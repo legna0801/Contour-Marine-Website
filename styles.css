@@ -4560,3 +4560,13 @@ p  { font-size: 1rem; line-height: 1.75; }
     border-radius: 10px;
   }
 }
+
+/* ── Deck Lighting Grid — responsive ── */
+@media (max-width: 620px) {
+  .deck-light-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .deck-light-grid > div {
+    aspect-ratio: 16 / 10 !important;
+  }
+}
