@@ -371,29 +371,44 @@ nav.scrolled .nav-logo img {
 }
 
 .hero-logo {
-  /* Natural colors — no blend mode, no tint */
   width: clamp(180px, 22vw, 260px);
   height: auto;
   display: block;
-  margin: 0 auto;            /* explicit centering */
+  margin: 0 auto;
   flex-shrink: 0;
   object-fit: contain;
-  /* Crisp rendering on all screens */
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
-  /* Elegant glow beneath, subtle drop shadow */
+  /* Layered 3D drop-shadow stack — builds depth below and behind */
   filter:
-    drop-shadow(0 4px 24px rgba(0,0,0,0.55))
-    drop-shadow(0 0 40px rgba(59,196,218,0.18));
-  transition: transform 0.5s cubic-bezier(0.22,1,0.36,1),
-              filter 0.5s ease;
+    drop-shadow(0 1px 1px rgba(13,43,69,0.50))
+    drop-shadow(0 3px 4px rgba(13,43,69,0.40))
+    drop-shadow(0 7px 12px rgba(13,43,69,0.32))
+    drop-shadow(0 16px 28px rgba(13,43,69,0.24))
+    drop-shadow(0 28px 48px rgba(13,43,69,0.16))
+    drop-shadow(0 0 50px rgba(59,196,218,0.22));
+  animation: heroLogoFloat 5s ease-in-out infinite;
+  transform-style: preserve-3d;
+  transition: filter 0.5s ease;
+}
+
+@keyframes heroLogoFloat {
+  0%   { transform: translateY(0px)   rotateX(1deg)  rotateY(-2deg); }
+  25%  { transform: translateY(-7px)  rotateX(-1deg) rotateY(2deg);  }
+  50%  { transform: translateY(-12px) rotateX(2deg)  rotateY(1deg);  }
+  75%  { transform: translateY(-5px)  rotateX(0deg)  rotateY(-1deg); }
+  100% { transform: translateY(0px)   rotateX(1deg)  rotateY(-2deg); }
 }
 
 .hero-logo:hover {
-  transform: scale(1.03);
   filter:
-    drop-shadow(0 6px 32px rgba(0,0,0,0.6))
-    drop-shadow(0 0 60px rgba(59,196,218,0.28));
+    drop-shadow(0 1px 1px rgba(13,43,69,0.55))
+    drop-shadow(0 4px 6px rgba(13,43,69,0.45))
+    drop-shadow(0 10px 20px rgba(13,43,69,0.35))
+    drop-shadow(0 22px 40px rgba(13,43,69,0.25))
+    drop-shadow(0 0 70px rgba(59,196,218,0.35));
+  animation-play-state: paused;
+  transform: translateY(-14px) rotateX(2deg) rotateY(2deg) scale(1.04);
 }
 
 /* ── Eyebrow label ── */
