@@ -4492,12 +4492,7 @@ p  { font-size: 1rem; line-height: 1.75; }
 .pl-diagram-wrap.pl-anno-visible .pl-svg-l3 { transition-delay: 0.46s; }
 .pl-diagram-wrap.pl-anno-visible .pl-svg-l4 { transition-delay: 0.64s; }
 
-/* ── Mobile: hide SVG annotations — photo only on small screens ── */
-@media (max-width: 768px) {
-  .pl-diagram-svg {
-    display: none;
-  }
-}
+/* ── Mobile: annotations always visible — SVG scales with viewBox automatically ── */
 
 /* On very small phones shrink the wrapper padding and radius */
 @media (max-width: 480px) {
@@ -4505,7 +4500,8 @@ p  { font-size: 1rem; line-height: 1.75; }
     margin: 1.5rem 0 0;
     border-radius: 10px;
   }
-  .pl-diagram-photo {
+  .pl-diagram-photo,
+  .pl-diagram-svg {
     border-radius: 10px;
   }
 }
