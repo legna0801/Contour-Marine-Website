@@ -4562,12 +4562,12 @@ p  { font-size: 1rem; line-height: 1.75; }
 }
 
 /* ── Deck Lighting Grid — responsive ── */
-@media (max-width: 620px) {
+@media (max-width: 780px) {
   .deck-light-grid {
     grid-template-columns: 1fr !important;
   }
   .deck-light-grid > div {
-    aspect-ratio: 16 / 10 !important;
+    height: 220px !important;
   }
 }
 
