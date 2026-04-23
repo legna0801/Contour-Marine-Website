@@ -4570,3 +4570,13 @@ p  { font-size: 1rem; line-height: 1.75; }
     aspect-ratio: 16 / 10 !important;
   }
 }
+
+/* ── Dock Lighting Grid — responsive ── */
+@media (max-width: 620px) {
+  .dock-light-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .dock-light-grid > div {
+    aspect-ratio: 16 / 10 !important;
+  }
+}
