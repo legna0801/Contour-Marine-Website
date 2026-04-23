@@ -50,11 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
           revealObserver.unobserve(e.target);
         }
       });
-    }, { threshold: 0.05, rootMargin: '0px 0px 0px 0px' });
+    }, { threshold: 0, rootMargin: '0px 0px 100px 0px' });
     revealEls.forEach(el => {
-      // If already in view on load (e.g. near top of page), make visible immediately
+      // Immediately visible if already on screen
       const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight && rect.bottom > 0) {
+      if (rect.top < window.innerHeight) {
         el.classList.add('visible');
       } else {
         revealObserver.observe(el);

@@ -688,6 +688,7 @@ section {
   color: var(--navy);
   margin-bottom: 1rem;
   line-height: 1.18;
+  text-shadow: 0 1px 4px rgba(13,43,69,0.18);
 }
 
 .section-header p {
@@ -2379,13 +2380,13 @@ footer {
 
 .reveal {
   opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transform: translateY(24px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 
 .reveal-left {
