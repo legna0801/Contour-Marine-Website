@@ -520,7 +520,7 @@
       position: relative;
     }
     .crew-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); }
-    .crew-card img { width:100%; aspect-ratio:4/3; object-fit:cover; display:block; }
+    .crew-card img { width:100%; aspect-ratio:4/3; object-fit:cover; object-position:center 20%; display:block; }
     .crew-card-overlay {
       position: absolute; inset: 0;
       background: linear-gradient(to top, rgba(7,27,46,0.88) 0%, transparent 55%);
@@ -1465,10 +1465,10 @@
     <!-- Image Stack with Logo Badge -->
     <div class="story-img-stack reveal-left">
       <div class="story-img-main">
-        <div class="ph ph--xl" style="border-radius:16px;"><i class="fas fa-users"></i><span>Contour Marine Team</span></div>
+        <img src="images/team-photo.jpg" alt="The Contour Marine crew — South Florida marine construction specialists" loading="lazy" />
       </div>
       <div class="story-img-second">
-        <div class="ph ph--md" style="border-radius:16px;"><i class="fas fa-hard-hat"></i><span>Marine Crew on Site</span></div>
+        <img src="images/team-photo.jpg" alt="Contour Marine team on the jobsite" loading="lazy" style="object-position:center 15%;" />
       </div>
       <div class="story-logo-badge">
         <img src="images/logo.png" alt="Contour Marine" />
@@ -1630,20 +1630,20 @@
       <p>A team of dedicated marine construction professionals who show up every day and build things that last for decades.</p>
     </div>
     <div class="crew-grid">
-      <div class="crew-card reveal-left">
-        <div class="ph ph--xl" style="width:100%;min-height:320px;border-radius:0;border:none;background:linear-gradient(145deg,#071b2e,#0d2b45);"><i class="fas fa-users"></i><span>Our Expert Crew</span></div>
+      <div class="crew-card crew-card--team reveal-left">
+        <img src="images/team-photo.jpg" alt="The Contour Marine crew — marine construction specialists on a South Florida jobsite" loading="lazy" />
         <div class="crew-card-overlay"></div>
         <div class="crew-card-label">
           <h4>Our Expert Crew</h4>
           <p>Marine Construction Specialists</p>
         </div>
       </div>
-      <div class="crew-card reveal-right">
-        <div class="ph ph--xl" style="width:100%;min-height:320px;border-radius:0;border:none;background:linear-gradient(145deg,#071b2e,#0d2b45);"><i class="fas fa-hard-hat"></i><span>Field Team — Quality &amp; Safety First</span></div>
+      <div class="crew-card crew-card--team reveal-right">
+        <img src="images/team-photo.jpg" alt="Contour Marine team ready on the jobsite — South Florida marine contractor" loading="lazy" />
         <div class="crew-card-overlay"></div>
         <div class="crew-card-label">
-          <h4>In the Field</h4>
-          <p>Quality &amp; Safety First</p>
+          <h4>Built By This Team</h4>
+          <p>25+ Years of Waterfront Expertise</p>
         </div>
       </div>
     </div>
