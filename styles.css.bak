@@ -291,7 +291,8 @@ nav.scrolled .nav-logo img {
   align-items: center;
   justify-content: center;
   background: var(--navy-dark);
-  padding: 110px 2rem 65px;
+  padding: 110px 2rem 70px;
+  padding-bottom: 100px; /* room for scroll indicator */
 }
 
 /* ── Background — clean deep navy gradient, no photos, no textures ── */
@@ -365,7 +366,7 @@ nav.scrolled .nav-logo img {
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin: 0 auto 1.2rem;
+  margin: 0 auto 2rem;
   opacity: 0;
   animation: heroFadeDown 1s 0.1s cubic-bezier(0.22,1,0.36,1) forwards;
 }
@@ -562,8 +563,8 @@ nav.scrolled .nav-logo img {
   gap: 0;
   justify-content: center;
   flex-wrap: nowrap;
-  margin-top: 1.6rem;
-  padding-top: 1.4rem;
+  margin-top: 2.8rem;
+  padding-top: 2rem;
   border-top: 1px solid rgba(255,255,255,0.12);
   z-index: 2;
   position: relative;
@@ -1833,8 +1834,7 @@ section {
 
 .service-detail-img img {
   width: 100%;
-  height: auto;
-  aspect-ratio: 4/3;
+  height: 420px;
   display: block;
   object-fit: cover;
   object-position: center center;
@@ -3097,7 +3097,7 @@ footer {
 .section-header {
   text-align: center;
   max-width: 700px;
-  margin: 0 auto 2.5rem;
+  margin: 0 auto 4rem;
   padding: 0 1rem;
 }
 
@@ -3323,7 +3323,7 @@ nav.scrolled .nav-logo img {
 .section-header {
   text-align: center;
   max-width: 640px;
-  margin: 0 auto 2.5rem;
+  margin: 0 auto 3.5rem;
   padding: 0;
 }
 .section-header h2 {
@@ -3702,3 +3702,3239 @@ p  { font-size: 1rem; line-height: 1.75; }
   }
 }
 
+
+/* ============================================================
+   HOMEPAGE PREMIUM REFINEMENT — Spacing, Alignment, Conversion
+   ============================================================ */
+
+/* ── HERO: padding handled by base rule ── */
+
+.hero-content {
+  max-width: 860px;
+}
+
+.hero-logo-wrap {
+  margin-bottom: 1.4rem;
+}
+
+.hero-eyebrow {
+  margin-bottom: 1.4rem;
+  font-size: 0.76rem;
+  letter-spacing: 0.30em;
+}
+
+.hero h1 {
+  font-size: clamp(2.8rem, 5.5vw, 4.8rem);
+  font-weight: 800;
+  margin-bottom: 1.6rem;
+  line-height: 1.08;
+}
+
+.hero-sub {
+  font-size: clamp(1rem, 1.8vw, 1.12rem);
+  max-width: 500px;
+  margin: 0 auto 1rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.80);
+}
+
+.hero-trust-line {
+  margin: 0 auto 2.8rem;
+  font-size: 0.80rem;
+  letter-spacing: 0.20em;
+}
+
+/* ── HERO CTA BUTTONS: identical size, clear hierarchy ── */
+.hero-buttons {
+  gap: 1.2rem;
+  margin-bottom: 0;
+}
+
+.hero-buttons .btn-primary,
+.hero-buttons .btn-secondary {
+  min-width: 200px;
+  padding: 1.05rem 2.4rem;
+  font-size: 0.92rem;
+  justify-content: center;
+}
+
+/* Primary: full orange fill — highest visual weight */
+.hero-buttons .btn-primary {
+  box-shadow: 0 8px 28px rgba(212,114,26,0.50);
+}
+
+/* Secondary/call: teal outline — same dimensions, clearly secondary */
+.hero-buttons .btn-secondary--call {
+  border-width: 2px;
+  border-color: rgba(59,196,218,0.75);
+  color: var(--teal-bright);
+}
+
+/* ── HERO STATS: slightly more breathing room ── */
+.hero-stats {
+  margin-top: 2rem;
+  padding-top: 1.4rem;
+  max-width: 520px;
+}
+
+/* ── SECTION HEADERS: consistent vertical rhythm ── */
+.section-header {
+  margin-bottom: 2.5rem;
+}
+
+.section-header h2 {
+  margin-bottom: 1.2rem;
+  line-height: 1.15;
+}
+
+.section-header p {
+  font-size: 1.02rem;
+  line-height: 1.8;
+  max-width: 580px;
+}
+
+/* ── SERVICES: equal-height cards, generous padding, bigger hover ── */
+.services-section {
+  padding: 5rem 2rem;
+}
+
+.services-grid {
+  align-items: stretch;
+  gap: 2rem;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.service-card-body {
+  padding: 2rem 2.2rem 2.4rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.service-card-body h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+  margin-top: 0.6rem;
+  color: var(--navy);
+}
+
+.service-card-body p {
+  font-size: 0.93rem;
+  line-height: 1.75;
+  margin-bottom: 1.6rem;
+  flex: 1; /* pushes .service-link to bottom */
+}
+
+/* ── BEFORE & AFTER: wider max, more vertical space ── */
+.before-after-section {
+  padding: 4.5rem 2rem 5rem;
+}
+
+.ba-grid {
+  gap: 2.4rem;
+  max-width: 1000px;
+}
+
+.ba-img-wrap {
+  aspect-ratio: 4 / 3;
+}
+
+/* ── PROCESS: more space, bigger numbers, improved symmetry ── */
+.process-section {
+  padding: 4.5rem 2rem;
+}
+
+.process-steps {
+  gap: 3rem 2.5rem;
+  max-width: 1020px;
+}
+
+.process-step:nth-child(1),
+.process-step:nth-child(2),
+.process-step:nth-child(3),
+.process-step:nth-child(4),
+.process-step:nth-child(5) {
+  flex: 0 0 180px;
+}
+
+.step-number {
+  width: 62px;
+  height: 62px;
+  margin: 0 auto 1.2rem;
+}
+
+.step-number span {
+  font-size: 1.2rem;
+}
+
+.process-step h4 {
+  font-size: 0.95rem;
+  margin-bottom: 0.6rem;
+  font-weight: 700;
+}
+
+.process-step p {
+  font-size: 0.85rem;
+  line-height: 1.65;
+}
+
+/* ── WHY US / FEATURE SECTION ── */
+.feature-section .container {
+  padding: 4.5rem 2rem;
+}
+
+.feature-boxes {
+  gap: 1.8rem;
+  margin-top: 3.5rem;
+}
+
+.feature-box {
+  padding: 2.8rem 2rem;
+}
+
+/* ── TESTIMONIALS: more padding, better line spacing ── */
+.testimonials-section {
+  padding: 4.5rem 2rem;
+}
+
+.testimonials-grid {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.testimonial-card {
+  padding: 2.8rem 2.4rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.testimonial-card p {
+  font-size: 0.97rem;
+  line-height: 1.85;
+  margin-bottom: 1.8rem;
+  flex: 1;
+}
+
+.testimonial-author {
+  margin-top: auto;
+}
+
+/* ── FINAL CTA: stand out, generous padding ── */
+.cta-section {
+  padding: 5rem 2rem;
+}
+
+.cta-content {
+  max-width: 720px;
+}
+
+.cta-content h2 {
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  margin-bottom: 1.6rem;
+}
+
+.cta-content p {
+  font-size: 1.1rem;
+  margin-bottom: 3.2rem;
+  color: rgba(255,255,255,0.75);
+}
+
+.cta-actions {
+  gap: 1.4rem;
+}
+
+/* Both CTA buttons: identical size, visually matched */
+.cta-actions .btn-cta,
+.cta-actions .btn-cta-call {
+  min-width: 220px;
+  padding: 1.1rem 2.6rem;
+  font-size: 0.95rem;
+}
+
+/* ── FOOTER: tighten alignment, uniform spacing ── */
+footer {
+  padding-top: 5.5rem;
+}
+
+.footer-grid {
+  gap: 3rem 3rem;
+  padding-bottom: 3.5rem;
+}
+
+.footer-brand p {
+  line-height: 1.8;
+  font-size: 0.92rem;
+  max-width: 260px;
+}
+
+.footer-social {
+  margin-top: 1.6rem;
+  margin-bottom: 0.4rem;
+}
+
+.footer-col h5 {
+  margin-bottom: 1.4rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+}
+
+.footer-col ul li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-col ul li a {
+  font-size: 0.9rem;
+}
+
+.footer-bottom {
+  padding-top: 2rem;
+}
+
+.footer-bottom p {
+  font-size: 0.84rem;
+  color: rgba(255,255,255,0.42);
+}
+
+/* ── GLOBAL SECTION RHYTHM ── */
+/* Generous top/bottom padding on every major section for breathing room */
+.trust-bar {
+  padding: 1.4rem 2rem;
+}
+
+/* ── MOBILE REFINEMENT ── */
+@media (max-width: 768px) {
+  .hero {
+    padding: 130px 1.5rem 100px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.2rem, 8vw, 3.2rem);
+    margin-bottom: 1.2rem;
+  }
+
+  .hero-sub {
+    font-size: 0.97rem;
+    margin-bottom: 0.9rem;
+    padding: 0 0.5rem;
+  }
+
+  .hero-trust-line {
+    margin-bottom: 2.2rem;
+    font-size: 0.74rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.9rem;
+  }
+
+  .hero-buttons .btn-primary,
+  .hero-buttons .btn-secondary {
+    width: 100%;
+    max-width: 300px;
+    min-width: unset;
+    padding: 1rem 1.6rem;
+    justify-content: center;
+  }
+
+  .hero-stats {
+    margin-top: 2.2rem;
+    padding-top: 1.6rem;
+  }
+
+  .services-section {
+    padding: 5rem 1.2rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+  }
+
+  /* Reset 4th/5th card positioning on mobile — all full-width */
+  .services-grid .service-card:nth-child(4),
+  .services-grid .service-card:nth-child(5) {
+    grid-column: auto;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .service-card-body {
+    padding: 1.6rem 1.8rem 2rem;
+  }
+
+  .before-after-section {
+    padding: 5rem 1.2rem 6rem;
+  }
+
+  .ba-grid {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+    max-width: 440px;
+  }
+
+  .process-section {
+    padding: 5rem 1.2rem;
+  }
+
+  .process-steps {
+    gap: 2rem 1.5rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .process-step:nth-child(1),
+  .process-step:nth-child(2),
+  .process-step:nth-child(3),
+  .process-step:nth-child(4),
+  .process-step:nth-child(5) {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .testimonials-section {
+    padding: 5rem 1.2rem;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+  }
+
+  .testimonial-card {
+    padding: 2.2rem 1.8rem;
+  }
+
+  .cta-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .cta-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .cta-actions .btn-cta,
+  .cta-actions .btn-cta-call {
+    width: 100%;
+    max-width: 300px;
+    min-width: unset;
+  }
+
+  .feature-section .container {
+    padding: 5rem 1.5rem;
+  }
+
+  .feature-boxes {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  footer {
+    padding-top: 4rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem 2rem;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  .section-header {
+    margin-bottom: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 120px 1.2rem 90px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 9vw, 2.8rem);
+  }
+
+  .hero-buttons .btn-primary,
+  .hero-buttons .btn-secondary {
+    max-width: 280px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ba-grid {
+    max-width: 360px;
+  }
+}
+
+
+/* ════════════════════════════════════════════════════════════
+   LUXURY REFINEMENT — Air · Calm · Intentional
+   Every rule here is deliberate. Less is more.
+   ════════════════════════════════════════════════════════════ */
+
+/* ── Root: softer shadows for a less heavy feel ── */
+:root {
+  --shadow-card:  0 4px 24px rgba(13,43,69,0.10);
+  --shadow-hover: 0 16px 48px rgba(13,43,69,0.18);
+}
+
+/* ── NAV: give it room, reduce crowding ── */
+nav {
+  padding: 1.4rem 3rem;
+}
+nav.scrolled {
+  padding: 0.9rem 3rem;
+}
+.nav-container {
+  max-width: 1360px;
+}
+.nav-links {
+  gap: 0.4rem;
+}
+.nav-links a {
+  font-size: 0.875rem;
+  padding: 0.45rem 1rem;
+  letter-spacing: 0.03em;
+}
+/* Remove the underline animation — too busy */
+.nav-links a::after {
+  display: none;
+}
+.nav-links a:hover {
+  background: transparent;
+  color: var(--teal-bright);
+}
+
+/* ── HERO: padding handled by base rule ── */
+.hero-content {
+  max-width: 820px;
+}
+.hero-logo-wrap {
+  margin-bottom: 1.4rem;
+}
+.hero h1 {
+  font-size: clamp(2.8rem, 5.2vw, 4.6rem);
+  line-height: 1.06;
+  margin-bottom: 1.8rem;
+  letter-spacing: -0.03em;
+}
+.hero-sub {
+  font-size: clamp(1.05rem, 1.6vw, 1.15rem);
+  max-width: 480px;
+  margin: 0 auto 1.4rem;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.72);
+}
+.hero-trust-line {
+  margin: 0 auto 3.2rem;
+  font-size: 0.76rem;
+  letter-spacing: 0.25em;
+  color: var(--teal-bright);
+  opacity: 0.85;
+}
+.hero-buttons {
+  gap: 1.4rem;
+}
+.hero-buttons .btn-primary,
+.hero-buttons .btn-secondary {
+  min-width: 210px;
+  padding: 1.1rem 2.6rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+}
+.hero-stats {
+  margin-top: 2rem;
+  padding-top: 1.6rem;
+  max-width: 500px;
+}
+
+/* ── TRUST BAR: quieter, less icon-heavy ── */
+.trust-bar {
+  padding: 1.2rem 3rem;
+  gap: 3rem;
+  background: var(--navy-dark);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.trust-item {
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  color: rgba(255,255,255,0.55);
+  gap: 0.65rem;
+}
+.trust-item i {
+  font-size: 0.9rem;
+  color: var(--teal);
+  opacity: 0.8;
+}
+
+/* ── SECTION LABELS: give them more room to breathe ── */
+.section-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.32em;
+  margin-bottom: 1rem;
+  color: var(--teal);
+}
+
+/* ── SECTION HEADERS: wider max, more space below ── */
+.section-header {
+  max-width: 600px;
+  margin: 0 auto 3rem;
+}
+.section-header h2 {
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  line-height: 1.12;
+  margin-bottom: 1.4rem;
+  letter-spacing: -0.025em;
+}
+.section-header p {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: var(--text-mid);
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* ── DIVIDER: subtler, more refined ── */
+.divider {
+  margin: 1.6rem auto 0;
+  gap: 0.8rem;
+}
+.divider::before,
+.divider::after {
+  max-width: 60px;
+  opacity: 0.5;
+}
+.divider-diamond {
+  width: 6px;
+  height: 6px;
+  background: var(--gold);
+  opacity: 0.7;
+}
+
+/* ── SERVICES: maximum air, clean cards ── */
+.services-section {
+  padding: 4.5rem 2rem;
+  background: #f8fafb;
+}
+.services-grid {
+  gap: 2rem;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+.service-card {
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(13,43,69,0.07);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(13,43,69,0.14);
+}
+.service-card-img {
+  height: 220px;
+}
+.service-card-body {
+  padding: 2.2rem 2.4rem 2.8rem;
+}
+.service-card-body h3 {
+  font-size: 1.25rem;
+  margin-top: 0.6rem;
+  margin-bottom: 0.9rem;
+  letter-spacing: -0.015em;
+}
+.service-card-body p {
+  font-size: 0.91rem;
+  line-height: 1.8;
+  color: var(--text-mid);
+  margin-bottom: 2rem;
+}
+/* Badge: quieter — less like a sticker */
+.service-card-badge {
+  background: rgba(212,114,26,0.88);
+  font-size: 0.65rem;
+  padding: 0.3rem 0.75rem;
+  letter-spacing: 0.14em;
+  backdrop-filter: blur(4px);
+}
+
+/* ── BEFORE & AFTER: space to breathe ── */
+.before-after-section {
+  background: #f0f4f7;
+  padding: 4.5rem 2rem;
+}
+.ba-grid {
+  max-width: 880px;
+  gap: 2.8rem;
+  margin: 0 auto;
+}
+.ba-card {
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(13,43,69,0.10);
+}
+.ba-card:hover {
+  box-shadow: 0 16px 48px rgba(13,43,69,0.16);
+  transform: translateY(-4px);
+}
+.ba-label {
+  padding: 0.5rem 1.1rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  background: rgba(7,27,46,0.82);
+  backdrop-filter: blur(6px);
+}
+
+/* ── PROCESS: cleaner step numbers, airy layout ── */
+.process-section {
+  padding: 4.5rem 2rem;
+  background: var(--white);
+}
+.process-steps {
+  max-width: 980px;
+  gap: 3rem 3.5rem;
+  margin: 0 auto;
+}
+.process-step:nth-child(1),
+.process-step:nth-child(2),
+.process-step:nth-child(3),
+.process-step:nth-child(4),
+.process-step:nth-child(5) {
+  flex: 0 0 172px;
+}
+.step-number {
+  width: 58px;
+  height: 58px;
+  box-shadow: 0 4px 14px rgba(26,122,138,0.25);
+}
+.step-number span {
+  font-size: 1.1rem;
+}
+.process-step h4 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--navy);
+  letter-spacing: 0;
+}
+.process-step p {
+  font-size: 0.82rem;
+  line-height: 1.7;
+  color: var(--text-mid);
+}
+
+/* ── FEATURE / WHY US: centred, airy boxes ── */
+.feature-section {
+  padding: 4.5rem 2rem;
+}
+.feature-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+.feature-content h2 {
+  color: var(--white);
+  font-size: clamp(1.9rem, 3.2vw, 2.7rem);
+  margin-bottom: 1.2rem;
+  line-height: 1.12;
+}
+.feature-content > p {
+  color: rgba(255,255,255,0.62);
+  font-size: 1rem;
+  max-width: 520px;
+  margin: 0 auto 4rem;
+  line-height: 1.85;
+}
+.feature-boxes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+  margin-top: 0;
+}
+.feature-box {
+  padding: 3rem 2.2rem;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  text-align: center;
+}
+.feature-box:hover {
+  transform: translateY(-6px);
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(59,196,218,0.25);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.22);
+}
+.feature-box-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  margin: 0 auto 1.6rem;
+}
+.feature-box h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.65rem;
+  letter-spacing: -0.01em;
+}
+.feature-box p {
+  font-size: 0.87rem;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.52);
+}
+
+/* ── TESTIMONIALS: generous padding, editorial feel ── */
+.testimonials-section {
+  background: #f8fafb;
+  padding: 4.5rem 2rem;
+}
+.testimonials-grid {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+.testimonial-card {
+  padding: 3rem 2.6rem;
+  border-radius: 16px;
+  border-left: 3px solid rgba(26,122,138,0.3);
+  box-shadow: 0 2px 16px rgba(13,43,69,0.06);
+}
+.testimonial-card:hover {
+  box-shadow: 0 10px 36px rgba(13,43,69,0.12);
+  transform: translateY(-4px);
+}
+.testimonial-card::before {
+  font-size: 5rem;
+  opacity: 0.08;
+  top: -0.5rem;
+}
+.testimonial-card p {
+  font-size: 0.95rem;
+  line-height: 1.9;
+  color: var(--text-mid);
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+.testimonial-stars {
+  margin-bottom: 1.4rem;
+}
+.testimonial-stars i {
+  font-size: 0.85rem;
+  color: var(--gold);
+}
+.testimonial-author {
+  padding-top: 1.4rem;
+  border-top: 1px solid rgba(13,43,69,0.07);
+  gap: 0.9rem;
+}
+.testimonial-avatar {
+  width: 42px;
+  height: 42px;
+}
+.testimonial-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+.testimonial-location {
+  font-size: 0.76rem;
+  margin-top: 0.15rem;
+  color: var(--teal);
+  opacity: 0.8;
+}
+
+/* ── CTA: dramatic, spacious ── */
+.cta-section {
+  padding: 4.5rem 2rem;
+}
+.cta-content {
+  max-width: 680px;
+  margin: 0 auto;
+}
+.cta-content .section-label {
+  margin-bottom: 1.4rem;
+}
+.cta-content h2 {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  margin-bottom: 1.8rem;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+}
+.cta-content p {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  margin-bottom: 3.6rem;
+  color: rgba(255,255,255,0.60);
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cta-actions {
+  gap: 1.4rem;
+  justify-content: center;
+}
+.cta-actions .btn-cta,
+.cta-actions .btn-cta-call {
+  min-width: 216px;
+  padding: 1.15rem 2.8rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+}
+
+/* ── FOOTER: spacious, quiet ── */
+footer {
+  padding: 4rem 2rem 2rem;
+}
+.footer-grid {
+  max-width: 1300px;
+  margin: 0 auto;
+  gap: 2rem 4rem;
+  padding-bottom: 4rem;
+}
+.footer-brand img {
+  height: 64px;
+  margin-bottom: 1.6rem;
+}
+.footer-brand p {
+  font-size: 0.88rem;
+  line-height: 1.85;
+  color: rgba(255,255,255,0.42);
+  max-width: 240px;
+}
+.footer-social {
+  margin-top: 2rem;
+  gap: 0.65rem;
+}
+.footer-phone {
+  margin-top: 1.8rem;
+  font-size: 1.05rem;
+}
+.footer-col h5 {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  margin-bottom: 1.6rem;
+  color: rgba(255,255,255,0.35);
+}
+.footer-col ul li {
+  margin-bottom: 0.9rem;
+}
+.footer-col ul li a {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.50);
+  gap: 0.4rem;
+}
+.footer-col ul li a i {
+  opacity: 0.3;
+  font-size: 0.7rem;
+}
+.footer-col ul li a:hover {
+  color: rgba(255,255,255,0.88);
+}
+.footer-bottom {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding-top: 2.2rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.footer-bottom p {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.28);
+  letter-spacing: 0.02em;
+}
+.footer-bottom a {
+  color: rgba(255,255,255,0.40);
+}
+.footer-bottom a:hover {
+  color: var(--teal-bright);
+}
+
+/* ── FLOATING CTA: subtle, non-intrusive ── */
+.float-cta {
+  bottom: 2.2rem;
+  right: 2.2rem;
+  gap: 0.7rem;
+}
+.float-btn {
+  padding: 0.85rem 1.6rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.05em;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.22);
+  border-radius: 50px;
+}
+
+/* ── SCROLL INDICATOR: quieter ── */
+.scroll-indicator {
+  opacity: 0.35;
+}
+
+/* ── GLOBAL SECTION RHYTHM: large desktop ── */
+@media (min-width: 1200px) {
+  .services-section,
+  .before-after-section,
+  .process-section,
+  .feature-section,
+  .testimonials-section {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+  .cta-section {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+  footer {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+/* ── MOBILE: generous but not wasteful ── */
+@media (max-width: 768px) {
+  nav {
+    padding: 1.1rem 1.6rem;
+  }
+  nav.scrolled {
+    padding: 0.8rem 1.6rem;
+  }
+  .hero {
+    padding: 115px 1.8rem 95px;
+  }
+  .hero h1 {
+    font-size: clamp(2.2rem, 8vw, 3rem);
+    margin-bottom: 1.4rem;
+  }
+  .hero-sub {
+    margin-bottom: 1.2rem;
+  }
+  .hero-trust-line {
+    margin-bottom: 2.6rem;
+  }
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .hero-buttons .btn-primary,
+  .hero-buttons .btn-secondary {
+    width: 100%;
+    max-width: 290px;
+    min-width: unset;
+  }
+  .hero-stats {
+    margin-top: 3rem;
+  }
+  .trust-bar {
+    padding: 1.2rem 1.6rem;
+    gap: 1.4rem 2rem;
+    justify-content: flex-start;
+  }
+  .services-section,
+  .before-after-section,
+  .process-section,
+  .feature-section,
+  .testimonials-section,
+  .cta-section {
+    padding: 4rem 1.6rem;
+  }
+  .section-header {
+    margin-bottom: 3.5rem;
+  }
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+  }
+  .services-grid .service-card:nth-child(4),
+  .services-grid .service-card:nth-child(5) {
+    grid-column: auto;
+    margin: 0;
+  }
+  .ba-grid {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+    max-width: 440px;
+  }
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+  }
+  .feature-boxes {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .cta-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  .cta-actions .btn-cta,
+  .cta-actions .btn-cta-call {
+    width: 100%;
+    max-width: 290px;
+    min-width: unset;
+  }
+  .process-steps {
+    flex-direction: column;
+    align-items: center;
+    gap: 2.2rem;
+    max-width: 280px;
+  }
+  .process-step:nth-child(1),
+  .process-step:nth-child(2),
+  .process-step:nth-child(3),
+  .process-step:nth-child(4),
+  .process-step:nth-child(5) {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+  footer {
+    padding: 5rem 1.6rem 2rem;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem 2rem;
+  }
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+  .footer-brand p {
+    max-width: 100%;
+  }
+  .float-btn {
+    font-size: 0;
+    width: 46px;
+    height: 46px;
+    padding: 0;
+    border-radius: 50%;
+    justify-content: center;
+  }
+  .float-btn i {
+    font-size: 1.05rem;
+    margin: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 125px 1.4rem 95px;
+  }
+  .hero h1 {
+    font-size: clamp(2rem, 9vw, 2.7rem);
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .ba-grid {
+    max-width: 360px;
+  }
+  .services-section,
+  .before-after-section,
+  .process-section,
+  .feature-section,
+  .testimonials-section,
+  .cta-section {
+    padding: 5rem 1.4rem;
+  }
+}
+
+
+/* ══════════════════════════════════════════════
+   FLOATING CTA — AUTHORITATIVE FINAL FIX
+   Overrides all previous conflicting rules.
+   Buttons: vertical stack, right edge, always
+   clear of footer, full text visible at all times.
+   ══════════════════════════════════════════════ */
+
+/* ── Base (desktop ≥ 769px) ─────────────────── */
+.float-cta {
+  position: fixed;
+  bottom: 2.4rem;
+  right: 2rem;
+  z-index: 900;
+  display: flex;
+  flex-direction: column;   /* stack vertically */
+  align-items: flex-end;
+  gap: 0.65rem;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+.float-cta.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+.float-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.78rem 1.45rem;
+  border-radius: 50px;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  white-space: nowrap;          /* never clip text */
+  overflow: visible;
+  box-shadow: 0 6px 22px rgba(0,0,0,0.26);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+.float-btn i {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+.float-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.32);
+}
+
+/* Call button */
+.float-btn-call {
+  background: var(--teal);
+  color: #fff;
+}
+.float-btn-call:hover { background: var(--teal-light); }
+
+/* Quote button */
+.float-btn-quote {
+  background: var(--orange);
+  color: #fff;
+}
+.float-btn-quote:hover { background: var(--orange-light); }
+
+/* ── Tablet (≤ 900px) ───────────────────────── */
+@media (max-width: 900px) {
+  .float-cta {
+    bottom: 1.8rem;
+    right: 1.4rem;
+    gap: 0.55rem;
+  }
+  .float-btn {
+    font-size: 0.84rem;
+    padding: 0.72rem 1.3rem;
+  }
+}
+
+/* ── Mobile (≤ 600px) ───────────────────────── */
+/* Show icon + text but slightly smaller.
+   Keep vertical stack so text is never cut off. */
+@media (max-width: 600px) {
+  .float-cta {
+    bottom: 1.4rem;
+    right: 1rem;
+    gap: 0.5rem;
+    flex-direction: column;   /* stay vertical, never row */
+    align-items: flex-end;
+  }
+  .float-btn {
+    font-size: 0.8rem !important;   /* restore text — cancel icon-only rules */
+    width: auto  !important;
+    height: auto !important;
+    padding: 0.68rem 1.15rem !important;
+    border-radius: 50px !important;
+    gap: 0.45rem;
+  }
+  .float-btn i {
+    font-size: 0.95rem !important;
+  }
+}
+
+/* ── Very small screens (≤ 400px) ──────────── */
+@media (max-width: 400px) {
+  .float-cta {
+    bottom: 1.1rem;
+    right: 0.75rem;
+  }
+  .float-btn {
+    font-size: 0.76rem !important;
+    padding: 0.6rem 1rem !important;
+  }
+}
+
+/* ══════════════════════════════════════════════
+   CTA SECTION — AUTHORITATIVE FINAL FIX
+   Equal-width buttons, no duplicate phone link,
+   clean centered layout on all screen sizes.
+   ══════════════════════════════════════════════ */
+
+.cta-actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+/* Every button variant used inside .cta-actions
+   across index, about, service pages gets
+   identical width, padding and font size.        */
+.cta-actions .btn-primary,
+.cta-actions .btn-cta,
+.cta-actions .btn-cta-call,
+.cta-actions .btn-secondary {
+  min-width: 220px;
+  width: auto;
+  padding: 1.05rem 2.2rem;
+  font-size: 0.92rem;
+  justify-content: center;
+  text-align: center;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+/* Mobile — stack vertically, full width up to 300px */
+@media (max-width: 640px) {
+  .cta-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.9rem;
+  }
+  .cta-actions .btn-primary,
+  .cta-actions .btn-cta,
+  .cta-actions .btn-cta-call,
+  .cta-actions .btn-secondary {
+    width: 100%;
+    max-width: 300px;
+    min-width: unset;
+  }
+}
+
+/* ══════════════════════════════════════════════
+   HOMEPAGE MOBILE FIX — AUTHORITATIVE PASS
+   Fixes: overlapping sections, clipped content,
+   float button coverage, spacing rhythm.
+   ══════════════════════════════════════════════ */
+
+/* ── Global: prevent horizontal overflow on all screens ── */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* ── Add bottom padding to body so float buttons never
+      cover the last piece of real content ── */
+body {
+  padding-bottom: 0;
+}
+
+/* ── Ensure footer always has enough bottom padding for
+      float buttons not to overlap it ── */
+footer {
+  padding-bottom: 6rem;
+}
+
+/* ── Float CTA: raise z-index below nav, above sections ── */
+.float-cta {
+  position: fixed;
+  z-index: 900;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  bottom: 2.4rem;
+  right: 2rem;
+  gap: 0.65rem;
+}
+.float-cta.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ── Tablet (≤ 768px): tighten float position ── */
+@media (max-width: 768px) {
+  .float-cta {
+    bottom: 5rem;      /* raised well above footer on tablet */
+    right: 1.2rem;
+    gap: 0.55rem;
+  }
+
+  /* Hero: ensure content never clips under fixed nav */
+  .hero {
+    padding-top: 110px;
+    padding-bottom: 90px;
+    min-height: unset;
+  }
+
+  /* Stats strip: allow wrap on tablets so items don't squeeze */
+  .hero-stats {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem 0;
+    max-width: 100%;
+    padding-top: 1.5rem;
+    margin-top: 2rem;
+  }
+  .hero-stat {
+    flex: 0 0 33.333%;
+    padding: 0 0.5rem;
+    border-right: 1px solid rgba(255,255,255,0.12);
+    min-width: 0;
+  }
+  .hero-stat:last-child { border-right: none; }
+
+  /* Section rhythm: consistent top/bottom breathing room */
+  .services-section,
+  .before-after-section,
+  .process-section,
+  .feature-section,
+  .testimonials-section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  .cta-section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  /* Trust bar: wrap cleanly on tablet */
+  .trust-bar {
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+    justify-content: center;
+    padding: 1.2rem 1.5rem;
+  }
+
+  /* Prevent service cards from being cut off */
+  .services-grid--5 {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.2rem;
+  }
+  .services-grid--5 .service-card {
+    flex: unset !important;
+    min-width: unset !important;
+    max-width: unset !important;
+  }
+
+  /* Testimonials: single column */
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+  }
+}
+
+/* ── Mobile (≤ 600px): full fix ── */
+@media (max-width: 600px) {
+  /* Float buttons: raised above footer, never over content */
+  .float-cta {
+    bottom: 5.5rem;
+    right: 1rem;
+    gap: 0.5rem;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .float-btn {
+    font-size: 0.8rem !important;
+    width: auto !important;
+    height: auto !important;
+    padding: 0.65rem 1.1rem !important;
+    border-radius: 50px !important;
+    white-space: nowrap;
+    gap: 0.4rem;
+  }
+  .float-btn i {
+    font-size: 0.9rem !important;
+    margin: 0 !important;
+  }
+
+  /* Hero: safe top padding for fixed nav (~70px) + breathing room */
+  .hero {
+    padding: 110px 1.2rem 70px;
+    min-height: unset;
+    height: auto;
+  }
+
+  /* Hero logo: smaller on mobile */
+  .hero-logo {
+    width: clamp(110px, 38vw, 170px);
+  }
+  .hero-logo-wrap {
+    margin-bottom: 1rem;
+  }
+
+  /* Hero headline: readable size, no overflow */
+  .hero h1 {
+    font-size: clamp(1.85rem, 7vw, 2.6rem);
+    line-height: 1.15;
+    margin-bottom: 0.9rem;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+
+  /* Sub text */
+  .hero-sub {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    padding: 0;
+    margin-bottom: 0.8rem;
+  }
+
+  /* Trust line */
+  .hero-trust-line {
+    font-size: 0.7rem;
+    margin-bottom: 1.4rem;
+  }
+
+  /* CTA buttons: full-width stack, proper tap targets */
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 0.75rem;
+    margin-bottom: 0;
+  }
+  .hero-buttons .btn-primary,
+  .hero-buttons .btn-secondary {
+    width: 100%;
+    max-width: 290px;
+    min-width: unset;
+    justify-content: center;
+    padding: 0.95rem 1.4rem;
+    font-size: 0.9rem;
+  }
+
+  /* Stats strip: 3 items in one row, allow shrink */
+  .hero-stats {
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 0;
+    max-width: 100%;
+    margin-top: 1.8rem;
+    padding-top: 1.4rem;
+  }
+  .hero-stat {
+    flex: 1;
+    padding: 0 0.5rem;
+    min-width: 0;
+  }
+  .hero-stat-num {
+    font-size: 1.4rem;
+  }
+  .hero-stat-label {
+    font-size: 0.55rem;
+    letter-spacing: 0.1em;
+  }
+
+  /* Section rhythm on mobile */
+  section {
+    padding: 4rem 1.2rem;
+  }
+  .services-section {
+    padding: 4rem 1.2rem;
+  }
+  .before-after-section {
+    padding: 4rem 1.2rem;
+  }
+  .process-section {
+    padding: 4rem 1.2rem;
+  }
+  .feature-section {
+    padding: 4rem 1.2rem;
+  }
+  .testimonials-section {
+    padding: 4rem 1.2rem;
+  }
+  .cta-section {
+    padding: 4.5rem 1.2rem 5rem;
+  }
+
+  /* Section headers: tighter margin */
+  .section-header {
+    margin-bottom: 2.5rem;
+  }
+
+  /* Services grid: single column */
+  .services-grid,
+  .services-grid--5 {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 1.2rem;
+  }
+  .services-grid--5 .service-card {
+    flex: unset !important;
+    min-width: unset !important;
+    max-width: unset !important;
+  }
+
+  /* Before/after: single column, constrained width */
+  .ba-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+  .ba-img-wrap {
+    aspect-ratio: 4 / 3;
+  }
+
+  /* Process steps: single column, centered */
+  .process-steps {
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+    padding: 0;
+    gap: 1.8rem;
+  }
+  .process-step {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    max-width: 300px;
+    padding: 0;
+  }
+
+  /* Feature boxes: single column */
+  .feature-boxes {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  /* Testimonials: single column */
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  /* Trust bar: column layout, flush left */
+  .trust-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 1.2rem 1.4rem;
+  }
+
+  /* Footer: extra bottom padding for float buttons */
+  footer {
+    padding-bottom: 8rem;
+  }
+
+  /* Footer grid: single column */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .footer-brand {
+    grid-column: auto;
+    max-width: 100%;
+  }
+}
+
+/* ── Very small (≤ 400px) ── */
+@media (max-width: 400px) {
+  .hero {
+    padding: 100px 1rem 60px;
+  }
+  .hero h1 {
+    font-size: clamp(1.7rem, 8vw, 2.2rem);
+  }
+  .float-cta {
+    bottom: 5rem;
+    right: 0.75rem;
+  }
+  .float-btn {
+    font-size: 0.75rem !important;
+    padding: 0.6rem 0.95rem !important;
+  }
+  section {
+    padding: 3.5rem 1rem;
+  }
+  footer {
+    padding-bottom: 7rem;
+  }
+}
+
+/* ── Seawall card photo placeholder ── */
+.service-card-img--placeholder {
+  background: linear-gradient(145deg, #e8edf2 0%, #f0f4f7 100%);
+}
+.card-photo-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  width: 100%;
+  height: 100%;
+  color: #9dafc0;
+}
+.card-photo-placeholder i {
+  font-size: 2rem;
+  opacity: 0.5;
+}
+.card-photo-placeholder span {
+  font-family: var(--font-accent);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   HOMEPAGE FINAL REFINEMENT — Definitive Pass
+   Addresses: bold hero headline, equal-height service cards,
+   centered before/after, process steps spacing, testimonial
+   padding, prominent CTA, uniform whitespace, mobile stack.
+   All rules use specificity or !important only where needed
+   to override earlier cascade layers.
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── 1. HERO HEADLINE: bolder weight, tighter tracking ── */
+.hero h1 {
+  font-weight: 900;
+  letter-spacing: -0.035em;
+  text-shadow:
+    0 3px 8px rgba(0,0,0,0.55),
+    0 10px 40px rgba(0,0,0,0.35);
+}
+
+/* ── 2. SERVICE CARDS: equal height via flex column ── */
+.services-grid,
+.services-grid--5 {
+  align-items: stretch;
+}
+.service-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.service-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.service-card-body p { flex: 1; }
+.service-link { margin-top: auto; }
+
+/* Card hover: consistent lift + teal glow accent */
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 16px 48px rgba(13,43,69,0.16), 0 0 0 1px rgba(59,196,218,0.18);
+}
+
+/* ── 3. BEFORE & AFTER: centered, constrained, balanced ── */
+.ba-grid {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 860px;
+  justify-content: center;
+}
+.ba-img-wrap {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+.ba-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── 4. PROCESS STEPS: evenly spaced, horizontally centered ── */
+.process-steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2.8rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0;
+}
+.process-step {
+  text-align: center;
+  flex: 0 0 170px;
+  min-width: 0;
+}
+.step-number {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1.1rem;
+}
+
+/* ── 5. TESTIMONIALS: more padding, better line height ── */
+.testimonial-card {
+  padding: 2.8rem 2.4rem;
+  display: flex;
+  flex-direction: column;
+}
+.testimonial-card p {
+  font-size: 0.96rem;
+  line-height: 1.88;
+  flex: 1;
+  margin-bottom: 1.8rem;
+}
+.testimonial-author {
+  margin-top: auto;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(13,43,69,0.07);
+}
+.testimonials-grid {
+  align-items: stretch;
+}
+
+/* ── 6. CTA SECTION: more prominent, generous spacing ── */
+.cta-section {
+  padding: 4.5rem 2rem;
+}
+.cta-content h2 {
+  font-size: clamp(2.4rem, 4.2vw, 3.4rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 1.6rem;
+  text-shadow: 0 4px 28px rgba(0,0,0,0.45);
+}
+.cta-content p {
+  font-size: 1.08rem;
+  line-height: 1.82;
+  color: rgba(255,255,255,0.70);
+  margin-bottom: 3.4rem;
+}
+.cta-actions {
+  gap: 1.4rem;
+  justify-content: center;
+}
+/* Primary CTA: bolder orange fill */
+.cta-actions .btn-cta,
+.cta-actions .btn-primary {
+  min-width: 220px;
+  padding: 1.15rem 2.8rem;
+  font-size: 0.93rem;
+  box-shadow: 0 10px 32px rgba(212,114,26,0.45);
+}
+.cta-actions .btn-cta-call {
+  min-width: 220px;
+  padding: 1.15rem 2.8rem;
+  font-size: 0.93rem;
+}
+
+/* ── 7. SECTION SPACING: consistent uniform rhythm ── */
+.services-section      { padding: 4.5rem 2rem; }
+.before-after-section  { padding: 4.5rem 2rem 5rem; }
+.process-section       { padding: 4.5rem 2rem; }
+.feature-section       { padding: 4.5rem 2rem; }
+.testimonials-section  { padding: 4.5rem 2rem; }
+
+/* ── 8. MOBILE (≤ 768px): clean vertical stacking ── */
+@media (max-width: 768px) {
+  /* Hero: full top clearance, proper padding */
+  .hero {
+    padding: 110px 1.4rem 80px;
+  }
+  .hero h1 {
+    font-size: clamp(2.1rem, 8vw, 3rem);
+    margin-bottom: 1.2rem;
+  }
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.9rem;
+  }
+  .hero-buttons .btn-primary,
+  .hero-buttons .btn-secondary {
+    width: 100%;
+    max-width: 300px;
+    min-width: unset;
+    justify-content: center;
+  }
+
+  /* Services: single column stack */
+  .services-section { padding: 5rem 1.2rem; }
+  .services-grid,
+  .services-grid--5 {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 1.2rem;
+  }
+  .services-grid .service-card:nth-child(4),
+  .services-grid .service-card:nth-child(5),
+  .services-grid--5 .service-card {
+    grid-column: auto;
+    flex: unset !important;
+    min-width: unset !important;
+    max-width: unset !important;
+    margin: 0;
+  }
+
+  /* Before/after: single column, centered */
+  .before-after-section { padding: 3.5rem 1.2rem; }
+  .ba-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    gap: 1.6rem;
+  }
+
+  /* Process: single column centered */
+  .process-section { padding: 3.5rem 1.2rem; }
+  .process-steps {
+    flex-direction: column;
+    align-items: center;
+    max-width: 300px;
+    gap: 2rem;
+  }
+  .process-step {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+  }
+
+  /* Feature boxes: single column */
+  .feature-section { padding: 3.5rem 1.2rem; }
+  .feature-boxes { grid-template-columns: 1fr; gap: 1.2rem; }
+
+  /* Testimonials: single column, spacious cards */
+  .testimonials-section { padding: 3.5rem 1.2rem; }
+  .testimonials-grid { grid-template-columns: 1fr; gap: 1.4rem; }
+  .testimonial-card { padding: 2rem 1.6rem; }
+
+  /* CTA */
+  .cta-section { padding: 4rem 1.4rem; }
+  .cta-actions { flex-direction: column; align-items: center; gap: 1rem; }
+  .cta-actions .btn-cta,
+  .cta-actions .btn-primary,
+  .cta-actions .btn-cta-call {
+    width: 100%;
+    max-width: 300px;
+    min-width: unset;
+  }
+
+  /* Footer: enough bottom padding for float buttons */
+  footer { padding-bottom: 7rem; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem 1.5rem; }
+  .footer-brand { grid-column: 1 / -1; }
+
+  /* Section headers: tighter on mobile */
+  .section-header { margin-bottom: 2.8rem; }
+}
+
+/* ── 9. SMALL MOBILE (≤ 480px) ── */
+@media (max-width: 480px) {
+  .hero {
+    padding: 100px 1.1rem 70px;
+  }
+  .hero h1 {
+    font-size: clamp(1.9rem, 9vw, 2.6rem);
+  }
+  .services-section,
+  .before-after-section,
+  .process-section,
+  .feature-section,
+  .testimonials-section,
+  .cta-section {
+    padding: 4.5rem 1rem;
+  }
+  .ba-grid { max-width: 340px; }
+  .testimonial-card { padding: 1.8rem 1.4rem; }
+  .cta-section { padding: 5rem 1rem; }
+  footer { padding-bottom: 8rem; }
+  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+/* ── 10. FLOAT CTA: clear of content, no overlap ── */
+.float-cta {
+  position: fixed;
+  bottom: 2rem;
+  right: 1.8rem;
+  z-index: 900;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.65rem;
+}
+@media (max-width: 768px) {
+  .float-cta { bottom: 1.6rem; right: 1.2rem; }
+  footer { padding-bottom: 7rem; }
+}
+@media (max-width: 480px) {
+  .float-cta { bottom: 1.2rem; right: 0.9rem; }
+  footer { padding-bottom: 8rem; }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   AUTHORITATIVE SCROLL & HEADER OVERLAP FIX
+   — Prevents fixed nav from burying any section on scroll
+   ══════════════════════════════════════════════════════════════ */
+
+/* 1. Global scroll-padding so anchor links land below the fixed nav */
+html {
+  scroll-padding-top: 80px;
+}
+@media (max-width: 768px) {
+  html { scroll-padding-top: 68px; }
+}
+@media (max-width: 480px) {
+  html { scroll-padding-top: 60px; }
+}
+
+/* 2. scroll-margin-top on every section with an id anchor
+      (and all main content sections for safety) */
+section,
+.services-section,
+.before-after-section,
+.process-section,
+.feature-section,
+.testimonials-section,
+.cta-section,
+.trust-bar,
+[id] {
+  scroll-margin-top: 80px;
+}
+@media (max-width: 768px) {
+  section,
+  .services-section,
+  .before-after-section,
+  .process-section,
+  .feature-section,
+  .testimonials-section,
+  .cta-section,
+  .trust-bar,
+  [id] {
+    scroll-margin-top: 68px;
+  }
+}
+@media (max-width: 480px) {
+  section,
+  .services-section,
+  .before-after-section,
+  .process-section,
+  .feature-section,
+  .testimonials-section,
+  .cta-section,
+  .trust-bar,
+  [id] {
+    scroll-margin-top: 60px;
+  }
+}
+
+/* 3. Z-index hierarchy — nav always on top, content below */
+nav {
+  z-index: 1000 !important;
+}
+.float-cta {
+  z-index: 900 !important;
+}
+.services-section,
+.before-after-section,
+.process-section,
+.feature-section,
+.testimonials-section,
+.cta-section,
+.trust-bar,
+footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* 4. Hero stacks cleanly — no negative margin, no overlap into next section */
+.hero {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 0;
+}
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 100px;
+    padding-bottom: 70px;
+  }
+}
+@media (max-width: 480px) {
+  .hero {
+    padding-top: 100px !important;
+    padding-bottom: 80px !important;
+  }
+}
+
+/* 5. Trust bar — sits directly below hero, no gap, no overlap */
+.trust-bar {
+  margin-top: 0 !important;
+}
+
+/* 6. Services section — clean top spacing, never hidden behind header */
+.services-section {
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+}
+@media (max-width: 768px) {
+  .services-section {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+}
+@media (max-width: 480px) {
+  .services-section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   FEATURED WATERFRONT BUILD SECTION
+   ══════════════════════════════════════════════════════════════ */
+
+.featured-build-section {
+  background: #fff;
+  padding: 4rem 2rem;
+}
+
+.featured-build-card {
+  max-width: 860px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 12px 48px rgba(7,27,46,0.13), 0 2px 8px rgba(7,27,46,0.07);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.featured-build-img-wrap {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 20px 20px 0 0;
+  background: #0a1a2e;
+}
+
+.featured-build-img-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  border-radius: 20px 20px 0 0;
+  transition: transform 0.6s ease;
+}
+
+.featured-build-card:hover .featured-build-img-wrap img {
+  transform: scale(1.015);
+}
+
+.featured-build-caption {
+  padding: 2rem 2.4rem 2.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background: #fff;
+  border-radius: 0 0 20px 20px;
+}
+
+.featured-build-title {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--navy);
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.featured-build-title i {
+  color: var(--teal-light);
+  font-size: 1.1rem;
+}
+
+.featured-build-caption p {
+  font-size: 0.97rem;
+  color: var(--text-mid);
+  margin: 0;
+  line-height: 1.7;
+}
+
+.featured-build-caption .btn-primary {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .featured-build-section {
+    padding: 4.5rem 1.5rem;
+  }
+  .featured-build-caption {
+    padding: 1.5rem 1.5rem 2rem;
+  }
+  .featured-build-title {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .featured-build-section {
+    padding: 3.5rem 1rem;
+  }
+  .featured-build-caption {
+    padding: 1.2rem 1.2rem 1.8rem;
+  }
+  .featured-build-caption .btn-primary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ══════════════════════════════════════════════════
+   SEAWALL TRANSFORMATION — BEFORE / AFTER SHOWCASE
+   ══════════════════════════════════════════════════ */
+
+.sw-transform {
+  background: #fff;
+  padding: 4.5rem 2rem;
+}
+
+/* ── BEFORE block (full width) ─────────────────── */
+.sw-transform-before {
+  position: relative;
+  margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.sw-transform-before.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── AFTER grid (2 cols) ───────────────────────── */
+.sw-transform-after-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.7s ease 0.15s, transform 0.7s ease 0.15s;
+}
+.sw-transform-after-grid.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sw-transform-after-card {
+  position: relative;
+}
+
+/* ── Shared image wrapper ──────────────────────── */
+.sw-transform-img-wrap {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 36px rgba(0, 30, 60, 0.10);
+}
+
+.sw-transform-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.sw-transform-before .sw-transform-img-wrap {
+  aspect-ratio: 16/7;
+}
+
+.sw-transform-after-card .sw-transform-img-wrap {
+  aspect-ratio: 4/3;
+}
+
+.sw-transform-before:hover .sw-transform-img-wrap img,
+.sw-transform-after-card:hover .sw-transform-img-wrap img {
+  transform: scale(1.025);
+}
+
+/* ── Labels ────────────────────────────────────── */
+.sw-transform-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+}
+
+.sw-transform-label--before {
+  background: rgba(0, 30, 60, 0.08);
+  color: var(--navy);
+  border: 1px solid rgba(0, 30, 60, 0.15);
+}
+
+.sw-transform-label--after {
+  background: rgba(0, 160, 130, 0.1);
+  color: var(--teal-bright, #00a082);
+  border: 1px solid rgba(0, 160, 130, 0.2);
+}
+
+.sw-transform-label--night {
+  background: rgba(10, 20, 60, 0.08);
+  color: #3a5aad;
+  border: 1px solid rgba(58, 90, 173, 0.2);
+}
+
+/* ── Footnote ──────────────────────────────────── */
+.sw-transform-note {
+  font-size: 0.88rem;
+  color: var(--text-mid, #6b7280);
+  text-align: center;
+  max-width: 680px;
+  margin: 1rem auto 0;
+  line-height: 1.65;
+  padding: 1rem 1.5rem;
+  background: #f5f7fa;
+  border-radius: 10px;
+  border-left: 3px solid var(--teal-bright, #00a082);
+}
+
+.sw-transform-note i {
+  color: var(--teal-bright, #00a082);
+  margin-right: 0.3rem;
+}
+
+/* ── RESPONSIVE ────────────────────────────────── */
+@media (max-width: 900px) {
+  .sw-transform-before .sw-transform-img-wrap {
+    aspect-ratio: 16/9;
+  }
+  .sw-transform-after-card .sw-transform-img-wrap {
+    aspect-ratio: 3/2;
+  }
+}
+
+@media (max-width: 700px) {
+  .sw-transform {
+    padding: 4.5rem 1rem;
+  }
+  .sw-transform-after-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .sw-transform-before .sw-transform-img-wrap {
+    aspect-ratio: 4/3;
+  }
+  .sw-transform-after-card .sw-transform-img-wrap {
+    aspect-ratio: 4/3;
+  }
+  .sw-transform-note {
+    text-align: left;
+  }
+}
+
+/* ══════════════════════════════════════════════════
+   SEAWALL BUILD PROCESS — LUXURY FULL-WIDTH IMMERSIVE
+   ══════════════════════════════════════════════════ */
+
+/* ── Section wrapper ────────────────────────────── */
+.sw-build-process {
+  background: #fff;
+  padding: 0;
+}
+
+/* ── Section header ─────────────────────────────── */
+.sw-build-header {
+  text-align: center;
+  padding: 4rem 2rem 3rem;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.sw-build-eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--teal-bright, #00c4a0);
+  margin-bottom: 1.2rem;
+}
+
+.sw-build-title {
+  font-family: var(--font-heading, 'Playfair Display', serif);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 700;
+  color: var(--navy, #0d2b45);
+  line-height: 1.15;
+  margin: 0 0 1rem;
+}
+
+.sw-build-subtitle {
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  color: var(--text-mid, #6b7280);
+  margin: 0 0 2.5rem;
+  line-height: 1.6;
+}
+
+.sw-build-header-rule {
+  width: 56px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--teal-bright, #00c4a0), transparent);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+/* ── Each step block ────────────────────────────── */
+.sw-build-step {
+  position: relative;
+  width: 100%;
+  margin-bottom: 0;
+  border-bottom: 1px solid rgba(0, 30, 60, 0.06);
+}
+.sw-build-step:last-child {
+  border-bottom: none;
+}
+
+/* ── Full-width image ───────────────────────────── */
+.sw-build-img-wrap {
+  width: 100%;
+  height: 45vh;
+  min-height: 300px;
+  max-height: 520px;
+  overflow: hidden;
+  position: relative;
+}
+
+.sw-build-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  display: block;
+  transform: scale(1.04);
+  transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+/* Ken-Burns subtle zoom-out on reveal */
+.sw-build-step.visible .sw-build-img-wrap img {
+  transform: scale(1.0);
+}
+
+/* ── Caption bar below image ────────────────────── */
+.sw-build-caption {
+  background: #fff;
+  padding: 2.8rem 3rem 3.2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  border-left: 4px solid var(--teal-bright, #00c4a0);
+  margin-top: -1px;
+  /* caption slides in slightly after image */
+}
+
+.sw-build-step-tag {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.sw-build-step-num {
+  font-family: var(--font-accent, 'Barlow Condensed', sans-serif);
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--teal-bright, #00c4a0);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+
+.sw-build-step-rule {
+  flex: 0 0 40px;
+  height: 2px;
+  background: rgba(0, 30, 60, 0.12);
+  border-radius: 1px;
+}
+
+.sw-build-step-label {
+  font-family: var(--font-heading, 'Playfair Display', serif);
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 700;
+  color: var(--navy, #0d2b45);
+  line-height: 1.2;
+}
+
+.sw-build-step-desc {
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  color: var(--text-mid, #6b7280);
+  line-height: 1.7;
+  margin: 0;
+  padding-left: calc(3rem + 40px + 1rem); /* align with label */
+  max-width: 640px;
+}
+
+/* ── Scroll reveal — initial states ────────────── */
+.swbp-reveal {
+  opacity: 0;
+  transform: translateY(44px);
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.swbp-caption-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.3s,
+              transform 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;
+}
+
+/* Stagger per step */
+.sw-build-step[data-step="1"].swbp-reveal { transition-delay: 0s; }
+.sw-build-step[data-step="2"].swbp-reveal { transition-delay: 0.05s; }
+.sw-build-step[data-step="3"].swbp-reveal { transition-delay: 0.05s; }
+
+/* Visible state */
+.swbp-reveal.visible,
+.swbp-caption-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Thin divider between steps ─────────────────── */
+.sw-build-step + .sw-build-step {
+  border-top: 1px solid rgba(0, 30, 60, 0.05);
+}
+
+/* ── RESPONSIVE ─────────────────────────────────── */
+@media (max-width: 900px) {
+  .sw-build-header {
+    padding: 5rem 1.5rem 4rem;
+  }
+  .sw-build-img-wrap {
+    height: 60vh;
+    min-height: 320px;
+  }
+  .sw-build-caption {
+    padding: 2rem 1.8rem 2.4rem;
+  }
+  .sw-build-step-desc {
+    padding-left: calc(2.5rem + 40px + 0.8rem);
+  }
+}
+
+@media (max-width: 640px) {
+  .sw-build-header {
+    padding: 4rem 1.2rem 3rem;
+  }
+  .sw-build-img-wrap {
+    height: 55vw;
+    min-height: 280px;
+    max-height: none;
+  }
+  .sw-build-caption {
+    padding: 1.6rem 1.2rem 2rem;
+    border-left-width: 3px;
+  }
+  .sw-build-step-num {
+    font-size: 2rem;
+  }
+  .sw-build-step-rule {
+    flex: 0 0 24px;
+  }
+  .sw-build-step-label {
+    font-size: 1.25rem;
+  }
+  .sw-build-step-desc {
+    padding-left: 0;
+    font-size: 0.95rem;
+  }
+  .sw-build-step-tag {
+    gap: 0.7rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .sw-build-img-wrap {
+    height: 62vw;
+    min-height: 240px;
+  }
+  .sw-build-caption {
+    padding: 1.4rem 1rem 1.8rem;
+  }
+}
+
+/* ══════════════════════════════════════════════════
+   PILING COVER STYLES — SHOWCASE SECTION
+   ══════════════════════════════════════════════════ */
+
+.pl-covers {
+  background: #f8f9fb;
+  padding: 4rem 2rem;
+}
+
+.pl-covers-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+/* ── Header ─────────────────────────────────────── */
+.pl-covers-header {
+  text-align: center;
+  max-width: 760px;
+}
+
+.pl-covers-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  color: var(--navy);
+  line-height: 1.25;
+  margin: 0.6rem 0 0;
+  font-weight: 700;
+}
+
+/* ── 3-column grid ─────────────────────────────── */
+.pl-covers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 100%;
+}
+
+/* ── Individual card ────────────────────────────── */
+.pl-cover-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 28px rgba(0,30,60,0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.pl-cover-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0,30,60,0.14);
+}
+
+/* ── Image wrapper — tall portrait to keep pilings visible ── */
+.pl-cover-img-wrap {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.pl-cover-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.pl-cover-card:hover .pl-cover-img-wrap img {
+  transform: scale(1.04);
+}
+
+/* ── Label bar ─────────────────────────────────── */
+.pl-cover-info {
+  padding: 1.1rem 1.4rem 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 2px solid rgba(0,30,60,0.05);
+}
+
+.pl-cover-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--navy);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* ── Support text ───────────────────────────────── */
+.pl-covers-note {
+  max-width: 740px;
+  text-align: center;
+  color: var(--text-mid);
+  font-size: 1rem;
+  line-height: 1.75;
+  padding: 1.5rem 2rem;
+  background: #fff;
+  border-left: 3px solid var(--teal-bright);
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,30,60,0.06);
+}
+
+/* ── Stagger animation delays ───────────────────── */
+.pl-cover-card[data-delay="0"],
+.pl-covers-header               { transition-delay: 0s; }
+.pl-cover-card[data-delay="1"]  { transition-delay: 0.12s; }
+.pl-cover-card[data-delay="2"]  { transition-delay: 0.24s; }
+.pl-covers-note[data-delay="3"] { transition-delay: 0.36s; }
+
+/* ── RESPONSIVE ─────────────────────────────────── */
+@media (max-width: 900px) {
+  .pl-covers-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .pl-cover-card:nth-child(3) {
+    grid-column: 1 / -1;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .pl-covers {
+    padding: 4.5rem 1rem;
+  }
+  .pl-covers-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .pl-cover-card:nth-child(3) {
+    grid-column: auto;
+    max-width: 100%;
+    margin: 0;
+  }
+  .pl-covers-header h2 {
+    font-size: 1.5rem;
+  }
+  .pl-cover-img-wrap {
+    aspect-ratio: 4 / 5;
+  }
+  .pl-covers-note {
+    padding: 1.2rem 1.2rem;
+    font-size: 0.95rem;
+  }
+  .hide-sm { display: none; }
+}
+
+@media (max-width: 400px) {
+  .pl-cover-img-wrap {
+    aspect-ratio: 3 / 4;
+  }
+}
+
+/* ══════════════════════════════════════════════════
+   ROOFTOP DECK TRANSFORMATION — BEFORE / AFTER
+   ══════════════════════════════════════════════════ */
+
+.dk-transform {
+  background: #fff;
+  padding: 4.5rem 2rem;
+}
+
+.dk-transform-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+/* ── Header ─────────────────────────────────────── */
+.dk-transform-header {
+  text-align: center;
+  max-width: 720px;
+}
+
+.dk-transform-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.9rem, 3.2vw, 2.75rem);
+  color: var(--navy);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0.5rem 0 0.9rem;
+}
+
+.dk-transform-sub {
+  color: var(--text-mid);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* ── Side-by-side grid ─────────────────────────── */
+.dk-transform-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  width: 100%;
+  align-items: start;
+}
+
+/* ── Individual card ────────────────────────────── */
+.dk-transform-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 6px 36px rgba(0,30,60,0.10);
+  background: #f8f9fb;
+  transition: transform 0.38s ease, box-shadow 0.38s ease;
+}
+
+.dk-transform-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 48px rgba(0,30,60,0.15);
+}
+
+/* ── Image wrapper ─────────────────────────────── */
+.dk-transform-img-wrap {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.dk-transform-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Subtle zoom-in on scroll reveal */
+.dk-transform-card .dk-transform-img-wrap img {
+  transform: scale(1.04);
+}
+.dk-transform-card.visible .dk-transform-img-wrap img {
+  transform: scale(1.0);
+}
+
+/* ── Label bar ─────────────────────────────────── */
+.dk-transform-label {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.1rem 1.6rem 1.25rem;
+  border-top: 3px solid transparent;
+}
+
+.dk-label--before {
+  border-top-color: #94a3b8;
+}
+
+.dk-label--after {
+  border-top-color: var(--teal-bright);
+}
+
+.dk-label-tag {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.28rem 0.75rem;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.dk-label--before .dk-label-tag {
+  background: #e2e8f0;
+  color: #475569;
+}
+
+.dk-label--after .dk-label-tag {
+  background: rgba(59, 196, 218, 0.12);
+  color: var(--teal-bright);
+}
+
+.dk-label-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: 0.01em;
+}
+
+/* ── Stagger delays ─────────────────────────────── */
+.dk-transform-card[data-delay="0"] { transition-delay: 0s; }
+.dk-transform-card[data-delay="1"] { transition-delay: 0.18s; }
+
+/* ── RESPONSIVE ─────────────────────────────────── */
+@media (max-width: 800px) {
+  .dk-transform-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .dk-transform-card[data-delay="1"] {
+    transition-delay: 0.12s;
+  }
+}
+
+@media (max-width: 560px) {
+  .dk-transform {
+    padding: 4.5rem 1rem;
+  }
+  .dk-transform-inner {
+    gap: 2.5rem;
+  }
+  .dk-transform-header h2 {
+    font-size: 1.55rem;
+  }
+  .dk-transform-sub {
+    font-size: 0.95rem;
+  }
+  .dk-transform-img-wrap {
+    aspect-ratio: 4 / 3;
+  }
+  .dk-transform-label {
+    padding: 0.9rem 1.2rem 1rem;
+    gap: 0.75rem;
+  }
+}
+
+/* ══════════════════════════════════════════════════
+   BOAT LIFT SHOWCASE — SIDE-BY-SIDE GALLERY
+   ══════════════════════════════════════════════════ */
+
+.bl-showcase {
+  background: #f8f9fb;
+  padding: 4.5rem 2rem;
+}
+
+.bl-showcase-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+/* ── Header ─────────────────────────────────────── */
+.bl-showcase-header {
+  text-align: center;
+  max-width: 720px;
+}
+
+.bl-showcase-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.9rem, 3.2vw, 2.75rem);
+  color: var(--navy);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0.5rem 0 0.9rem;
+}
+
+.bl-showcase-sub {
+  color: var(--text-mid);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* ── Side-by-side grid ─────────────────────────── */
+.bl-showcase-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  width: 100%;
+  align-items: start;
+}
+
+/* ── Individual card ────────────────────────────── */
+.bl-showcase-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 6px 36px rgba(0,30,60,0.09);
+  transition: transform 0.38s ease, box-shadow 0.38s ease;
+}
+
+.bl-showcase-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 48px rgba(0,30,60,0.15);
+}
+
+/* ── Image wrapper ─────────────────────────────── */
+.bl-showcase-img-wrap {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.bl-showcase-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.bl-showcase-card:hover .bl-showcase-img-wrap img {
+  transform: scale(1.04);
+}
+
+/* ── Label bar ─────────────────────────────────── */
+.bl-showcase-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.1rem 1.6rem 1.25rem;
+  border-top: 3px solid var(--teal-bright);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+
+.bl-showcase-label i {
+  color: var(--teal-bright);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+/* ── Stagger delays ─────────────────────────────── */
+.bl-showcase-card[data-delay="0"] { transition-delay: 0s; }
+.bl-showcase-card[data-delay="1"] { transition-delay: 0.15s; }
+
+/* ── RESPONSIVE ─────────────────────────────────── */
+@media (max-width: 800px) {
+  .bl-showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .bl-showcase-card[data-delay="1"] {
+    transition-delay: 0.1s;
+  }
+}
+
+@media (max-width: 560px) {
+  .bl-showcase {
+    padding: 4.5rem 1rem;
+  }
+  .bl-showcase-inner {
+    gap: 2.5rem;
+  }
+  .bl-showcase-header h2 {
+    font-size: 1.55rem;
+  }
+  .bl-showcase-sub {
+    font-size: 0.95rem;
+  }
+  .bl-showcase-label {
+    padding: 0.9rem 1.2rem 1rem;
+    font-size: 0.88rem;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   PILINGS — Annotated Feature Image with Callout Arrows
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Wrapper: fills the service-detail-img slot ── */
+.pl-annotated-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 480px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #071b2e;
+}
+
+/* ── Photo: fills the wrapper, no crop ── */
+.pl-annotated-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  border-radius: 16px;
+  /* subtle brightness lift to help callouts read */
+  filter: brightness(1.04) contrast(1.03);
+  transition: transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+.pl-annotated-wrap:hover .pl-annotated-img {
+  transform: scale(1.025);
+}
+
+/* ── Gradient vignette — darkens edges so labels pop ── */
+.pl-annotated-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  background:
+    radial-gradient(ellipse 90% 90% at 50% 50%,
+      transparent 42%,
+      rgba(4,14,26,0.45) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── Base callout ── */
+.pl-callout {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none;
+}
+/* Revealed by JS intersection observer via .pl-anno-visible */
+.pl-annotated-wrap.pl-anno-visible .pl-callout {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* stagger delays */
+.pl-annotated-wrap.pl-anno-visible .pl-c1 { transition-delay: 0.15s; }
+.pl-annotated-wrap.pl-anno-visible .pl-c2 { transition-delay: 0.30s; }
+.pl-annotated-wrap.pl-anno-visible .pl-c3 { transition-delay: 0.45s; }
+.pl-annotated-wrap.pl-anno-visible .pl-c4 { transition-delay: 0.60s; }
+
+/* ── Position anchors ── */
+.pl-callout--tl { top: 12%;  left: 4%;  flex-direction: row; align-items: flex-start; }
+.pl-callout--bl { bottom: 24%; left: 4%;  flex-direction: row; align-items: flex-end; }
+.pl-callout--tr { top: 14%;  right: 4%; flex-direction: row-reverse; align-items: flex-start; }
+.pl-callout--br { bottom: 14%; right: 4%; flex-direction: row-reverse; align-items: flex-end; }
+
+/* ── Label box ── */
+.pl-callout-box {
+  background: rgba(4,14,26,0.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(59,196,218,0.28);
+  border-radius: 8px;
+  padding: 0.55rem 0.85rem;
+  max-width: 148px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.22rem;
+}
+.pl-callout-box--gold {
+  border-color: rgba(201,168,76,0.35);
+}
+
+.pl-callout-title {
+  font-family: var(--font-accent);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: rgba(59,196,218,0.95);
+  line-height: 1.2;
+}
+.pl-callout-box--gold .pl-callout-title {
+  color: rgba(201,168,76,0.95);
+}
+
+.pl-callout-desc {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.62rem;
+  color: rgba(255,255,255,0.68);
+  line-height: 1.4;
+}
+
+/* ── Arrow SVG ── */
+.pl-callout-arrow {
+  width: 52px;
+  height: 42px;
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+/* ─────────────────────────────────────────────────────────
+   RESPONSIVE — mobile: hide callouts, show plain image
+   ───────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .pl-annotated-wrap {
+    min-height: 320px;
+  }
+  .pl-callout {
+    display: none;   /* too small on mobile — keep image clean */
+  }
+  .pl-annotated-wrap::after {
+    background: none;  /* remove vignette on mobile */
+  }
+}
+@media (max-width: 500px) {
+  .pl-annotated-wrap { min-height: 260px; }
+}
+
+/* ─────────────────────────────────────────────────────────
+   PILING DIAGRAM — full-width annotated image display
+   ───────────────────────────────────────────────────────── */
+
+/* Text block above the image */
+.pl-methods-text {
+  margin-bottom: 3rem;
+}
+.pl-methods-text h2 {
+  margin-bottom: 1.5rem;
+}
+.pl-methods-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+.pl-methods-list {
+  margin-bottom: 2rem;
+}
+
+/* Full-width image container — no fixed height, no crop */
+.pl-diagram-section {
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-deep);
+  background: #071b2e;
+  margin-top: 0;
+}
+
+/* The image itself: full width, auto height = shows everything */
+.pl-diagram-img {
+  display: block;
+  width: 100%;
+  height: auto;          /* ← key: natural aspect ratio, no cropping */
+  border-radius: 20px;
+  filter: brightness(1.04) contrast(1.03);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .pl-methods-cols {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .pl-diagram-section {
+    border-radius: 12px;
+  }
+  .pl-diagram-img {
+    border-radius: 12px;
+  }
+}
