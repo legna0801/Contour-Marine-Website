@@ -50,8 +50,16 @@ document.addEventListener('DOMContentLoaded', () => {
           revealObserver.unobserve(e.target);
         }
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
-    revealEls.forEach(el => revealObserver.observe(el));
+    }, { threshold: 0.05, rootMargin: '0px 0px 0px 0px' });
+    revealEls.forEach(el => {
+      // If already in view on load (e.g. near top of page), make visible immediately
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        el.classList.add('visible');
+      } else {
+        revealObserver.observe(el);
+      }
+    });
   }
 
   // ── Floating CTA ───────────────────────────
