@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="styles.css?v=8" />
+  <link rel="stylesheet" href="styles.css?v=9" />
 </head>
 <body>
 
@@ -123,14 +123,63 @@
       </a>
     </div>
 
-    <!-- Annotated piling image — full width, full height, no crop -->
-    <div class="pl-diagram-section reveal-up">
+    <!-- Annotated piling diagram — HTML/CSS callouts over clean photo -->
+    <div class="pl-annotated-wrap reveal-up">
       <img
-        src="images/piling-dock-annotated-v2.jpg"
-        alt="Completed dock with white square composite pilings on Biscayne Bay, South Florida — annotated diagram showing structural support, protective caps, marine-grade construction, and deep-driven foundation — Contour Marine"
+        src="images/piling-dock-annotated-backup.jpg"
+        alt="Completed dock with white square composite pilings on Biscayne Bay, South Florida — Contour Marine"
         loading="eager"
-        class="pl-diagram-img"
+        class="pl-annotated-img"
       />
+
+      <!-- Callout 1: Vertical Pilings — left mid -->
+      <div class="pl-callout pl-callout--tl pl-c1">
+        <div class="pl-callout-box">
+          <span class="pl-callout-title">Vertical Pilings</span>
+          <span class="pl-callout-desc">Load-bearing support for the entire system</span>
+        </div>
+        <svg class="pl-callout-arrow" viewBox="0 0 52 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 2 Q26 10 48 38" stroke="rgba(59,196,218,0.85)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <circle cx="48" cy="38" r="3" fill="rgba(59,196,218,0.85)"/>
+        </svg>
+      </div>
+
+      <!-- Callout 2: Protective Caps — top center -->
+      <div class="pl-callout pl-callout--tr pl-c2" style="top:18%;right:38%;">
+        <div class="pl-callout-box">
+          <span class="pl-callout-title">Protective Caps</span>
+          <span class="pl-callout-desc">Extend lifespan and prevent damage</span>
+        </div>
+        <svg class="pl-callout-arrow" viewBox="0 0 52 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50 2 Q26 10 4 38" stroke="rgba(59,196,218,0.85)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <circle cx="4" cy="38" r="3" fill="rgba(59,196,218,0.85)"/>
+        </svg>
+      </div>
+
+      <!-- Callout 3: Marine-Grade — top right -->
+      <div class="pl-callout pl-callout--tr pl-c3">
+        <div class="pl-callout-box">
+          <span class="pl-callout-title">Marine-Grade</span>
+          <span class="pl-callout-desc">Resists saltwater and corrosion</span>
+        </div>
+        <svg class="pl-callout-arrow" viewBox="0 0 52 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50 2 Q26 14 4 38" stroke="rgba(59,196,218,0.85)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <circle cx="4" cy="38" r="3" fill="rgba(59,196,218,0.85)"/>
+        </svg>
+      </div>
+
+      <!-- Callout 4: Driven Deep — bottom left -->
+      <div class="pl-callout pl-callout--bl pl-c4">
+        <div class="pl-callout-box">
+          <span class="pl-callout-title">Driven Deep</span>
+          <span class="pl-callout-desc">Installed deep for long-term stability</span>
+        </div>
+        <svg class="pl-callout-arrow" viewBox="0 0 52 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 40 Q26 28 48 4" stroke="rgba(59,196,218,0.85)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <circle cx="48" cy="4" r="3" fill="rgba(59,196,218,0.85)"/>
+        </svg>
+      </div>
+
     </div>
 
   </div>
