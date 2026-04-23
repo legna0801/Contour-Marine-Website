@@ -4492,9 +4492,22 @@ p  { font-size: 1rem; line-height: 1.75; }
 .pl-diagram-wrap.pl-anno-visible .pl-svg-l3 { transition-delay: 0.46s; }
 .pl-diagram-wrap.pl-anno-visible .pl-svg-l4 { transition-delay: 0.64s; }
 
-/* ── Mobile: keep image clean — annotations hidden below 560px ── */
-@media (max-width: 560px) {
-  .pl-diagram-svg { display: none; }
+/* ── Mobile: hide SVG annotations — photo only on small screens ── */
+@media (max-width: 768px) {
+  .pl-diagram-svg {
+    display: none;
+  }
+}
+
+/* On very small phones shrink the wrapper padding and radius */
+@media (max-width: 480px) {
+  .pl-diagram-wrap {
+    margin: 1.5rem 0 0;
+    border-radius: 10px;
+  }
+  .pl-diagram-photo {
+    border-radius: 10px;
+  }
 }
 
 /* ─────────────────────────────────────────────────────────
