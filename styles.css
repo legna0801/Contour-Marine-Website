@@ -6925,20 +6925,20 @@ footer {
 /* Full-width image container — no fixed height, no crop */
 .pl-diagram-section {
   width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: var(--shadow-deep);
   background: #071b2e;
-  margin-top: 0;
 }
 
-/* The image itself: constrained max height on desktop so it doesn't overwhelm */
+/* Show the full image — no cropping, no max-height */
 .pl-diagram-img {
   display: block;
   width: 100%;
-  max-height: 600px;
-  object-fit: cover;
-  object-position: center top;
+  height: auto;
+  object-fit: contain;
   border-radius: 20px;
   filter: brightness(1.04) contrast(1.03);
 }
