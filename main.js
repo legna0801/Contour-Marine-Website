@@ -141,17 +141,38 @@ document.addEventListener('DOMContentLoaded', () => {
   // ── Contact Form Submission ────────────────
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const btn = contactForm.querySelector('.btn-submit');
-      btn.textContent = 'Sending...';
+      const originalText = btn.innerHTML;
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> &nbsp; Sending...';
       btn.disabled = true;
-      // Simulate submission
-      setTimeout(() => {
-        contactForm.style.display = 'none';
-        const success = document.querySelector('.form-success');
-        if (success) success.style.display = 'block';
-      }, 1500);
+
+      const formData = new FormData(contactForm);
+
+      try {
+        const response = await fetch('https://formsubmit.co/ajax/tom@contourmarine.com', {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          contactForm.style.display = 'none';
+          const success = document.querySelector('.form-success');
+          if (success) success.style.display = 'block';
+        } else {
+          const data = await response.json();
+          const msg = (data.errors || []).map(err => err.message).join(', ') || 'Something went wrong. Please try again or call us directly.';
+          alert(msg);
+          btn.innerHTML = originalText;
+          btn.disabled = false;
+        }
+      } catch (err) {
+        alert('Unable to send your request. Please call us at (954) 968-0500 or email tom@contourmarine.com directly.');
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+      }
     });
   }
 
