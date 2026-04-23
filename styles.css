@@ -734,7 +734,7 @@ section {
 
 .services-section {
   background: #f5f7fa;
-  padding: 7rem 2rem;
+  padding: 5rem 2rem;
   /* Prevent fixed header overlap when anchor-scrolled */
   scroll-margin-top: 80px;
   position: relative;
@@ -894,7 +894,7 @@ section {
 
 .portfolio-section {
   background: var(--navy-dark);
-  padding: 6rem 2rem;
+  padding: 4.5rem 2rem;
 }
 
 .portfolio-section .section-header h2 {
@@ -1012,7 +1012,7 @@ section {
 
 .process-section {
   background: var(--white);
-  padding: 7rem 2rem;
+  padding: 5rem 2rem;
 }
 
 /* ── Outer wrapper: two centred flex rows ── */
@@ -1114,7 +1114,7 @@ section {
 
 .about-section {
   background: var(--off-white);
-  padding: 6rem 2rem;
+  padding: 4.5rem 2rem;
 }
 
 .about-grid {
@@ -1269,7 +1269,7 @@ section {
 
 .feature-section {
   position: relative;
-  padding: 8rem 2rem;
+  padding: 5.5rem 2rem;
   overflow: hidden;
   /* Solid deep navy — no photos, no texture, clean premium look */
   background: #0a1f33;
@@ -1360,7 +1360,7 @@ section {
 
 .testimonials-section {
   background: #f5f7fa;
-  padding: 7rem 2rem;
+  padding: 5rem 2rem;
 }
 
 .testimonials-grid {
@@ -1458,7 +1458,7 @@ section {
 
 .cta-section {
   position: relative;
-  padding: 8rem 2rem;
+  padding: 5.5rem 2rem;
   overflow: hidden;
   text-align: center;
   /* Luxury dark gradient with warm gold undertone */
@@ -1802,7 +1802,7 @@ section {
    ============================================ */
 
 .service-detail {
-  padding: 6rem 2rem;
+  padding: 4.5rem 2rem;
   background: var(--white);
 }
 
@@ -2418,7 +2418,7 @@ footer {
 
 .before-after-section {
   background: #f4f7f9;
-  padding: 7rem 2rem 8rem;
+  padding: 5rem 2rem 6rem;
 }
 
 .before-after-section .section-header h2 { color: var(--navy); }
@@ -3312,12 +3312,12 @@ nav.scrolled .nav-logo img {
 }
 
 /* ── 4. GLOBAL SECTION SPACING: consistent rhythm ── */
-.services-section    { padding: 7rem 2.5rem; }
-.before-after-section{ padding: 7rem 2.5rem 8rem; }
-.process-section     { padding: 7rem 2.5rem; }
-.feature-section     { padding: 7rem 2.5rem; }
-.testimonials-section{ padding: 7rem 2.5rem; }
-.cta-section         { padding: 7rem 2.5rem; }
+.services-section    { padding: 5rem 2.5rem; }
+.before-after-section{ padding: 5rem 2.5rem 6rem; }
+.process-section     { padding: 5rem 2.5rem; }
+.feature-section     { padding: 5.5rem 2.5rem; }
+.testimonials-section{ padding: 5rem 2.5rem; }
+.cta-section         { padding: 5.5rem 2.5rem; }
 
 /* ── 5. CONTAINER: consistent max-width & auto margins ── */
 .container {
@@ -3806,7 +3806,7 @@ p  { font-size: 1rem; line-height: 1.75; }
 
 /* ── SERVICES: equal-height cards, generous padding, bigger hover ── */
 .services-section {
-  padding: 8rem 2rem;
+  padding: 5rem 2rem;
 }
 
 .services-grid {
@@ -3843,7 +3843,7 @@ p  { font-size: 1rem; line-height: 1.75; }
 
 /* ── BEFORE & AFTER: wider max, more vertical space ── */
 .before-after-section {
-  padding: 8rem 2rem 9rem;
+  padding: 5rem 2rem 6rem;
 }
 
 .ba-grid {
@@ -3857,7 +3857,7 @@ p  { font-size: 1rem; line-height: 1.75; }
 
 /* ── PROCESS: more space, bigger numbers, improved symmetry ── */
 .process-section {
-  padding: 8rem 2rem;
+  padding: 5rem 2rem;
 }
 
 .process-steps {
@@ -3896,7 +3896,7 @@ p  { font-size: 1rem; line-height: 1.75; }
 
 /* ── WHY US / FEATURE SECTION ── */
 .feature-section .container {
-  padding: 8rem 2rem;
+  padding: 5.5rem 2rem;
 }
 
 .feature-boxes {
@@ -3910,7 +3910,7 @@ p  { font-size: 1rem; line-height: 1.75; }
 
 /* ── TESTIMONIALS: more padding, better line spacing ── */
 .testimonials-section {
-  padding: 8rem 2rem;
+  padding: 5rem 2rem;
 }
 
 .testimonials-grid {
@@ -3939,7 +3939,7 @@ p  { font-size: 1rem; line-height: 1.75; }
 
 /* ── FINAL CTA: stand out, generous padding ── */
 .cta-section {
-  padding: 9rem 2rem;
+  padding: 5.5rem 2rem;
 }
 
 .cta-content {
@@ -4611,7 +4611,7 @@ nav.scrolled {
 
 /* ── FOOTER: spacious, quiet ── */
 footer {
-  padding: 7rem 3rem 2.5rem;
+  padding: 4rem 3rem 2rem;
 }
 .footer-grid {
   max-width: 1300px;
@@ -4724,7 +4724,7 @@ footer {
     padding: 0.8rem 1.6rem;
   }
   .hero {
-    padding: 140px 1.8rem 110px;
+    padding: 120px 1.8rem 140px;
   }
   .hero h1 {
     font-size: clamp(2.2rem, 8vw, 3rem);
@@ -6292,7 +6292,7 @@ footer {
 
 .pl-covers {
   background: #f8f9fb;
-  padding: 7rem 2rem;
+  padding: 5rem 2rem;
 }
 
 .pl-covers-inner {
