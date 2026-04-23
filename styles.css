@@ -6339,10 +6339,10 @@ footer {
   box-shadow: 0 12px 40px rgba(0,30,60,0.14);
 }
 
-/* ── Image wrapper — tall portrait to keep pilings visible ── */
+/* ── Image wrapper — landscape ratio matching other service pages ── */
 .pl-cover-img-wrap {
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
   flex-shrink: 0;
 }
@@ -6430,7 +6430,7 @@ footer {
     font-size: 1.5rem;
   }
   .pl-cover-img-wrap {
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 4 / 3;
   }
   .pl-covers-note {
     padding: 1.2rem 1.2rem;
@@ -6928,11 +6928,13 @@ footer {
   margin-top: 0;
 }
 
-/* The image itself: full width, auto height = shows everything */
+/* The image itself: constrained max height on desktop so it doesn't overwhelm */
 .pl-diagram-img {
   display: block;
   width: 100%;
-  height: auto;          /* ← key: natural aspect ratio, no cropping */
+  max-height: 600px;
+  object-fit: cover;
+  object-position: center top;
   border-radius: 20px;
   filter: brightness(1.04) contrast(1.03);
 }
