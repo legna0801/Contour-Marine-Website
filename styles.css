@@ -6959,3 +6959,94 @@ footer {
     border-radius: 12px;
   }
 }
+
+/* ============================================================
+   DEFINITIVE OVERRIDES — appended last, highest specificity
+   These beat every conflicting rule above
+   ============================================================ */
+
+/* HERO — fixed overlap fix */
+.hero {
+  padding-top: 120px !important;
+  padding-bottom: 160px !important;
+  min-height: 100vh !important;
+  box-sizing: border-box !important;
+  overflow: visible !important;
+}
+.scroll-indicator {
+  position: absolute !important;
+  bottom: 32px !important;
+  z-index: 20 !important;
+  pointer-events: none !important;
+}
+/* Trust bar sits BELOW hero, never overlaps */
+.trust-bar {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* SECTION SPACING — tighter throughout */
+.services-section,
+.before-after-section,
+.process-section,
+.about-section,
+.portfolio-section,
+.service-detail {
+  padding-top: 4.5rem !important;
+  padding-bottom: 4.5rem !important;
+}
+.feature-section,
+.testimonials-section,
+.cta-section {
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
+}
+.pl-covers {
+  padding-top: 4.5rem !important;
+  padding-bottom: 4.5rem !important;
+}
+footer {
+  padding-top: 3.5rem !important;
+  padding-bottom: 2rem !important;
+}
+
+/* MOBILE spacing */
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 110px !important;
+    padding-bottom: 130px !important;
+    min-height: unset !important;
+  }
+  .services-section,
+  .before-after-section,
+  .process-section,
+  .about-section,
+  .portfolio-section,
+  .service-detail,
+  .feature-section,
+  .testimonials-section,
+  .cta-section,
+  .pl-covers {
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+}
+@media (max-width: 480px) {
+  .hero {
+    padding-top: 100px !important;
+    padding-bottom: 120px !important;
+  }
+  .services-section,
+  .before-after-section,
+  .process-section,
+  .about-section,
+  .portfolio-section,
+  .service-detail,
+  .feature-section,
+  .testimonials-section,
+  .cta-section,
+  .pl-covers {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+}
