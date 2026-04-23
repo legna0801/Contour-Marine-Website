@@ -147,115 +147,108 @@
           Submerged piling base (left):       ~18%, 52% → (180, 390)
           Submerged piling base (right):      ~65%, 53% → (650, 396)
       -->
+      <!--
+        SVG viewBox = 1000 × 750 (matches 4:3 photo ratio).
+        Piling cap positions verified from the enhanced photo:
+          Left piling cap:    7%x, 37%y  → (70,  278)
+          2nd piling cap:    24%x, 38%y  → (240, 285)
+          Center piling cap: 50%x, 35%y  → (500, 263)
+          Right piling cap:  80%x, 43%y  → (800, 323)
+          Submerged base L:  18%x, 58%y  → (180, 435)
+          Submerged base R:  65%x, 55%y  → (650, 413)
+      -->
       <svg class="pl-diagram-svg" viewBox="0 0 1000 750"
            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <defs>
-          <!-- Dot marker for line endpoints -->
-          <marker id="dot-teal" markerWidth="6" markerHeight="6"
-                  refX="3" refY="3" orient="auto">
-            <circle cx="3" cy="3" r="3" fill="#3BC4DA"/>
+          <marker id="dot-teal" markerWidth="8" markerHeight="8"
+                  refX="4" refY="4" orient="auto">
+            <circle cx="4" cy="4" r="3.5" fill="#3BC4DA" opacity="0.95"/>
           </marker>
-          <!-- Drop shadow for label boxes -->
-          <filter id="lbl-shadow" x="-5%" y="-5%" width="110%" height="110%">
-            <feDropShadow dx="0" dy="2" stdDeviation="4"
-                          flood-color="#040e1a" flood-opacity="0.55"/>
+          <marker id="dot-gold" markerWidth="8" markerHeight="8"
+                  refX="4" refY="4" orient="auto">
+            <circle cx="4" cy="4" r="3.5" fill="#C9A84C" opacity="0.95"/>
+          </marker>
+          <filter id="lbl-shadow" x="-8%" y="-8%" width="116%" height="116%">
+            <feDropShadow dx="0" dy="3" stdDeviation="5"
+                          flood-color="#020a14" flood-opacity="0.65"/>
           </filter>
         </defs>
 
-        <!-- ═══════════════════════════════════════════
-             CALLOUT 1 — VERTICAL PILINGS
-             Label top-left, line to left foreground piling cap ~(90,218)
-        ════════════════════════════════════════════ -->
-        <line x1="220" y1="108" x2="95" y2="215"
-              stroke="#3BC4DA" stroke-width="1.8"
-              stroke-linecap="round" stroke-dasharray="0"
-              marker-end="url(#dot-teal)" opacity="0.9" class="pl-svg-line pl-svg-l1"/>
-        <rect x="18" y="52" width="192" height="54"
-              rx="6" ry="6"
-              fill="rgba(4,14,26,0.82)" stroke="#3BC4DA"
-              stroke-width="0.8" stroke-opacity="0.45"
+        <!-- ══════════════════════════════════════════════════
+             CALLOUT 1 — SQUARE COMPOSITE PILINGS
+             Label: top-left  |  Arrow tip: left piling cap (70, 278)
+        ══════════════════════════════════════════════════ -->
+        <line x1="195" y1="142" x2="76" y2="272"
+              stroke="#3BC4DA" stroke-width="1.8" stroke-linecap="round"
+              marker-end="url(#dot-teal)" class="pl-svg-line pl-svg-l1"/>
+        <rect x="12" y="82" width="200" height="58" rx="7"
+              fill="rgba(4,14,26,0.86)" stroke="#3BC4DA" stroke-width="1" stroke-opacity="0.5"
               filter="url(#lbl-shadow)" class="pl-svg-box pl-svg-l1"/>
-        <text x="114" y="72" text-anchor="middle"
+        <text x="112" y="104" text-anchor="middle"
               font-family="'Barlow Condensed',sans-serif"
-              font-size="13" font-weight="700" letter-spacing="1.6"
-              fill="#3BC4DA" text-transform="uppercase"
-              class="pl-svg-title pl-svg-l1">VERTICAL PILINGS</text>
-        <text x="114" y="90" text-anchor="middle"
+              font-size="14" font-weight="700" letter-spacing="1.8" fill="#3BC4DA"
+              class="pl-svg-title pl-svg-l1">SQUARE PILINGS</text>
+        <text x="112" y="123" text-anchor="middle"
               font-family="'Inter',sans-serif"
-              font-size="10.5" fill="rgba(255,255,255,0.72)"
-              class="pl-svg-desc pl-svg-l1">Load-bearing structural support</text>
+              font-size="11" fill="rgba(255,255,255,0.75)"
+              class="pl-svg-desc pl-svg-l1">Marine-grade composite posts</text>
 
-        <!-- ═══════════════════════════════════════════
+        <!-- ══════════════════════════════════════════════════
              CALLOUT 2 — PROTECTIVE CAPS
-             Label top-center, line to center piling cap ~(440,192)
-        ════════════════════════════════════════════ -->
-        <line x1="390" y1="88" x2="442" y2="190"
-              stroke="#3BC4DA" stroke-width="1.8"
-              stroke-linecap="round"
-              marker-end="url(#dot-teal)" opacity="0.9" class="pl-svg-line pl-svg-l2"/>
-        <rect x="290" y="34" width="196" height="54"
-              rx="6" ry="6"
-              fill="rgba(4,14,26,0.82)" stroke="#3BC4DA"
-              stroke-width="0.8" stroke-opacity="0.45"
+             Label: top-center  |  Arrow tip: center piling cap (500, 263)
+        ══════════════════════════════════════════════════ -->
+        <line x1="440" y1="130" x2="498" y2="257"
+              stroke="#3BC4DA" stroke-width="1.8" stroke-linecap="round"
+              marker-end="url(#dot-teal)" class="pl-svg-line pl-svg-l2"/>
+        <rect x="330" y="72" width="206" height="58" rx="7"
+              fill="rgba(4,14,26,0.86)" stroke="#3BC4DA" stroke-width="1" stroke-opacity="0.5"
               filter="url(#lbl-shadow)" class="pl-svg-box pl-svg-l2"/>
-        <text x="388" y="54" text-anchor="middle"
+        <text x="433" y="94" text-anchor="middle"
               font-family="'Barlow Condensed',sans-serif"
-              font-size="13" font-weight="700" letter-spacing="1.6"
-              fill="#3BC4DA" class="pl-svg-title pl-svg-l2">PROTECTIVE CAPS</text>
-        <text x="388" y="72" text-anchor="middle"
+              font-size="14" font-weight="700" letter-spacing="1.8" fill="#3BC4DA"
+              class="pl-svg-title pl-svg-l2">PROTECTIVE CAPS</text>
+        <text x="433" y="113" text-anchor="middle"
               font-family="'Inter',sans-serif"
-              font-size="10.5" fill="rgba(255,255,255,0.72)"
+              font-size="11" fill="rgba(255,255,255,0.75)"
               class="pl-svg-desc pl-svg-l2">Extend lifespan, prevent damage</text>
 
-        <!-- ═══════════════════════════════════════════
-             CALLOUT 3 — MARINE-GRADE COMPOSITE
-             Label top-right, line to right piling cap ~(750,185)
-        ════════════════════════════════════════════ -->
-        <line x1="780" y1="88" x2="752" y2="183"
-              stroke="#C9A84C" stroke-width="1.8"
-              stroke-linecap="round"
-              marker-end="url(#dot-gold)" opacity="0.9" class="pl-svg-line pl-svg-l3"/>
-        <defs>
-          <marker id="dot-gold" markerWidth="6" markerHeight="6"
-                  refX="3" refY="3" orient="auto">
-            <circle cx="3" cy="3" r="3" fill="#C9A84C"/>
-          </marker>
-        </defs>
-        <rect x="686" y="34" width="210" height="54"
-              rx="6" ry="6"
-              fill="rgba(4,14,26,0.82)" stroke="#C9A84C"
-              stroke-width="0.8" stroke-opacity="0.5"
+        <!-- ══════════════════════════════════════════════════
+             CALLOUT 3 — MARINE-GRADE CONSTRUCTION
+             Label: top-right  |  Arrow tip: right cluster piling (800, 323)
+        ══════════════════════════════════════════════════ -->
+        <line x1="794" y1="142" x2="800" y2="317"
+              stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round"
+              marker-end="url(#dot-gold)" class="pl-svg-line pl-svg-l3"/>
+        <rect x="686" y="72" width="218" height="58" rx="7"
+              fill="rgba(4,14,26,0.86)" stroke="#C9A84C" stroke-width="1" stroke-opacity="0.55"
               filter="url(#lbl-shadow)" class="pl-svg-box pl-svg-l3"/>
-        <text x="791" y="54" text-anchor="middle"
+        <text x="795" y="94" text-anchor="middle"
               font-family="'Barlow Condensed',sans-serif"
-              font-size="13" font-weight="700" letter-spacing="1.6"
-              fill="#C9A84C" class="pl-svg-title pl-svg-l3">MARINE-GRADE</text>
-        <text x="791" y="72" text-anchor="middle"
+              font-size="14" font-weight="700" letter-spacing="1.8" fill="#C9A84C"
+              class="pl-svg-title pl-svg-l3">MARINE-GRADE</text>
+        <text x="795" y="113" text-anchor="middle"
               font-family="'Inter',sans-serif"
-              font-size="10.5" fill="rgba(255,255,255,0.72)"
+              font-size="11" fill="rgba(255,255,255,0.75)"
               class="pl-svg-desc pl-svg-l3">Resists saltwater &amp; corrosion</text>
 
-        <!-- ═══════════════════════════════════════════
+        <!-- ══════════════════════════════════════════════════
              CALLOUT 4 — DRIVEN DEEP
-             Label bottom-left, line to submerged piling base ~(180,390)
-        ════════════════════════════════════════════ -->
-        <line x1="220" y1="580" x2="182" y2="392"
-              stroke="#3BC4DA" stroke-width="1.8"
-              stroke-linecap="round"
-              marker-end="url(#dot-teal)" opacity="0.9" class="pl-svg-line pl-svg-l4"/>
-        <rect x="18" y="590" width="192" height="54"
-              rx="6" ry="6"
-              fill="rgba(4,14,26,0.82)" stroke="#3BC4DA"
-              stroke-width="0.8" stroke-opacity="0.45"
+             Label: bottom-left  |  Arrow tip: submerged piling base (180, 435)
+        ══════════════════════════════════════════════════ -->
+        <line x1="205" y1="596" x2="184" y2="441"
+              stroke="#3BC4DA" stroke-width="1.8" stroke-linecap="round"
+              marker-end="url(#dot-teal)" class="pl-svg-line pl-svg-l4"/>
+        <rect x="12" y="608" width="200" height="58" rx="7"
+              fill="rgba(4,14,26,0.86)" stroke="#3BC4DA" stroke-width="1" stroke-opacity="0.5"
               filter="url(#lbl-shadow)" class="pl-svg-box pl-svg-l4"/>
-        <text x="114" y="610" text-anchor="middle"
+        <text x="112" y="630" text-anchor="middle"
               font-family="'Barlow Condensed',sans-serif"
-              font-size="13" font-weight="700" letter-spacing="1.6"
-              fill="#3BC4DA" class="pl-svg-title pl-svg-l4">DRIVEN DEEP</text>
-        <text x="114" y="628" text-anchor="middle"
+              font-size="14" font-weight="700" letter-spacing="1.8" fill="#3BC4DA"
+              class="pl-svg-title pl-svg-l4">DRIVEN DEEP</text>
+        <text x="112" y="649" text-anchor="middle"
               font-family="'Inter',sans-serif"
-              font-size="10.5" fill="rgba(255,255,255,0.72)"
-              class="pl-svg-desc pl-svg-l4">Installed for long-term stability</text>
+              font-size="11" fill="rgba(255,255,255,0.75)"
+              class="pl-svg-desc pl-svg-l4">Set deep for long-term stability</text>
 
       </svg>
     </div>
