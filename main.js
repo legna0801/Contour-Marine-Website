@@ -147,8 +147,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ── Piling Annotated Image — callout reveal ─
-  const annoWrap = document.querySelector('.pl-annotated-wrap');
+  // ── Piling Annotated Diagram — SVG callout reveal ─
+  const annoWrap = document.querySelector('.pl-diagram-wrap');
   if (annoWrap) {
     const annoObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
           annoObserver.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.25 });
+    }, { threshold: 0.2 });
     annoObserver.observe(annoWrap);
   }
 

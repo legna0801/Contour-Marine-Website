@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="styles.css?v=9" />
+  <link rel="stylesheet" href="styles.css?v=10" />
 </head>
 <body>
 
@@ -123,63 +123,141 @@
       </a>
     </div>
 
-    <!-- Annotated piling diagram — HTML/CSS callouts over clean photo -->
-    <div class="pl-annotated-wrap reveal-up">
+    <!-- Annotated piling diagram — pure SVG callouts over enhanced photo, always crisp -->
+    <div class="pl-diagram-wrap reveal-up">
+
+      <!-- Base photo — enhanced, clean, no baked text -->
       <img
-        src="images/piling-dock-annotated-backup.jpg"
-        alt="Completed dock with white square composite pilings on Biscayne Bay, South Florida — Contour Marine"
+        src="images/piling-dock-enhanced.jpg"
+        alt="White square composite pilings supporting a Biscayne Bay dock — Contour Marine South Florida"
         loading="eager"
-        class="pl-annotated-img"
+        class="pl-diagram-photo"
       />
 
-      <!-- Callout 1: Vertical Pilings — left mid -->
-      <div class="pl-callout pl-callout--tl pl-c1">
-        <div class="pl-callout-box">
-          <span class="pl-callout-title">Vertical Pilings</span>
-          <span class="pl-callout-desc">Load-bearing support for the entire system</span>
-        </div>
-        <svg class="pl-callout-arrow" viewBox="0 0 52 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M2 2 Q26 10 48 38" stroke="rgba(59,196,218,0.85)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-          <circle cx="48" cy="38" r="3" fill="rgba(59,196,218,0.85)"/>
-        </svg>
-      </div>
+      <!--
+        SVG overlay — viewBox matches photo ratio 4:3 (1000×750 units).
+        All coordinates are in those units so lines/dots scale perfectly
+        with the image at every viewport size.
 
-      <!-- Callout 2: Protective Caps — top center -->
-      <div class="pl-callout pl-callout--tr pl-c2" style="top:18%;right:38%;">
-        <div class="pl-callout-box">
-          <span class="pl-callout-title">Protective Caps</span>
-          <span class="pl-callout-desc">Extend lifespan and prevent damage</span>
-        </div>
-        <svg class="pl-callout-arrow" viewBox="0 0 52 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M50 2 Q26 10 4 38" stroke="rgba(59,196,218,0.85)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-          <circle cx="4" cy="38" r="3" fill="rgba(59,196,218,0.85)"/>
-        </svg>
-      </div>
+        Piling positions mapped from the enhanced photo:
+          Left piling cap (foreground-left):  ~9%, 29%  → (90, 218)
+          2nd piling cap (left cluster):      ~16%, 27% → (160, 200)
+          Center piling cap:                  ~44%, 26% → (440, 192)
+          Right cluster piling cap:           ~75%, 25% → (750, 185)
+          Submerged piling base (left):       ~18%, 52% → (180, 390)
+          Submerged piling base (right):      ~65%, 53% → (650, 396)
+      -->
+      <svg class="pl-diagram-svg" viewBox="0 0 1000 750"
+           xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <!-- Dot marker for line endpoints -->
+          <marker id="dot-teal" markerWidth="6" markerHeight="6"
+                  refX="3" refY="3" orient="auto">
+            <circle cx="3" cy="3" r="3" fill="#3BC4DA"/>
+          </marker>
+          <!-- Drop shadow for label boxes -->
+          <filter id="lbl-shadow" x="-5%" y="-5%" width="110%" height="110%">
+            <feDropShadow dx="0" dy="2" stdDeviation="4"
+                          flood-color="#040e1a" flood-opacity="0.55"/>
+          </filter>
+        </defs>
 
-      <!-- Callout 3: Marine-Grade — top right -->
-      <div class="pl-callout pl-callout--tr pl-c3">
-        <div class="pl-callout-box">
-          <span class="pl-callout-title">Marine-Grade</span>
-          <span class="pl-callout-desc">Resists saltwater and corrosion</span>
-        </div>
-        <svg class="pl-callout-arrow" viewBox="0 0 52 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M50 2 Q26 14 4 38" stroke="rgba(59,196,218,0.85)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-          <circle cx="4" cy="38" r="3" fill="rgba(59,196,218,0.85)"/>
-        </svg>
-      </div>
+        <!-- ═══════════════════════════════════════════
+             CALLOUT 1 — VERTICAL PILINGS
+             Label top-left, line to left foreground piling cap ~(90,218)
+        ════════════════════════════════════════════ -->
+        <line x1="220" y1="108" x2="95" y2="215"
+              stroke="#3BC4DA" stroke-width="1.8"
+              stroke-linecap="round" stroke-dasharray="0"
+              marker-end="url(#dot-teal)" opacity="0.9" class="pl-svg-line pl-svg-l1"/>
+        <rect x="18" y="52" width="192" height="54"
+              rx="6" ry="6"
+              fill="rgba(4,14,26,0.82)" stroke="#3BC4DA"
+              stroke-width="0.8" stroke-opacity="0.45"
+              filter="url(#lbl-shadow)" class="pl-svg-box pl-svg-l1"/>
+        <text x="114" y="72" text-anchor="middle"
+              font-family="'Barlow Condensed',sans-serif"
+              font-size="13" font-weight="700" letter-spacing="1.6"
+              fill="#3BC4DA" text-transform="uppercase"
+              class="pl-svg-title pl-svg-l1">VERTICAL PILINGS</text>
+        <text x="114" y="90" text-anchor="middle"
+              font-family="'Inter',sans-serif"
+              font-size="10.5" fill="rgba(255,255,255,0.72)"
+              class="pl-svg-desc pl-svg-l1">Load-bearing structural support</text>
 
-      <!-- Callout 4: Driven Deep — bottom left -->
-      <div class="pl-callout pl-callout--bl pl-c4">
-        <div class="pl-callout-box">
-          <span class="pl-callout-title">Driven Deep</span>
-          <span class="pl-callout-desc">Installed deep for long-term stability</span>
-        </div>
-        <svg class="pl-callout-arrow" viewBox="0 0 52 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M2 40 Q26 28 48 4" stroke="rgba(59,196,218,0.85)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-          <circle cx="48" cy="4" r="3" fill="rgba(59,196,218,0.85)"/>
-        </svg>
-      </div>
+        <!-- ═══════════════════════════════════════════
+             CALLOUT 2 — PROTECTIVE CAPS
+             Label top-center, line to center piling cap ~(440,192)
+        ════════════════════════════════════════════ -->
+        <line x1="390" y1="88" x2="442" y2="190"
+              stroke="#3BC4DA" stroke-width="1.8"
+              stroke-linecap="round"
+              marker-end="url(#dot-teal)" opacity="0.9" class="pl-svg-line pl-svg-l2"/>
+        <rect x="290" y="34" width="196" height="54"
+              rx="6" ry="6"
+              fill="rgba(4,14,26,0.82)" stroke="#3BC4DA"
+              stroke-width="0.8" stroke-opacity="0.45"
+              filter="url(#lbl-shadow)" class="pl-svg-box pl-svg-l2"/>
+        <text x="388" y="54" text-anchor="middle"
+              font-family="'Barlow Condensed',sans-serif"
+              font-size="13" font-weight="700" letter-spacing="1.6"
+              fill="#3BC4DA" class="pl-svg-title pl-svg-l2">PROTECTIVE CAPS</text>
+        <text x="388" y="72" text-anchor="middle"
+              font-family="'Inter',sans-serif"
+              font-size="10.5" fill="rgba(255,255,255,0.72)"
+              class="pl-svg-desc pl-svg-l2">Extend lifespan, prevent damage</text>
 
+        <!-- ═══════════════════════════════════════════
+             CALLOUT 3 — MARINE-GRADE COMPOSITE
+             Label top-right, line to right piling cap ~(750,185)
+        ════════════════════════════════════════════ -->
+        <line x1="780" y1="88" x2="752" y2="183"
+              stroke="#C9A84C" stroke-width="1.8"
+              stroke-linecap="round"
+              marker-end="url(#dot-gold)" opacity="0.9" class="pl-svg-line pl-svg-l3"/>
+        <defs>
+          <marker id="dot-gold" markerWidth="6" markerHeight="6"
+                  refX="3" refY="3" orient="auto">
+            <circle cx="3" cy="3" r="3" fill="#C9A84C"/>
+          </marker>
+        </defs>
+        <rect x="686" y="34" width="210" height="54"
+              rx="6" ry="6"
+              fill="rgba(4,14,26,0.82)" stroke="#C9A84C"
+              stroke-width="0.8" stroke-opacity="0.5"
+              filter="url(#lbl-shadow)" class="pl-svg-box pl-svg-l3"/>
+        <text x="791" y="54" text-anchor="middle"
+              font-family="'Barlow Condensed',sans-serif"
+              font-size="13" font-weight="700" letter-spacing="1.6"
+              fill="#C9A84C" class="pl-svg-title pl-svg-l3">MARINE-GRADE</text>
+        <text x="791" y="72" text-anchor="middle"
+              font-family="'Inter',sans-serif"
+              font-size="10.5" fill="rgba(255,255,255,0.72)"
+              class="pl-svg-desc pl-svg-l3">Resists saltwater &amp; corrosion</text>
+
+        <!-- ═══════════════════════════════════════════
+             CALLOUT 4 — DRIVEN DEEP
+             Label bottom-left, line to submerged piling base ~(180,390)
+        ════════════════════════════════════════════ -->
+        <line x1="220" y1="580" x2="182" y2="392"
+              stroke="#3BC4DA" stroke-width="1.8"
+              stroke-linecap="round"
+              marker-end="url(#dot-teal)" opacity="0.9" class="pl-svg-line pl-svg-l4"/>
+        <rect x="18" y="590" width="192" height="54"
+              rx="6" ry="6"
+              fill="rgba(4,14,26,0.82)" stroke="#3BC4DA"
+              stroke-width="0.8" stroke-opacity="0.45"
+              filter="url(#lbl-shadow)" class="pl-svg-box pl-svg-l4"/>
+        <text x="114" y="610" text-anchor="middle"
+              font-family="'Barlow Condensed',sans-serif"
+              font-size="13" font-weight="700" letter-spacing="1.6"
+              fill="#3BC4DA" class="pl-svg-title pl-svg-l4">DRIVEN DEEP</text>
+        <text x="114" y="628" text-anchor="middle"
+              font-family="'Inter',sans-serif"
+              font-size="10.5" fill="rgba(255,255,255,0.72)"
+              class="pl-svg-desc pl-svg-l4">Installed for long-term stability</text>
+
+      </svg>
     </div>
 
   </div>
