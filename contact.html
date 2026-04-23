@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Contour Marine | Free Project Quote</title>
+  <meta name="description" content="Contact Contour Marine for a free waterfront project consultation. Call or fill out the form — we serve Broward and Miami-Dade Counties." />
+  <meta property="og:title" content="Contact Contour Marine | Get a Free Quote" />
+  <meta property="og:description" content="Start your waterfront project today. Contact South Florida's trusted marine contractor for a free site visit and project estimate." />
+  <meta property="og:image" content="images/logo.png" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ── Leaflet map container ── */
+    .contact-map {
+      width: 100%;
+      height: 460px;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-top: 2.5rem;
+      box-shadow: var(--shadow-card);
+      position: relative;
+    }
+    #service-map {
+      width: 100%;
+      height: 100%;
+    }
+    /* Leaflet attribution tweak */
+    .leaflet-control-attribution {
+      font-size: 10px;
+      opacity: 0.7;
+    }
+    @media (max-width: 600px) {
+      .contact-map { height: 320px; }
+    }
+    .contact-hero-img {
+      /* No image background — gradient handled by .page-hero--contact */
+      display: none;
+    }
+  </style>
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+</head>
+<body>
+
+<nav>
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.png" alt="Contour Marine Logo" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="seawalls.html">Seawalls</a></li>
+      <li><a href="docks.html">Docks</a></li>
+      <li><a href="decks.html">Decks</a></li>
+      <li><a href="boatlifts.html">Boat Lifts</a></li>
+      <li><a href="pilings.html">Pilings</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html" class="nav-cta active">Get a Quote</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-nav">
+  <a href="index.html">Home</a>
+  <a href="seawalls.html">Seawalls</a>
+  <a href="docks.html">Docks</a>
+  <a href="decks.html">Decks</a>
+  <a href="boatlifts.html">Boat Lifts</a>
+  <a href="pilings.html">Pilings</a>
+  <a href="about.html">About Us</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html" class="nav-cta">Get a Quote</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero page-hero--contact">
+  <div class="page-hero-content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <i class="fas fa-chevron-right"></i>
+      <span>Contact Us</span>
+    </nav>
+    <h1>Let's Build<br /><em style="color:var(--teal-bright);font-style:italic;">Something</em></h1>
+    <p class="hero-sub">Tell us about your project — we'll schedule a free site visit and give you a detailed, no-obligation estimate.</p>
+  </div>
+</section>
+
+<div class="trust-bar">
+  <div class="trust-item"><i class="fas fa-shield-alt"></i> Free Site Visit</div>
+  <div class="trust-item"><i class="fas fa-map-marker-alt"></i> Broward &amp; Miami-Dade</div>
+  <div class="trust-item"><i class="fas fa-award"></i> Est. 2001 — 25+ Years</div>
+  <div class="trust-item"><i class="fas fa-clock"></i> Fast Response Time</div>
+  <div class="trust-item"><i class="fas fa-file-alt"></i> No-Obligation Estimates</div>
+</div>
+
+<!-- CONTACT SECTION -->
+<section class="contact-section">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- LEFT: Info -->
+      <div class="contact-info reveal-left">
+        <span class="section-label">Get In Touch</span>
+        <h2>Start Your Waterfront Project</h2>
+        <p>Whether you're ready to build or just exploring your options, we're here to help. Reach out and one of our marine construction experts will get back to you promptly.</p>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon"><i class="fas fa-phone-alt"></i></div>
+          <div class="contact-detail-text">
+            <strong>Phone</strong>
+            <a href="tel:+19549680500">(954) 968-0500</a>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon"><i class="fas fa-envelope"></i></div>
+          <div class="contact-detail-text">
+            <strong>Email</strong>
+            <a href="mailto:tom@contourmarine.com">tom@contourmarine.com</a>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="contact-detail-text">
+            <strong>Office Location</strong>
+            <span>South Florida — Serving Broward &amp; Miami-Dade</span>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon"><i class="fas fa-clock"></i></div>
+          <div class="contact-detail-text">
+            <strong>Business Hours</strong>
+            <span>Mon – Fri: 8:00 AM – 5:00 PM<br />Sat: 8:00 AM – 2:00 PM<br />Sun: Closed</span>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon"><i class="fab fa-instagram"></i></div>
+          <div class="contact-detail-text">
+            <strong>Instagram</strong>
+            <a href="https://www.instagram.com/contourmarine" target="_blank">@contourmarine</a>
+          </div>
+        </div>
+
+        <div class="service-areas">
+          <h4><i class="fas fa-map-marker-alt"></i> &nbsp; Service Areas</h4>
+          <div class="area-tags">
+            <span class="area-tag">Broward County</span>
+            <span class="area-tag">Miami-Dade County</span>
+          </div>
+        </div>
+
+        <div class="contact-map">
+          <div id="service-map"></div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Form -->
+      <div class="contact-form-wrap reveal-right">
+        <h3>Request a Free Quote</h3>
+        <p class="sub">Fill out the form below and we'll get back to you within 24 hours to schedule your free site consultation.</p>
+
+        <form id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name *</label>
+              <input type="text" id="firstName" name="firstName" placeholder="John" required />
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name *</label>
+              <input type="text" id="lastName" name="lastName" placeholder="Smith" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone Number *</label>
+              <input type="tel" id="phone" name="phone" placeholder="(954) 000-0000" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" placeholder="john@email.com" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="service">Service Needed *</label>
+            <select id="service" name="service" required>
+              <option value="" disabled selected>Select a service...</option>
+              <option value="seawall">Seawall Construction / Repair</option>
+              <option value="dock">Dock Construction</option>
+              <option value="deck">Deck Construction</option>
+              <option value="boatlift">Boat Lift Installation</option>
+              <option value="pilings">Marine Pilings</option>
+              <option value="multiple">Multiple Services</option>
+              <option value="other">Other / Not Sure</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="location">Project Location / City *</label>
+            <input type="text" id="location" name="location" placeholder="e.g., Fort Lauderdale, Miami Beach..." required />
+          </div>
+
+          <div class="form-group">
+            <label for="timeline">Project Timeline</label>
+            <select id="timeline" name="timeline">
+              <option value="" disabled selected>When are you looking to start?</option>
+              <option value="asap">As Soon as Possible</option>
+              <option value="1-3months">1 – 3 Months</option>
+              <option value="3-6months">3 – 6 Months</option>
+              <option value="planning">Just Planning / Researching</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Tell Us About Your Project</label>
+            <textarea id="message" name="message" placeholder="Describe your project — current condition, dimensions, goals, or any relevant details..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">
+            <i class="fas fa-paper-plane"></i> &nbsp; Send My Request
+          </button>
+        </form>
+
+        <div class="form-success" id="formSuccess">
+          <div style="font-size:3rem;margin-bottom:1rem;">✅</div>
+          <h3 style="color:var(--navy);margin-bottom:0.5rem;">Request Sent!</h3>
+          <p>Thank you — a member of the Contour Marine team will reach out within 24 hours to schedule your free site visit.</p>
+          <br />
+          <a href="index.html" class="btn-primary" style="display:inline-flex;"><i class="fas fa-home"></i> Back to Home</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHY CONTACT US FEATURE -->
+<section class="feature-section">
+  <div class="container">
+    <div class="feature-content">
+      <span class="section-label reveal">What to Expect</span>
+      <h2 class="reveal">Our Promise to Every Client</h2>
+      <p class="reveal">From first contact to final delivery — we make the process simple, transparent, and stress-free.</p>
+      <div class="feature-boxes">
+        <div class="feature-box reveal">
+          <div class="feature-box-icon"><i class="fas fa-comments"></i></div>
+          <h4>Fast Response</h4>
+          <p>We respond to every inquiry within 24 hours and schedule site visits promptly.</p>
+        </div>
+        <div class="feature-box reveal">
+          <div class="feature-box-icon"><i class="fas fa-search"></i></div>
+          <h4>Free Site Visit</h4>
+          <p>Every project starts with a free, no-obligation site consultation and assessment.</p>
+        </div>
+        <div class="feature-box reveal">
+          <div class="feature-box-icon"><i class="fas fa-dollar-sign"></i></div>
+          <h4>Transparent Pricing</h4>
+          <p>Detailed written estimates with no hidden fees — you know exactly what you're getting.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="images/logo.png" alt="Contour Marine" />
+      <p>South Florida's trusted marine contractor since 2001, proudly serving Broward and Miami-Dade.</p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/contourmarine" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <a href="tel:+19549680500" class="footer-phone"><i class="fas fa-phone-alt"></i> (954) 968-0500</a>
+    </div>
+    <div class="footer-col"><h5>Services</h5><ul>
+      <li><a href="seawalls.html"><i class="fas fa-chevron-right"></i> Seawall Construction</a></li>
+      <li><a href="docks.html"><i class="fas fa-chevron-right"></i> Dock Construction</a></li>
+      <li><a href="decks.html"><i class="fas fa-chevron-right"></i> Deck Construction</a></li>
+      <li><a href="boatlifts.html"><i class="fas fa-chevron-right"></i> Boat Lift Installation</a></li>
+      <li><a href="pilings.html"><i class="fas fa-chevron-right"></i> Marine Pilings</a></li>
+    </ul></div>
+    <div class="footer-col"><h5>Company</h5><ul>
+      <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+      <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+      <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Get a Quote</a></li>
+    </ul></div>
+    <div class="footer-col"><h5>Service Areas</h5><ul>
+      <li><a href="#"><i class="fas fa-map-marker-alt"></i> Broward County</a></li>
+      <li><a href="#"><i class="fas fa-map-marker-alt"></i> Miami-Dade County</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Contour Marine. All Rights Reserved. | <a href="#">Privacy Policy</a></p>
+    <p>Docks · Seawalls · Boat Lifts · Decks · Pilings</p>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+
+<!-- Floating CTA -->
+<div class="float-cta">
+  <a href="tel:+19549680500" class="float-btn float-btn-call"><i class="fas fa-phone-alt"></i> Call Now</a>
+  <a href="contact.html" class="float-btn float-btn-quote"><i class="fas fa-hard-hat"></i> Free Quote</a>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!--  Leaflet Service-Area Map              -->
+<!-- ═══════════════════════════════════════ -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script>
+(function () {
+  /* ── Broward County approximate boundary polygon ── */
+  var broward = [
+    [26.3397, -80.0311],[26.3397, -80.1000],[26.3397, -80.1500],[26.3397, -80.2000],
+    [26.3397, -80.2534],[26.3397, -80.3200],[26.3397, -80.3880],
+    [26.2000, -80.3880],[26.0700, -80.3880],[25.9579, -80.3880],
+    [25.9579, -80.3200],[25.9579, -80.2534],[25.9579, -80.1500],
+    [25.9579, -80.0311],[26.0700, -80.0311],[26.2000, -80.0311],
+    [26.3397, -80.0311]
+  ];
+
+  /* ── Miami-Dade County approximate boundary polygon ── */
+  var miamiDade = [
+    [25.9579, -80.0311],[25.9579, -80.1500],[25.9579, -80.2534],[25.9579, -80.3880],
+    [25.8000, -80.3880],[25.6000, -80.3880],[25.4700, -80.3880],
+    [25.4700, -80.2534],[25.4700, -80.1200],[25.4700, -80.0311],
+    [25.5500, -80.0000],[25.6500, -80.0000],[25.7500, -80.0000],
+    [25.9579, -80.0311]
+  ];
+
+  /* ── Tight bounding box: north Broward → south Miami-Dade ── */
+  /* North tip: ~26.34  South tip: ~25.45  West: ~80.39  East: ~80.03 */
+  var bounds = L.latLngBounds(
+    L.latLng(25.43, -80.50),   /* SW — south Miami-Dade with padding  */
+    L.latLng(26.38, -80.00)    /* NE — north Broward with padding      */
+  );
+
+  /* ── Initialise map, fit to bounds ── */
+  var map = L.map('service-map', {
+    scrollWheelZoom: false,
+    zoomControl: true,
+    dragging: true,
+    touchZoom: true,
+    doubleClickZoom: false
+  }).fitBounds(bounds, { padding: [12, 12] });
+
+  /* ── Tile layer — clean light CartoDB ── */
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
+    subdomains: 'abcd',
+    maxZoom: 14
+  }).addTo(map);
+
+  /* ── County fill style ── */
+  var countyStyle = {
+    fillColor: '#0D7377',
+    fillOpacity: 0.18,
+    color: '#0D7377',
+    weight: 2.5,
+    dashArray: '6 4',
+    lineJoin: 'round'
+  };
+
+  /* ── Draw both county polygons ── */
+  L.polygon(broward,   countyStyle).addTo(map).bindTooltip('Broward County',   {permanent: false, direction: 'center', className: 'map-county-tip'});
+  L.polygon(miamiDade, countyStyle).addTo(map).bindTooltip('Miami-Dade County',{permanent: false, direction: 'center', className: 'map-county-tip'});
+
+  /* ── Custom teal marker icon ── */
+  var pinIcon = L.divIcon({
+    html: '<div style="background:#0D7377;width:14px;height:14px;border-radius:50%;border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,0.35);"></div>',
+    className: '',
+    iconSize: [14, 14],
+    iconAnchor: [7, 7]
+  });
+
+  /* ── Contour Marine office marker ── */
+  L.marker([26.005, -80.145], {icon: pinIcon})
+    .addTo(map)
+    .bindPopup('<strong style="color:#0D2B45;font-family:Inter,sans-serif;">Contour Marine</strong><br><span style="font-size:12px;color:#555;">Serving Broward &amp; Miami-Dade Counties</span>', {maxWidth: 200})
+    .openPopup();
+
+  /* ── Labels ── */
+  var labelStyle = 'background:rgba(255,255,255,0.88);border:none;box-shadow:none;font-family:Inter,sans-serif;font-size:11px;font-weight:700;color:#0D2B45;padding:3px 7px;border-radius:6px;';
+
+  L.marker([26.18, -80.22], {
+    icon: L.divIcon({ html: '<div style="'+labelStyle+'">BROWARD COUNTY</div>', className:'', iconAnchor:[60,10] })
+  }).addTo(map);
+
+  L.marker([25.70, -80.22], {
+    icon: L.divIcon({ html: '<div style="'+labelStyle+'">MIAMI-DADE COUNTY</div>', className:'', iconAnchor:[72,10] })
+  }).addTo(map);
+
+})();
+</script>
+
+</body>
+</html>

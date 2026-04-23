@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seawall Construction &amp; Repair | Contour Marine | South Florida</title>
+  <meta name="description" content="Expert seawall construction and repair in Broward &amp; Miami-Dade. Contour Marine — 25+ years protecting South Florida waterfronts. Free consultation." />
+  <meta property="og:title" content="Seawall Construction &amp; Repair | Contour Marine" />
+  <meta property="og:description" content="South Florida's trusted seawall specialists since 2001. New construction, repair, cap replacement &amp; more. Free site assessment." />
+  <meta property="og:image" content="images/logo.png" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* ═══════════════════════════════════════════════
+       SEAWALLS PAGE — SCOPED STYLES (Premium Redesign)
+       ═══════════════════════════════════════════════ */
+
+    /* ── Hero ── */
+    .sw-hero {
+      position: relative;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      min-height: 82vh;
+      overflow: hidden;
+      /* Pure gradient — no photo background */
+      background:
+        radial-gradient(ellipse 110% 70% at 20% 0%,
+          rgba(26,122,138,0.32) 0%, transparent 55%),
+        radial-gradient(ellipse 60% 50% at 100% 100%,
+          rgba(59,196,218,0.10) 0%, transparent 60%),
+        linear-gradient(150deg, #030c16 0%, #071b2e 50%, #0c2e46 100%);
+    }
+
+    /* Hidden — no photo bg used */
+    .sw-hero-bg {
+      display: none;
+    }
+
+    /* Hidden — no photo to overlay */
+    .sw-hero-overlay {
+      display: none;
+    }
+
+    /* Gold/teal shimmer line at bottom */
+    .sw-hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      z-index: 4;
+      background: linear-gradient(90deg,
+        transparent 0%, rgba(59,196,218,0.6) 25%,
+        rgba(201,168,76,0.75) 50%, rgba(59,196,218,0.6) 75%, transparent 100%);
+    }
+
+    .sw-hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 860px;
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+      padding: 160px 2rem 100px;
+    }
+
+    .sw-hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-family: var(--font-accent);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.6rem;
+    }
+    .sw-hero-eyebrow::before,
+    .sw-hero-eyebrow::after {
+      content: '';
+      display: block;
+      width: 36px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.6;
+    }
+
+    .sw-hero h1 {
+      font-size: clamp(2.6rem, 5.8vw, 4.4rem);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      color: var(--white);
+      margin-bottom: 1.4rem;
+      text-shadow: 0 4px 40px rgba(0,0,0,0.55);
+      overflow: visible;
+      white-space: normal;
+    }
+    .sw-hero h1 em {
+      font-style: italic;
+      color: var(--teal-bright);
+      text-shadow: 0 0 30px rgba(59,196,218,0.35), 0 4px 30px rgba(0,0,0,0.5);
+    }
+
+    .sw-hero-sub {
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      color: rgba(255,255,255,0.82);
+      line-height: 1.75;
+      max-width: 560px;
+      margin: 0 auto 2.8rem;
+    }
+
+    .sw-hero-btns {
+      display: flex;
+      gap: 1.1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+
+    /* Large, high-contrast CTA buttons */
+    .sw-hero-btns .sw-btn-call {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--orange);
+      color: white;
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      font-weight: 700;
+      padding: 1rem 2.2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      border: 2px solid var(--orange);
+      box-shadow: 0 6px 24px rgba(212,114,26,0.4);
+      transition: all 0.3s ease;
+      letter-spacing: 0.02em;
+    }
+    .sw-hero-btns .sw-btn-call:hover {
+      background: transparent;
+      color: var(--orange);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 32px rgba(212,114,26,0.3);
+    }
+    .sw-hero-btns .sw-btn-quote {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: transparent;
+      color: white;
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      font-weight: 600;
+      padding: 1rem 2.2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      border: 2px solid rgba(255,255,255,0.55);
+      transition: all 0.3s ease;
+      letter-spacing: 0.02em;
+    }
+    .sw-hero-btns .sw-btn-quote:hover {
+      background: rgba(255,255,255,0.12);
+      border-color: white;
+      transform: translateY(-2px);
+    }
+
+    /* Trust badges row */
+    .sw-hero-trust {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.5rem 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.12);
+    }
+    .sw-hero-trust span {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-accent);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+    }
+    .sw-hero-trust span i { color: var(--teal-bright); font-size: 0.95rem; }
+    .sw-hero-trust-sep { color: rgba(255,255,255,0.2); }
+
+    /* ── Services Grid ── */
+    .sw-services {
+      background: var(--white);
+      padding: 7rem 2rem;
+    }
+    .sw-services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+    }
+    .sw-service-card {
+      background: #f8fafc;
+      border-radius: 16px;
+      padding: 2.4rem 2rem;
+      border: 1px solid #e4eaf0;
+      border-top: 3px solid transparent;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+    .sw-service-card:hover {
+      border-top-color: var(--teal);
+      border-color: #d0dde8;
+      box-shadow: 0 14px 40px rgba(13,43,69,0.10);
+      transform: translateY(-5px);
+    }
+    .sw-service-icon {
+      width: 52px;
+      height: 52px;
+      background: linear-gradient(135deg, var(--teal), var(--teal-light));
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+      box-shadow: 0 6px 18px rgba(26,122,138,0.25);
+    }
+    .sw-service-card h4 {
+      font-family: var(--font-body);
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: -0.01em;
+    }
+    .sw-service-card p {
+      font-size: 0.9rem;
+      color: var(--text-mid);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    /* ── Two-column intro ── */
+    .sw-intro {
+      background: var(--white);
+      padding: 0 2rem 7rem;
+    }
+
+    /* ── Why Us — light gray ── */
+    .sw-why {
+      background: #f4f7f9;
+      padding: 7rem 2rem;
+    }
+    .sw-why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+      margin-top: 3.5rem;
+    }
+    .sw-why-img {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 24px 70px rgba(13,43,69,0.18);
+      position: relative;
+    }
+    .sw-why-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 60%, rgba(7,27,46,0.3) 100%);
+      border-radius: 20px;
+    }
+    .sw-why-img img {
+      width: 100%;
+      height: 440px;
+      object-fit: cover;
+      object-position: center 35%;
+      display: block;
+    }
+    .sw-why-img .ph {
+      width: 100%; height: 440px; min-height: 440px;
+      border-radius: 0; border: none;
+    }
+    /* Intro section image placeholder */
+    .service-detail-img .ph {
+      min-height: 420px; height: 420px;
+    }
+    .sw-why-content { display: flex; flex-direction: column; gap: 2rem; }
+    .sw-why-point {
+      display: flex;
+      gap: 1.2rem;
+      align-items: flex-start;
+    }
+    .sw-why-point-icon {
+      width: 46px;
+      height: 46px;
+      flex-shrink: 0;
+      background: linear-gradient(135deg, rgba(26,122,138,0.14), rgba(59,196,218,0.08));
+      border: 1.5px solid rgba(26,122,138,0.28);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--teal);
+      font-size: 1.1rem;
+    }
+    .sw-why-point-text h4 {
+      font-family: var(--font-body);
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.35rem;
+    }
+    .sw-why-point-text p {
+      font-size: 0.9rem;
+      color: var(--text-mid);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    /* ── Process — white with step numbers ── */
+    .sw-process {
+      background: var(--white);
+      padding: 7rem 2rem;
+    }
+    .sw-process-steps {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+      position: relative;
+    }
+    .sw-process-steps::before {
+      content: '';
+      position: absolute;
+      top: 27px;
+      left: calc(10% + 18px);
+      right: calc(10% + 18px);
+      height: 2px;
+      background: linear-gradient(90deg, var(--teal) 0%, var(--teal-bright) 100%);
+      opacity: 0.2;
+      z-index: 0;
+    }
+    .sw-step {
+      text-align: center;
+      padding: 0 0.5rem;
+      position: relative;
+      z-index: 1;
+    }
+    .sw-step-num {
+      width: 54px;
+      height: 54px;
+      background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+      border: 2px solid rgba(59,196,218,0.35);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.1rem;
+      font-family: var(--font-accent);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--teal-bright);
+    }
+    .sw-step h4 {
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.4rem;
+      line-height: 1.3;
+    }
+    .sw-step p {
+      font-size: 0.8rem;
+      color: var(--text-mid);
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    /* ── Before & After ── */
+    .sw-ba {
+      background: #f4f7f9;
+      padding: 7rem 2rem;
+    }
+    .sw-ba-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      max-width: 980px;
+      margin: 3rem auto 0;
+    }
+    .sw-ba-card {
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 14px 45px rgba(13,43,69,0.16);
+      background: var(--navy-dark);
+    }
+    .sw-ba-card img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      object-position: center 40%;
+      display: block;
+    }
+    /* Left/right crop override when using ba-before/after images */
+    .sw-ba-card.ba-card--before img { object-position: left 40%; }
+    .sw-ba-card.ba-card--after  img { object-position: right 40%; }
+    /* ph placeholder inside sw-ba-card */
+    .sw-ba-card .ph {
+      width: 100%; height: 320px; min-height: 320px;
+      border-radius: 0; border: none;
+    }
+    .sw-ba-label {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: rgba(7,27,46,0.90);
+      color: white;
+      font-family: var(--font-accent);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+    .sw-ba-label.after {
+      background: var(--teal);
+      border-color: var(--teal-bright);
+    }
+    .sw-ba-caption {
+      text-align: center;
+      font-size: 0.88rem;
+      color: var(--text-mid);
+      margin-top: 1.4rem;
+      font-style: italic;
+    }
+
+    /* ── Testimonials ── */
+    .sw-testimonials {
+      background: var(--white);
+      padding: 7rem 2rem;
+    }
+    .sw-testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.8rem;
+      margin-top: 3.5rem;
+    }
+    .sw-tcard {
+      background: #f8fafc;
+      border-radius: 18px;
+      padding: 2.4rem;
+      border: 1px solid #e4eaf0;
+      border-left: 4px solid var(--teal);
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    .sw-tcard:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 44px rgba(13,43,69,0.10);
+    }
+    .sw-tcard-stars {
+      display: flex;
+      gap: 0.2rem;
+      margin-bottom: 1.1rem;
+    }
+    .sw-tcard-stars i { color: #d4a017; font-size: 0.95rem; }
+    .sw-tcard p {
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      line-height: 1.75;
+      font-style: italic;
+      margin-bottom: 1.6rem;
+    }
+    .sw-tcard-author {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+    .sw-tcard-avatar {
+      width: 42px;
+      height: 42px;
+      background: linear-gradient(135deg, var(--navy), var(--teal));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-accent);
+      font-size: 1rem;
+      font-weight: 700;
+      color: white;
+      flex-shrink: 0;
+    }
+    .sw-tcard-name {
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: var(--navy);
+      line-height: 1.2;
+    }
+    .sw-tcard-loc {
+      font-size: 0.8rem;
+      color: var(--text-mid);
+    }
+
+    /* ── Service Areas ── */
+    .sw-areas {
+      background: linear-gradient(145deg, #040d1a 0%, #071b2e 50%, #0a2540 100%);
+      padding: 5.5rem 2rem;
+    }
+    .sw-areas-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .sw-areas-inner h3 {
+      font-family: var(--font-heading);
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      color: var(--white);
+      margin-bottom: 0.8rem;
+    }
+    .sw-areas-inner > p {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+    .sw-areas-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      justify-content: center;
+    }
+    .sw-area-tag {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(59,196,218,0.22);
+      color: rgba(255,255,255,0.78);
+      padding: 0.55rem 1.3rem;
+      border-radius: 50px;
+      font-family: var(--font-accent);
+      font-size: 0.83rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      transition: all 0.25s ease;
+    }
+    .sw-area-tag:hover {
+      background: rgba(59,196,218,0.12);
+      border-color: var(--teal-bright);
+      color: var(--white);
+    }
+
+    /* ── CTA ── */
+    .sw-cta {
+      background:
+        radial-gradient(ellipse 80% 70% at 50% 50%,
+          rgba(26,122,138,0.18) 0%, transparent 65%),
+        linear-gradient(175deg, #040e1a 0%, #071b2e 100%);
+      padding: 8rem 2rem;
+      text-align: center;
+      position: relative;
+    }
+    .sw-cta::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(59,196,218,0.3), rgba(201,168,76,0.4), rgba(59,196,218,0.3), transparent);
+    }
+    .sw-cta-inner {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .sw-cta h2 {
+      font-size: clamp(2rem, 4.2vw, 3.4rem);
+      color: var(--white);
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+      margin-bottom: 1.2rem;
+      text-shadow: 0 4px 30px rgba(0,0,0,0.4);
+    }
+    .sw-cta > .sw-cta-inner > p {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.68);
+      line-height: 1.75;
+      margin-bottom: 3rem;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .sw-cta-btns {
+      display: flex;
+      gap: 1.1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* CTA-specific large buttons */
+    .sw-cta .sw-btn-call {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--orange);
+      color: white;
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      font-weight: 700;
+      padding: 1.05rem 2.4rem;
+      border-radius: 50px;
+      text-decoration: none;
+      border: 2px solid var(--orange);
+      box-shadow: 0 6px 28px rgba(212,114,26,0.38);
+      transition: all 0.3s ease;
+      letter-spacing: 0.02em;
+    }
+    .sw-cta .sw-btn-call:hover {
+      background: transparent;
+      color: var(--orange);
+      transform: translateY(-2px);
+    }
+    .sw-cta .sw-btn-quote {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: transparent;
+      color: white;
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      font-weight: 600;
+      padding: 1.05rem 2.4rem;
+      border-radius: 50px;
+      text-decoration: none;
+      border: 2px solid rgba(255,255,255,0.5);
+      transition: all 0.3s ease;
+    }
+    .sw-cta .sw-btn-quote:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: white;
+      transform: translateY(-2px);
+    }
+    .sw-cta .section-label { color: var(--teal-bright); }
+
+    /* ══════════════════════════════════════════════════════
+       SEAWALL BUILD PROCESS — luxury full-width immersive
+       ══════════════════════════════════════════════════════ */
+
+    /* ── Responsive (non-process) ── */
+    @media (max-width: 1024px) {
+      .sw-why-grid { gap: 3rem; }
+      .sw-why-img img { height: 380px; }
+    }
+    @media (max-width: 900px) {
+      .sw-services-grid { grid-template-columns: 1fr 1fr; }
+      .sw-why-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .sw-why-img img { height: 300px; }
+      .sw-process-steps { grid-template-columns: 1fr 1fr 1fr; }
+      .sw-process-steps::before { display: none; }
+      .sw-testimonials-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 700px) {
+      .sw-hero-inner { padding: 140px 1.5rem 80px; }
+      .sw-hero h1 { font-size: clamp(2.1rem, 8.5vw, 3rem); }
+      .sw-hero-btns { flex-direction: column; align-items: center; }
+      .sw-hero-btns .sw-btn-call,
+      .sw-hero-btns .sw-btn-quote { width: 100%; max-width: 340px; justify-content: center; }
+      .sw-hero-trust-sep { display: none; }
+      .sw-services-grid { grid-template-columns: 1fr; }
+      .sw-process-steps { grid-template-columns: 1fr 1fr; gap: 1rem; }
+      .sw-testimonials-grid { grid-template-columns: 1fr; }
+      .sw-cta .sw-btn-call,
+      .sw-cta .sw-btn-quote { width: 100%; max-width: 340px; justify-content: center; }
+    }
+    @media (max-width: 480px) {
+      .sw-hero h1 { font-size: clamp(1.9rem, 9vw, 2.6rem); }
+      .sw-process-steps { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══════════════════════════════════════ -->
+<nav>
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.png" alt="Contour Marine Logo" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="seawalls.html" class="active">Seawalls</a></li>
+      <li><a href="docks.html">Docks</a></li>
+      <li><a href="decks.html">Decks</a></li>
+      <li><a href="boatlifts.html">Boat Lifts</a></li>
+      <li><a href="pilings.html">Pilings</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html" class="nav-cta">Get a Quote</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-nav">
+  <a href="index.html">Home</a>
+  <a href="seawalls.html">Seawalls</a>
+  <a href="docks.html">Docks</a>
+  <a href="decks.html">Decks</a>
+  <a href="boatlifts.html">Boat Lifts</a>
+  <a href="pilings.html">Pilings</a>
+  <a href="about.html">About Us</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html" class="nav-cta">Get a Quote</a>
+</div>
+
+<!-- ═══ HERO ═══════════════════════════════════════ -->
+<section class="sw-hero">
+  <!-- Background photo -->
+  <div class="sw-hero-bg" id="swHeroBg"></div>
+  <!-- Dark overlay for contrast -->
+  <div class="sw-hero-overlay"></div>
+
+  <div class="sw-hero-inner">
+    <div class="sw-hero-eyebrow">South Florida Marine Contractors</div>
+    <h1>Seawall Construction &amp; Repair<br />in <em>South Florida</em></h1>
+    <p class="sw-hero-sub">Built to protect your property. Engineered to last. Serving Broward &amp; Miami-Dade since 2001.</p>
+    <div class="sw-hero-btns">
+      <a href="tel:+19549680500" class="sw-btn-call">
+        <i class="fas fa-phone"></i> Call Now
+      </a>
+      <a href="contact.html" class="sw-btn-quote">
+        <i class="fas fa-paper-plane"></i> Request Free Quote
+      </a>
+    </div>
+    <div class="sw-hero-trust">
+      <span><i class="fas fa-shield-alt"></i> Licensed &amp; Insured</span>
+      <span class="sw-hero-trust-sep">·</span>
+      <span><i class="fas fa-award"></i> 25+ Years Experience</span>
+      <span class="sw-hero-trust-sep">·</span>
+      <span><i class="fas fa-hard-hat"></i> Hundreds of Projects Completed</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SERVICES GRID ══════════════════════════════ -->
+<section class="sw-services">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Our Seawall Services</span>
+      <h2 style="color:var(--navy);">Everything You Need to Protect Your Waterfront</h2>
+      <p style="color:var(--text-mid);">From new construction to complete restoration — we handle every aspect of your seawall project, including permits.</p>
+    </div>
+    <div class="sw-services-grid">
+      <div class="sw-service-card reveal">
+        <div class="sw-service-icon"><i class="fas fa-water"></i></div>
+        <h4>New Seawall Construction</h4>
+        <p>Full installation of new concrete or vinyl sheet-pile seawall systems, engineered for your site and soil conditions.</p>
+      </div>
+      <div class="sw-service-card reveal">
+        <div class="sw-service-icon"><i class="fas fa-wrench"></i></div>
+        <h4>Seawall Repair</h4>
+        <p>Structural repair of cracked, leaning, or failing seawalls before erosion and damage spread further.</p>
+      </div>
+      <div class="sw-service-card reveal">
+        <div class="sw-service-icon"><i class="fas fa-layer-group"></i></div>
+        <h4>Cap Replacement</h4>
+        <p>Removal and replacement of deteriorating seawall caps — restoring structural integrity and appearance.</p>
+      </div>
+      <div class="sw-service-card reveal">
+        <div class="sw-service-icon"><i class="fas fa-link"></i></div>
+        <h4>Tiebacks &amp; Reinforcement</h4>
+        <p>Tieback rod and anchor system installation to stabilize walls under pressure from soil and tidal forces.</p>
+      </div>
+      <div class="sw-service-card reveal">
+        <div class="sw-service-icon"><i class="fas fa-seedling"></i></div>
+        <h4>Erosion Control</h4>
+        <p>Rip-rap, hybrid solutions, and protective measures to stop shoreline erosion and safeguard your property.</p>
+      </div>
+      <div class="sw-service-card reveal">
+        <div class="sw-service-icon"><i class="fas fa-star"></i></div>
+        <h4>Waterfront Upgrades</h4>
+        <p>Cosmetic and structural upgrades that improve both the look and performance of your waterfront edge.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ INTRO — PHOTO + TEXT ════════════════════════ -->
+<section class="sw-intro">
+  <div class="container">
+    <div class="service-detail-grid">
+      <div class="service-detail-img reveal-left">
+        <img src="images/seawall-completed-cap.jpg" alt="Completed concrete seawall cap with timber deck foreground, green lawn, palm trees, and luxury waterfront home — South Florida by Contour Marine" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 50%;display:block;border-radius:16px;" />
+      </div>
+      <div class="service-detail-content reveal-right">
+        <span class="section-label">Built for South Florida Conditions</span>
+        <h2>Your Seawall Is Your Property's First Line of Defense</h2>
+        <p>South Florida's saltwater environment is relentless. Tidal forces, storm surges, boat wakes, and soil erosion put constant pressure on every waterfront structure. A failing seawall doesn't just look bad — it puts your entire property at risk.</p>
+        <p>Contour Marine has been engineering and building seawalls across Broward and Miami-Dade since 2001. We work with concrete, vinyl sheet pile, and hybrid systems — always recommending what's right for your site, not what's easiest for us.</p>
+        <ul class="service-detail-list">
+          <li><i class="fas fa-check-circle"></i> Residential &amp; commercial seawall projects</li>
+          <li><i class="fas fa-check-circle"></i> Vinyl sheet pile — corrosion-proof, long-lasting</li>
+          <li><i class="fas fa-check-circle"></i> Reinforced concrete systems</li>
+          <li><i class="fas fa-check-circle"></i> Storm damage assessment &amp; repair</li>
+          <li><i class="fas fa-check-circle"></i> Full permit acquisition — we handle it all</li>
+        </ul>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:0.5rem;">
+          <a href="contact.html" class="btn-primary"><i class="fas fa-hard-hat"></i>&nbsp; Start Your Project</a>
+          <a href="tel:+19549680500" class="btn-secondary"><i class="fas fa-phone"></i>&nbsp; Call Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHY CHOOSE US ══════════════════════════════ -->
+<section class="sw-why">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Why Choose Us</span>
+      <h2 style="color:var(--navy);">The Seawall Specialists South Florida Trusts</h2>
+      <p style="color:var(--text-mid);">Experience, equipment, and accountability — on every project.</p>
+    </div>
+    <div class="sw-why-grid">
+      <div class="sw-why-img reveal-left">
+        <img
+          src="images/seawall-construction-crane.jpg"
+          alt="Engineered seawall installation — crane barge driving pilings on a South Florida canal, Contour Marine crew on site"
+          loading="lazy"
+          style="width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block;border-radius:16px;"
+        />
+      </div>
+      <div class="sw-why-content reveal-right">
+        <div class="sw-why-point">
+          <div class="sw-why-point-icon"><i class="fas fa-calendar-check"></i></div>
+          <div class="sw-why-point-text">
+            <h4>25+ Years of Waterfront Experience</h4>
+            <p>Hundreds of seawalls built across Broward and Miami-Dade. We know South Florida's waterways, tidal conditions, and permitting requirements inside and out.</p>
+          </div>
+        </div>
+        <div class="sw-why-point">
+          <div class="sw-why-point-icon"><i class="fas fa-tools"></i></div>
+          <div class="sw-why-point-text">
+            <h4>We Own Our Marine Equipment</h4>
+            <p>No subcontractors, no rented cranes. We own and operate our heavy marine equipment — giving you direct control of quality, schedule, and cost.</p>
+          </div>
+        </div>
+        <div class="sw-why-point">
+          <div class="sw-why-point-icon"><i class="fas fa-file-alt"></i></div>
+          <div class="sw-why-point-text">
+            <h4>Permits, Handled Start to Finish</h4>
+            <p>We manage all Army Corps of Engineers, DEP, and municipal permits. You don't lift a finger — we keep the project moving on your timeline.</p>
+          </div>
+        </div>
+        <div class="sw-why-point">
+          <div class="sw-why-point-icon"><i class="fas fa-leaf"></i></div>
+          <div class="sw-why-point-text">
+            <h4>Fully Compliant &amp; Eco-Responsible</h4>
+            <p>All construction is performed in full compliance with Florida DEP regulations and Army Corps standards — protecting the environment and your liability.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROCESS ═══════════════════════════════════ -->
+<section class="sw-process">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Our Process</span>
+      <h2 style="color:var(--navy);">How We Build Your Seawall</h2>
+      <p style="color:var(--text-mid);">A clear, proven process — no surprises from start to finish.</p>
+    </div>
+    <div class="sw-process-steps">
+      <div class="sw-step reveal">
+        <div class="sw-step-num">01</div>
+        <h4>Site Assessment</h4>
+        <p>We evaluate your waterfront, soil, and existing structure to define the best approach.</p>
+      </div>
+      <div class="sw-step reveal">
+        <div class="sw-step-num">02</div>
+        <h4>Engineering &amp; Design</h4>
+        <p>A system designed specifically for your site, tidal conditions, and long-term goals.</p>
+      </div>
+      <div class="sw-step reveal">
+        <div class="sw-step-num">03</div>
+        <h4>Permitting</h4>
+        <p>We acquire all required permits from the Army Corps of Engineers and local agencies.</p>
+      </div>
+      <div class="sw-step reveal">
+        <div class="sw-step-num">04</div>
+        <h4>Construction</h4>
+        <p>Expert crew and marine equipment deliver precise work — on time, no shortcuts.</p>
+      </div>
+      <div class="sw-step reveal">
+        <div class="sw-step-num">05</div>
+        <h4>Inspection &amp; Handoff</h4>
+        <p>Final inspections done. We walk you through your new seawall, built to last decades.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONSTRUCTION PROCESS ══════════════════════ -->
+<section class="sw-build-process">
+
+  <!-- Section header -->
+  <div class="sw-build-header swbp-reveal">
+    <span class="sw-build-eyebrow">How We Build</span>
+    <h2 class="sw-build-title">Seawall Construction Process</h2>
+    <p class="sw-build-subtitle">Three stages. One finished waterfront.</p>
+    <div class="sw-build-header-rule"></div>
+  </div>
+
+  <!-- Step 1 — Forming & Reinforcement -->
+  <div class="sw-build-step swbp-reveal" data-step="1">
+    <div class="sw-build-img-wrap">
+      <img
+        src="images/sw-step1.jpg"
+        alt="Seawall formwork and steel rebar reinforcement cage during construction — South Florida by Contour Marine"
+        loading="lazy"
+      />
+    </div>
+    <div class="sw-build-caption swbp-caption-reveal">
+      <div class="sw-build-step-tag">
+        <span class="sw-build-step-num">01</span>
+        <span class="sw-build-step-rule"></span>
+        <span class="sw-build-step-label">Forming &amp; Reinforcement</span>
+      </div>
+      <p class="sw-build-step-desc">Formwork and steel reinforcement create the foundation for a durable seawall.</p>
+    </div>
+  </div>
+
+  <!-- Step 2 — Concrete Placement -->
+  <div class="sw-build-step swbp-reveal" data-step="2">
+    <div class="sw-build-img-wrap">
+      <img
+        src="images/sw-step2.jpg"
+        alt="Fresh concrete being placed inside seawall formwork along South Florida waterfront — Contour Marine"
+        loading="lazy"
+      />
+    </div>
+    <div class="sw-build-caption swbp-caption-reveal">
+      <div class="sw-build-step-tag">
+        <span class="sw-build-step-num">02</span>
+        <span class="sw-build-step-rule"></span>
+        <span class="sw-build-step-label">Concrete Placement</span>
+      </div>
+      <p class="sw-build-step-desc">Concrete is placed with precision to form a strong, uniform waterfront barrier.</p>
+    </div>
+  </div>
+
+  <!-- Step 3 — Finished Seawall -->
+  <div class="sw-build-step swbp-reveal" data-step="3">
+    <div class="sw-build-img-wrap">
+      <img
+        src="images/sw-step3.jpg"
+        alt="Freshly finished concrete seawall cap with workers and rebar coils, canal view — South Florida by Contour Marine"
+        loading="lazy"
+        style="object-position: center 40%;"
+      />
+    </div>
+    <div class="sw-build-caption swbp-caption-reveal">
+      <div class="sw-build-step-tag">
+        <span class="sw-build-step-num">03</span>
+        <span class="sw-build-step-rule"></span>
+        <span class="sw-build-step-label">Finished Seawall</span>
+      </div>
+      <p class="sw-build-step-desc">The finished seawall delivers long-term shoreline protection and structural integrity.</p>
+    </div>
+  </div>
+
+</section>
+
+<!-- ═══ SEAWALL TRANSFORMATION ═════════════════════ -->
+<section class="sw-transform">
+  <div class="container">
+
+    <div class="section-header reveal">
+      <span class="section-label">Project Showcase</span>
+      <h2 style="color:var(--navy);">Seawall Transformation</h2>
+      <div class="divider"><div class="divider-diamond"></div></div>
+      <p style="color:var(--text-mid);">From build phase to finished waterfront protection.</p>
+    </div>
+
+    <!-- BEFORE — full width -->
+    <div class="sw-transform-before reveal-up">
+      <div class="sw-transform-label sw-transform-label--before">
+        <i class="fas fa-hard-hat"></i> Before
+      </div>
+      <div class="sw-transform-img-wrap">
+        <img
+          src="images/sw-transform-before.jpg"
+          alt="Seawall formwork and rebar reinforcement grid during construction — South Florida by Contour Marine"
+          loading="lazy"
+        />
+      </div>
+    </div>
+
+    <!-- AFTER — two columns: day + night -->
+    <div class="sw-transform-after-grid reveal-up" data-step="after">
+      <div class="sw-transform-after-card">
+        <div class="sw-transform-label sw-transform-label--after">
+          <i class="fas fa-sun"></i> After – Daytime
+        </div>
+        <div class="sw-transform-img-wrap">
+          <img
+            src="images/sw-transform-day.jpg"
+            alt="Finished seawall cap with white dock light posts and timber pilings — South Florida by Contour Marine"
+            loading="lazy"
+          />
+        </div>
+      </div>
+      <div class="sw-transform-after-card">
+        <div class="sw-transform-label sw-transform-label--after sw-transform-label--night">
+          <i class="fas fa-moon"></i> After – Night
+        </div>
+        <div class="sw-transform-img-wrap">
+          <img
+            src="images/sw-transform-night.jpg"
+            alt="Completed seawall at night with illuminated dock lights reflecting on canal water — South Florida by Contour Marine"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Footnote -->
+    <p class="sw-transform-note reveal">
+      <i class="fas fa-info-circle"></i>
+      Lighting and electrical components are installed by licensed professionals. We work with trusted partners and can provide referrals upon request.
+    </p>
+
+  </div>
+</section>
+
+<!-- ═══ TESTIMONIALS ══════════════════════════════ -->
+<section class="sw-testimonials">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Client Reviews</span>
+      <h2 style="color:var(--navy);">What Our Clients Say</h2>
+      <p style="color:var(--text-mid);">Trusted by homeowners, estates, and commercial properties across South Florida.</p>
+    </div>
+    <div class="sw-testimonials-grid">
+      <div class="sw-tcard reveal">
+        <div class="sw-tcard-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p>"Contour Marine is the best company out there for seawalls. I'm the property manager in a condominium in Hallandale on Three Island and he just finished doing our seawall. Not only does it look amazing but working with Tom the President of the company has been a pleasure. Very professional, excellent work — he answered your text immediately and any issue or concerns are addressed immediately. Recommend him 100."</p>
+        <div class="sw-tcard-author">
+          <div class="sw-tcard-avatar">DB</div>
+          <div>
+            <div class="sw-tcard-name">Damaris B.</div>
+            <div class="sw-tcard-loc">Hallandale, FL</div>
+          </div>
+        </div>
+      </div>
+      <div class="sw-tcard reveal">
+        <div class="sw-tcard-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p>"I had several companies come out to estimate my seawall and dock repair/replacement. Contour Marine came out and Tom the owner personally worked with me and explained my options. His price was more than fair and I contracted him to repair my wall and replace my cap and dock. They were on time and worked extremely fast and with high quality. I am very happy with this company and would definitely recommend them."</p>
+        <div class="sw-tcard-author">
+          <div class="sw-tcard-avatar">RD</div>
+          <div>
+            <div class="sw-tcard-name">Rick D.</div>
+            <div class="sw-tcard-loc">South Florida</div>
+          </div>
+        </div>
+      </div>
+      <div class="sw-tcard reveal">
+        <div class="sw-tcard-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p>"Contour Marine is the best company out there for seawalls. They recently completed the seawall at our condominium in Hallandale. The entire process — from start to finish — was handled professionally. Tom was responsive, the crew was efficient, and the result is outstanding. Highly recommended."</p>
+        <div class="sw-tcard-author">
+          <div class="sw-tcard-avatar">JR</div>
+          <div>
+            <div class="sw-tcard-name">Jason R.</div>
+            <div class="sw-tcard-loc">Hallandale, FL</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SERVICE AREAS ════════════════════════════ -->
+<section class="sw-areas">
+  <div class="sw-areas-inner">
+    <span class="section-label" style="color:var(--teal-bright);">Where We Work</span>
+    <h3>Serving South Florida Waterfront Communities</h3>
+    <div class="sw-areas-tags">
+      <span class="sw-area-tag">Broward County</span>
+      <span class="sw-area-tag">Miami-Dade County</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══════════════════════════════════════ -->
+<section class="sw-cta">
+  <div class="sw-cta-inner reveal">
+    <span class="section-label" style="color:var(--teal-bright);margin-bottom:1rem;">Get Started Today</span>
+    <h2>Protect Your Waterfront Investment</h2>
+    <p>Schedule a professional seawall inspection today — no obligation, just an honest assessment from South Florida's most trusted marine contractor.</p>
+    <div class="sw-cta-btns">
+      <a href="tel:+19549680500" class="sw-btn-call">
+        <i class="fas fa-phone"></i> Call Now
+      </a>
+      <a href="contact.html" class="sw-btn-quote">
+        <i class="fas fa-paper-plane"></i> Request Free Quote
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ════════════════════════════════════ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="images/logo.png" alt="Contour Marine" />
+      <p>South Florida's trusted marine contractor since 2001, proudly serving Broward and Miami-Dade.</p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/contourmarine" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <a href="tel:+19549680500" class="footer-phone"><i class="fas fa-phone-alt"></i> (954) 968-0500</a>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="seawalls.html"><i class="fas fa-chevron-right"></i> Seawall Construction</a></li>
+        <li><a href="docks.html"><i class="fas fa-chevron-right"></i> Dock Construction</a></li>
+        <li><a href="decks.html"><i class="fas fa-chevron-right"></i> Deck Construction</a></li>
+        <li><a href="boatlifts.html"><i class="fas fa-chevron-right"></i> Boat Lift Installation</a></li>
+        <li><a href="pilings.html"><i class="fas fa-chevron-right"></i> Marine Pilings</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+        <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Get a Quote</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Service Areas</h5>
+      <ul>
+        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Broward County</a></li>
+        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Miami-Dade County</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Contour Marine. All Rights Reserved. | <a href="#">Privacy Policy</a></p>
+    <p>Seawalls · Docks · Decks · Boat Lifts · Pilings</p>
+  </div>
+</footer>
+
+<!-- Floating CTA -->
+<div class="float-cta">
+  <a href="tel:+19549680500" class="float-btn float-btn-call"><i class="fas fa-phone-alt"></i> Call Now</a>
+  <a href="contact.html" class="float-btn float-btn-quote"><i class="fas fa-hard-hat"></i> Free Quote</a>
+</div>
+
+<script src="main.js"></script>
+<script>
+  // Trigger hero background Ken-Burns zoom-out after load
+  (function() {
+    var bg = document.getElementById('swHeroBg');
+    if (bg) {
+      setTimeout(function() { bg.classList.add('loaded'); }, 100);
+    }
+  })();
+</script>
+</body>
+</html>

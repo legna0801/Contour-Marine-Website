@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Gallery | Contour Marine | South Florida</title>
+  <meta name="description" content="Browse Contour Marine's project gallery — seawalls, docks, decks, boat lifts, and pilings built across Broward & Miami-Dade." />
+  <meta property="og:title" content="Project Gallery | Contour Marine" />
+  <meta property="og:description" content="See our completed marine construction work across South Florida since 2001." />
+  <meta property="og:image" content="images/logo.png" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+  /* ═══════════════════════════════════════════════
+     GALLERY PAGE — scoped styles only
+     ═══════════════════════════════════════════════ */
+
+  /* ── PAGE HERO ── */
+  .gal-hero {
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 0%,
+        rgba(26,122,138,0.18) 0%, transparent 60%),
+      linear-gradient(170deg, #040e1a 0%, #071b2e 55%, #0a2237 100%);
+    padding: 180px 2rem 100px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  /* subtle gold-teal line at bottom */
+  .gal-hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(59,196,218,0.5) 30%,
+      rgba(201,168,76,0.6) 50%,
+      rgba(59,196,218,0.5) 70%,
+      transparent 100%);
+  }
+  .gal-hero .section-label {
+    color: var(--teal);
+    letter-spacing: 0.32em;
+    font-size: 0.72rem;
+    margin-bottom: 1.2rem;
+  }
+  .gal-hero h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(2.6rem, 5vw, 4rem);
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.2rem;
+  }
+  .gal-hero h1 em {
+    font-style: italic;
+    color: var(--teal-bright);
+  }
+  .gal-hero p {
+    color: rgba(255,255,255,0.58);
+    font-size: 1rem;
+    line-height: 1.85;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  /* ── FILTER BAR ── */
+  .gal-filters {
+    background: #f8fafb;
+    padding: 3rem 2rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+  .gal-filter-btn {
+    font-family: var(--font-accent);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 0.6rem 1.6rem;
+    border-radius: 50px;
+    border: 1.5px solid rgba(13,43,69,0.14);
+    background: var(--white);
+    color: var(--text-mid);
+    cursor: pointer;
+    transition: all 0.22s ease;
+    outline: none;
+  }
+  .gal-filter-btn:hover {
+    border-color: var(--teal);
+    color: var(--teal);
+    background: var(--white);
+  }
+  .gal-filter-btn.active {
+    background: var(--navy);
+    border-color: var(--navy);
+    color: var(--white);
+    box-shadow: 0 4px 14px rgba(13,43,69,0.18);
+  }
+
+  /* ── GALLERY SECTION ── */
+  .gal-section {
+    background: #f8fafb;
+    padding: 3.5rem 2rem 8rem;
+  }
+  .gal-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.4rem;
+    max-width: 1260px;
+    margin: 0 auto;
+  }
+
+  /* ── GALLERY ITEM ── */
+  .gal-item {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    background: var(--navy-mid);
+    box-shadow: 0 2px 12px rgba(13,43,69,0.09);
+    transition: transform 0.35s cubic-bezier(0.25,0.46,0.45,0.94),
+                box-shadow 0.35s ease;
+    aspect-ratio: 4 / 3;
+  }
+  .gal-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 40px rgba(13,43,69,0.16);
+  }
+  /* filtered-out items */
+  .gal-item.hidden {
+    display: none;
+  }
+
+  /* image fills the card */
+  .gal-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.55s cubic-bezier(0.25,0.46,0.45,0.94);
+  }
+  .gal-item:hover img {
+    transform: scale(1.06);
+  }
+
+  /* ── SUBTLE LABEL (bottom-left pill) ── */
+  .gal-label {
+    position: absolute;
+    bottom: 0.9rem;
+    left: 0.9rem;
+    z-index: 2;
+    background: rgba(7,27,46,0.78);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: rgba(255,255,255,0.90);
+    font-family: var(--font-accent);
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 0.38rem 0.85rem;
+    border-radius: 50px;
+    border: 1px solid rgba(255,255,255,0.10);
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity 0.28s ease, transform 0.28s ease;
+  }
+  .gal-item:hover .gal-label {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── EXPAND ICON (center, on hover) ── */
+  .gal-expand {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(7,27,46,0.30);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+  .gal-expand i {
+    color: rgba(255,255,255,0.85);
+    font-size: 1.6rem;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
+  }
+  .gal-item:hover .gal-expand {
+    opacity: 1;
+  }
+
+  /* ── EMPTY STATE ── */
+  .gal-empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 6rem 2rem;
+    display: none;
+  }
+  .gal-empty.visible { display: block; }
+  .gal-empty i {
+    font-size: 2.5rem;
+    color: var(--mid-gray);
+    margin-bottom: 1rem;
+    display: block;
+  }
+  .gal-empty p {
+    color: var(--mid-gray);
+    font-size: 1rem;
+  }
+
+  /* ── CTA STRIP ── */
+  .gal-cta {
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 50%,
+        rgba(201,168,76,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 40% at 50% 100%,
+        rgba(26,122,138,0.15) 0%, transparent 70%),
+      linear-gradient(180deg, #040e1a 0%, #071b2e 55%, #050f1c 100%);
+    padding: 9rem 2rem;
+    text-align: center;
+  }
+  .gal-cta .section-label {
+    color: var(--teal);
+    letter-spacing: 0.32em;
+    font-size: 0.72rem;
+    margin-bottom: 1.2rem;
+  }
+  .gal-cta h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    color: var(--white);
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+    margin-bottom: 1.4rem;
+  }
+  .gal-cta p {
+    color: rgba(255,255,255,0.55);
+    font-size: 1rem;
+    line-height: 1.85;
+    max-width: 420px;
+    margin: 0 auto 3.2rem;
+  }
+  .gal-cta-btns {
+    display: flex;
+    gap: 1.4rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .gal-cta-btns .btn-primary {
+    min-width: 200px;
+    padding: 1.1rem 2.6rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    justify-content: center;
+  }
+  .gal-cta-btns .btn-cta-call {
+    min-width: 200px;
+    padding: 1.1rem 2.6rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+  }
+
+  /* ══════════════════════════════════════════════
+     LIGHTBOX
+     ══════════════════════════════════════════════ */
+  .lb-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9000;
+    background: rgba(4,14,26,0.97);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  .lb-overlay.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  /* close */
+  .lb-close {
+    position: absolute;
+    top: 1.6rem;
+    right: 1.8rem;
+    width: 44px;
+    height: 44px;
+    border: 1.5px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+    color: rgba(255,255,255,0.80);
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+    z-index: 9010;
+  }
+  .lb-close:hover {
+    background: rgba(255,255,255,0.14);
+    border-color: rgba(255,255,255,0.5);
+    color: var(--white);
+  }
+
+  /* nav arrows */
+  .lb-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border: 1.5px solid rgba(255,255,255,0.18);
+    border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+    color: rgba(255,255,255,0.75);
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 9010;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+  }
+  .lb-arrow:hover {
+    background: rgba(255,255,255,0.14);
+    border-color: rgba(255,255,255,0.45);
+    color: var(--white);
+  }
+  .lb-prev { left: 1.8rem; }
+  .lb-next { right: 1.8rem; }
+
+  /* image wrapper */
+  .lb-img-wrap {
+    max-width: min(88vw, 1100px);
+    max-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .lb-img-wrap img {
+    max-width: 100%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 10px;
+    display: block;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.6);
+    transition: opacity 0.22s ease;
+  }
+
+  /* caption */
+  .lb-caption {
+    position: absolute;
+    bottom: -2.6rem;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-family: var(--font-accent);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.40);
+  }
+
+  /* counter */
+  .lb-counter {
+    position: absolute;
+    bottom: 1.6rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-accent);
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    color: rgba(255,255,255,0.30);
+  }
+
+  /* ══════════════════════════════════════════════
+     RESPONSIVE
+     ══════════════════════════════════════════════ */
+  @media (max-width: 1100px) {
+    .gal-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 768px) {
+    .gal-hero { padding: 150px 1.6rem 80px; }
+    .gal-filters { padding: 2.5rem 1.6rem 0; gap: 0.5rem; }
+    .gal-section { padding: 2.8rem 1.4rem 6rem; }
+    .gal-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .lb-arrow { width: 40px; height: 40px; font-size: 0.95rem; }
+    .lb-prev { left: 0.8rem; }
+    .lb-next { right: 0.8rem; }
+    .gal-cta { padding: 6rem 1.6rem; }
+    .gal-cta-btns { flex-direction: column; align-items: center; }
+    .gal-cta-btns .btn-primary,
+    .gal-cta-btns .btn-cta-call { width: 100%; max-width: 280px; min-width: unset; }
+  }
+  @media (max-width: 480px) {
+    .gal-hero { padding: 130px 1.4rem 70px; }
+    .gal-grid { grid-template-columns: 1fr; gap: 1rem; }
+    .gal-item { aspect-ratio: 4 / 3; }
+    .lb-prev { left: 0.5rem; }
+    .lb-next { right: 0.5rem; }
+  }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════ -->
+<!--  NAVIGATION                            -->
+<!-- ═══════════════════════════════════════ -->
+<nav>
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.png" alt="Contour Marine Logo" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="seawalls.html">Seawalls</a></li>
+      <li><a href="docks.html">Docks</a></li>
+      <li><a href="decks.html">Decks</a></li>
+      <li><a href="boatlifts.html">Boat Lifts</a></li>
+      <li><a href="pilings.html">Pilings</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="gallery.html" class="active">Gallery</a></li>
+      <li><a href="contact.html" class="nav-cta">Get a Quote</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-nav">
+  <a href="index.html">Home</a>
+  <a href="seawalls.html">Seawalls</a>
+  <a href="docks.html">Docks</a>
+  <a href="decks.html">Decks</a>
+  <a href="boatlifts.html">Boat Lifts</a>
+  <a href="pilings.html">Pilings</a>
+  <a href="about.html">About Us</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html" class="nav-cta">Get a Quote</a>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!--  HERO                                  -->
+<!-- ═══════════════════════════════════════ -->
+<header class="gal-hero">
+  <span class="section-label">Our Portfolio</span>
+  <h1>Project <em>Gallery</em></h1>
+  <p>A look at our recent work across South Florida.</p>
+</header>
+
+<!-- ═══════════════════════════════════════ -->
+<!--  FILTER TABS                           -->
+<!-- ═══════════════════════════════════════ -->
+<div class="gal-filters" id="gal-filters">
+  <button class="gal-filter-btn active" data-filter="all">All</button>
+  <button class="gal-filter-btn" data-filter="boat-lifts">Boat Lifts</button>
+  <button class="gal-filter-btn" data-filter="seawalls">Seawalls</button>
+  <button class="gal-filter-btn" data-filter="docks">Docks</button>
+  <button class="gal-filter-btn" data-filter="decks">Decks</button>
+  <button class="gal-filter-btn" data-filter="pilings">Pilings</button>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!--  GALLERY GRID                          -->
+<!-- ═══════════════════════════════════════ -->
+<section class="gal-section">
+  <div class="gal-grid" id="gal-grid">
+
+    <!-- ── BOAT LIFTS (3 clean photos, no overlays) ── -->
+    <div class="gal-item" data-cat="boat-lifts" data-label="Boat Lift Installation">
+      <img src="images/boatlift-1.jpg" alt="Boat lift walkway over calm South Florida waterway" loading="lazy" style="object-position: center 60%;" />
+      <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
+      <span class="gal-label">Boat Lift Installation</span>
+    </div>
+
+    <div class="gal-item" data-cat="boat-lifts" data-label="Boat Lift Installation">
+      <img src="images/boatlift-2.jpg" alt="Installed boat lift frame and controls — South Florida dock" loading="lazy" style="object-position: center 40%;" />
+      <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
+      <span class="gal-label">Boat Lift Installation</span>
+    </div>
+
+    <div class="gal-item" data-cat="boat-lifts" data-label="Boat Lift Installation">
+      <img src="images/boatlift-3.jpg" alt="Boat lift rails and motor detail — South Florida waterfront" loading="lazy" style="object-position: center 50%;" />
+      <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
+      <span class="gal-label">Boat Lift Installation</span>
+    </div>
+
+    <!-- ── SEAWALLS (3 clean photos, no overlays) ── -->
+    <div class="gal-item" data-cat="seawalls" data-label="Completed Seawall Cap">
+      <img src="images/seawall-completed-cap.jpg" alt="Completed concrete seawall cap with timber deck foreground, green lawn, palm trees and luxury home — South Florida" loading="lazy" style="object-position: center 45%;" />
+      <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
+      <span class="gal-label">Completed Seawall Cap</span>
+    </div>
+
+    <div class="gal-item" data-cat="seawalls" data-label="Seawall Construction">
+      <img src="images/seawall-before.jpg" alt="Seawall under construction — rebar and formwork along South Florida canal" loading="lazy" style="object-position: center 40%;" />
+      <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
+      <span class="gal-label">Seawall Construction</span>
+    </div>
+
+    <div class="gal-item" data-cat="seawalls" data-label="Seawall Construction">
+      <img src="images/seawall-construction-crane.jpg" alt="Seawall and dock construction with crane barge — South Florida" loading="lazy" style="object-position: center 45%;" />
+      <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
+      <span class="gal-label">Seawall Construction</span>
+    </div>
+
+    <div class="gal-item" data-cat="seawalls" data-label="Completed Waterfront">
+      <img src="images/seawall-after.jpg" alt="Completed waterfront dock with bollard lighting — South Florida" loading="lazy" style="object-position: center 35%;" />
+      <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
+      <span class="gal-label">Completed Waterfront</span>
+    </div>
+
+    <!-- ── DOCKS (7 photos) ── -->
+
+    <div class="gal-item" data-cat="docks" data-label="Dock — Night Lighting">
+      <img src="images/dock-night-feature.jpg?v=2" alt="Luxury custom dock at night with teal underwater lighting and teak wood decking — South Florida by Contour Marine" loading="lazy" style="object-position: center 60%;" />
+      <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
+      <span class="gal-label">Dock — Night Lighting</span>
+    </div>
+
+    <div class="gal-item" data-cat="docks" data-label="Composite Gray Dock">
+      <img src="images/dock-composite-gray.jpg?v=3" alt="Gray composite dock walkway with dark pilings along a South Florida canal — Contour Marine" loading="lazy" style="object-position: center 45%;" />
+      <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
+      <span class="gal-label">Composite Gray Dock</span>
+    </div>
+
+    <div class="gal-item" data-cat="docks" data-label="Dock — White Post Walkway">
+      <img src="images/dock-white-posts-walkway.jpg?v=3" alt="Modern dock walkway with white square posts and city skyline — South Florida by Contour Marine" loading="lazy" style="object-position: center 50%;" />
+      <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
+      <span class="gal-label">Dock — White Post Walkway</span>
+    </div>
+
+    <div class="gal-item" data-cat="docks" data-label="Composite Dock">
+      <img src="images/dock-composite-walkway.jpg?v=2" alt="Composite dock walkway with palm trees and moored boats — South Florida" loading="lazy" style="object-position: center 50%;" />
+      <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
+      <span class="gal-label">Composite Dock</span>
+    </div>
+
+    <div class="gal-item" data-cat="docks" data-label="Large Custom Dock">
+      <img src="images/dock-large-custom.jpg?v=2" alt="Large custom dock installation with composite decking and covered yacht — South Florida" loading="lazy" style="object-position: center 40%;" />
+      <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
+      <span class="gal-label">Large Custom Dock</span>
+    </div>
+
+    <div class="gal-item" data-cat="docks" data-label="Dock Extension — Day">
+      <img src="images/dock-extension-day.jpg" alt="Dock extension with composite decking — bright daylight — South Florida" loading="lazy" style="object-position: center 50%;" />
+      <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
+      <span class="gal-label">Dock Extension — Day</span>
+    </div>
+
+    <div class="gal-item" data-cat="docks" data-label="Dock Extension — Evening">
+      <img src="images/dock-extension-evening.jpg" alt="Dock extension at dusk with warm evening light — South Florida waterway" loading="lazy" style="object-position: center 50%;" />
+      <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
+      <span class="gal-label">Dock Extension — Evening</span>
+    </div>
+
+    <div class="gal-item" data-cat="docks" data-label="Dock Access Ramp">
+      <img src="images/dock-access-ramp.jpg" alt="Dock access ramp and gangway with construction crane barge — South Florida" loading="lazy" style="object-position: center 50%;" />
+      <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
+      <span class="gal-label">Dock Access Ramp</span>
+    </div>
+
+    <div class="gal-item" data-cat="docks" data-label="Luxury Dock with Boat Lifts">
+      <img src="images/dock-luxury-boatlifts.jpg" alt="Luxury dock with dual boat lifts and covered slips — South Florida" loading="lazy" style="object-position: center 40%;" />
+      <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
+      <span class="gal-label">Luxury Dock with Boat Lifts</span>
+    </div>
+
+    <div class="gal-item" data-cat="docks" data-label="Multi-Level Dock &amp; Lift">
+      <img src="images/dock-multilevel-lift.jpg" alt="Multi-level dock and boat lift system on South Florida waterway" loading="lazy" style="object-position: center 50%;" />
+      <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
+      <span class="gal-label">Multi-Level Dock &amp; Lift</span>
+    </div>
+
+    <div class="gal-item" data-cat="decks" data-label="Deck — Evening Lighting">
+      <img src="images/deck-evening-lit.jpg?v=2" alt="Illuminated composite waterfront deck at night with blue LED rail accent lights and warm golden stair lighting — South Florida" loading="lazy" style="object-position: center 55%;" />
+      <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
+      <span class="gal-label">Deck — Evening Lighting</span>
+    </div>
+
+    <div class="gal-item" data-cat="docks" data-label="Dock Construction">
+      <img src="images/dock-framing.jpg" alt="Dock framing and structural pilings under construction — South Florida" loading="lazy" style="object-position: center 40%;" />
+      <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
+      <span class="gal-label">Dock Construction</span>
+    </div>
+
+    <div class="gal-item" data-cat="docks" data-label="Completed Dock">
+      <img src="images/dock-hero.jpg" alt="Finished custom dock with cable railing — South Florida waterway" loading="lazy" style="object-position: center 30%;" />
+      <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
+      <span class="gal-label">Completed Dock</span>
+    </div>
+
+    <!-- ── BOAT LIFTS (additional photo) ── -->
+    <div class="gal-item" data-cat="boat-lifts" data-label="Boat Lift Platform">
+      <img src="images/dock-boatlift-platform.jpg" alt="Finished dock platform with boat lift posts and covered boat — South Florida" loading="lazy" style="object-position: center 50%;" />
+      <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
+      <span class="gal-label">Boat Lift Platform</span>
+    </div>
+
+    <!-- ── SEAWALLS (additional photos) ── -->
+    <div class="gal-item" data-cat="seawalls" data-label="Seawall Construction">
+      <img src="images/seawall-construction-2.jpg" alt="Seawall construction with fresh concrete formwork — South Florida" loading="lazy" style="object-position: center 45%;" />
+      <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
+      <span class="gal-label">Seawall Construction</span>
+    </div>
+
+    <div class="gal-item" data-cat="seawalls" data-label="Seawall Cap &amp; Pilings">
+      <img src="images/seawall-cap-pilings.jpg" alt="Completed concrete seawall cap with square marine pilings — South Florida" loading="lazy" style="object-position: center 40%;" />
+      <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
+      <span class="gal-label">Seawall Cap &amp; Pilings</span>
+    </div>
+
+    <!-- ── DECO DOUBLE JET SKI LIFT (4 angles) ── -->
+    <div class="gal-item" data-cat="boat-lifts" data-label="Deco Double Jet Ski Lift">
+      <img src="images/pwc-lift-angle1.jpg" alt="Deco double jet ski lift aluminum frame installation — South Florida canal" loading="lazy" style="object-position: center 50%;" />
+      <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
+      <span class="gal-label">Deco Double Jet Ski Lift</span>
+    </div>
+
+    <div class="gal-item" data-cat="boat-lifts" data-label="Deco Double Jet Ski Lift">
+      <img src="images/pwc-lift-angle2.jpg" alt="Dual Yamaha WaveRunners loaded on deco double jet ski lift — front view South Florida" loading="lazy" style="object-position: center 50%;" />
+      <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
+      <span class="gal-label">Deco Double Jet Ski Lift</span>
+    </div>
+
+    <div class="gal-item" data-cat="boat-lifts" data-label="Deco Double Jet Ski Lift">
+      <img src="images/pwc-lift-angle3.jpg" alt="Yamaha WaveRunner on deco lift — side angle South Florida dock" loading="lazy" style="object-position: center 50%;" />
+      <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
+      <span class="gal-label">Deco Double Jet Ski Lift</span>
+    </div>
+
+    <div class="gal-item" data-cat="boat-lifts" data-label="Deco Double Jet Ski Lift">
+      <img src="images/pwc-lift-angle4.jpg" alt="Deco double jet ski lift cradles wide view with yacht alongside — South Florida" loading="lazy" style="object-position: center 50%;" />
+      <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
+      <span class="gal-label">Deco Double Jet Ski Lift</span>
+    </div>
+
+    <!-- ── PILINGS ── -->
+    <div class="gal-item" data-cat="pilings" data-label="Marine Pilings">
+      <img src="images/seawall-pilings.jpg" alt="Concrete marine pilings installed along South Florida canal" loading="lazy" style="object-position: center 40%;" />
+      <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
+      <span class="gal-label">Marine Pilings</span>
+    </div>
+
+    <div class="gal-item" data-cat="pilings" data-label="Seawall Cap &amp; Pilings">
+      <img src="images/seawall-cap-pilings.jpg" alt="Completed concrete seawall cap and pilings — South Florida waterfront" loading="lazy" style="object-position: center 50%;" />
+      <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
+      <span class="gal-label">Seawall Cap &amp; Pilings</span>
+    </div>
+
+    <div class="gal-item" data-cat="pilings" data-label="Square Composite Wrap">
+      <img src="images/piling-square-composite.jpg" alt="Square composite piling wraps on South Florida dock — Contour Marine" loading="lazy" style="object-position: center top;" />
+      <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
+      <span class="gal-label">Square Composite Wrap</span>
+    </div>
+
+    <div class="gal-item" data-cat="pilings" data-label="Traditional Wood Pilings">
+      <img src="images/piling-traditional-wood.jpg" alt="Traditional wood pilings with composite wrap caps along South Florida waterfront — Contour Marine" loading="lazy" style="object-position: center top;" />
+      <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
+      <span class="gal-label">Traditional Wood Pilings</span>
+    </div>
+
+    <div class="gal-item" data-cat="pilings" data-label="Custom Wrapped Finish">
+      <img src="images/piling-custom-wrap.jpg" alt="Custom wrapped piling finish on South Florida waterfront dock — Contour Marine" loading="lazy" style="object-position: center top;" />
+      <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
+      <span class="gal-label">Custom Wrapped Finish</span>
+    </div>
+
+    <!-- ── SEAWALLS — Construction Process ── -->
+    <div class="gal-item" data-cat="seawalls" data-label="Forming &amp; Reinforcement">
+      <img src="images/sw-step1.jpg" alt="Seawall forming and steel reinforcement installation — South Florida by Contour Marine" loading="lazy" style="object-position: center 50%;" />
+      <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
+      <span class="gal-label">Forming &amp; Reinforcement</span>
+    </div>
+
+    <div class="gal-item" data-cat="seawalls" data-label="Concrete Placement">
+      <img src="images/sw-step2.jpg" alt="Concrete being poured into seawall formwork — South Florida by Contour Marine" loading="lazy" style="object-position: center 50%;" />
+      <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
+      <span class="gal-label">Concrete Placement</span>
+    </div>
+
+    <div class="gal-item" data-cat="seawalls" data-label="Finished Seawall">
+      <img src="images/sw-step3.jpg" alt="Finished seawall — completed concrete cap along South Florida canal — Contour Marine" loading="lazy" style="object-position: center 50%;" />
+      <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
+      <span class="gal-label">Finished Seawall</span>
+    </div>
+
+    <!-- ── SEAWALLS — Transformation ── -->
+    <div class="gal-item" data-cat="seawalls" data-label="Seawall Transformation — Before">
+      <img src="images/sw-transform-before.jpg" alt="Seawall construction in progress — before transformation — South Florida by Contour Marine" loading="lazy" style="object-position: center 50%;" />
+      <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
+      <span class="gal-label">Seawall Transformation — Before</span>
+    </div>
+
+    <div class="gal-item" data-cat="seawalls" data-label="Seawall Transformation — Daytime">
+      <img src="images/sw-transform-day.jpg" alt="Completed seawall — finished waterfront daytime view — South Florida by Contour Marine" loading="lazy" style="object-position: center 50%;" />
+      <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
+      <span class="gal-label">Seawall Transformation — Daytime</span>
+    </div>
+
+    <div class="gal-item" data-cat="seawalls" data-label="Seawall Transformation — Night">
+      <img src="images/sw-transform-night.jpg" alt="Completed seawall with integrated lighting at night — South Florida by Contour Marine" loading="lazy" style="object-position: center 50%;" />
+      <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
+      <span class="gal-label">Seawall Transformation — Night</span>
+    </div>
+
+    <!-- ── DECKS ── -->
+    <div class="gal-item" data-cat="decks" data-label="Rooftop Deck — Before">
+      <img src="images/deck-rooftop-before.jpg" alt="Bare concrete rooftop before composite deck installation — South Florida by Contour Marine" loading="lazy" style="object-position: center top;" />
+      <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
+      <span class="gal-label">Rooftop Deck — Before</span>
+    </div>
+
+    <div class="gal-item" data-cat="decks" data-label="Rooftop Deck — After">
+      <img src="images/deck-rooftop-after.jpg" alt="Finished composite rooftop deck — South Florida by Contour Marine" loading="lazy" style="object-position: center top;" />
+      <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
+      <span class="gal-label">Rooftop Deck — After</span>
+    </div>
+
+    <div class="gal-item" data-cat="decks" data-label="Waterfront Hardwood Deck">
+      <img src="images/deck-waterfront.jpg" alt="Luxury Ipe hardwood waterfront deck with palm tree and tropical landscaping — South Florida by Contour Marine" loading="lazy" style="object-position: center 40%;" />
+      <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
+      <span class="gal-label">Waterfront Hardwood Deck</span>
+    </div>
+
+    <!-- ── BOAT LIFTS — Project Showcase ── -->
+    <div class="gal-item" data-cat="boat-lifts" data-label="Boat Lift — Rear View">
+      <img src="images/boatlift-rear.jpg" alt="Center console on boat lift, rear view — South Florida canal by Contour Marine" loading="lazy" style="object-position: center 50%;" />
+      <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
+      <span class="gal-label">Boat Lift — Rear View</span>
+    </div>
+
+    <div class="gal-item" data-cat="boat-lifts" data-label="Boat Lift — Side View">
+      <img src="images/boatlift-side.jpg" alt="Center console on boat lift, side view — South Florida waterfront by Contour Marine" loading="lazy" style="object-position: center 50%;" />
+      <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
+      <span class="gal-label">Boat Lift — Side View</span>
+    </div>
+
+    <!-- empty state -->
+    <div class="gal-empty" id="gal-empty">
+      <i class="fas fa-images"></i>
+      <p>No projects in this category yet.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!--  CTA                                   -->
+<!-- ═══════════════════════════════════════ -->
+<section class="gal-cta">
+  <span class="section-label">Ready to Build?</span>
+  <h2>Add Your Project<br />to Our Gallery</h2>
+  <p>Contact us for a free consultation — let's build something worth showing off.</p>
+  <div class="gal-cta-btns">
+    <a href="contact.html" class="btn-primary">
+      <i class="fas fa-paper-plane"></i>&nbsp; Get a Free Quote
+    </a>
+    <a href="tel:+19549680500" class="btn-cta-call">
+      <i class="fas fa-phone"></i>&nbsp; (954) 968-0500
+    </a>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!--  FOOTER                                -->
+<!-- ═══════════════════════════════════════ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="images/logo.png" alt="Contour Marine" />
+      <p>South Florida's trusted marine contractor since 2001, proudly serving Broward and Miami-Dade.</p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/contourmarine" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <a href="tel:+19549680500" class="footer-phone"><i class="fas fa-phone-alt"></i> (954) 968-0500</a>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="seawalls.html"><i class="fas fa-chevron-right"></i> Seawall Construction</a></li>
+        <li><a href="docks.html"><i class="fas fa-chevron-right"></i> Dock Construction</a></li>
+        <li><a href="decks.html"><i class="fas fa-chevron-right"></i> Deck Construction</a></li>
+        <li><a href="boatlifts.html"><i class="fas fa-chevron-right"></i> Boat Lift Installation</a></li>
+        <li><a href="pilings.html"><i class="fas fa-chevron-right"></i> Marine Pilings</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+        <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Get a Quote</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Service Areas</h5>
+      <ul>
+        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Broward County</a></li>
+        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Miami-Dade County</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Contour Marine. All Rights Reserved. | <a href="#">Privacy Policy</a></p>
+    <p>Licensed &amp; Insured &mdash; Broward &amp; Miami-Dade</p>
+  </div>
+</footer>
+
+<!-- Floating CTA -->
+<div class="float-cta">
+  <a href="tel:+19549680500" class="float-btn float-btn-call"><i class="fas fa-phone-alt"></i> Call Now</a>
+  <a href="contact.html" class="float-btn float-btn-quote"><i class="fas fa-hard-hat"></i> Free Quote</a>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!--  LIGHTBOX                              -->
+<!-- ═══════════════════════════════════════ -->
+<div class="lb-overlay" id="lb" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="lb-close" id="lb-close" aria-label="Close"><i class="fas fa-times"></i></button>
+  <button class="lb-arrow lb-prev" id="lb-prev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+  <button class="lb-arrow lb-next" id="lb-next" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+  <div class="lb-img-wrap">
+    <img id="lb-img" src="" alt="" />
+    <div class="lb-caption" id="lb-caption"></div>
+  </div>
+  <div class="lb-counter" id="lb-counter"></div>
+</div>
+
+<script src="main.js"></script>
+<script>
+/* ═══════════════════════════════════════════
+   GALLERY — Filter + Lightbox
+   ═══════════════════════════════════════════ */
+(function () {
+  'use strict';
+
+  /* ── DOM ── */
+  const filterBtns = document.querySelectorAll('.gal-filter-btn');
+  const items      = Array.from(document.querySelectorAll('.gal-item[data-cat]'));
+  const emptyMsg   = document.getElementById('gal-empty');
+
+  const lb         = document.getElementById('lb');
+  const lbImg      = document.getElementById('lb-img');
+  const lbCaption  = document.getElementById('lb-caption');
+  const lbCounter  = document.getElementById('lb-counter');
+  const lbClose    = document.getElementById('lb-close');
+  const lbPrev     = document.getElementById('lb-prev');
+  const lbNext     = document.getElementById('lb-next');
+
+  /* ── State ── */
+  let activeFilter  = 'all';
+  let visibleItems  = [];   /* items currently shown */
+  let currentIndex  = 0;
+
+  /* ── FILTER ── */
+  function applyFilter(cat) {
+    activeFilter = cat;
+    visibleItems = [];
+
+    items.forEach(item => {
+      const match = cat === 'all' || item.dataset.cat === cat;
+      item.classList.toggle('hidden', !match);
+      if (match) visibleItems.push(item);
+    });
+
+    emptyMsg.classList.toggle('visible', visibleItems.length === 0);
+  }
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      applyFilter(btn.dataset.filter);
+    });
+  });
+
+  /* initial state */
+  applyFilter('all');
+
+  /* ── LIGHTBOX ── */
+  function openLightbox(index) {
+    currentIndex = index;
+    showSlide(currentIndex);
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+    /* fade out image */
+    lbImg.style.opacity = '0';
+    setTimeout(() => { lbImg.src = ''; lbImg.style.opacity = '1'; }, 300);
+  }
+
+  function showSlide(index) {
+    const item  = visibleItems[index];
+    const img   = item.querySelector('img');
+    const label = item.dataset.label || '';
+
+    lbImg.style.opacity = '0';
+    setTimeout(() => {
+      lbImg.src     = img.src;
+      lbImg.alt     = img.alt;
+      lbImg.style.opacity = '1';
+    }, 160);
+
+    lbCaption.textContent = label;
+    lbCounter.textContent = (index + 1) + ' / ' + visibleItems.length;
+
+    /* arrow visibility */
+    lbPrev.style.visibility = index === 0 ? 'hidden' : 'visible';
+    lbNext.style.visibility = index === visibleItems.length - 1 ? 'hidden' : 'visible';
+  }
+
+  function prev() {
+    if (currentIndex > 0) { currentIndex--; showSlide(currentIndex); }
+  }
+  function next() {
+    if (currentIndex < visibleItems.length - 1) { currentIndex++; showSlide(currentIndex); }
+  }
+
+  /* click items to open */
+  items.forEach(item => {
+    item.addEventListener('click', () => {
+      const idx = visibleItems.indexOf(item);
+      if (idx !== -1) openLightbox(idx);
+    });
+  });
+
+  /* controls */
+  lbClose.addEventListener('click', closeLightbox);
+  lbPrev.addEventListener('click', prev);
+  lbNext.addEventListener('click', next);
+
+  /* click backdrop to close */
+  lb.addEventListener('click', e => {
+    if (e.target === lb) closeLightbox();
+  });
+
+  /* keyboard */
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape')      closeLightbox();
+    if (e.key === 'ArrowLeft')   prev();
+    if (e.key === 'ArrowRight')  next();
+  });
+
+  /* touch swipe */
+  let touchStartX = 0;
+  lb.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  lb.addEventListener('touchend',   e => {
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) > 50) dx < 0 ? next() : prev();
+  });
+
+})();
+</script>
+</body>
+</html>
