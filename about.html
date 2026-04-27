@@ -6,11 +6,14 @@
   <title>About Us | Contour Marine | South Florida Since 2001</title>
   <meta name="description" content="South Florida's trusted marine contractor since 2001, proudly serving Broward and Miami-Dade." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://contourmarine.com/about.html" />
   <meta property="og:title" content="About Contour Marine | South Florida's Marine Experts Since 2001" />
   <meta property="og:description" content="Over 25 years of craftsmanship shaping Florida's waterfronts. Meet the team behind South Florida's most trusted marine contractor." />
-  <meta property="og:image" content="images/logo.png" />
+  <meta property="og:image" content="https://www.contourmarine.com/images/og-share.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="images/logo.png" />
+  <meta name="twitter:image" content="https://www.contourmarine.com/images/og-share.jpg" />
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -300,7 +303,7 @@
       100% { transform: translateY(0px)   rotateX(2deg) rotateY(-3deg) rotateZ(0deg); }
     }
     .story-logo-badge img {
-      width: 110px;
+      width: 170px;
       height: auto;
       display: block;
       margin: 0 auto;
@@ -556,7 +559,7 @@
       position: relative;
     }
     .crew-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); }
-    .crew-card img { width:100%; aspect-ratio:4/3; object-fit:cover; object-position:center 20%; display:block; }
+    .crew-card img { width:100%; height:auto; display:block; object-fit:unset; }
     .crew-card-overlay {
       position: absolute; inset: 0;
       background: linear-gradient(to top, rgba(7,27,46,0.88) 0%, transparent 55%);
@@ -930,13 +933,13 @@
     /* Single centered crew card */
     .crew-grid--single {
       grid-template-columns: 1fr;
-      max-width: 760px;
+      max-width: 480px;
       margin: 0 auto;
     }
     .crew-grid--single .crew-card img {
-      aspect-ratio: 4/3;
-      object-fit: cover;
-      object-position: center 15%;
+      width: 100%;
+      height: auto;
+      object-fit: unset;
     }
     .crew-card {
       border-radius: 20px;
@@ -1110,7 +1113,7 @@
       .story-section { padding: 6rem 1.5rem; }
       .story-img-stack { height: 320px; }
       .story-logo-badge { bottom: -16px; right: -10px; padding: 0.8rem 1rem; }
-      .story-logo-badge img { width: 64px; }
+      .story-logo-badge img { width: 110px; }
       .why-section { padding: 6rem 1.5rem; }
       .why-card { padding: 1.4rem 1.5rem; gap: 1rem; }
       .values-section { padding: 6rem 1.5rem; }
@@ -1410,6 +1413,7 @@
       .about-stats-banner { padding: 2.8rem 1.5rem; }
     }
   </style>
+  <link rel="canonical" href="https://www.contourmarine.com/about.html">
 </head>
 <body>
 
@@ -1418,8 +1422,8 @@
 <!-- ═══════════════════════════════════════ -->
 <nav>
   <div class="nav-container">
-    <a href="index.html" class="nav-logo">
-      <img src="images/logo.png" alt="Contour Marine Logo" />
+    <a href="index.html" class="nav-logo" aria-label="Contour Marine – Home">
+      <img src="images/ocean-life-texture.png" alt="Contour Marine" class="site-logo-img" />
     </a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
@@ -1429,6 +1433,7 @@
       <li><a href="boatlifts.html">Boat Lifts</a></li>
       <li><a href="pilings.html">Pilings</a></li>
       <li><a href="about.html" class="active">About Us</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
       <li><a href="contact.html" class="nav-cta">Get a Quote</a></li>
     </ul>
     <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -1455,7 +1460,7 @@
 
     <!-- Logo showcase with glow ring -->
     <div class="about-hero-logo-wrap">
-      <img src="images/logo.png" alt="Contour Marine" class="about-hero-logo" />
+      <img src="images/logo-hd.png" alt="Contour Marine" class="about-hero-logo" width="2048" height="2048" />
     </div>
 
     <div class="about-hero-eyebrow">
@@ -1695,7 +1700,7 @@
 <section class="brand-feature">
   <div class="brand-feature-inner">
     <div class="brand-logo-wrap">
-      <img src="images/logo.png" alt="Contour Marine" class="brand-logo-big reveal" loading="lazy" />
+      <img src="images/logo-hd.png" alt="Contour Marine" class="brand-logo-big reveal" width="2048" height="2048" loading="lazy" />
     </div>
     <span class="section-label reveal" style="color:var(--teal-bright);">Est. 2001 · South Florida</span>
     <h2 class="reveal">One Company.<br />Every Marine Service.</h2>
@@ -1761,13 +1766,16 @@
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <img src="images/logo.png" alt="Contour Marine" />
+      <a href="index.html" class="footer-cm-logo-link" aria-label="Contour Marine – Home">
+        <img src="images/ocean-life-texture.png" alt="Contour Marine" class="site-logo-img" />
+      </a>
       <p>South Florida's trusted marine contractor since 2001, proudly serving Broward and Miami-Dade.</p>
       <div class="footer-social">
         <a href="https://www.instagram.com/contourmarine" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
         <a href="https://www.facebook.com/share/1LgJvvn2UB/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
       </div>
       <a href="tel:+19549680500" class="footer-phone"><i class="fas fa-phone-alt"></i> (954) 968-0500</a>
+      <a href="mailto:tom@contourmarine.com" class="footer-phone" style="margin-top:0.4rem;"><i class="fas fa-envelope"></i> tom@contourmarine.com</a>
     </div>
     <div class="footer-col">
       <h5>Services</h5>
@@ -1809,6 +1817,7 @@
 </div>
 
 <script src="main.js"></script>
+<script src="ocean-logo.js"></script>
 <script>
   // About hero bg zoom on load
   document.addEventListener('DOMContentLoaded', () => {

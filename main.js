@@ -98,8 +98,18 @@ document.addEventListener('DOMContentLoaded', () => {
           counterObserver.unobserve(e.target);
         }
       });
-    }, { threshold: 0.5 });
-    counters.forEach(el => counterObserver.observe(el));
+    }, { threshold: 0.1, rootMargin: '0px 0px 0px 0px' });
+    counters.forEach(el => {
+      // If already visible on load, fire immediately
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        const target = parseInt(el.dataset.count);
+        const suffix = el.dataset.suffix || '';
+        setTimeout(() => animateCounter(el, target, 1800, suffix), 400);
+      } else {
+        counterObserver.observe(el);
+      }
+    });
   }
 
   // ── 3D Tilt on Feature Boxes ───────────────
@@ -120,14 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ── Parallax on hero bg ─────────────────────
-  const heroBgEl = document.querySelector('.hero-bg');
-  if (heroBgEl) {
-    window.addEventListener('scroll', () => {
-      const scrolled = window.scrollY;
-      heroBgEl.style.transform = `scale(1) translateY(${scrolled * 0.25}px)`;
-    });
-  }
+  // ── Parallax on hero bg — removed (was sliding over featured section on scroll) ──
 
   // ── Active Nav Link ────────────────────────
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';

@@ -1,0 +1,13 @@
+Options -Indexes
+DirectoryIndex index.html index.htm
+
+# Allow all access
+<Files "*">
+    Order allow,deny
+    Allow from all
+</Files>
+
+# Redirect www to non-www
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.contourmarine\.com [NC]
+RewriteRule ^(.*)$ http://contourmarine.com/$1 [R=301,L]
