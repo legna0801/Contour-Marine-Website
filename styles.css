@@ -131,10 +131,10 @@ nav.scrolled {
   padding: 0;
 }
 
-/* The logo image in the nav — ~55px tall, full proportions, no effects */
+/* The logo image in the nav — 70px tall, full proportions, no effects */
 .nav-logo .site-logo-img {
   display: block !important;
-  height: 55px;
+  height: 70px;
   width: auto;
   max-width: none;
   filter: none;
@@ -145,9 +145,9 @@ nav.scrolled {
 .nav-logo .cm-logo-wrap { display: none !important; }
 .nav-logo img:not(.site-logo-img) { display: none !important; }
 
-/* scrolled — same size */
+/* scrolled — slightly reduced */
 nav.scrolled .nav-logo .site-logo-img {
-  height: 55px;
+  height: 60px;
 }
 
 /* ── Footer logo link wrapper ── */
@@ -158,10 +158,10 @@ nav.scrolled .nav-logo .site-logo-img {
   text-align: center;
 }
 
-/* The logo image in the footer — 250px wide, no effects */
+/* The logo image in the footer — 300px wide, no effects */
 .footer-cm-logo-link .site-logo-img {
   display: block !important;
-  width: 250px;
+  width: 300px;
   height: auto;
   margin: 0 auto;
   filter: none;
@@ -4631,7 +4631,7 @@ p  { font-size: 1rem; line-height: 1.75; }
   }
 
   /* Mobile logo sizing — keep proportional */
-  .nav-logo .site-logo-img { height: 44px !important; width: auto !important; filter: none !important; }
-  nav.scrolled .nav-logo .site-logo-img { height: 44px !important; }
-  .footer-cm-logo-link .site-logo-img { width: min(250px, 80vw) !important; height: auto !important; filter: none !important; }
+  .nav-logo .site-logo-img { height: 50px !important; width: auto !important; filter: none !important; }
+  nav.scrolled .nav-logo .site-logo-img { height: 50px !important; }
+  .footer-cm-logo-link .site-logo-img { width: min(280px, 80vw) !important; height: auto !important; filter: none !important; }
 }
