@@ -5051,3 +5051,42 @@ footer::before {
     0 0 14px rgba(59,196,218,0.20);
   letter-spacing: 0.16em;
 }
+
+/* ═══════════════════════════════════════════════════════════════════
+   NAV OVERLAP FIX — first section after every page hero
+   The nav is position:fixed ~86px tall. Any section that sits
+   immediately after a hero must have enough padding-top to clear it.
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* Service pages: docks / decks / boatlifts / pilings */
+.service-detail {
+  padding-top: 5.5rem;   /* was 4rem — now clears the 86px fixed nav */
+}
+
+/* Contact page */
+.contact-section {
+  padding-top: 5.5rem;
+}
+
+/* Gallery page */
+.gal-section {
+  padding-top: 5.5rem;
+}
+
+/* Seawalls — sw-services is already 7rem, but add safety for sw-intro */
+.sw-intro {
+  scroll-margin-top: 90px;
+}
+
+/* Responsive — nav shrinks on scroll, keep clearance proportional */
+@media (max-width: 768px) {
+  .service-detail  { padding-top: 5rem; }
+  .contact-section { padding-top: 5rem; }
+  .gal-section     { padding-top: 5rem; }
+}
+
+@media (max-width: 480px) {
+  .service-detail  { padding-top: 4.5rem; }
+  .contact-section { padding-top: 4.5rem; }
+  .gal-section     { padding-top: 4.5rem; }
+}
