@@ -439,7 +439,7 @@ nav.scrolled .nav-logo-est  { font-size: 0.60rem; margin-top: 0.26rem; letter-sp
   align-items: center;
   justify-content: center;
   background: var(--navy-dark);
-  padding: 160px 2rem 3.5rem;
+  padding: 210px 2rem 3.5rem;
 }
 
 /* ── Background — clean deep navy gradient, no photos, no textures ── */
@@ -519,9 +519,9 @@ nav.scrolled .nav-logo-est  { font-size: 0.60rem; margin-top: 0.26rem; letter-sp
 }
 
 .hero-logo {
-  /* 3D text logo is landscape (1024×434) — needs wide display */
-  width: clamp(320px, 50vw, 620px);
-  max-width: 90%;
+  /* Badge logo is square (2048×2048) */
+  width: clamp(200px, 22vw, 280px);
+  max-width: 85%;
   height: auto;
   display: block;
   margin: 0 auto;
