@@ -126,9 +126,9 @@ nav.scrolled {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 130px;
-  min-height: 130px;
-  max-height: 130px;
+  height: 100px;
+  min-height: 100px;
+  max-height: 100px;
 }
 
 .nav-logo {
@@ -420,7 +420,7 @@ nav.scrolled .nav-logo-est  { font-size: 0.60rem; margin-top: 0.26rem; letter-sp
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding-top: 160px;
+  padding-top: 120px;
   gap: 1.5rem;
   opacity: 0;
   transform: translateY(-20px);
@@ -2285,7 +2285,7 @@ section {
 
 .form-group textarea {
   resize: vertical;
-  min-height: 130px;
+  min-height: 100px;
 }
 
 .btn-submit {
@@ -4736,9 +4736,9 @@ p  { font-size: 1rem; line-height: 1.75; }
 /* ── NAV logo image — fixed size, never changes on scroll ── */
 .nav-logo-img {
   display: block !important;
-  width: 340px !important;
+  width: 260px !important;
   height: auto !important;
-  max-width: 340px !important;
+  max-width: 260px !important;
   max-height: none !important;
   object-fit: contain !important;
   flex-shrink: 0 !important;
@@ -4755,8 +4755,8 @@ p  { font-size: 1rem; line-height: 1.75; }
 
 /* Scrolled state — IDENTICAL, no shrink */
 nav.scrolled .nav-logo-img {
-  width: 340px !important;
-  max-width: 340px !important;
+  width: 260px !important;
+  max-width: 260px !important;
   height: auto !important;
   transform: none !important;
   transition: none !important;
@@ -4781,20 +4781,20 @@ nav.scrolled .nav-logo-img {
 
 /* ── Responsive logo sizes ── */
 @media (max-width: 1024px) {
-  .nav-logo-img    { width: 300px !important; max-width: 300px !important; }
+  .nav-logo-img    { width: 230px !important; max-width: 230px !important; }
   .footer-logo-img { width: 360px !important; }
 }
 
 @media (max-width: 768px) {
-  .nav-logo-img    { width: 260px !important; max-width: 260px !important; }
+  .nav-logo-img    { width: 200px !important; max-width: 200px !important; }
   .footer-logo-img { width: 300px !important; }
-  nav.scrolled .nav-logo-img { width: 260px !important; max-width: 260px !important; }
+  nav.scrolled .nav-logo-img { width: 200px !important; max-width: 200px !important; }
 }
 
 @media (max-width: 480px) {
-  .nav-logo-img    { width: 220px !important; max-width: 220px !important; }
+  .nav-logo-img    { width: 170px !important; max-width: 170px !important; }
   .footer-logo-img { width: 260px !important; }
-  nav.scrolled .nav-logo-img { width: 220px !important; max-width: 220px !important; }
+  nav.scrolled .nav-logo-img { width: 170px !important; max-width: 170px !important; }
 }
 
 /* ═══════════════════════════════════════════════════════════════════
@@ -5062,8 +5062,8 @@ nav.scrolled {
 
 .nav-logo-img,
 nav.scrolled .nav-logo-img {
-  width: 340px !important;
-  max-width: 340px !important;
+  width: 260px !important;
+  max-width: 260px !important;
   height: auto !important;
   display: block !important;
   object-fit: contain !important;
@@ -5080,16 +5080,16 @@ nav.scrolled .nav-logo-img {
 @media (max-width: 768px) {
   .nav-logo-img,
   nav.scrolled .nav-logo-img {
-    width: 260px !important;
-    max-width: 260px !important;
+    width: 200px !important;
+    max-width: 200px !important;
   }
 }
 
 @media (max-width: 480px) {
   .nav-logo-img,
   nav.scrolled .nav-logo-img {
-    width: 220px !important;
-    max-width: 220px !important;
+    width: 170px !important;
+    max-width: 170px !important;
   }
 }
 
