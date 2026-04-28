@@ -85,14 +85,19 @@
       to   { opacity: 1; transform: translateY(0) scale(1); }
     }
     .about-hero-logo {
-      width: clamp(180px, 26vw, 280px);
+      /* 3D text logo is landscape (1024×434) — needs wide display */
+      width: clamp(300px, 48vw, 580px);
+      max-width: 90%;
       height: auto;
       display: block;
       margin: 0 auto;          /* belt-and-suspenders centering */
       flex-shrink: 0;
-      filter: drop-shadow(0 10px 40px rgba(0,0,0,0.6))
-              drop-shadow(0 0 80px rgba(59,196,218,0.35));
-      transition: transform 0.4s ease;
+      filter:
+        drop-shadow(0 2px 4px rgba(0,0,0,0.75))
+        drop-shadow(0 6px 18px rgba(0,0,0,0.55))
+        drop-shadow(0 14px 40px rgba(0,0,0,0.35))
+        drop-shadow(0 0 60px rgba(59,196,218,0.30));
+      transition: filter 0.4s ease, transform 0.4s ease;
     }
     .about-hero-logo:hover { transform: scale(1.04); }
 
@@ -616,12 +621,18 @@
       pointer-events: none;
     }
     .brand-logo-big {
-      width: clamp(220px, 32vw, 340px);
+      /* 3D text logo is landscape (1024×434) — needs wide display */
+      width: clamp(300px, 48vw, 560px);
+      max-width: 90%;
       height: auto;
       display: block;
       margin: 0 auto;          /* explicit center within flex container */
       flex-shrink: 0;
-      filter: drop-shadow(0 16px 60px rgba(0,0,0,0.55)) drop-shadow(0 0 100px rgba(59,196,218,0.3));
+      filter:
+        drop-shadow(0 2px 4px rgba(0,0,0,0.80))
+        drop-shadow(0 8px 24px rgba(0,0,0,0.60))
+        drop-shadow(0 18px 55px rgba(0,0,0,0.40))
+        drop-shadow(0 0 80px rgba(59,196,218,0.28));
       animation: floatBadge 5s ease-in-out infinite;
     }
     .brand-feature h2 { color: white; margin-bottom: 1rem; }
@@ -706,7 +717,9 @@
       margin: 0 auto 3rem;
     }
     .about-hero-logo {
-      width: clamp(160px, 22vw, 240px);
+      /* 3D text logo is landscape — needs wider clamp on desktop */
+      width: clamp(320px, 44vw, 560px);
+      max-width: 90%;
     }
     .about-hero-eyebrow {
       font-size: 0.78rem;
@@ -976,7 +989,9 @@
       margin: 0 auto 3rem;
     }
     .brand-logo-big {
-      width: clamp(180px, 26vw, 280px);
+      /* 3D text logo — landscape, needs wider clamp on desktop */
+      width: clamp(320px, 42vw, 520px);
+      max-width: 90%;
     }
     .brand-feature h2 {
       font-size: clamp(1.9rem, 3vw, 2.8rem);
@@ -1110,7 +1125,7 @@
       .about-hero-btns { flex-direction: column; align-items: center; }
       .about-hero-btns .btn-primary,
       .about-hero-btns .btn-secondary { width: 100%; max-width: 300px; min-width: unset; }
-      .about-hero-logo { width: clamp(140px, 44vw, 200px); margin: 0 auto; }
+      .about-hero-logo { width: clamp(240px, 72vw, 380px); max-width: 92%; margin: 0 auto; }
       .story-section { padding: 6rem 1.5rem; }
       .story-img-stack { height: 320px; }
       .story-logo-badge { bottom: -16px; right: -10px; padding: 0.8rem 1rem; }
@@ -1423,10 +1438,8 @@
 <!-- ═══════════════════════════════════════ -->
 <nav>
   <div class="nav-container">
-    <a href="index.html" class="nav-logo">      <span class="nav-logo-wrap">
-        <span class="nav-logo-text">Contour Marine</span>
-        <span class="nav-logo-est">Est. 2001</span>
-      </span>
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo-final.png" alt="Contour Marine" class="nav-logo-img" />
     </a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
@@ -1463,7 +1476,7 @@
 
     <!-- Logo showcase with glow ring -->
     <div class="about-hero-logo-wrap">
-      <img src="images/logo-hd.png" alt="Contour Marine" class="about-hero-logo" width="2048" height="2048" />
+      <img src="images/logo-3d-v3-sharp.png" alt="Contour Marine" class="about-hero-logo" width="1024" height="434" />
     </div>
 
     <div class="about-hero-eyebrow">
@@ -1703,7 +1716,7 @@
 <section class="brand-feature">
   <div class="brand-feature-inner">
     <div class="brand-logo-wrap">
-      <img src="images/logo-hd.png" alt="Contour Marine" class="brand-logo-big reveal" width="2048" height="2048" loading="lazy" />
+      <img src="images/logo-3d-v3-sharp.png" alt="Contour Marine" class="brand-logo-big reveal" width="1024" height="434" loading="lazy" />
     </div>
     <span class="section-label reveal" style="color:var(--teal-bright);">Est. 2001 · South Florida</span>
     <h2 class="reveal">One Company.<br />Every Marine Service.</h2>
@@ -1768,10 +1781,8 @@
 <!-- ═══════════════════════════════════════ -->
 <footer>
   <div class="footer-grid">
-    <div class="footer-brand">      <span class="footer-logo-wrap">
-        <span class="footer-logo-text">Contour Marine</span>
-        <span class="footer-logo-est">Est. 2001</span>
-      </span>
+    <div class="footer-brand">
+      <img src="images/logo-final.png" alt="Contour Marine" class="footer-logo-img" />
       <p>South Florida's trusted marine contractor since 2001, proudly serving Broward and Miami-Dade.</p>
       <div class="footer-social">
         <a href="https://www.instagram.com/contourmarine" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
