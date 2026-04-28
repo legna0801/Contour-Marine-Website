@@ -97,12 +97,11 @@ nav {
   transition: var(--transition);
   background: transparent;
   pointer-events: auto;
-  /* 3-D depth: layered bottom shadow + subtle top highlight */
+  /* 3-D depth: layered bottom shadow — fully transparent, no white line */
   box-shadow:
     0 1px 0   rgba(59,196,218,0.10),
     0 4px 18px rgba(0,0,0,0.45),
-    0 8px 40px rgba(0,0,0,0.30),
-    inset 0 1px 0 rgba(255,255,255,0.06);
+    0 8px 40px rgba(0,0,0,0.30);
 }
 
 nav.scrolled {
@@ -113,8 +112,7 @@ nav.scrolled {
   box-shadow:
     0 1px 0   rgba(59,196,218,0.18),
     0 6px 28px rgba(0,0,0,0.55),
-    0 12px 50px rgba(0,0,0,0.35),
-    inset 0 1px 0 rgba(255,255,255,0.08);
+    0 12px 50px rgba(0,0,0,0.35);
   border-bottom: 1px solid rgba(59,196,218,0.18);
 }
 
@@ -4883,8 +4881,7 @@ nav {
     0  6px 24px rgba(0,0,0,0.60),         /* close cast shadow          */
     0 14px 55px rgba(0,0,0,0.42),         /* mid ambient                */
     0 28px 90px rgba(0,0,0,0.22),         /* far depth haze             */
-    inset 0 1px 0 rgba(255,255,255,0.12), /* inner top sheen            */
-    inset 0 -1px 0 rgba(0,0,0,0.25);     /* inner bottom depth         */
+    inset 0 -1px 0 rgba(0,0,0,0.25);     /* inner bottom depth — NO white top line */
 }
 nav.scrolled {
   box-shadow:
@@ -4893,7 +4890,6 @@ nav.scrolled {
     0  8px 32px rgba(0,0,0,0.70),
     0 18px 60px rgba(0,0,0,0.48),
     0 32px 90px rgba(0,0,0,0.25),
-    inset 0 1px 0 rgba(255,255,255,0.14),
     inset 0 -1px 0 rgba(0,0,0,0.30);
   border-bottom: 1px solid rgba(59,196,218,0.35);
 }
@@ -4939,8 +4935,7 @@ nav.scrolled {
 .nav-cta {
   box-shadow:
     0 4px  0   rgba(130,50,0,0.75),
-    0 7px 18px rgba(0,0,0,0.45),
-    inset 0 1px 0 rgba(255,255,255,0.30) !important;
+    0 7px 18px rgba(0,0,0,0.45) !important;
   transform: translateY(0) !important;
   transition: all 0.22s ease !important;
 }
@@ -4950,8 +4945,7 @@ nav.scrolled {
   color: var(--orange) !important;
   box-shadow:
     0 2px  0   rgba(130,50,0,0.50),
-    0 4px 10px rgba(0,0,0,0.32),
-    inset 0 1px 0 rgba(255,255,255,0.10) !important;
+    0 4px 10px rgba(0,0,0,0.32) !important;
   transform: translateY(2px) !important;
 }
 
@@ -4966,8 +4960,7 @@ footer {
     0 -2px  0   rgba(59,196,218,0.25),    /* reversed: glow above footer */
     0 -8px 40px rgba(0,0,0,0.55),
     0 -24px 80px rgba(0,0,0,0.30),
-    inset 0 2px 0 rgba(59,196,218,0.10),  /* inner top glow              */
-    inset 0 1px 0 rgba(255,255,255,0.05);
+    inset 0 2px 0 rgba(59,196,218,0.10);  /* inner top glow — no white line */
 }
 
 /* Glowing cyan seam at the very top of the footer */

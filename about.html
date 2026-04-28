@@ -565,7 +565,7 @@
       position: relative;
     }
     .crew-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); }
-    .crew-card img { width:100%; height:auto; display:block; object-fit:unset; }
+    .crew-card img { width:100%; height:auto; display:block; object-fit:cover; object-position:center top; }
     .crew-card-overlay {
       position: absolute; inset: 0;
       background: linear-gradient(to top, rgba(7,27,46,0.88) 0%, transparent 55%);
@@ -953,7 +953,8 @@
     .crew-grid--single .crew-card img {
       width: 100%;
       height: auto;
-      object-fit: unset;
+      object-fit: cover;
+      object-position: center top;
     }
     .crew-card {
       border-radius: 20px;
@@ -1695,7 +1696,7 @@
     </div>
     <div class="crew-grid crew-grid--single">
       <div class="crew-card crew-card--team reveal">
-        <img src="images/team-photo-2.jpg" alt="The Contour Marine crew on a South Florida jobsite — seawall and dock construction" loading="lazy" />
+        <img src="images/team-photo-2.jpg" alt="The Contour Marine crew on a South Florida jobsite — seawall and dock construction" loading="lazy" width="811" height="1024" />
         <div class="crew-card-overlay"></div>
         <div class="crew-card-label">
           <h4>Our Expert Crew</h4>
