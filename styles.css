@@ -134,11 +134,8 @@ nav.scrolled {
   text-decoration: none;
   flex-shrink: 0;
   line-height: 1;
-  /* 3-D logo pop: cyan glow + perspective lift shadow */
-  filter:
-    drop-shadow(0 2px  6px rgba(0,0,0,0.70))
-    drop-shadow(0 4px 14px rgba(0,0,0,0.55))
-    drop-shadow(0 0  18px rgba(59,196,218,0.35));
+  /* No filter on container — shadow applied on .nav-logo-img only */
+  filter: none;
   transition: filter 0.3s ease;
 }
 
