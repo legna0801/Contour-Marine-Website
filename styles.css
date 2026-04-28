@@ -39,7 +39,7 @@ html {
   scroll-behavior: smooth;
   font-size: 16px;
   /* Account for fixed header when scrolling to anchors */
-  scroll-padding-top: 180px;
+  scroll-padding-top: 140px;
   overflow-x: hidden;
   max-width: 100%;
 }
@@ -97,7 +97,7 @@ nav {
   left: 0;
   right: 0;
   z-index: 1000;
-  padding: 0.9rem 2rem;
+  padding: 0.6rem 2rem;
   transition: background 0.4s ease, box-shadow 0.4s ease;
   background: transparent;
   pointer-events: auto;
@@ -112,7 +112,7 @@ nav.scrolled {
   background: rgba(7, 27, 46, 0.97);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  padding: 0.9rem 2rem;
+  padding: 0.6rem 2rem;
   box-shadow:
     0 1px 0   rgba(59,196,218,0.18),
     0 6px 28px rgba(0,0,0,0.55),
@@ -126,9 +126,9 @@ nav.scrolled {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 68px;
-  min-height: 68px;
-  max-height: 68px;
+  height: 130px;
+  min-height: 130px;
+  max-height: 130px;
 }
 
 .nav-logo {
@@ -159,11 +159,41 @@ nav.scrolled {
   line-height: 1;
 }
 
-/* ── Nav + Footer tagline: hidden — tagline is baked into logo PNG ── */
-.nav-logo-tagline,
-nav.scrolled .nav-logo-tagline,
+/* ── Nav tagline — shown as real CSS text under the logo image ── */
+.nav-logo-tagline {
+  display: block !important;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #dcc38a;
+  text-align: center;
+  width: 100%;
+  margin-top: 4px;
+  line-height: 1.3;
+  white-space: nowrap;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+}
+nav.scrolled .nav-logo-tagline {
+  display: block !important;
+  color: #dcc38a;
+}
 .footer-logo-tagline {
-  display: none !important;
+  display: block !important;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #dcc38a;
+  text-align: center;
+  width: 100%;
+  margin-top: 6px;
+  margin-bottom: 10px;
+  line-height: 1.4;
+  white-space: nowrap;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.7);
 }
 
 /* ══════════════════════════════════════════════
@@ -870,7 +900,7 @@ section {
   background: #f5f7fa;
   padding: 4.5rem 2rem;
   /* Prevent fixed header overlap when anchor-scrolled */
-  scroll-margin-top: 180px;
+  scroll-margin-top: 140px;
   position: relative;
   z-index: 1;
 }
@@ -2496,60 +2526,6 @@ footer {
    FLOATING CTA
    ============================================ */
 
-.float-cta {
-  position: fixed;
-  bottom: 2rem;
-  right: 1rem;
-  z-index: 800;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.75rem;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: var(--transition);
-  pointer-events: none;
-}
-
-.float-cta.visible {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: all;
-}
-
-.float-btn {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  padding: 0.85rem 1.5rem;
-  border-radius: 50px;
-  font-weight: 700;
-  font-size: 0.9rem;
-  text-decoration: none;
-  transition: var(--transition);
-  white-space: nowrap;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-}
-
-.float-btn-call {
-  background: var(--teal);
-  color: white;
-}
-
-.float-btn-call:hover {
-  background: var(--teal-light);
-  transform: scale(1.04);
-}
-
-.float-btn-quote {
-  background: var(--orange);
-  color: white;
-}
-
-.float-btn-quote:hover {
-  background: var(--orange-light);
-  transform: scale(1.04);
-}
 
 /* ============================================
    ANIMATIONS
@@ -3144,26 +3120,7 @@ footer {
     padding: 1rem 1.2rem;
   }
   
-  .float-cta {
-    bottom: 1rem;
-    right: 0.75rem;
-    flex-direction: row;        /* side by side on mobile — less vertical space */
-    gap: 0.5rem;
-  }
 
-  .float-btn {
-    font-size: 0;               /* hide text — icon only on mobile */
-    padding: 0.85rem 0.85rem;
-    border-radius: 50%;
-    width: 46px;
-    height: 46px;
-    justify-content: center;
-  }
-
-  .float-btn i {
-    font-size: 1.1rem;          /* keep icon visible */
-    margin: 0;
-  }
 
   .services-grid {
     grid-template-columns: 1fr;
@@ -3403,10 +3360,6 @@ footer {
   box-shadow: none;
 }
 
-/* ── Float CTA: prevent overlap with footer ── */
-.float-cta {
-  z-index: 800;
-}
 
 /* ── Service page hero: keep content left-aligned for readability ── */
 .page-hero-content {
@@ -3720,19 +3673,6 @@ footer {
   font-size: 0.8rem;
 }
 
-/* ── 13. FLOATING CTA: no overlap, safe position ── */
-.float-cta {
-  bottom: 1.8rem;
-  right: 1.8rem;
-  gap: 0.65rem;
-  z-index: 799; /* below nav (1000) */
-}
-.float-btn {
-  padding: 0.8rem 1.4rem;
-  font-size: 0.875rem;
-  gap: 0.55rem;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.28);
-}
 
 /* ── 14. TYPOGRAPHY: consistent global sizes ── */
 h2 { font-size: clamp(1.8rem, 3.5vw, 2.9rem); }
@@ -3780,12 +3720,6 @@ p  { font-size: 1rem; line-height: 1.75; }
     padding: 1.1rem 1.5rem;
   }
 
-  .float-cta {
-    bottom: 1rem;
-    right: 1rem;
-    flex-direction: row;
-    gap: 0.5rem;
-  }
 
   .footer-grid {
     grid-template-columns: 1fr 1fr;
@@ -3845,18 +3779,6 @@ p  { font-size: 1rem; line-height: 1.75; }
 
   footer { padding: 3.5rem 1.2rem 1.5rem; }
 
-  .float-btn {
-    font-size: 0;
-    width: 46px;
-    height: 46px;
-    padding: 0;
-    border-radius: 50%;
-    justify-content: center;
-  }
-  .float-btn i {
-    font-size: 1.1rem;
-    margin: 0;
-  }
 
   .ba-grid {
     grid-template-columns: 1fr;
@@ -4812,9 +4734,9 @@ p  { font-size: 1rem; line-height: 1.75; }
 /* ── NAV logo image — fixed size, never changes on scroll ── */
 .nav-logo-img {
   display: block !important;
-  width: 220px !important;
+  width: 340px !important;
   height: auto !important;
-  max-width: 220px !important;
+  max-width: 340px !important;
   max-height: none !important;
   object-fit: contain !important;
   flex-shrink: 0 !important;
@@ -4831,8 +4753,8 @@ p  { font-size: 1rem; line-height: 1.75; }
 
 /* Scrolled state — IDENTICAL, no shrink */
 nav.scrolled .nav-logo-img {
-  width: 220px !important;
-  max-width: 220px !important;
+  width: 340px !important;
+  max-width: 340px !important;
   height: auto !important;
   transform: none !important;
   transition: none !important;
@@ -4841,7 +4763,7 @@ nav.scrolled .nav-logo-img {
 /* ── FOOTER logo image ── */
 .footer-logo-img {
   display: block !important;
-  width: 320px !important;
+  width: 400px !important;
   max-width: 100% !important;
   height: auto !important;
   object-fit: contain !important;
@@ -4857,20 +4779,20 @@ nav.scrolled .nav-logo-img {
 
 /* ── Responsive logo sizes ── */
 @media (max-width: 1024px) {
-  .nav-logo-img    { width: 200px !important; max-width: 200px !important; }
-  .footer-logo-img { width: 280px !important; }
+  .nav-logo-img    { width: 300px !important; max-width: 300px !important; }
+  .footer-logo-img { width: 360px !important; }
 }
 
 @media (max-width: 768px) {
-  .nav-logo-img    { width: 180px !important; max-width: 180px !important; }
-  .footer-logo-img { width: 240px !important; }
-  nav.scrolled .nav-logo-img { width: 180px !important; max-width: 180px !important; }
+  .nav-logo-img    { width: 260px !important; max-width: 260px !important; }
+  .footer-logo-img { width: 300px !important; }
+  nav.scrolled .nav-logo-img { width: 260px !important; max-width: 260px !important; }
 }
 
 @media (max-width: 480px) {
-  .nav-logo-img    { width: 160px !important; max-width: 160px !important; }
-  .footer-logo-img { width: 200px !important; }
-  nav.scrolled .nav-logo-img { width: 160px !important; max-width: 160px !important; }
+  .nav-logo-img    { width: 220px !important; max-width: 220px !important; }
+  .footer-logo-img { width: 260px !important; }
+  nav.scrolled .nav-logo-img { width: 220px !important; max-width: 220px !important; }
 }
 
 /* ═══════════════════════════════════════════════════════════════════
@@ -5096,29 +5018,10 @@ section, footer, header, main, .hero, .footer {
   box-sizing: border-box !important;
 }
 
-/* Float CTA — keep inside screen on all mobiles */
 @media (max-width: 768px) {
-  .float-cta {
-    right: 0.75rem !important;
-    bottom: 1rem !important;
-  }
-  .float-btn {
-    font-size: 0.82rem !important;
-    padding: 0.7rem 1rem !important;
-    white-space: nowrap;
-  }
 }
 
 @media (max-width: 480px) {
-  .float-cta {
-    right: 0.5rem !important;
-    bottom: 0.75rem !important;
-    gap: 0.5rem !important;
-  }
-  .float-btn {
-    font-size: 0.78rem !important;
-    padding: 0.65rem 0.85rem !important;
-  }
 }
 
 /* ═══════════════════════════════════════════════
@@ -5157,8 +5060,8 @@ nav.scrolled {
 
 .nav-logo-img,
 nav.scrolled .nav-logo-img {
-  width: 200px !important;
-  max-width: 200px !important;
+  width: 340px !important;
+  max-width: 340px !important;
   height: auto !important;
   display: block !important;
   object-fit: contain !important;
@@ -5175,21 +5078,21 @@ nav.scrolled .nav-logo-img {
 @media (max-width: 768px) {
   .nav-logo-img,
   nav.scrolled .nav-logo-img {
-    width: 170px !important;
-    max-width: 170px !important;
+    width: 260px !important;
+    max-width: 260px !important;
   }
 }
 
 @media (max-width: 480px) {
   .nav-logo-img,
   nav.scrolled .nav-logo-img {
-    width: 150px !important;
-    max-width: 150px !important;
+    width: 220px !important;
+    max-width: 220px !important;
   }
 }
 
 .footer-logo-img {
-  width: 300px !important;
+  width: 400px !important;
   max-width: 100% !important;
   height: auto !important;
   display: block !important;
@@ -5203,9 +5106,104 @@ nav.scrolled .nav-logo-img {
 }
 
 @media (max-width: 768px) {
-  .footer-logo-img { width: 220px !important; }
+  .footer-logo-img { width: 300px !important; }
 }
 
 @media (max-width: 480px) {
-  .footer-logo-img { width: 180px !important; }
+  .footer-logo-img { width: 260px !important; }
+}
+
+
+/* ═══════════════════════════════════════════════════
+   FLOATING CTA — Call Now + Free Quote
+   Single authoritative block — no duplicates
+   ═══════════════════════════════════════════════════ */
+
+.float-cta {
+  position: fixed;
+  bottom: 1.8rem;
+  right: 1.8rem;
+  z-index: 900;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.65rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.float-cta.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+.float-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: 50px;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 6px 22px rgba(0,0,0,0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.float-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+}
+
+.float-btn-call {
+  background: #3bc4da;
+  color: #fff;
+}
+
+.float-btn-call:hover {
+  background: #5ad0e4;
+  color: #fff;
+}
+
+.float-btn-quote {
+  background: #e87722;
+  color: #fff;
+}
+
+.float-btn-quote:hover {
+  background: #f08a3a;
+  color: #fff;
+}
+
+/* ── Tablet (≤768px): keep text, slightly smaller ── */
+@media (max-width: 768px) {
+  .float-cta {
+    bottom: 1.2rem;
+    right: 1.2rem;
+    gap: 0.5rem;
+  }
+  .float-btn {
+    font-size: 0.88rem;
+    padding: 0.75rem 1.3rem;
+  }
+}
+
+/* ── Mobile (≤480px): icon + short label, pill shape ── */
+@media (max-width: 480px) {
+  .float-cta {
+    bottom: 1rem;
+    right: 1rem;
+    gap: 0.45rem;
+  }
+  .float-btn {
+    font-size: 0.82rem;
+    padding: 0.7rem 1.1rem;
+    gap: 0.45rem;
+  }
 }
