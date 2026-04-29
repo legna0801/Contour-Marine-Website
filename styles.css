@@ -127,7 +127,7 @@ nav.scrolled {
   height: auto;
   min-height: unset;
   max-height: none;
-  padding: 0.35rem 1.5rem;
+  padding: 0.1rem 1.5rem;
   box-sizing: border-box;
 }
 
@@ -472,7 +472,7 @@ nav.scrolled .nav-logo-est  { font-size: 0.60rem; margin-top: 0.26rem; letter-sp
   align-items: flex-start;
   justify-content: center;
   background: var(--navy-dark);
-  padding: 96px 2rem 3.5rem;
+  padding: 78px 2rem 3.5rem;
 }
 
 /* ── Background — clean deep navy gradient, no photos, no textures ── */
@@ -3709,7 +3709,7 @@ p  { font-size: 1rem; line-height: 1.75; }
   nav { padding: 0; }
   nav.scrolled { padding: 0; }
 
-  .hero { padding: 82px 1.5rem 60px; }
+  .hero { padding: 74px 1.5rem 60px; }
   .hero-content { max-width: 100%; }
 
   .services-section,
@@ -3766,7 +3766,7 @@ p  { font-size: 1rem; line-height: 1.75; }
 @media (max-width: 480px) {
   nav { padding: 0; }
 
-  .hero { padding: 72px 1.2rem 50px; } /* clears 64px nav + small gap on mobile */
+  .hero { padding: 66px 1.2rem 50px; } /* clears mobile nav + small gap */
 
   .hero-buttons {
     flex-direction: column;
