@@ -164,16 +164,18 @@ nav.scrolled {
   display: block !important;
   font-family: 'Cinzel', serif;
   font-weight: 700;
-  font-size: 0.48rem;
-  letter-spacing: 0.04em;
+  font-size: 0.52rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #dcc38a;
   text-align: center;
-  width: 100%;
+  width: 200px;
+  max-width: 200px;
   margin-top: 3px;
-  line-height: 1.2;
+  line-height: 1.3;
   white-space: nowrap;
   overflow: hidden;
+  text-overflow: ellipsis;
   text-shadow: 0 1px 3px rgba(0,0,0,0.7);
 }
 nav.scrolled .nav-logo-tagline {
@@ -185,11 +187,11 @@ nav.scrolled .nav-logo-tagline {
   font-family: 'Cinzel', serif;
   font-weight: 700;
   font-size: 0.58rem;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #dcc38a;
-  text-align: center;
-  width: 100%;
+  text-align: left;
+  width: 220px;
   max-width: 220px;
   margin-top: 6px;
   margin-bottom: 10px;
@@ -3306,29 +3308,6 @@ footer {
 @media (max-width: 768px) {
   .footer-brand {
     max-width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  .footer-brand .footer-logo-img {
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-  .footer-brand .footer-logo-tagline {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .footer-brand p {
-    text-align: center;
-  }
-  .footer-social {
-    justify-content: center;
-  }
-  .footer-phone {
-    text-align: center;
-    justify-content: center;
   }
 }
 
@@ -4762,9 +4741,9 @@ p  { font-size: 1rem; line-height: 1.75; }
 /* ── NAV logo image — fixed size, never changes on scroll ── */
 .nav-logo-img {
   display: block !important;
-  width: 180px !important;
+  width: 200px !important;
   height: auto !important;
-  max-width: 180px !important;
+  max-width: 200px !important;
   max-height: none !important;
   object-fit: contain !important;
   flex-shrink: 0 !important;
@@ -4781,8 +4760,8 @@ p  { font-size: 1rem; line-height: 1.75; }
 
 /* Scrolled state — IDENTICAL, no shrink */
 nav.scrolled .nav-logo-img {
-  width: 180px !important;
-  max-width: 180px !important;
+  width: 200px !important;
+  max-width: 200px !important;
   height: auto !important;
   transform: none !important;
   transition: none !important;
