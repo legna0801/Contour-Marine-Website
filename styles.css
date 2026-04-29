@@ -184,16 +184,18 @@ nav.scrolled .nav-logo-tagline {
   display: block !important;
   font-family: 'Cinzel', serif;
   font-weight: 700;
-  font-size: 0.75rem;
-  letter-spacing: 0.22em;
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #dcc38a;
   text-align: center;
   width: 100%;
+  max-width: 220px;
   margin-top: 6px;
   margin-bottom: 10px;
-  line-height: 1.4;
-  white-space: nowrap;
+  line-height: 1.5;
+  white-space: normal;
+  word-break: break-word;
   text-shadow: 0 1px 3px rgba(0,0,0,0.7);
 }
 
@@ -4766,11 +4768,11 @@ nav.scrolled .nav-logo-img {
 /* ── FOOTER logo image ── */
 .footer-logo-img {
   display: block !important;
-  width: 400px !important;
+  width: 220px !important;
   max-width: 100% !important;
   height: auto !important;
   object-fit: contain !important;
-  margin: 0 0 1.4rem 0 !important;
+  margin: 0 0 0.8rem 0 !important;
   background: transparent !important;
   box-shadow: none !important;
   filter: none !important;
@@ -4783,18 +4785,18 @@ nav.scrolled .nav-logo-img {
 /* ── Responsive logo sizes ── */
 @media (max-width: 1024px) {
   .nav-logo-img    { width: 160px !important; max-width: 160px !important; }
-  .footer-logo-img { width: 360px !important; }
+  .footer-logo-img { width: 200px !important; }
 }
 
 @media (max-width: 768px) {
   .nav-logo-img    { width: 150px !important; max-width: 150px !important; }
-  .footer-logo-img { width: 300px !important; }
+  .footer-logo-img { width: 180px !important; }
   nav.scrolled .nav-logo-img { width: 150px !important; max-width: 150px !important; }
 }
 
 @media (max-width: 480px) {
   .nav-logo-img    { width: 140px !important; max-width: 140px !important; }
-  .footer-logo-img { width: 260px !important; }
+  .footer-logo-img { width: 160px !important; }
   nav.scrolled .nav-logo-img { width: 140px !important; max-width: 140px !important; }
 }
 
@@ -5095,7 +5097,7 @@ nav.scrolled .nav-logo-img {
 }
 
 .footer-logo-img {
-  width: 400px !important;
+  width: 220px !important;
   max-width: 100% !important;
   height: auto !important;
   display: block !important;
@@ -5109,11 +5111,11 @@ nav.scrolled .nav-logo-img {
 }
 
 @media (max-width: 768px) {
-  .footer-logo-img { width: 300px !important; }
+  .footer-logo-img { width: 180px !important; }
 }
 
 @media (max-width: 480px) {
-  .footer-logo-img { width: 260px !important; }
+  .footer-logo-img { width: 160px !important; }
 }
 
 
