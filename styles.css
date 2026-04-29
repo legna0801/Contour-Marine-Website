@@ -3343,23 +3343,7 @@ footer {
   margin-top: 0.5rem;
 }
 
-/* ── Footer brand: consistent width, left-aligned with centered logo+tagline ── */
-.footer-brand {
-  max-width: 340px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.footer-brand .footer-logo-img,
-.footer-brand .footer-logo-tagline {
-  align-self: center;
-}
-@media (max-width: 768px) {
-  .footer-brand {
-    max-width: 100%;
-    align-items: center;
-  }
-}
+/* ── Footer brand: original styles preserved in main block ── */
 
 /* ── Process steps: better sizing on mid-size screens ── */
 @media (min-width: 481px) and (max-width: 768px) {
@@ -3697,39 +3681,7 @@ nav.scrolled .nav-logo img {
   line-height: 1.65;
 }
 
-/* ── 12. FOOTER: clean alignment, balanced spacing ── */
-footer {
-  padding: 5rem 2.5rem 2rem;
-}
-.footer-grid {
-  max-width: 1200px;
-  gap: 2rem 2rem;
-  padding-bottom: 2rem;
-}
-.footer-brand p {
-  font-size: 0.88rem;
-  line-height: 1.72;
-  max-width: 260px;
-  text-align: center;
-}
-.footer-col ul li {
-  margin-bottom: 0.65rem;
-}
-.footer-col ul li a {
-  font-size: 0.9rem;
-}
-.footer-col h5 {
-  margin-bottom: 1.1rem;
-  font-size: 0.8rem;
-  letter-spacing: 0.14em;
-}
-.footer-bottom {
-  max-width: 1200px;
-  padding-top: 1.1rem;
-}
-.footer-bottom p {
-  font-size: 0.8rem;
-}
+/* ── 12. FOOTER: original styles preserved in main block ── */
 
 
 /* ── 14. TYPOGRAPHY: consistent global sizes ── */
@@ -5647,78 +5599,8 @@ section, footer, header, main, .hero, .footer {
   font-size: 0.95rem !important;
 }
 
-/* ─── 8. FOOTER — CONSISTENT ACROSS ALL PAGES ──────────────────── */
-footer {
-  background: var(--navy-dark) !important;
-  padding: 4rem 2rem 2rem !important;
-}
-.footer-grid {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 2rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  align-items: start;
-}
-.footer-brand {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-.footer-phone {
-  display: flex !important;
-  align-items: center !important;
-  gap: 0.5rem !important;
-  color: var(--teal-bright) !important;
-  text-decoration: none !important;
-  font-weight: 600 !important;
-  font-size: 1rem !important;
-  margin-top: 0.6rem !important;
-  transition: color 0.3s !important;
-}
-.footer-phone:hover {
-  color: var(--white) !important;
-}
-.footer-phone i {
-  font-size: 0.9rem !important;
-  flex-shrink: 0 !important;
-}
-/* Footer email link — same style as phone */
-.footer-brand a[href^="mailto:"] {
-  display: flex !important;
-  align-items: center !important;
-  gap: 0.5rem !important;
-  color: var(--teal-bright) !important;
-  text-decoration: none !important;
-  font-weight: 600 !important;
-  font-size: 1rem !important;
-  margin-top: 0.4rem !important;
-  transition: color 0.3s !important;
-}
-.footer-brand a[href^="mailto:"]:hover {
-  color: var(--white) !important;
-}
-.footer-bottom {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding-top: 1.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
-/* Footer bottom links */
-.footer-bottom a {
-  color: var(--teal-bright) !important;
-  text-decoration: none !important;
-}
-.footer-bottom a:hover {
-  color: var(--white) !important;
-  text-decoration: underline !important;
-}
+/* ─── 8. FOOTER — original styles preserved in main block above ──── */
+/* No overrides needed — footer styling handled by the primary CSS   */
 
 /* ─── 9. NAVIGATION — HEIGHT LOCK, NO LAYOUT SHIFT ─────────────── */
 /* Desktop: position relative, full-width, auto height */
@@ -5889,49 +5771,7 @@ p, a, span, li {
     margin: 0 auto !important;
   }
 
-  /* Footer: single col, centered */
-  footer {
-    padding: 3rem 1.5rem 5.5rem !important;
-  }
-  .footer-grid {
-    grid-template-columns: 1fr !important;
-    gap: 2rem !important;
-  }
-  .footer-brand {
-    align-items: center !important;
-    text-align: center !important;
-    width: 100% !important;
-  }
-  .footer-brand p {
-    text-align: center !important;
-    max-width: 280px !important;
-    margin: 0 auto !important;
-  }
-  .footer-brand .footer-social {
-    justify-content: center !important;
-  }
-  .footer-brand .footer-phone,
-  .footer-brand a[href^="mailto:"] {
-    justify-content: center !important;
-  }
-  .footer-col {
-    align-items: center !important;
-    text-align: center !important;
-  }
-  .footer-col ul {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-  }
-  .footer-col ul li a {
-    justify-content: center !important;
-  }
-  .footer-bottom {
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
-    gap: 0.3rem !important;
-  }
+  /* Footer mobile: handled by original CSS rules */
 
   /* CTA buttons: stack on mobile */
   .cta-actions {
@@ -6069,10 +5909,7 @@ p, a, span, li {
     border-radius: 12px !important;
   }
 
-  /* Footer tighter */
-  footer {
-    padding: 2.5rem 1rem 5.5rem !important;
-  }
+  /* Footer 480px: handled by original CSS */
 
   /* CTA section */
   .cta-section {
