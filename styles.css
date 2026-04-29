@@ -3027,7 +3027,7 @@ footer {
   }
 
   .page-hero {
-    padding: 60px 0 60px;
+    padding: 78px 0 60px;
     min-height: 380px;
   }
 
@@ -3210,7 +3210,7 @@ footer {
     padding: 3rem 1.2rem 1.5rem;
   }
   .page-hero {
-    padding: 50px 0 50px;
+    padding: 75px 0 50px;
     min-height: 340px;
   }
   .process-steps {
@@ -5705,19 +5705,19 @@ p, a, span, li {
 @media (max-width: 768px) {
   /* Hero sections */
   .page-hero {
-    padding: 60px 1.5rem 50px !important;
+    padding: 78px 1.5rem 50px !important;
   }
   .page-hero-content {
     padding: 0 !important;
   }
   .sw-hero-inner {
-    padding: 60px 1.5rem 50px !important;
+    padding: 78px 1.5rem 50px !important;
   }
   .gal-hero {
-    padding: 60px 1.5rem 50px !important;
+    padding: 78px 1.5rem 50px !important;
   }
   .about-hero-content {
-    padding: 60px 1.5rem 50px !important;
+    padding: 78px 1.5rem 50px !important;
   }
 
   /* Sections */
@@ -5855,16 +5855,16 @@ p, a, span, li {
 @media (max-width: 480px) {
   /* Hero padding */
   .page-hero {
-    padding: 50px 1.2rem 45px !important;
+    padding: 75px 1.2rem 45px !important;
   }
   .sw-hero-inner {
-    padding: 50px 1.2rem 45px !important;
+    padding: 75px 1.2rem 45px !important;
   }
   .gal-hero {
-    padding: 50px 1.2rem 45px !important;
+    padding: 75px 1.2rem 45px !important;
   }
   .about-hero-content {
-    padding: 50px 1.2rem 45px !important;
+    padding: 75px 1.2rem 45px !important;
   }
 
   /* Sections tighter */
