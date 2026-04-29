@@ -364,13 +364,51 @@
   );
 
   /* ── Initialise map, fit to bounds ── */
+  var isMobile = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
   var map = L.map('service-map', {
     scrollWheelZoom: false,
     zoomControl: true,
-    dragging: true,
-    touchZoom: true,
+    dragging:        !isMobile,   /* disabled on touch — tap overlay to unlock */
+    touchZoom:       false,
     doubleClickZoom: false
   }).fitBounds(bounds, { padding: [12, 12] });
+
+  /* ── Touch overlay: tap once to enable interaction, tap × to lock again ── */
+  if (isMobile) {
+    var overlay = document.createElement('div');
+    overlay.id = 'map-touch-overlay';
+    overlay.innerHTML = '<span><i class="fas fa-hand-pointer"></i> Tap to interact with map</span>';
+    overlay.style.cssText = [
+      'position:absolute','top:0','left:0','right:0','bottom:0',
+      'z-index:1000','display:flex','align-items:center','justify-content:center',
+      'background:rgba(13,43,69,0.45)','cursor:pointer',
+      'font-family:Inter,sans-serif','font-size:0.85rem','font-weight:600',
+      'color:#fff','letter-spacing:0.04em','border-radius:inherit',
+      'transition:opacity 0.3s'
+    ].join(';');
+
+    var mapWrap = document.getElementById('service-map');
+    mapWrap.style.position = 'relative';
+    mapWrap.appendChild(overlay);
+
+    /* Tap overlay → unlock map */
+    overlay.addEventListener('click', function () {
+      map.dragging.enable();
+      map.touchZoom.enable();
+      overlay.style.opacity = '0';
+      overlay.style.pointerEvents = 'none';
+    });
+
+    /* When map loses focus (touch outside) → re-lock */
+    document.addEventListener('touchstart', function (e) {
+      if (!mapWrap.contains(e.target)) {
+        map.dragging.disable();
+        map.touchZoom.disable();
+        overlay.style.opacity = '1';
+        overlay.style.pointerEvents = 'auto';
+      }
+    });
+  }
 
   /* ── Tile layer — clean light CartoDB ── */
   L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
