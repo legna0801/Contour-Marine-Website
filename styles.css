@@ -5436,3 +5436,203 @@ nav.scrolled .nav-logo-img {
   }
 }
 
+
+/* ═══════════════════════════════════════════════════════════════════
+   FINAL CTA + FOOTER ALIGNMENT FIX — HIGHEST AUTHORITY
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ── DESKTOP: keep float CTA as-is (bottom-right) ── */
+
+/* ── MOBILE ≤768px: convert float CTA to full-width bottom bar ── */
+@media (max-width: 768px) {
+
+  /* Float CTA → full-width sticky bar at bottom */
+  .float-cta {
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0 !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    z-index: 9999 !important;
+    transform: none !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    box-shadow: 0 -3px 16px rgba(0,0,0,0.35) !important;
+  }
+
+  .float-cta.visible {
+    opacity: 1 !important;
+    pointer-events: all !important;
+    transform: none !important;
+  }
+
+  /* Each button takes exactly half the bar */
+  .float-btn {
+    flex: 1 1 50% !important;
+    border-radius: 0 !important;
+    padding: 1rem 0.5rem !important;
+    font-size: 0.92rem !important;
+    justify-content: center !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    gap: 0.5rem !important;
+    box-shadow: none !important;
+  }
+
+  /* Add bottom padding to footer so bar doesn't overlap content */
+  footer {
+    padding-bottom: 5rem !important;
+  }
+
+  /* ── FOOTER: full center alignment ── */
+  footer,
+  .footer-grid,
+  .footer-brand,
+  .footer-col,
+  .footer-bottom {
+    text-align: center !important;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  .footer-brand {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+  }
+
+  /* Footer logo — slightly larger to match header */
+  .footer-logo-img {
+    width: 210px !important;
+    max-width: 210px !important;
+    height: auto !important;
+    display: block !important;
+    margin: 0 auto 0.4rem auto !important;
+  }
+
+  .footer-logo-tagline {
+    width: 210px !important;
+    max-width: 210px !important;
+    text-align: center !important;
+    margin: 0 auto 0.8rem auto !important;
+    padding: 0 !important;
+  }
+
+  .footer-brand > p {
+    text-align: center !important;
+    max-width: 300px !important;
+    margin: 0 auto 1rem auto !important;
+    padding: 0 !important;
+  }
+
+  .footer-social {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+    margin: 0 auto 0.8rem auto !important;
+    padding: 0 !important;
+    width: auto !important;
+  }
+
+  .footer-phone {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    margin: 0.3rem auto !important;
+    padding: 0 !important;
+    width: auto !important;
+  }
+
+  /* Footer columns */
+  .footer-col {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+  }
+
+  .footer-col h5 {
+    text-align: center !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .footer-col ul {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0.4rem !important;
+  }
+
+  .footer-col ul li {
+    text-align: center !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: auto !important;
+  }
+
+  .footer-col ul li a {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 0.4rem !important;
+    padding: 0 !important;
+  }
+
+  .footer-bottom {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 0.4rem !important;
+    padding: 1rem 0 0 0 !important;
+  }
+
+  /* Breathing room above footer */
+  .cta-section {
+    margin-bottom: 2rem !important;
+  }
+}
+
+/* ── 480px refinements ── */
+@media (max-width: 480px) {
+  .float-btn {
+    font-size: 0.85rem !important;
+    padding: 0.9rem 0.4rem !important;
+  }
+
+  .footer-logo-img {
+    width: 180px !important;
+    max-width: 180px !important;
+  }
+
+  .footer-logo-tagline {
+    width: 180px !important;
+    max-width: 180px !important;
+  }
+}
+
