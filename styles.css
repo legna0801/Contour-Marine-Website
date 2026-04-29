@@ -97,24 +97,22 @@ nav {
   left: 0;
   right: 0;
   z-index: 1000;
-  padding: 0.6rem 2rem;
-  transition: background 0.4s ease, box-shadow 0.4s ease;
+  padding: 0 2rem;
+  margin: 0;
   background: transparent;
   pointer-events: auto;
-  /* Minimal downward shadow — no wide spread that bleeds into hero */
-  box-shadow:
-    0 1px 0   rgba(59,196,218,0.10),
-    0 2px 8px rgba(0,0,0,0.25);
+  box-shadow: none;
+  /* no transition — size never changes on scroll */
 }
 
+/* Scrolled state — same geometry, only background/border changes */
 nav.scrolled {
   background: rgba(7, 27, 46, 0.97);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  padding: 0.6rem 2rem;
-  box-shadow:
-    0 1px 0   rgba(59,196,218,0.18),
-    0 2px 10px rgba(0,0,0,0.40);
+  padding: 0 2rem;
+  margin: 0;
+  box-shadow: none;
   border-bottom: 1px solid rgba(59,196,218,0.18);
 }
 
@@ -124,9 +122,10 @@ nav.scrolled {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
-  min-height: 80px;
-  max-height: 80px;
+  height: 56px;
+  min-height: 56px;
+  max-height: 56px;
+  padding: 0;
 }
 
 .nav-logo {
@@ -158,46 +157,16 @@ nav.scrolled {
   text-align: center;
 }
 
-/* ── Nav tagline — shown as real CSS text under the logo image ── */
+/* Nav tagline — REMOVED from header, hidden */
 .nav-logo-tagline {
-  display: block !important;
-  font-family: 'Cinzel', serif;
-  font-weight: 700;
-  font-size: 0.52rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #dcc38a;
-  text-align: center;
-  width: 250px;
-  max-width: 250px;
-  margin-top: 4px;
-  line-height: 1.6;
-  white-space: normal;
-  word-break: break-word;
-  overflow: visible;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+  display: none !important;
 }
 nav.scrolled .nav-logo-tagline {
-  display: block !important;
-  color: #dcc38a;
+  display: none !important;
 }
+/* Footer tagline — REMOVED, hidden */
 .footer-logo-tagline {
-  display: block !important;
-  font-family: 'Cinzel', serif;
-  font-weight: 700;
-  font-size: 0.60rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #dcc38a;
-  text-align: center;
-  width: 250px;
-  max-width: 250px;
-  margin-top: 4px;
-  margin-bottom: 10px;
-  line-height: 1.6;
-  white-space: normal;
-  word-break: break-word;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+  display: none !important;
 }
 
 /* ══════════════════════════════════════════════
@@ -661,22 +630,24 @@ nav.scrolled .nav-logo-est  { font-size: 0.60rem; margin-top: 0.26rem; letter-sp
 .hero-sub-break { display: none; }
 @media (min-width: 600px) { .hero-sub-break { display: inline; } }
 
-/* ── Local trust line ── */
+/* ── Local trust line — hidden (replaced by hero-tagline above buttons) ── */
 .hero-trust-line {
-  font-family: var(--font-accent);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--teal-bright);
-  text-align: center;
-  margin: 0 auto 2.2rem;
-  opacity: 0;
-  animation: heroFadeUp 0.9s 0.95s ease-out forwards;
+  display: none !important;
 }
-.hero-trust-line i {
-  opacity: 0.75;
-  margin-right: 0.2rem;
+
+/* ── Hero tagline — "PROUDLY SERVING OUR COMMUNITY SINCE 2001" above buttons ── */
+.hero-tagline {
+  font-family: var(--font-accent);
+  font-size: 0.80rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-align: center;
+  margin: 0 auto 1.6rem;
+  opacity: 0;
+  animation: heroFadeUp 0.9s 0.98s ease-out forwards;
+  white-space: nowrap;
 }
 
 /* ── CTA Buttons ── */
@@ -3401,10 +3372,10 @@ footer {
 
 /* ── 1. NAV: perfect vertical alignment & consistent padding ── */
 nav {
-  padding: 1rem 2.5rem;
+  padding: 0 2rem;
 }
 nav.scrolled {
-  padding: 1rem 2.5rem;
+  padding: 0 2rem;
 }
 .nav-container {
   max-width: 1300px;
@@ -3704,8 +3675,8 @@ p  { font-size: 1rem; line-height: 1.75; }
 
 /* ── 16. REFINED RESPONSIVE: 768px breakpoint ── */
 @media (max-width: 768px) {
-  nav { padding: 1rem 1.5rem; }
-  nav.scrolled { padding: 1rem 1.5rem; }
+  nav { padding: 0 1rem; }
+  nav.scrolled { padding: 0 1rem; }
 
   .hero { padding: 200px 1.5rem 70px; }
   .hero-content { max-width: 100%; }
@@ -3762,7 +3733,7 @@ p  { font-size: 1rem; line-height: 1.75; }
 
 /* ── 17. REFINED RESPONSIVE: 480px breakpoint ── */
 @media (max-width: 480px) {
-  nav { padding: 0.9rem 1.2rem; }
+  nav { padding: 0 0.8rem; }
 
   .hero { padding: 180px 1.2rem 60px; } /* increased to clear nav (~174px) + breathing room */
 
@@ -4740,13 +4711,14 @@ p  { font-size: 1rem; line-height: 1.75; }
    Crisp retina PNG, no resize on scroll, no box/shadow
    ═══════════════════════════════════════════════════ */
 
-/* ── NAV logo image — fixed size, never changes on scroll ── */
-.nav-logo-img {
+/* ── NAV logo image — 1024×341, compact header, no resize ever ── */
+.nav-logo-img,
+nav.scrolled .nav-logo-img {
   display: block !important;
-  width: 250px !important;
-  height: auto !important;
-  max-width: 250px !important;
-  max-height: none !important;
+  width: auto !important;
+  height: 38px !important;      /* fixed pixel height — fills the 56px bar neatly */
+  max-width: 200px !important;
+  max-height: 38px !important;
   object-fit: contain !important;
   flex-shrink: 0 !important;
   background: transparent !important;
@@ -4754,54 +4726,45 @@ p  { font-size: 1rem; line-height: 1.75; }
   filter: none !important;
   border: none !important;
   outline: none !important;
-  image-rendering: auto;
-  -webkit-font-smoothing: antialiased;
+  image-rendering: auto !important;
   transition: none !important;
   transform: none !important;
 }
 
-/* Scrolled state — IDENTICAL, no shrink */
-nav.scrolled .nav-logo-img {
-  width: 250px !important;
-  max-width: 250px !important;
-  height: auto !important;
-  transform: none !important;
-  transition: none !important;
-}
-
-/* ── FOOTER logo image ── */
+/* ── FOOTER logo image — centered, generous width ── */
 .footer-logo-img {
   display: block !important;
-  width: 250px !important;
-  max-width: 100% !important;
+  width: auto !important;
   height: auto !important;
+  max-width: 280px !important;
   object-fit: contain !important;
-  margin: 0 0 0.5rem 0 !important;
+  margin: 0 auto 0.8rem auto !important;
   background: transparent !important;
   box-shadow: none !important;
   filter: none !important;
   border: none !important;
-  image-rendering: auto;
+  image-rendering: auto !important;
   transition: none !important;
   transform: none !important;
 }
 
 /* ── Responsive logo sizes ── */
 @media (max-width: 1024px) {
-  .nav-logo-img    { width: 210px !important; max-width: 210px !important; }
-  .footer-logo-img { width: 210px !important; }
+  .nav-logo-img,
+  nav.scrolled .nav-logo-img  { height: 34px !important; max-height: 34px !important; }
+  .footer-logo-img             { max-width: 240px !important; }
 }
 
 @media (max-width: 768px) {
-  .nav-logo-img    { width: 180px !important; max-width: 180px !important; }
-  .footer-logo-img { width: 200px !important; }
-  nav.scrolled .nav-logo-img { width: 180px !important; max-width: 180px !important; }
+  .nav-logo-img,
+  nav.scrolled .nav-logo-img  { height: 30px !important; max-height: 30px !important; }
+  .footer-logo-img             { max-width: 210px !important; }
 }
 
 @media (max-width: 480px) {
-  .nav-logo-img    { width: 150px !important; max-width: 150px !important; }
-  .footer-logo-img { width: 170px !important; }
-  nav.scrolled .nav-logo-img { width: 150px !important; max-width: 150px !important; }
+  .nav-logo-img,
+  nav.scrolled .nav-logo-img  { height: 26px !important; max-height: 26px !important; }
+  .footer-logo-img             { max-width: 180px !important; }
 }
 
 /* ═══════════════════════════════════════════════════════════════════
@@ -5026,95 +4989,36 @@ section, footer, header, main, .hero, .footer {
 }
 
 /* ═══════════════════════════════════════════════
-   NAV HEIGHT LOCK — never changes on scroll
+   NAV HEIGHT LOCK — compact, no resize on scroll
    ═══════════════════════════════════════════════ */
 
-/* Nav padding stays identical scrolled vs not scrolled */
+/* Padding: zero vertical — height is set by .nav-container */
 nav,
 nav.scrolled {
-  padding-top: 0.9rem !important;
-  padding-bottom: 0.9rem !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
 
 @media (max-width: 768px) {
   nav,
   nav.scrolled {
-    padding: 0.75rem 1.2rem !important;
-  }
-  .nav-container {
-    height: auto !important;
-    min-height: 56px !important;
-    max-height: none !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
   }
 }
 
 @media (max-width: 480px) {
   nav,
   nav.scrolled {
-    padding: 0.65rem 1rem !important;
+    padding: 0 0.8rem !important;
   }
 }
 
 /* ═══════════════════════════════════════════════
-   LOGO — CRISP, FIXED SIZE, NO ANIMATION
+   LOGO — deferred to primary block above (lines ~4716+)
    ═══════════════════════════════════════════════ */
-
-.nav-logo-img,
-nav.scrolled .nav-logo-img {
-  width: 250px !important;
-  max-width: 250px !important;
-  height: auto !important;
-  display: block !important;
-  object-fit: contain !important;
-  background: transparent !important;
-  box-shadow: none !important;
-  border: none !important;
-  filter: none !important;
-  transform: none !important;
-  transition: none !important;
-  image-rendering: auto !important;
-  flex-shrink: 0 !important;
-}
-
-@media (max-width: 768px) {
-  .nav-logo-img,
-  nav.scrolled .nav-logo-img {
-    width: 180px !important;
-    max-width: 180px !important;
-  }
-}
-
-@media (max-width: 480px) {
-  .nav-logo-img,
-  nav.scrolled .nav-logo-img {
-    width: 150px !important;
-    max-width: 150px !important;
-  }
-}
-
-.footer-logo-img {
-  width: 250px !important;
-  max-width: 100% !important;
-  height: auto !important;
-  display: block !important;
-  background: transparent !important;
-  box-shadow: none !important;
-  border: none !important;
-  filter: none !important;
-  transform: none !important;
-  transition: none !important;
-  image-rendering: auto !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
-
-@media (max-width: 768px) {
-  .footer-logo-img { width: 200px !important; }
-}
-
-@media (max-width: 480px) {
-  .footer-logo-img { width: 170px !important; }
-}
 
 
 /* ═══════════════════════════════════════════════════
@@ -5225,10 +5129,10 @@ nav.scrolled .nav-logo-img {
     align-items: center !important;
     justify-content: center !important;
     position: relative !important;
-    height: auto !important;
-    min-height: 70px !important;
-    max-height: none !important;
-    padding: 0.6rem 1rem !important;
+    height: 52px !important;
+    min-height: 52px !important;
+    max-height: 52px !important;
+    padding: 0 1rem !important;
     box-sizing: border-box !important;
   }
 
@@ -5251,30 +5155,21 @@ nav.scrolled .nav-logo-img {
     gap: 0 !important;
   }
 
-  /* Logo image: 15% bigger than previous mobile size */
+  /* Logo image: height-based sizing, consistent with desktop */
   .nav-logo-img,
   nav.scrolled .nav-logo-img {
-    width: 200px !important;
-    max-width: 200px !important;
-    height: auto !important;
+    height: 30px !important;
+    max-height: 30px !important;
+    width: auto !important;
+    max-width: 160px !important;
     display: block !important;
     transform: none !important;
     transition: none !important;
   }
 
-  /* Tagline: constrained to logo width, centered */
+  /* Tagline: hidden on mobile (removed from header) */
   .nav-logo-tagline {
-    display: block !important;
-    text-align: center !important;
-    width: 200px !important;
-    max-width: 200px !important;
-    font-size: 0.44rem !important;
-    letter-spacing: 0.14em !important;
-    line-height: 1.5 !important;
-    margin-top: 3px !important;
-    white-space: normal !important;
-    word-break: break-word !important;
-    overflow: visible !important;
+    display: none !important;
   }
 
   /* Hamburger: pinned to right */
@@ -5410,21 +5305,22 @@ nav.scrolled .nav-logo-img {
 @media (max-width: 480px) {
 
   .nav-container {
-    min-height: 64px !important;
-    padding: 0.5rem 0.9rem !important;
+    height: 48px !important;
+    min-height: 48px !important;
+    max-height: 48px !important;
+    padding: 0 0.8rem !important;
   }
 
   .nav-logo-img,
   nav.scrolled .nav-logo-img {
-    width: 170px !important;
-    max-width: 170px !important;
+    height: 26px !important;
+    max-height: 26px !important;
+    width: auto !important;
+    max-width: 140px !important;
   }
 
   .nav-logo-tagline {
-    width: 170px !important;
-    max-width: 170px !important;
-    font-size: 0.40rem !important;
-    letter-spacing: 0.12em !important;
+    display: none !important;
   }
 
   footer {
@@ -5432,13 +5328,12 @@ nav.scrolled .nav-logo-img {
   }
 
   .footer-logo-img {
-    width: 170px !important;
     max-width: 170px !important;
+    width: auto !important;
   }
 
   .footer-logo-tagline {
-    width: 170px !important;
-    max-width: 170px !important;
+    display: none !important;
   }
 }
 
