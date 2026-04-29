@@ -22,16 +22,12 @@
   <link rel="stylesheet" href="styles.css?v=19" />
   <style>
     /* ── Leaflet map container ── */
-    .contact-map-outer {
-      width: 100%;
-      padding: 0 2rem 3rem;
-      box-sizing: border-box;
-    }
     .contact-map {
       width: 100%;
-      height: 500px;
+      height: 460px;
       border-radius: 20px;
       overflow: hidden;
+      margin-top: 2.5rem;
       box-shadow: var(--shadow-card);
       position: relative;
     }
@@ -45,22 +41,10 @@
       opacity: 0.7;
     }
     @media (max-width: 768px) {
-      .contact-map-outer {
-        padding: 0 1rem 2rem;
-      }
-      .contact-map {
-        height: 340px;
-        border-radius: 14px;
-      }
+      .contact-map { height: 480px; }
     }
     @media (max-width: 480px) {
-      .contact-map-outer {
-        padding: 0 0.75rem 2rem;
-      }
-      .contact-map {
-        height: 300px;
-        border-radius: 10px;
-      }
+      .contact-map { height: 460px; }
     }
     .contact-hero-img {
       /* No image background — gradient handled by .page-hero--contact */
@@ -186,7 +170,10 @@
           </div>
         </div>
 
-      </div><!-- /.contact-info -->
+        <div class="contact-map">
+          <div id="service-map"></div>
+        </div>
+      </div>
 
       <!-- RIGHT: Form -->
       <div class="contact-form-wrap reveal-right">
@@ -270,16 +257,8 @@
         </div>
       </div>
 
-    </div><!-- /.contact-grid -->
-  </div><!-- /.container -->
-
-  <!-- Map: full-width below the grid -->
-  <div class="contact-map-outer">
-    <div class="contact-map">
-      <div id="service-map"></div>
     </div>
   </div>
-
 </section>
 
 <!-- WHY CONTACT US FEATURE -->
@@ -411,33 +390,27 @@
     [25.9576, -80.6858]
   ];
 
-  /* ── Map init ── */
+  /* ── Map init: setView centred on both counties, zoom 9 ── */
   var isMobile = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
-  var screenW  = window.innerWidth;
-
-  /* Zoom 7 on phones (<600px) shows the full width of both counties.
-     At zoom 8 a 375px wide phone only fits ~0.53° longitude but the
-     counties span ~0.62° — so zoom 8 always clips the sides on mobile.
-     Desktop at 900px+ can use zoom 9 comfortably. */
-  var zoom = (screenW < 600) ? 7 : (screenW < 900) ? 8 : 9;
-  /* Center: lat midpoint of both counties, lng centered between east
-     coast (-80.07) and Everglades (-80.69) = -80.38 */
-  var centerLat = 25.83;
-  var centerLng = -80.38;
-
   var map = L.map('service-map', {
     scrollWheelZoom: false,
     zoomControl:     true,
     dragging:        !isMobile,
     touchZoom:       false,
-    doubleClickZoom: false,
-    minZoom:         6,
-    maxZoom:         14
-  }).setView([centerLat, centerLng], zoom);
+    doubleClickZoom: false
+  });
 
-  /* Recalculate tile layout after CSS renders — do NOT change zoom/center */
-  setTimeout(function() { map.invalidateSize(false); }, 150);
-  window.addEventListener('resize', function() { map.invalidateSize(false); });
+  /* fitBounds auto-fits both counties to any screen — same result as desktop */
+  var serviceBounds = [
+    [26.40, -80.72],
+    [25.24, -80.03]
+  ];
+  map.fitBounds(serviceBounds, { padding: [20, 20], maxZoom: 9 });
+  /* Re-fit after DOM settles on mobile */
+  setTimeout(function() {
+    map.invalidateSize();
+    map.fitBounds(serviceBounds, { padding: [20, 20], maxZoom: 9 });
+  }, 250);
 
   /* Touch overlay */
   if (isMobile) {
