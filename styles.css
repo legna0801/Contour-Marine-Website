@@ -180,7 +180,7 @@ nav.scrolled .nav-logo-tagline {
   display: none !important;
 }
 .footer-logo-tagline {
-  display: block !important;
+  display: none !important;
   font-family: 'Cinzel', serif;
   font-weight: 700;
   font-size: 0.60rem;
@@ -3661,6 +3661,7 @@ footer {
   font-size: 0.88rem;
   line-height: 1.72;
   max-width: 260px;
+  text-align: center;
 }
 .footer-col ul li {
   margin-bottom: 0.65rem;
@@ -3737,7 +3738,7 @@ p  { font-size: 1rem; line-height: 1.75; }
     grid-column: 1 / -1;
     max-width: 100%;
   }
-  .footer-brand p { max-width: 100%; }
+  .footer-brand p { max-width: 100%; text-align: center; }
 
   .section-header {
     margin-bottom: 2.5rem;
