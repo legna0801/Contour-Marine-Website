@@ -411,7 +411,7 @@
     [25.9576, -80.6858]
   ];
 
-  /* ── Map init: setView centred on both counties, zoom 9 ── */
+  /* ── Map init — fitBounds auto-calculates perfect zoom/center for any screen ── */
   var isMobile = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
   var map = L.map('service-map', {
     scrollWheelZoom: false,
@@ -421,13 +421,13 @@
     doubleClickZoom: false
   });
 
-  /* Hard-set view — mobile gets slightly different center/zoom to fit both counties */
-  var mobileView = window.innerWidth <= 600;
-  if (mobileView) {
-    map.setView([25.8000, -80.3800], 8);
-  } else {
-    map.setView([25.8200, -80.3700], 9);
-  }
+  /* Explicit bounds: SW corner = south tip of Miami-Dade, NE = north Broward */
+  /* Add extra west padding so the Everglades border is never clipped on mobile */
+  var serviceBounds = L.latLngBounds(
+    L.latLng(25.24, -80.78),   /* SW — south tip + generous west buffer */
+    L.latLng(26.40, -80.04)    /* NE — north Broward + east buffer       */
+  );
+  map.fitBounds(serviceBounds, { padding: [30, 30] });
 
   /* Force Leaflet to recalculate container size — fires multiple times to catch mobile render delay */
   setTimeout(function() { map.invalidateSize(); }, 100);
