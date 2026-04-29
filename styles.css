@@ -613,7 +613,7 @@ nav.scrolled .nav-logo-est  { font-size: 0.60rem; margin-top: 0.26rem; letter-sp
   filter:
     drop-shadow(0 2px 4px rgba(13,43,69,0.40))
     drop-shadow(0 6px 12px rgba(13,43,69,0.20))
-    drop-shadow(0 0 28px rgba(63,214,255,0.10));
+    drop-shadow(0 0 32px rgba(63,214,255,0.09));
   animation: heroLogoFloat 5s ease-in-out infinite;
   transform-style: preserve-3d;
   transition: filter 0.5s ease;
@@ -631,7 +631,7 @@ nav.scrolled .nav-logo-est  { font-size: 0.60rem; margin-top: 0.26rem; letter-sp
   filter:
     drop-shadow(0 2px 5px rgba(13,43,69,0.45))
     drop-shadow(0 6px 14px rgba(13,43,69,0.25))
-    drop-shadow(0 0 36px rgba(63,214,255,0.14));
+    drop-shadow(0 0 40px rgba(63,214,255,0.13));
   animation-play-state: paused;
   transform: translateY(-14px) rotateX(2deg) rotateY(2deg) scale(1.04);
 }
