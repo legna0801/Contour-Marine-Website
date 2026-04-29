@@ -126,9 +126,9 @@ nav.scrolled {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
-  min-height: 100px;
-  max-height: 100px;
+  height: 80px;
+  min-height: 80px;
+  max-height: 80px;
 }
 
 .nav-logo {
@@ -164,15 +164,16 @@ nav.scrolled {
   display: block !important;
   font-family: 'Cinzel', serif;
   font-weight: 700;
-  font-size: 0.62rem;
-  letter-spacing: 0.22em;
+  font-size: 0.48rem;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: #dcc38a;
   text-align: center;
   width: 100%;
-  margin-top: 4px;
-  line-height: 1.3;
+  margin-top: 3px;
+  line-height: 1.2;
   white-space: nowrap;
+  overflow: hidden;
   text-shadow: 0 1px 3px rgba(0,0,0,0.7);
 }
 nav.scrolled .nav-logo-tagline {
@@ -420,7 +421,7 @@ nav.scrolled .nav-logo-est  { font-size: 0.60rem; margin-top: 0.26rem; letter-sp
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding-top: 120px;
+  padding-top: 100px;
   gap: 1.5rem;
   opacity: 0;
   transform: translateY(-20px);
@@ -4736,9 +4737,9 @@ p  { font-size: 1rem; line-height: 1.75; }
 /* ── NAV logo image — fixed size, never changes on scroll ── */
 .nav-logo-img {
   display: block !important;
-  width: 260px !important;
+  width: 180px !important;
   height: auto !important;
-  max-width: 260px !important;
+  max-width: 180px !important;
   max-height: none !important;
   object-fit: contain !important;
   flex-shrink: 0 !important;
@@ -4755,8 +4756,8 @@ p  { font-size: 1rem; line-height: 1.75; }
 
 /* Scrolled state — IDENTICAL, no shrink */
 nav.scrolled .nav-logo-img {
-  width: 260px !important;
-  max-width: 260px !important;
+  width: 180px !important;
+  max-width: 180px !important;
   height: auto !important;
   transform: none !important;
   transition: none !important;
@@ -4781,20 +4782,20 @@ nav.scrolled .nav-logo-img {
 
 /* ── Responsive logo sizes ── */
 @media (max-width: 1024px) {
-  .nav-logo-img    { width: 230px !important; max-width: 230px !important; }
+  .nav-logo-img    { width: 160px !important; max-width: 160px !important; }
   .footer-logo-img { width: 360px !important; }
 }
 
 @media (max-width: 768px) {
-  .nav-logo-img    { width: 200px !important; max-width: 200px !important; }
+  .nav-logo-img    { width: 150px !important; max-width: 150px !important; }
   .footer-logo-img { width: 300px !important; }
-  nav.scrolled .nav-logo-img { width: 200px !important; max-width: 200px !important; }
+  nav.scrolled .nav-logo-img { width: 150px !important; max-width: 150px !important; }
 }
 
 @media (max-width: 480px) {
-  .nav-logo-img    { width: 170px !important; max-width: 170px !important; }
+  .nav-logo-img    { width: 140px !important; max-width: 140px !important; }
   .footer-logo-img { width: 260px !important; }
-  nav.scrolled .nav-logo-img { width: 170px !important; max-width: 170px !important; }
+  nav.scrolled .nav-logo-img { width: 140px !important; max-width: 140px !important; }
 }
 
 /* ═══════════════════════════════════════════════════════════════════
@@ -5062,8 +5063,8 @@ nav.scrolled {
 
 .nav-logo-img,
 nav.scrolled .nav-logo-img {
-  width: 260px !important;
-  max-width: 260px !important;
+  width: 180px !important;
+  max-width: 180px !important;
   height: auto !important;
   display: block !important;
   object-fit: contain !important;
@@ -5080,16 +5081,16 @@ nav.scrolled .nav-logo-img {
 @media (max-width: 768px) {
   .nav-logo-img,
   nav.scrolled .nav-logo-img {
-    width: 200px !important;
-    max-width: 200px !important;
+    width: 150px !important;
+    max-width: 150px !important;
   }
 }
 
 @media (max-width: 480px) {
   .nav-logo-img,
   nav.scrolled .nav-logo-img {
-    width: 170px !important;
-    max-width: 170px !important;
+    width: 140px !important;
+    max-width: 140px !important;
   }
 }
 
