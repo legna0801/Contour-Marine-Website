@@ -124,10 +124,10 @@ nav.scrolled {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 64px;
-  min-height: 64px;
-  max-height: 64px;
-  padding: 0 1.5rem;
+  height: auto;
+  min-height: unset;
+  max-height: none;
+  padding: 0.35rem 1.5rem;
   box-sizing: border-box;
 }
 
@@ -4742,7 +4742,7 @@ p  { font-size: 1rem; line-height: 1.75; }
    Crisp retina PNG, no resize on scroll, no box/shadow
    ═══════════════════════════════════════════════════ */
 
-/* ── NAV logo image — DESKTOP (≥769px): width-based, auto height ── */
+/* ── NAV logo image — DESKTOP (≥769px): clean, sharp, no effects ── */
 .nav-logo-img,
 nav.scrolled .nav-logo-img {
   display: block !important;
@@ -4758,11 +4758,11 @@ nav.scrolled .nav-logo-img {
   box-shadow: none !important;
   border: none !important;
   outline: none !important;
+  filter: none !important;
+  transform: none !important;
+  transition: none !important;
   image-rendering: -webkit-optimize-contrast !important;
   image-rendering: crisp-edges !important;
-  transition: filter 0.3s ease !important;
-  transform: none !important;
-  filter: brightness(1.08) contrast(1.10) drop-shadow(0 0 6px rgba(63,214,255,0.18)) !important;
 }
 
 /* ── FOOTER logo image ── */
@@ -4830,13 +4830,14 @@ nav.scrolled {
   align-items: center;
 }
 
-/* NAV LOGO IMAGE — defer to primary block above */
+/* NAV LOGO IMAGE — clean, no effects */
 .nav-logo-img {
   align-self: center !important;
   background: transparent !important;
   background-color: transparent !important;
   box-shadow: none !important;
-  transition: filter 0.3s ease !important;
+  filter: none !important;
+  transition: none !important;
 }
 .nav-logo:hover .nav-logo-img {
   filter: none !important;
@@ -5203,7 +5204,7 @@ nav.scrolled {
     gap: 0 !important;
   }
 
-  /* Logo image: MOBILE — 195px width, auto height */
+  /* Logo image: MOBILE — 195px width, auto height, no effects */
   .nav-logo-img,
   nav.scrolled .nav-logo-img {
     width: 195px !important;
@@ -5212,10 +5213,10 @@ nav.scrolled {
     max-height: none !important;
     display: block !important;
     transform: none !important;
-    transition: filter 0.3s ease !important;
+    transition: none !important;
     background: transparent !important;
     box-shadow: none !important;
-    filter: brightness(1.08) contrast(1.10) drop-shadow(0 0 6px rgba(63,214,255,0.18)) !important;
+    filter: none !important;
   }
 
   /* Tagline: keep hidden */
