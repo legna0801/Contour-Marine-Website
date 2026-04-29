@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="styles.css?v=17" />
+  <link rel="stylesheet" href="styles.css?v=18" />
   <style>
     /* ══════════════════════════════════════
        ABOUT PAGE — STANDALONE STYLES
@@ -30,10 +30,8 @@
     /* ── Hero ─────────────────────────────── */
     .about-hero {
       position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      min-height: unset;
+      display: block;
       overflow: hidden;
       /* Luxury prestige gradient — warm gold-navy, no image */
       background:
@@ -51,9 +49,10 @@
       position: relative;
       z-index: 2;
       text-align: center;
-      padding: 220px 2rem 80px;
+      padding: 60px 2rem 60px;
       max-width: 900px;
       width: 100%;
+      margin: 0 auto;
     }
     /* Big logo with glow ring — centered */
     .about-hero-logo-wrap {
@@ -707,11 +706,12 @@
 
     /* ── Hero refinements ─────────────────── */
     .about-hero {
-      min-height: 100svh; /* use svh so mobile chrome bar doesn't clip */
+      min-height: unset;
     }
     .about-hero-content {
-      padding: 160px 2.5rem 100px;
+      padding: 60px 2.5rem 60px;
       max-width: 860px;
+      margin: 0 auto;
     }
     .about-hero-logo-wrap {
       margin: 0 auto 3rem;
@@ -1091,7 +1091,7 @@
       .why-inner { gap: 3.5rem; }
     }
     @media (max-width: 900px) {
-      .about-hero-content { padding: 180px 2rem 90px; }
+      .about-hero-content { padding: 65px 2rem 60px; }
       .story-section { padding: 7rem 2rem; }
       .story-grid { grid-template-columns: 1fr; gap: 3rem; }
       .story-img-stack { height: 400px; }
@@ -1120,7 +1120,7 @@
       .experience-bullets li { flex: 1 1 calc(50% - 1rem); justify-content: center; }
     }
     @media (max-width: 600px) {
-      .about-hero-content { padding: 160px 1.5rem 80px; }
+      .about-hero-content { padding: 55px 1.5rem 60px; }
       .about-hero h1 { font-size: clamp(2rem, 8vw, 2.8rem); }
       .about-hero-sub { font-size: 0.97rem; }
       .about-hero-btns { flex-direction: column; align-items: center; }
@@ -1197,10 +1197,10 @@
       opacity: 0.6;
     }
 
-    /* ── Hero — more sky above the fold ── */
+    /* ── Hero — tightened top padding ── */
     .about-hero-content {
-      padding-top: 220px;
-      padding-bottom: 120px;
+      padding-top: 60px;
+      padding-bottom: 60px;
     }
     /* Scroll hint — barely visible, minimal */
     .about-hero-scroll {
@@ -1823,7 +1823,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <p>&copy; 2026 Contour Marine. All Rights Reserved. | <a href="#">Privacy Policy</a></p>
+    <p>&copy; 2026 Contour Marine. All Rights Reserved. | <a href="privacy.html">Privacy Policy</a></p>
     <p>Docks · Seawalls · Boat Lifts · Decks · Pilings</p>
   </div>
 </footer>

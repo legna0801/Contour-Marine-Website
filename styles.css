@@ -39,7 +39,7 @@ html {
   scroll-behavior: smooth;
   font-size: 16px;
   /* Account for fixed header when scrolling to anchors */
-  scroll-padding-top: 140px;
+  scroll-padding-top: 20px;
   overflow-x: hidden;
   max-width: 100%;
 }
@@ -949,7 +949,7 @@ section {
   background: #f5f7fa;
   padding: 4.5rem 2rem;
   /* Prevent fixed header overlap when anchor-scrolled */
-  scroll-margin-top: 140px;
+  scroll-margin-top: 20px;
   position: relative;
   z-index: 1;
 }
@@ -1790,10 +1790,9 @@ section {
 
 .page-hero {
   position: relative;
-  min-height: 540px;
+  min-height: unset;
   height: auto;
-  display: flex;
-  align-items: center;
+  display: block;
   /* Luxury gradient default — no image needed */
   background:
     radial-gradient(ellipse 100% 60% at 50% 0%,
@@ -1803,7 +1802,7 @@ section {
       #040e1a 0%,
       #071b2e 50%,
       #0a2437 100%);
-  padding: 220px 0 80px;
+  padding: 80px 2rem 70px;
 }
 
 .page-hero-bg {
@@ -3028,8 +3027,8 @@ footer {
   }
 
   .page-hero {
-    padding: 170px 0 70px;
-    min-height: 420px;
+    padding: 60px 0 60px;
+    min-height: 380px;
   }
 
   .page-hero-content {
@@ -3211,8 +3210,8 @@ footer {
     padding: 3rem 1.2rem 1.5rem;
   }
   .page-hero {
-    padding: 200px 0 60px;
-    min-height: 380px;
+    padding: 50px 0 50px;
+    min-height: 340px;
   }
   .process-steps {
     flex-direction: column;
@@ -5019,7 +5018,7 @@ footer::before {
 
 /* Seawalls — sw-services is already 7rem, but add safety for sw-intro */
 .sw-intro {
-  scroll-margin-top: 90px;
+  scroll-margin-top: 20px;
 }
 
 /* Responsive — nav shrinks on scroll, keep clearance proportional */
@@ -5497,3 +5496,1023 @@ section, footer, header, main, .hero, .footer {
   }
 }
 
+
+/* ═══════════════════════════════════════════════════════════════════════
+   SITE-WIDE AUDIT FIX v18  —  Final authority block
+   Fixes: spacing, CTA buttons, footer, mobile, inline-style overrides
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* ─── 1. CSS SPACING VARIABLES ─────────────────────────────────── */
+:root {
+  --section-pad-v: 4.5rem;
+  --section-pad-h: 2rem;
+  --hero-pad-top: 80px;
+  --hero-pad-bottom: 70px;
+  --nav-h-desktop: auto;
+  --nav-h-mobile: 62px;
+  --nav-h-small: 56px;
+}
+
+/* ─── 2. PAGE-HERO: uniform padding, no min-height centering gap ── */
+.page-hero {
+  display: block !important;
+  padding: var(--hero-pad-top) 2rem var(--hero-pad-bottom) !important;
+  min-height: unset !important;
+}
+.page-hero-content {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  text-align: left;
+}
+/* About hero: centered content */
+.about-hero-content {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+/* ─── 3. SEAWALLS HERO FIX ──────────────────────────────────────── */
+.sw-hero {
+  display: block !important;
+  min-height: unset !important;
+  padding: 0;
+}
+.sw-hero-inner {
+  padding: var(--hero-pad-top) 2rem var(--hero-pad-bottom) !important;
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* ─── 4. GALLERY HERO FIX ───────────────────────────────────────── */
+.gal-hero {
+  display: block !important;
+  padding: var(--hero-pad-top) 2rem var(--hero-pad-bottom) !important;
+}
+
+/* ─── 5. ABOUT HERO FIX ─────────────────────────────────────────── */
+.about-hero {
+  display: block !important;
+  min-height: unset !important;
+  overflow: hidden;
+}
+.about-hero-content {
+  padding: var(--hero-pad-top) 2rem var(--hero-pad-bottom) !important;
+}
+
+/* ─── 6. UNIFORM SECTION VERTICAL SPACING ──────────────────────── */
+.services-section,
+.before-after-section,
+.process-section,
+.feature-section,
+.testimonials-section,
+.cta-section,
+.service-detail,
+.contact-section,
+.gallery-section {
+  padding-top: var(--section-pad-v);
+  padding-bottom: var(--section-pad-v);
+  padding-left: var(--section-pad-h);
+  padding-right: var(--section-pad-h);
+}
+/* Inline-style sections on docks/decks/boatlifts - handled via class additions below */
+
+/* ─── 7. CTA BUTTONS — STANDARDIZED ────────────────────────────── */
+/* Primary: orange fill, consistent size, glow */
+.btn-primary {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.6rem !important;
+  background: var(--orange) !important;
+  color: var(--white) !important;
+  padding: 1rem 2.2rem !important;
+  border-radius: 50px !important;
+  font-weight: 700 !important;
+  font-size: 0.95rem !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  border: 2px solid var(--orange) !important;
+  box-shadow: 0 6px 22px rgba(212,114,26,0.35), 0 0 14px rgba(212,114,26,0.15) !important;
+  transition: all 0.3s ease !important;
+  white-space: nowrap;
+}
+.btn-primary:hover {
+  background: transparent !important;
+  color: var(--orange) !important;
+  box-shadow: 0 12px 35px rgba(212,114,26,0.30) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Secondary: teal outline, consistent size */
+.btn-secondary {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.6rem !important;
+  background: transparent !important;
+  color: var(--white) !important;
+  padding: 1rem 2.2rem !important;
+  border-radius: 50px !important;
+  font-weight: 700 !important;
+  font-size: 0.95rem !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  border: 2px solid rgba(255,255,255,0.65) !important;
+  transition: all 0.3s ease !important;
+  white-space: nowrap;
+}
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.14) !important;
+  border-color: rgba(255,255,255,0.95) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* CTA section button pair — full consistent sizing */
+.cta-actions {
+  display: flex !important;
+  gap: 1.1rem !important;
+  justify-content: center !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  margin-top: 0 !important;
+}
+.cta-actions .btn-primary,
+.cta-actions .btn-secondary,
+.cta-actions .btn-cta-call {
+  min-width: 200px !important;
+  justify-content: center !important;
+  padding: 1rem 2.2rem !important;
+  font-size: 0.95rem !important;
+}
+
+/* ─── 8. FOOTER — CONSISTENT ACROSS ALL PAGES ──────────────────── */
+footer {
+  background: var(--navy-dark) !important;
+  padding: 4rem 2rem 2rem !important;
+}
+.footer-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  align-items: start;
+}
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.footer-phone {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  color: var(--teal-bright) !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+  margin-top: 0.6rem !important;
+  transition: color 0.3s !important;
+}
+.footer-phone:hover {
+  color: var(--white) !important;
+}
+.footer-phone i {
+  font-size: 0.9rem !important;
+  flex-shrink: 0 !important;
+}
+/* Footer email link — same style as phone */
+.footer-brand a[href^="mailto:"] {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  color: var(--teal-bright) !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+  margin-top: 0.4rem !important;
+  transition: color 0.3s !important;
+}
+.footer-brand a[href^="mailto:"]:hover {
+  color: var(--white) !important;
+}
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+/* Footer bottom links */
+.footer-bottom a {
+  color: var(--teal-bright) !important;
+  text-decoration: none !important;
+}
+.footer-bottom a:hover {
+  color: var(--white) !important;
+  text-decoration: underline !important;
+}
+
+/* ─── 9. NAVIGATION — HEIGHT LOCK, NO LAYOUT SHIFT ─────────────── */
+/* Desktop: position relative, full-width, auto height */
+@media (min-width: 769px) {
+  nav {
+    position: relative !important;
+    width: 100% !important;
+    z-index: 100 !important;
+  }
+  .nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0.3rem 1.5rem !important;
+    height: auto !important;
+    min-height: unset !important;
+    max-height: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-logo-img {
+    width: 280px !important;
+    max-width: 280px !important;
+    height: auto !important;
+  }
+}
+
+/* ─── 10. HORIZONTAL SCROLL PREVENTION ─────────────────────────── */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+}
+* {
+  max-width: 100%;
+}
+img, video, iframe, embed {
+  max-width: 100% !important;
+}
+
+/* ─── 11. INLINE SECTION GRIDS — RESPONSIVE FIXES ──────────────── */
+/* Docks/Decks inline photo grids become single-column on mobile */
+@media (max-width: 600px) {
+  .dock-light-grid,
+  .deck-light-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem !important;
+  }
+  .dock-light-grid > div,
+  .deck-light-grid > div {
+    height: 200px !important;
+  }
+}
+/* Photo showcase grids: 3-col → 2-col → 1-col */
+@media (max-width: 768px) {
+  /* Any inline 3-col grid */
+  [style*="grid-template-columns:repeat(3,1fr)"],
+  [style*="grid-template-columns: repeat(3,1fr)"],
+  [style*="grid-template-columns:repeat(3, 1fr)"],
+  [style*="grid-template-columns: repeat(3, 1fr)"] {
+    grid-template-columns: repeat(2,1fr) !important;
+  }
+  [style*="grid-template-columns:1fr 2fr"],
+  [style*="grid-template-columns: 1fr 2fr"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+@media (max-width: 480px) {
+  [style*="grid-template-columns:repeat(3,1fr)"],
+  [style*="grid-template-columns: repeat(3,1fr)"],
+  [style*="grid-template-columns:repeat(3, 1fr)"],
+  [style*="grid-template-columns: repeat(3, 1fr)"],
+  [style*="grid-template-columns:repeat(2,1fr)"],
+  [style*="grid-template-columns: repeat(2,1fr)"],
+  [style*="grid-template-columns:1fr 1fr"],
+  [style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+  /* Stacked image heights on mobile */
+  [style*="height:320px"],
+  [style*="height: 320px"],
+  [style*="height:260px"],
+  [style*="height: 260px"] {
+    height: 200px !important;
+  }
+}
+
+/* ─── 12. TEXT WRAPPING — PREVENT OVERFLOW ──────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+p, a, span, li {
+  overflow-wrap: break-word;
+}
+/* Section labels */
+.section-label {
+  white-space: normal;
+  word-break: normal;
+}
+
+/* ─── 13. MOBILE RESPONSIVE — COMPREHENSIVE PASS ───────────────── */
+@media (max-width: 768px) {
+  /* Hero sections */
+  .page-hero {
+    padding: 60px 1.5rem 50px !important;
+  }
+  .page-hero-content {
+    padding: 0 !important;
+  }
+  .sw-hero-inner {
+    padding: 60px 1.5rem 50px !important;
+  }
+  .gal-hero {
+    padding: 60px 1.5rem 50px !important;
+  }
+  .about-hero-content {
+    padding: 60px 1.5rem 50px !important;
+  }
+
+  /* Sections */
+  .services-section,
+  .before-after-section,
+  .process-section,
+  .feature-section,
+  .testimonials-section,
+  .cta-section,
+  .service-detail,
+  .contact-section {
+    padding: 3.5rem 1.5rem !important;
+  }
+
+  /* Trust bar */
+  .trust-bar {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0.6rem !important;
+    padding: 1.2rem 1.5rem !important;
+  }
+
+  /* Service detail grid: stack */
+  .service-detail-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  .service-detail-grid.reverse > *:first-child {
+    order: 2;
+  }
+  .service-detail-grid.reverse > *:last-child {
+    order: 1;
+  }
+
+  /* Feature boxes: 2 col → 1 col */
+  .feature-boxes {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1rem !important;
+  }
+
+  /* Testimonials: 1 col */
+  .testimonials-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.2rem !important;
+  }
+
+  /* Before/after: 1 col */
+  .ba-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 460px !important;
+    margin: 0 auto !important;
+  }
+
+  /* Footer: single col, centered */
+  footer {
+    padding: 3rem 1.5rem 5.5rem !important;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  .footer-brand {
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+  .footer-brand p {
+    text-align: center !important;
+    max-width: 280px !important;
+    margin: 0 auto !important;
+  }
+  .footer-brand .footer-social {
+    justify-content: center !important;
+  }
+  .footer-brand .footer-phone,
+  .footer-brand a[href^="mailto:"] {
+    justify-content: center !important;
+  }
+  .footer-col {
+    align-items: center !important;
+    text-align: center !important;
+  }
+  .footer-col ul {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .footer-col ul li a {
+    justify-content: center !important;
+  }
+  .footer-bottom {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 0.3rem !important;
+  }
+
+  /* CTA buttons: stack on mobile */
+  .cta-actions {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .cta-actions .btn-primary,
+  .cta-actions .btn-secondary,
+  .cta-actions .btn-cta-call {
+    width: 100% !important;
+    max-width: 300px !important;
+  }
+
+  /* Section headers */
+  .section-header {
+    margin-bottom: 2rem !important;
+    padding: 0 !important;
+  }
+  .section-header h2 {
+    font-size: clamp(1.7rem, 6vw, 2.4rem) !important;
+  }
+
+  /* Service detail buttons: full width on mobile */
+  .service-detail-content .btn-primary {
+    width: 100% !important;
+    max-width: 340px !important;
+    justify-content: center !important;
+  }
+
+  /* Hero buttons: stack */
+  .hero-buttons {
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    gap: 0.75rem !important;
+  }
+  .hero-buttons .btn-primary,
+  .hero-buttons .btn-secondary {
+    width: 100% !important;
+    max-width: 300px !important;
+    justify-content: center !important;
+  }
+  /* Seawalls hero buttons */
+  .sw-hero-btns {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+    width: 100% !important;
+  }
+  .sw-btn-call,
+  .sw-btn-quote {
+    width: 100% !important;
+    max-width: 300px !important;
+    justify-content: center !important;
+  }
+
+  /* Process steps: wrap nicely */
+  .process-steps {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 1.5rem !important;
+    max-width: 100% !important;
+  }
+  .process-step {
+    flex: 0 0 calc(50% - 1rem) !important;
+    min-width: 130px !important;
+    max-width: 200px !important;
+  }
+
+  /* Contact grid: stack */
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  .contact-form-wrap {
+    padding: 1.5rem 1.2rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Hero padding */
+  .page-hero {
+    padding: 50px 1.2rem 45px !important;
+  }
+  .sw-hero-inner {
+    padding: 50px 1.2rem 45px !important;
+  }
+  .gal-hero {
+    padding: 50px 1.2rem 45px !important;
+  }
+  .about-hero-content {
+    padding: 50px 1.2rem 45px !important;
+  }
+
+  /* Sections tighter */
+  .services-section,
+  .before-after-section,
+  .process-section,
+  .feature-section,
+  .testimonials-section,
+  .cta-section,
+  .service-detail,
+  .contact-section {
+    padding: 3rem 1.2rem !important;
+  }
+
+  /* Feature boxes: single col */
+  .feature-boxes {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Process steps: single col */
+  .process-steps {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .process-step {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    max-width: 280px !important;
+  }
+
+  /* Typography */
+  .page-hero-content h1,
+  .sw-hero h1,
+  .gal-hero h1,
+  .about-hero-content h1 {
+    font-size: clamp(1.9rem, 8vw, 2.6rem) !important;
+  }
+
+  /* Service detail img height */
+  .service-detail-img img {
+    height: 240px !important;
+    border-radius: 12px !important;
+  }
+
+  /* Footer tighter */
+  footer {
+    padding: 2.5rem 1rem 5.5rem !important;
+  }
+
+  /* CTA section */
+  .cta-section {
+    padding: 3rem 1.2rem !important;
+  }
+
+  /* Seawalls process steps */
+  .sw-process-steps {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ─── 14. SECTION LABEL CONSISTENT SPACING ──────────────────────── */
+.section-label {
+  display: block !important;
+  margin-bottom: 0.65rem !important;
+}
+.cta-content .section-label {
+  margin-bottom: 0.8rem !important;
+}
+
+/* ─── 15. TRUST BAR — HORIZONTAL DESKTOP ────────────────────────── */
+@media (min-width: 769px) {
+  .trust-bar {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    padding: 1.2rem 2.5rem !important;
+    gap: 2rem !important;
+    justify-content: center !important;
+  }
+}
+
+/* ─── 16. BREADCRUMB NAV — CONSISTENT ACROSS PAGES ─────────────── */
+.page-hero-content nav.breadcrumb,
+.breadcrumb {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  font-size: 0.8rem !important;
+  color: rgba(255,255,255,0.55) !important;
+  margin-bottom: 1.2rem !important;
+  letter-spacing: 0.04em !important;
+  background: none !important;
+  position: static !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  width: 100% !important;
+}
+.breadcrumb a {
+  color: rgba(255,255,255,0.55) !important;
+  text-decoration: none !important;
+  transition: color 0.3s !important;
+}
+.breadcrumb a:hover {
+  color: var(--teal-bright) !important;
+}
+.breadcrumb .fa-chevron-right {
+  font-size: 0.6rem !important;
+  opacity: 0.5 !important;
+}
+
+/* ─── 17. PAGE HERO H1 LINE BREAKS — RESPONSIVE ─────────────────── */
+.page-hero-content h1 {
+  font-size: clamp(2.2rem, 5vw, 3.8rem) !important;
+  line-height: 1.1 !important;
+  margin-bottom: 1rem !important;
+}
+.page-hero-content h1 em {
+  color: var(--teal-bright) !important;
+  font-style: italic !important;
+}
+.page-hero-content h1 br {
+  display: none;
+}
+@media (min-width: 640px) {
+  .page-hero-content h1 br {
+    display: inline;
+  }
+}
+
+/* ─── 18. HERO-SUB ON SERVICE PAGES ─────────────────────────────── */
+.page-hero-content .hero-sub {
+  color: rgba(255,255,255,0.82) !important;
+  font-size: clamp(0.95rem, 2vw, 1.1rem) !important;
+  line-height: 1.7 !important;
+  max-width: 600px !important;
+  margin-top: 0 !important;
+}
+
+/* ─── 19. GALLERY PAGE SPECIFIC ─────────────────────────────────── */
+.gal-hero h1 {
+  font-size: clamp(2.2rem, 5vw, 3.8rem) !important;
+  line-height: 1.1 !important;
+  color: var(--white) !important;
+}
+.gal-section {
+  padding: 3rem 1.5rem 5rem !important;
+}
+@media (max-width: 768px) {
+  .gal-grid {
+    grid-template-columns: repeat(2,1fr) !important;
+  }
+  .gal-section {
+    padding: 2.5rem 1.2rem 4rem !important;
+  }
+}
+@media (max-width: 480px) {
+  .gal-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ─── 20. ABOUT PAGE: hero logo size ─────────────────────────────── */
+.about-hero-logo {
+  width: clamp(140px, 18vw, 200px) !important;
+  max-width: 80% !important;
+  margin: 0 auto !important;
+  display: block !important;
+}
+@media (max-width: 768px) {
+  .about-hero-logo {
+    width: clamp(120px, 40vw, 180px) !important;
+  }
+}
+
+/* ─── 21. INLINE SECTION PADDING OVERRIDES ───────────────────────── */
+/* Override any inline style="padding:4rem 2rem" sections */
+@media (max-width: 768px) {
+  section[style*="padding:4rem 2rem"],
+  section[style*="padding: 4rem 2rem"],
+  section[style*="padding:5rem 2rem"],
+  section[style*="padding: 5rem 2rem"],
+  section[style*="padding:4.5rem 2rem"],
+  section[style*="padding: 4.5rem 2rem"] {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+}
+@media (max-width: 480px) {
+  section[style*="padding:4rem 2rem"],
+  section[style*="padding: 4rem 2rem"],
+  section[style*="padding:5rem 2rem"],
+  section[style*="padding: 5rem 2rem"],
+  section[style*="padding:4.5rem 2rem"],
+  section[style*="padding: 4.5rem 2rem"] {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+    padding-left: 1.2rem !important;
+    padding-right: 1.2rem !important;
+  }
+}
+
+/* ─── 22. INLINE MAX-WIDTH CENTERING ────────────────────────────── */
+/* Any inline container div: consistent centering */
+[style*="max-width:1200px"],
+[style*="max-width: 1200px"],
+[style*="max-width:1100px"],
+[style*="max-width: 1100px"],
+[style*="max-width:900px"],
+[style*="max-width: 900px"] {
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* ─── 23. PWC LIFT GRID — RESPONSIVE ────────────────────────────── */
+@media (max-width: 768px) {
+  .pwc-angle-grid {
+    grid-template-columns: repeat(2,1fr) !important;
+  }
+  .pwc-angle-item--wide {
+    grid-column: 1 / -1 !important;
+    aspect-ratio: 16/9 !important;
+  }
+}
+@media (max-width: 480px) {
+  .pwc-angle-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .pwc-angle-item--wide {
+    aspect-ratio: 4/3 !important;
+  }
+}
+
+/* ─── 24. BOAT LIFT SHOWCASE — RESPONSIVE ───────────────────────── */
+@media (max-width: 768px) {
+  .bl-showcase-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ─── 25. PILING COVERS GRID — RESPONSIVE ───────────────────────── */
+@media (max-width: 768px) {
+  .pl-covers-grid {
+    grid-template-columns: repeat(2,1fr) !important;
+  }
+}
+@media (max-width: 480px) {
+  .pl-covers-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ─── 26. DK-TRANSFORM (decks rooftop) — RESPONSIVE ────────────── */
+@media (max-width: 768px) {
+  .dk-transform-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+}
+
+/* ─── 27. SW (SEAWALLS) SPECIFIC RESPONSIVE ─────────────────────── */
+@media (max-width: 700px) {
+  .sw-hero h1 {
+    font-size: clamp(1.9rem, 9vw, 2.6rem) !important;
+  }
+}
+@media (max-width: 768px) {
+  .sw-process-steps {
+    grid-template-columns: repeat(2,1fr) !important;
+  }
+}
+@media (max-width: 480px) {
+  .sw-process-steps {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ─── 28. CONTACT FORM — RESPONSIVE ─────────────────────────────── */
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+}
+.contact-map {
+  max-width: 100% !important;
+  overflow: hidden !important;
+}
+
+/* ─── 29. ABOUT PAGE SECTIONS — CONSISTENT SPACING ─────────────── */
+.story-section,
+.values-section,
+.why-section,
+.areas-section,
+.about-cta-section {
+  padding-top: var(--section-pad-v) !important;
+  padding-bottom: var(--section-pad-v) !important;
+  padding-left: var(--section-pad-h) !important;
+  padding-right: var(--section-pad-h) !important;
+}
+@media (max-width: 768px) {
+  .story-section,
+  .values-section,
+  .why-section,
+  .areas-section,
+  .about-cta-section {
+    padding: 3.5rem 1.5rem !important;
+  }
+  .story-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  .why-inner {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  .areas-grid {
+    grid-template-columns: repeat(2,1fr) !important;
+  }
+}
+@media (max-width: 480px) {
+  .areas-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .about-stats {
+    grid-template-columns: repeat(2,1fr) !important;
+  }
+}
+
+/* ─── 30. OVERALL POLISH ─────────────────────────────────────────── */
+/* Remove any stray outline on focused links */
+a:focus-visible {
+  outline: 2px solid var(--teal-bright);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+/* Smooth image rendering */
+img {
+  image-rendering: auto;
+  -webkit-font-smoothing: auto;
+}
+/* Prevent font-size inflation on iOS */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+/* Ensure section containers don't overflow */
+.container {
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+
+/* ─── 31. INLINE-STYLE REPLACEMENT CLASSES ──────────────────────── */
+/* Dock montage section */
+.dock-montage-section {
+  background: #f4f7f9;
+  padding: 4rem 2rem;
+}
+.dock-montage-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+/* Dock / Deck lighting dark section */
+.lighting-dark-section {
+  background: #071b2e;
+  padding: 4rem 2rem;
+}
+.lighting-dark-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+/* Dock photo showcase white section */
+.dock-showcase-section {
+  background: #fff;
+  padding: 5rem 2rem;
+}
+.dock-showcase-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+/* Image caption overlay (day/evening labels) */
+.img-caption-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.75rem 1rem;
+  background: linear-gradient(transparent, rgba(13,43,69,0.75));
+}
+/* Lighting disclaimer card */
+.lighting-disclaimer-card {
+  max-width: 660px;
+  margin: 0 auto;
+  text-align: center;
+  border: 1px solid rgba(59,196,218,0.18);
+  border-radius: 14px;
+  padding: 1.8rem 2rem;
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(8px);
+}
+/* Referral / gallery teal outline button */
+.btn-teal-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-accent), sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--teal-bright);
+  text-decoration: none;
+  border: 1.5px solid rgba(59,196,218,0.4);
+  padding: 0.7rem 1.8rem;
+  border-radius: 50px;
+  margin-top: 1.5rem;
+  transition: all 0.22s ease;
+}
+.btn-teal-outline:hover {
+  border-color: var(--teal-bright);
+  background: rgba(59,196,218,0.1);
+  color: #fff;
+}
+/* Gallery view-all teal outline button */
+.btn-teal-outline--gallery {
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  padding: 0.75rem 2rem;
+  color: var(--teal);
+  border-color: var(--teal);
+}
+.btn-teal-outline--gallery:hover {
+  background: var(--teal);
+  color: #fff;
+  border-color: var(--teal);
+}
+/* Deck IPE walkway section */
+.ipe-walkway-section {
+  background: #f8f5f0;
+  padding: 4rem 2rem;
+}
+.ipe-walkway-inner {
+  max-width: 520px;
+  margin: 0 auto;
+}
+/* Boatlift featured project section */
+.bl-featured-section {
+  background: #f8f5f0;
+  padding: 4rem 2rem;
+}
+.bl-featured-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+/* Boatlift third service-detail alt-bg */
+.service-detail--alt-bg {
+  background: #f4f7f9;
+}
+
+/* ─── 32. PRIVACY PAGE ───────────────────────────────────────────── */
+.privacy-section {
+  padding: 5rem 2rem;
+  background: var(--off-white);
+}
+.privacy-section .container {
+  max-width: 860px;
+}
+.privacy-section h1 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+.privacy-section .last-updated {
+  color: var(--mid-gray);
+  font-size: 0.88rem;
+  margin-bottom: 2.5rem;
+}
+.privacy-section h2 {
+  font-size: 1.3rem;
+  color: var(--navy);
+  margin: 2rem 0 0.6rem;
+}
+.privacy-section p,
+.privacy-section li {
+  font-size: 0.97rem;
+  line-height: 1.8;
+  color: var(--text-mid);
+}
+.privacy-section ul {
+  padding-left: 1.4rem;
+  margin-bottom: 1rem;
+}
