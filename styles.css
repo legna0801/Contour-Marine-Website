@@ -124,9 +124,9 @@ nav.scrolled {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
-  min-height: 80px;
-  max-height: 80px;
+  height: 58px;
+  min-height: 58px;
+  max-height: 58px;
 }
 
 .nav-logo {
@@ -158,9 +158,9 @@ nav.scrolled {
   text-align: center;
 }
 
-/* ── Nav tagline — shown as real CSS text under the logo image ── */
+/* ── Nav tagline — HIDDEN from header ── */
 .nav-logo-tagline {
-  display: block !important;
+  display: none !important;
   font-family: 'Cinzel', serif;
   font-weight: 700;
   font-size: 0.52rem;
@@ -178,8 +178,7 @@ nav.scrolled {
   text-shadow: 0 1px 3px rgba(0,0,0,0.7);
 }
 nav.scrolled .nav-logo-tagline {
-  display: block !important;
-  color: #dcc38a;
+  display: none !important;
 }
 .footer-logo-tagline {
   display: block !important;
