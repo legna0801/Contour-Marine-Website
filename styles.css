@@ -97,7 +97,7 @@ nav {
   left: 0;
   right: 0;
   z-index: 1000;
-  padding: 0 1rem;
+  padding: 0;
   background: transparent;
   pointer-events: auto;
   box-shadow:
@@ -110,7 +110,7 @@ nav.scrolled {
   background: rgba(7, 27, 46, 0.97);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  padding: 0 1rem;
+  padding: 0;
   box-shadow:
     0 1px 0   rgba(59,196,218,0.18),
     0 2px 10px rgba(0,0,0,0.40);
@@ -118,16 +118,16 @@ nav.scrolled {
 }
 
 .nav-container {
+  max-width: 1400px;
   width: 100%;
-  max-width: 100%;
-  margin: 0;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: auto;
-  min-height: unset;
-  max-height: none;
-  padding: 0 1rem 0 0;
+  height: 64px;
+  min-height: 64px;
+  max-height: 64px;
+  padding: 0 1.5rem;
   box-sizing: border-box;
 }
 
@@ -469,10 +469,10 @@ nav.scrolled .nav-logo-est  { font-size: 0.60rem; margin-top: 0.26rem; letter-sp
 .hero {
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   background: var(--navy-dark);
-  padding: 185px 2rem 3.5rem;
+  padding: 96px 2rem 3.5rem;
 }
 
 /* ── Background — clean deep navy gradient, no photos, no textures ── */
@@ -3050,9 +3050,9 @@ footer {
   }
 
   .hero-logo {
-    width: clamp(260px, 80vw, 420px); /* landscape 3D text logo — needs wider treatment on mobile */
-    max-width: 92%;
-    margin: 0 auto;            /* keep centered on mobile  */
+    width: clamp(160px, 55vw, 260px); /* smaller on mobile — don't push headline too far down */
+    max-width: 85%;
+    margin: 0 auto;
     display: block;
   }
 
@@ -3706,10 +3706,10 @@ p  { font-size: 1rem; line-height: 1.75; }
 
 /* ── 16. REFINED RESPONSIVE: 768px breakpoint ── */
 @media (max-width: 768px) {
-  nav { padding: 1rem 1.5rem; }
-  nav.scrolled { padding: 1rem 1.5rem; }
+  nav { padding: 0; }
+  nav.scrolled { padding: 0; }
 
-  .hero { padding: 165px 1.5rem 70px; }
+  .hero { padding: 82px 1.5rem 60px; }
   .hero-content { max-width: 100%; }
 
   .services-section,
@@ -3764,9 +3764,9 @@ p  { font-size: 1rem; line-height: 1.75; }
 
 /* ── 17. REFINED RESPONSIVE: 480px breakpoint ── */
 @media (max-width: 480px) {
-  nav { padding: 0.9rem 1.2rem; }
+  nav { padding: 0; }
 
-  .hero { padding: 135px 1.2rem 60px; } /* clears auto-height nav on mobile */
+  .hero { padding: 72px 1.2rem 50px; } /* clears 64px nav + small gap on mobile */
 
   .hero-buttons {
     flex-direction: column;
@@ -4742,26 +4742,27 @@ p  { font-size: 1rem; line-height: 1.75; }
    Crisp retina PNG, no resize on scroll, no box/shadow
    ═══════════════════════════════════════════════════ */
 
-/* ── NAV logo image — wide, slim, fully transparent ── */
+/* ── NAV logo image — desktop: height-based, left-aligned ── */
 .nav-logo-img,
 nav.scrolled .nav-logo-img {
   display: block !important;
   width: auto !important;
   max-width: 100% !important;
-  height: 58px !important;
-  max-height: 58px !important;
+  height: 42px !important;
+  max-height: 42px !important;
   object-fit: contain !important;
   object-position: left center !important;
   flex-shrink: 0 !important;
   background: transparent !important;
   background-color: transparent !important;
   box-shadow: none !important;
-  filter: none !important;
   border: none !important;
   outline: none !important;
-  image-rendering: auto !important;
-  transition: none !important;
+  image-rendering: -webkit-optimize-contrast !important;
+  image-rendering: crisp-edges !important;
+  transition: filter 0.3s ease !important;
   transform: none !important;
+  filter: brightness(1.08) contrast(1.10) drop-shadow(0 0 6px rgba(63,214,255,0.18)) !important;
 }
 
 /* ── FOOTER logo image ── */
@@ -4784,19 +4785,19 @@ nav.scrolled .nav-logo-img {
 /* ── Responsive nav logo ── */
 @media (max-width: 1024px) {
   .nav-logo-img,
-  nav.scrolled .nav-logo-img { width: 420px !important; max-width: calc(100vw - 70px) !important; height: auto !important; max-height: none !important; }
+  nav.scrolled .nav-logo-img { height: 38px !important; max-height: 38px !important; width: auto !important; }
   .footer-logo-img            { width: 210px !important; }
 }
 
 @media (max-width: 768px) {
   .nav-logo-img,
-  nav.scrolled .nav-logo-img { width: 300px !important; max-width: calc(100vw - 60px) !important; height: auto !important; max-height: none !important; }
+  nav.scrolled .nav-logo-img { height: 50px !important; max-height: 50px !important; width: auto !important; max-width: calc(100vw - 70px) !important; }
   .footer-logo-img            { width: 200px !important; }
 }
 
 @media (max-width: 480px) {
   .nav-logo-img,
-  nav.scrolled .nav-logo-img { width: 220px !important; max-width: calc(100vw - 56px) !important; height: auto !important; max-height: none !important; }
+  nav.scrolled .nav-logo-img { height: 44px !important; max-height: 44px !important; width: auto !important; max-width: calc(100vw - 64px) !important; }
   .footer-logo-img            { width: 170px !important; }
 }
 
@@ -5170,16 +5171,16 @@ nav.scrolled {
 /* ── NAV: full-width flex, logo left, hamburger right ── */
 @media (max-width: 768px) {
 
-  /* Nav container: simple flex row, logo left, hamburger right */
+  /* Nav container: slim fixed height, logo left, hamburger right */
   .nav-container {
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
     position: relative !important;
-    height: auto !important;
-    min-height: unset !important;
-    max-height: none !important;
-    padding: 0 0.8rem 0 0 !important;
+    height: 62px !important;
+    min-height: 62px !important;
+    max-height: 62px !important;
+    padding: 0 1rem !important;
     box-sizing: border-box !important;
   }
 
@@ -5202,13 +5203,13 @@ nav.scrolled {
     gap: 0 !important;
   }
 
-  /* Logo image: width-based, auto height */
+  /* Logo image: height-based, auto width, max 50px on mobile */
   .nav-logo-img,
   nav.scrolled .nav-logo-img {
-    width: 300px !important;
-    max-width: calc(100vw - 60px) !important;
-    height: auto !important;
-    max-height: none !important;
+    width: auto !important;
+    max-width: calc(100vw - 70px) !important;
+    height: 50px !important;
+    max-height: 50px !important;
     display: block !important;
     transform: none !important;
     transition: filter 0.3s ease !important;
@@ -5356,16 +5357,18 @@ nav.scrolled {
 @media (max-width: 480px) {
 
   .nav-container {
-    min-height: unset !important;
-    padding: 0 0.6rem 0 0 !important;
+    height: 56px !important;
+    min-height: 56px !important;
+    max-height: 56px !important;
+    padding: 0 0.75rem !important;
   }
 
   .nav-logo-img,
   nav.scrolled .nav-logo-img {
-    width: 220px !important;
-    max-width: calc(100vw - 56px) !important;
-    height: auto !important;
-    max-height: none !important;
+    width: auto !important;
+    max-width: calc(100vw - 64px) !important;
+    height: 44px !important;
+    max-height: 44px !important;
   }
 
   .nav-logo-tagline {
