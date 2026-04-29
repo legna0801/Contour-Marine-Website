@@ -49,7 +49,7 @@
         padding: 0 1rem 2rem;
       }
       .contact-map {
-        height: 440px;
+        height: 340px;
         border-radius: 14px;
       }
     }
@@ -58,7 +58,7 @@
         padding: 0 0.75rem 2rem;
       }
       .contact-map {
-        height: 420px;
+        height: 300px;
         border-radius: 10px;
       }
     }
@@ -411,29 +411,33 @@
     [25.9576, -80.6858]
   ];
 
-  /* ── Map init — fitBounds auto-calculates perfect zoom/center for any screen ── */
+  /* ── Map init ── */
   var isMobile = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+  var screenW  = window.innerWidth;
+
+  /* Zoom 7 on phones (<600px) shows the full width of both counties.
+     At zoom 8 a 375px wide phone only fits ~0.53° longitude but the
+     counties span ~0.62° — so zoom 8 always clips the sides on mobile.
+     Desktop at 900px+ can use zoom 9 comfortably. */
+  var zoom = (screenW < 600) ? 7 : (screenW < 900) ? 8 : 9;
+  /* Center: lat midpoint of both counties, lng centered between east
+     coast (-80.07) and Everglades (-80.69) = -80.38 */
+  var centerLat = 25.83;
+  var centerLng = -80.38;
+
   var map = L.map('service-map', {
     scrollWheelZoom: false,
     zoomControl:     true,
     dragging:        !isMobile,
     touchZoom:       false,
-    doubleClickZoom: false
-  });
+    doubleClickZoom: false,
+    minZoom:         6,
+    maxZoom:         14
+  }).setView([centerLat, centerLng], zoom);
 
-  /* Explicit bounds: SW corner = south tip of Miami-Dade, NE = north Broward */
-  /* Add extra west padding so the Everglades border is never clipped on mobile */
-  var serviceBounds = L.latLngBounds(
-    L.latLng(25.24, -80.78),   /* SW — south tip + generous west buffer */
-    L.latLng(26.40, -80.04)    /* NE — north Broward + east buffer       */
-  );
-  map.fitBounds(serviceBounds, { padding: [30, 30] });
-
-  /* Force Leaflet to recalculate container size — fires multiple times to catch mobile render delay */
-  setTimeout(function() { map.invalidateSize(); }, 100);
-  setTimeout(function() { map.invalidateSize(); map.setView([25.8200, -80.3700], 9); }, 400);
-  setTimeout(function() { map.invalidateSize(); }, 800);
-  window.addEventListener('resize', function() { map.invalidateSize(); });
+  /* Recalculate tile layout after CSS renders — do NOT change zoom/center */
+  setTimeout(function() { map.invalidateSize(false); }, 150);
+  window.addEventListener('resize', function() { map.invalidateSize(false); });
 
   /* Touch overlay */
   if (isMobile) {
