@@ -97,22 +97,24 @@ nav {
   left: 0;
   right: 0;
   z-index: 1000;
-  padding: 0 2rem;
-  margin: 0;
+  padding: 0.6rem 2rem;
+  transition: background 0.4s ease, box-shadow 0.4s ease;
   background: transparent;
   pointer-events: auto;
-  box-shadow: none;
-  /* no transition — size never changes on scroll */
+  /* Minimal downward shadow — no wide spread that bleeds into hero */
+  box-shadow:
+    0 1px 0   rgba(59,196,218,0.10),
+    0 2px 8px rgba(0,0,0,0.25);
 }
 
-/* Scrolled state — same geometry, only background/border changes */
 nav.scrolled {
   background: rgba(7, 27, 46, 0.97);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  padding: 0 2rem;
-  margin: 0;
-  box-shadow: none;
+  padding: 0.6rem 2rem;
+  box-shadow:
+    0 1px 0   rgba(59,196,218,0.18),
+    0 2px 10px rgba(0,0,0,0.40);
   border-bottom: 1px solid rgba(59,196,218,0.18);
 }
 
@@ -122,48 +124,80 @@ nav.scrolled {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 64px;
-  min-height: 64px;
-  max-height: 64px;
-  padding: 0;
+  height: 80px;
+  min-height: 80px;
+  max-height: 80px;
 }
 
-/* Logo link takes up all available space, pushing hamburger to far right */
 .nav-logo {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  flex: 1 1 auto;          /* grow to fill remaining width */
-  min-width: 0;
+  gap: 0.75rem;
   text-decoration: none;
+  flex-shrink: 0;
   line-height: 1;
   filter: none;
-  transition: none;
+  transition: filter 0.3s ease;
 }
 
 .nav-logo:hover {
   filter: none;
-  opacity: 0.9;
 }
 
-/* Logo block wrapper */
+/* Hide any leftover img inside nav-logo (safety net) */
+.nav-logo img.nav-logo-img { display: block; }
+
+/* ── Logo block: image stacked above tagline ── */
 .nav-logo-block {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  width: 100%;
+  gap: 0;
   line-height: 1;
+  text-align: center;
 }
 
-/* Nav tagline — REMOVED from header, hidden */
+/* ── Nav tagline — shown as real CSS text under the logo image ── */
 .nav-logo-tagline {
-  display: none !important;
+  display: block !important;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 0.52rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #dcc38a;
+  text-align: center;
+  width: 250px;
+  max-width: 250px;
+  margin-top: 4px;
+  line-height: 1.6;
+  white-space: normal;
+  word-break: break-word;
+  overflow: visible;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.7);
 }
 nav.scrolled .nav-logo-tagline {
-  display: none !important;
+  display: block !important;
+  color: #dcc38a;
 }
-/* Footer tagline — REMOVED, hidden */
 .footer-logo-tagline {
-  display: none !important;
+  display: block !important;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 0.60rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #dcc38a;
+  text-align: center;
+  width: 250px;
+  max-width: 250px;
+  margin-top: 4px;
+  margin-bottom: 10px;
+  line-height: 1.6;
+  white-space: normal;
+  word-break: break-word;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.7);
 }
 
 /* ══════════════════════════════════════════════
@@ -350,9 +384,8 @@ nav.scrolled .nav-logo-est  { font-size: 0.60rem; margin-top: 0.26rem; letter-sp
 .nav-cta::after { display: none !important; }
 
 /* Hamburger */
-/* Wide-logo header: hamburger always visible, nav-links always hidden */
 .hamburger {
-  display: flex !important;   /* always shown — logo is full-width */
+  display: none;
   flex-direction: column;
   cursor: pointer;
   gap: 5px;
@@ -360,11 +393,6 @@ nav.scrolled .nav-logo-est  { font-size: 0.60rem; margin-top: 0.26rem; letter-sp
   background: none;
   border: none;
   z-index: 1100;
-  flex-shrink: 0;
-}
-
-.nav-links {
-  display: none !important;   /* hidden — hamburger + mobile-nav used instead */
 }
 
 .hamburger span {
@@ -633,24 +661,22 @@ nav.scrolled .nav-logo-est  { font-size: 0.60rem; margin-top: 0.26rem; letter-sp
 .hero-sub-break { display: none; }
 @media (min-width: 600px) { .hero-sub-break { display: inline; } }
 
-/* ── Local trust line — hidden (replaced by hero-tagline above buttons) ── */
+/* ── Local trust line ── */
 .hero-trust-line {
-  display: none !important;
-}
-
-/* ── Hero tagline — "PROUDLY SERVING OUR COMMUNITY SINCE 2001" above buttons ── */
-.hero-tagline {
   font-family: var(--font-accent);
-  font-size: 0.80rem;
-  font-weight: 700;
-  letter-spacing: 0.22em;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--teal-bright);
   text-align: center;
-  margin: 0 auto 1.6rem;
+  margin: 0 auto 2.2rem;
   opacity: 0;
-  animation: heroFadeUp 0.9s 0.98s ease-out forwards;
-  white-space: nowrap;
+  animation: heroFadeUp 0.9s 0.95s ease-out forwards;
+}
+.hero-trust-line i {
+  opacity: 0.75;
+  margin-right: 0.2rem;
 }
 
 /* ── CTA Buttons ── */
@@ -3375,10 +3401,10 @@ footer {
 
 /* ── 1. NAV: perfect vertical alignment & consistent padding ── */
 nav {
-  padding: 0 2rem;
+  padding: 1rem 2.5rem;
 }
 nav.scrolled {
-  padding: 0 2rem;
+  padding: 1rem 2.5rem;
 }
 .nav-container {
   max-width: 1300px;
@@ -3678,8 +3704,8 @@ p  { font-size: 1rem; line-height: 1.75; }
 
 /* ── 16. REFINED RESPONSIVE: 768px breakpoint ── */
 @media (max-width: 768px) {
-  nav { padding: 0 1rem; }
-  nav.scrolled { padding: 0 1rem; }
+  nav { padding: 1rem 1.5rem; }
+  nav.scrolled { padding: 1rem 1.5rem; }
 
   .hero { padding: 200px 1.5rem 70px; }
   .hero-content { max-width: 100%; }
@@ -3736,7 +3762,7 @@ p  { font-size: 1rem; line-height: 1.75; }
 
 /* ── 17. REFINED RESPONSIVE: 480px breakpoint ── */
 @media (max-width: 480px) {
-  nav { padding: 0 0.8rem; }
+  nav { padding: 0.9rem 1.2rem; }
 
   .hero { padding: 180px 1.2rem 60px; } /* increased to clear nav (~174px) + breathing room */
 
@@ -4714,62 +4740,68 @@ p  { font-size: 1rem; line-height: 1.75; }
    Crisp retina PNG, no resize on scroll, no box/shadow
    ═══════════════════════════════════════════════════ */
 
-/* ── NAV logo image — wide, 80-90% header width, fully transparent ── */
-.nav-logo-img,
-nav.scrolled .nav-logo-img {
+/* ── NAV logo image — fixed size, never changes on scroll ── */
+.nav-logo-img {
   display: block !important;
-  width: 88% !important;         /* ~80-90% of nav width */
-  max-width: 1100px !important;  /* cap on very wide screens */
+  width: 250px !important;
   height: auto !important;
-  max-height: 54px !important;   /* never taller than the 64px bar */
+  max-width: 250px !important;
+  max-height: none !important;
   object-fit: contain !important;
-  object-position: left center !important;
   flex-shrink: 0 !important;
   background: transparent !important;
-  background-color: transparent !important;
   box-shadow: none !important;
   filter: none !important;
   border: none !important;
   outline: none !important;
-  image-rendering: auto !important;
+  image-rendering: auto;
+  -webkit-font-smoothing: antialiased;
   transition: none !important;
   transform: none !important;
 }
 
-/* ── FOOTER logo image — centered, generous width ── */
+/* Scrolled state — IDENTICAL, no shrink */
+nav.scrolled .nav-logo-img {
+  width: 250px !important;
+  max-width: 250px !important;
+  height: auto !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+/* ── FOOTER logo image ── */
 .footer-logo-img {
   display: block !important;
-  width: auto !important;
+  width: 250px !important;
+  max-width: 100% !important;
   height: auto !important;
-  max-width: 280px !important;
   object-fit: contain !important;
-  margin: 0 auto 0.8rem auto !important;
+  margin: 0 0 0.5rem 0 !important;
   background: transparent !important;
   box-shadow: none !important;
   filter: none !important;
   border: none !important;
-  image-rendering: auto !important;
+  image-rendering: auto;
   transition: none !important;
   transform: none !important;
 }
 
-/* ── Responsive nav logo sizes ── */
+/* ── Responsive logo sizes ── */
 @media (max-width: 1024px) {
-  .nav-logo-img,
-  nav.scrolled .nav-logo-img  { width: 85% !important; max-height: 50px !important; }
-  .footer-logo-img             { max-width: 240px !important; }
+  .nav-logo-img    { width: 210px !important; max-width: 210px !important; }
+  .footer-logo-img { width: 210px !important; }
 }
 
 @media (max-width: 768px) {
-  .nav-logo-img,
-  nav.scrolled .nav-logo-img  { width: 78% !important; max-height: 44px !important; }
-  .footer-logo-img             { max-width: 210px !important; }
+  .nav-logo-img    { width: 180px !important; max-width: 180px !important; }
+  .footer-logo-img { width: 200px !important; }
+  nav.scrolled .nav-logo-img { width: 180px !important; max-width: 180px !important; }
 }
 
 @media (max-width: 480px) {
-  .nav-logo-img,
-  nav.scrolled .nav-logo-img  { width: 72% !important; max-height: 38px !important; }
-  .footer-logo-img             { max-width: 180px !important; }
+  .nav-logo-img    { width: 150px !important; max-width: 150px !important; }
+  .footer-logo-img { width: 170px !important; }
+  nav.scrolled .nav-logo-img { width: 150px !important; max-width: 150px !important; }
 }
 
 /* ═══════════════════════════════════════════════════════════════════
@@ -4801,14 +4833,17 @@ nav.scrolled {
 }
 
 /* ─────────────────────────────────────────────────────────────────
-   NAV LOGO IMAGE — no overrides (primary block above is authoritative)
+   NAV LOGO IMAGE — maximum 3-D pop
    ───────────────────────────────────────────────────────────────── */
 .nav-logo-img {
+  height: auto !important;
+  max-height: none !important;
   align-self: center !important;
   background: transparent !important;
-  background-color: transparent !important;
   box-shadow: none !important;
   filter: none !important;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
   transition: none !important;
 }
 .nav-logo:hover .nav-logo-img {
@@ -4991,36 +5026,95 @@ section, footer, header, main, .hero, .footer {
 }
 
 /* ═══════════════════════════════════════════════
-   NAV HEIGHT LOCK — compact, no resize on scroll
+   NAV HEIGHT LOCK — never changes on scroll
    ═══════════════════════════════════════════════ */
 
-/* Padding: zero vertical — height is set by .nav-container */
+/* Nav padding stays identical scrolled vs not scrolled */
 nav,
 nav.scrolled {
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
+  padding-top: 0.9rem !important;
+  padding-bottom: 0.9rem !important;
 }
 
 @media (max-width: 768px) {
   nav,
   nav.scrolled {
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
+    padding: 0.75rem 1.2rem !important;
+  }
+  .nav-container {
+    height: auto !important;
+    min-height: 56px !important;
+    max-height: none !important;
   }
 }
 
 @media (max-width: 480px) {
   nav,
   nav.scrolled {
-    padding: 0 0.8rem !important;
+    padding: 0.65rem 1rem !important;
   }
 }
 
 /* ═══════════════════════════════════════════════
-   LOGO — deferred to primary block above (lines ~4716+)
+   LOGO — CRISP, FIXED SIZE, NO ANIMATION
    ═══════════════════════════════════════════════ */
+
+.nav-logo-img,
+nav.scrolled .nav-logo-img {
+  width: 250px !important;
+  max-width: 250px !important;
+  height: auto !important;
+  display: block !important;
+  object-fit: contain !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  filter: none !important;
+  transform: none !important;
+  transition: none !important;
+  image-rendering: auto !important;
+  flex-shrink: 0 !important;
+}
+
+@media (max-width: 768px) {
+  .nav-logo-img,
+  nav.scrolled .nav-logo-img {
+    width: 180px !important;
+    max-width: 180px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-logo-img,
+  nav.scrolled .nav-logo-img {
+    width: 150px !important;
+    max-width: 150px !important;
+  }
+}
+
+.footer-logo-img {
+  width: 250px !important;
+  max-width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  filter: none !important;
+  transform: none !important;
+  transition: none !important;
+  image-rendering: auto !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+@media (max-width: 768px) {
+  .footer-logo-img { width: 200px !important; }
+}
+
+@media (max-width: 480px) {
+  .footer-logo-img { width: 170px !important; }
+}
 
 
 /* ═══════════════════════════════════════════════════
@@ -5125,60 +5219,70 @@ nav.scrolled {
 /* ── NAV: full-width flex, logo centered, hamburger right ── */
 @media (max-width: 768px) {
 
-  /* Nav container: wide logo + hamburger on right */
+  /* Nav container: logo centered, hamburger stays right */
   .nav-container {
     display: flex !important;
     align-items: center !important;
-    justify-content: space-between !important;
+    justify-content: center !important;
     position: relative !important;
-    height: 56px !important;
-    min-height: 56px !important;
-    max-height: 56px !important;
-    padding: 0 0.75rem !important;
+    height: auto !important;
+    min-height: 70px !important;
+    max-height: none !important;
+    padding: 0.6rem 1rem !important;
     box-sizing: border-box !important;
   }
 
-  /* Logo fills available width, hamburger stays right */
+  /* Logo block: centered column */
   .nav-logo {
     display: flex !important;
     align-items: center !important;
-    justify-content: flex-start !important;
-    flex: 1 1 auto !important;
-    position: static !important;
-    transform: none !important;
-    min-width: 0 !important;
+    justify-content: center !important;
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
   }
 
   .nav-logo-block {
     display: flex !important;
+    flex-direction: column !important;
     align-items: center !important;
-    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+    gap: 0 !important;
   }
 
-  /* Logo image: wide, transparent */
+  /* Logo image: 15% bigger than previous mobile size */
   .nav-logo-img,
   nav.scrolled .nav-logo-img {
-    width: 78% !important;
-    max-width: none !important;
+    width: 200px !important;
+    max-width: 200px !important;
     height: auto !important;
-    max-height: 42px !important;
     display: block !important;
-    background: transparent !important;
-    background-color: transparent !important;
     transform: none !important;
     transition: none !important;
   }
 
-  /* Tagline: hidden */
+  /* Tagline: constrained to logo width, centered */
   .nav-logo-tagline {
-    display: none !important;
+    display: block !important;
+    text-align: center !important;
+    width: 200px !important;
+    max-width: 200px !important;
+    font-size: 0.44rem !important;
+    letter-spacing: 0.14em !important;
+    line-height: 1.5 !important;
+    margin-top: 3px !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    overflow: visible !important;
   }
 
-  /* Hamburger: flex-shrink so it never gets pushed off */
+  /* Hamburger: pinned to right */
   .hamburger {
-    flex-shrink: 0 !important;
-    position: static !important;
-    transform: none !important;
+    position: absolute !important;
+    right: 1rem !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
   }
 
   /* Nav links hidden on mobile */
@@ -5306,22 +5410,21 @@ nav.scrolled {
 @media (max-width: 480px) {
 
   .nav-container {
-    height: 52px !important;
-    min-height: 52px !important;
-    max-height: 52px !important;
-    padding: 0 0.6rem !important;
+    min-height: 64px !important;
+    padding: 0.5rem 0.9rem !important;
   }
 
   .nav-logo-img,
   nav.scrolled .nav-logo-img {
-    width: 72% !important;
-    max-width: none !important;
-    height: auto !important;
-    max-height: 36px !important;
+    width: 170px !important;
+    max-width: 170px !important;
   }
 
   .nav-logo-tagline {
-    display: none !important;
+    width: 170px !important;
+    max-width: 170px !important;
+    font-size: 0.40rem !important;
+    letter-spacing: 0.12em !important;
   }
 
   footer {
@@ -5329,12 +5432,13 @@ nav.scrolled {
   }
 
   .footer-logo-img {
+    width: 170px !important;
     max-width: 170px !important;
-    width: auto !important;
   }
 
   .footer-logo-tagline {
-    display: none !important;
+    width: 170px !important;
+    max-width: 170px !important;
   }
 }
 
