@@ -101,11 +101,10 @@ nav {
   transition: background 0.4s ease, box-shadow 0.4s ease;
   background: transparent;
   pointer-events: auto;
-  /* 3-D depth: layered bottom shadow — fully transparent, no white line */
+  /* Minimal downward shadow — no wide spread that bleeds into hero */
   box-shadow:
     0 1px 0   rgba(59,196,218,0.10),
-    0 4px 18px rgba(0,0,0,0.45),
-    0 8px 40px rgba(0,0,0,0.30);
+    0 2px 8px rgba(0,0,0,0.25);
 }
 
 nav.scrolled {
@@ -115,8 +114,7 @@ nav.scrolled {
   padding: 0.6rem 2rem;
   box-shadow:
     0 1px 0   rgba(59,196,218,0.18),
-    0 6px 28px rgba(0,0,0,0.55),
-    0 12px 50px rgba(0,0,0,0.35);
+    0 2px 10px rgba(0,0,0,0.40);
   border-bottom: 1px solid rgba(59,196,218,0.18);
 }
 
@@ -563,14 +561,11 @@ nav.scrolled .nav-logo-est  { font-size: 0.60rem; margin-top: 0.26rem; letter-sp
   flex-shrink: 0;
   object-fit: contain;
   image-rendering: auto;
-  /* Layered 3D drop-shadow stack — builds depth below and behind */
+  /* Subtle drop-shadow — tight radius, no wide bleed */
   filter:
-    drop-shadow(0 1px 1px rgba(13,43,69,0.50))
-    drop-shadow(0 3px 4px rgba(13,43,69,0.40))
-    drop-shadow(0 7px 12px rgba(13,43,69,0.32))
-    drop-shadow(0 16px 28px rgba(13,43,69,0.24))
-    drop-shadow(0 28px 48px rgba(13,43,69,0.16))
-    drop-shadow(0 0 50px rgba(59,196,218,0.22));
+    drop-shadow(0 2px 4px rgba(13,43,69,0.45))
+    drop-shadow(0 6px 12px rgba(13,43,69,0.25))
+    drop-shadow(0 0 18px rgba(59,196,218,0.15));
   animation: heroLogoFloat 5s ease-in-out infinite;
   transform-style: preserve-3d;
   transition: filter 0.5s ease;
@@ -586,11 +581,9 @@ nav.scrolled .nav-logo-est  { font-size: 0.60rem; margin-top: 0.26rem; letter-sp
 
 .hero-logo:hover {
   filter:
-    drop-shadow(0 1px 1px rgba(13,43,69,0.55))
-    drop-shadow(0 4px 6px rgba(13,43,69,0.45))
-    drop-shadow(0 10px 20px rgba(13,43,69,0.35))
-    drop-shadow(0 22px 40px rgba(13,43,69,0.25))
-    drop-shadow(0 0 70px rgba(59,196,218,0.35));
+    drop-shadow(0 2px 5px rgba(13,43,69,0.50))
+    drop-shadow(0 6px 14px rgba(13,43,69,0.30))
+    drop-shadow(0 0 24px rgba(59,196,218,0.20));
   animation-play-state: paused;
   transform: translateY(-14px) rotateX(2deg) rotateY(2deg) scale(1.04);
 }
@@ -4820,21 +4813,13 @@ nav.scrolled .nav-logo-img {
    ───────────────────────────────────────────────────────────────── */
 nav {
   box-shadow:
-    0  1px  0   rgba(59,196,218,0.30),    /* cyan top specular hairline */
-    0  3px  0   rgba(59,196,218,0.08),    /* secondary glow spread      */
-    0  6px 24px rgba(0,0,0,0.60),         /* close cast shadow          */
-    0 14px 55px rgba(0,0,0,0.42),         /* mid ambient                */
-    0 28px 90px rgba(0,0,0,0.22),         /* far depth haze             */
-    inset 0 -1px 0 rgba(0,0,0,0.25);     /* inner bottom depth — NO white top line */
+    0 1px 0   rgba(59,196,218,0.25),
+    0 2px 8px rgba(0,0,0,0.25);
 }
 nav.scrolled {
   box-shadow:
-    0  1px  0   rgba(59,196,218,0.40),
-    0  3px  0   rgba(59,196,218,0.12),
-    0  8px 32px rgba(0,0,0,0.70),
-    0 18px 60px rgba(0,0,0,0.48),
-    0 32px 90px rgba(0,0,0,0.25),
-    inset 0 -1px 0 rgba(0,0,0,0.30);
+    0 1px 0   rgba(59,196,218,0.35),
+    0 2px 10px rgba(0,0,0,0.40);
   border-bottom: 1px solid rgba(59,196,218,0.35);
 }
 
