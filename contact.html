@@ -410,7 +410,7 @@
     dragging:        !isMobile,
     touchZoom:       false,
     doubleClickZoom: false
-  }).setView([25.7700, -80.3750], 9);
+  }).setView([26.0500, -80.3800], 10);
 
   /* Touch overlay */
   if (isMobile) {
@@ -465,8 +465,7 @@
   /* Marker — Fort Lauderdale */
   L.marker([26.1200, -80.1431], {icon: pinIcon})
     .addTo(map)
-    .bindPopup('<strong style="color:#0D2B45;font-family:Inter,sans-serif;">Contour Marine</strong><br><span style="font-size:12px;color:#555;">Serving Broward &amp; Miami-Dade Counties</span>', {maxWidth:200})
-    .openPopup();
+    .bindPopup('<strong style="color:#0D2B45;font-family:Inter,sans-serif;">Contour Marine</strong><br><span style="font-size:12px;color:#555;">Serving Broward &amp; Miami-Dade Counties</span>', {maxWidth:220});
 
   /* County labels */
   var ls = 'background:rgba(255,255,255,0.92);border:none;box-shadow:none;font-family:Inter,sans-serif;font-size:11px;font-weight:700;color:#0D2B45;padding:3px 8px;border-radius:6px;white-space:nowrap;';
