@@ -124,9 +124,9 @@ nav.scrolled {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 58px;
-  min-height: 58px;
-  max-height: 58px;
+  height: 46px;
+  min-height: 46px;
+  max-height: 46px;
 }
 
 .nav-logo {
