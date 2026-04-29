@@ -154,7 +154,7 @@ nav.scrolled {
 .nav-logo-block {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 0;
   line-height: 1;
 }
@@ -164,13 +164,13 @@ nav.scrolled {
   display: block !important;
   font-family: 'Cinzel', serif;
   font-weight: 700;
-  font-size: 0.48rem;
+  font-size: 0.50rem;
   letter-spacing: 0.10em;
   text-transform: uppercase;
   color: #dcc38a;
   text-align: center;
-  width: 200px;
-  max-width: 200px;
+  width: 220px;
+  max-width: 220px;
   margin-top: 3px;
   line-height: 1.5;
   white-space: normal;
@@ -186,13 +186,13 @@ nav.scrolled .nav-logo-tagline {
   display: block !important;
   font-family: 'Cinzel', serif;
   font-weight: 700;
-  font-size: 0.58rem;
+  font-size: 0.60rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #dcc38a;
   text-align: center;
-  width: 220px;
-  max-width: 220px;
+  width: 240px;
+  max-width: 240px;
   margin-top: 6px;
   margin-bottom: 10px;
   line-height: 1.5;
@@ -2355,7 +2355,7 @@ footer {
 .footer-logo-wrap {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 0;
   margin-bottom: 1.8rem;
 }
@@ -4741,9 +4741,9 @@ p  { font-size: 1rem; line-height: 1.75; }
 /* ── NAV logo image — fixed size, never changes on scroll ── */
 .nav-logo-img {
   display: block !important;
-  width: 200px !important;
+  width: 220px !important;
   height: auto !important;
-  max-width: 200px !important;
+  max-width: 220px !important;
   max-height: none !important;
   object-fit: contain !important;
   flex-shrink: 0 !important;
@@ -4760,8 +4760,8 @@ p  { font-size: 1rem; line-height: 1.75; }
 
 /* Scrolled state — IDENTICAL, no shrink */
 nav.scrolled .nav-logo-img {
-  width: 200px !important;
-  max-width: 200px !important;
+  width: 220px !important;
+  max-width: 220px !important;
   height: auto !important;
   transform: none !important;
   transition: none !important;
@@ -4770,7 +4770,7 @@ nav.scrolled .nav-logo-img {
 /* ── FOOTER logo image ── */
 .footer-logo-img {
   display: block !important;
-  width: 220px !important;
+  width: 240px !important;
   max-width: 100% !important;
   height: auto !important;
   object-fit: contain !important;
