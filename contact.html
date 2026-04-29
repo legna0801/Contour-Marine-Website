@@ -338,71 +338,56 @@
 <script>
 (function () {
 
-  /*
-   * Broward County — correct real coordinates
-   * Roughly 26.3397 N to 25.9576 N, 80.0700 W to 80.6858 W
-   */
+  /* ── Broward County ──────────────────────────────────────────────────────
+     North: 26.3397  South: 25.9576  West: -80.6858  East: ~-80.07
+     Shape: rectangle with straight north/south/west borders;
+             east side follows Atlantic coast (nearly straight for Broward)
+  */
   var broward = [
-    [26.3397, -80.0700],
-    [26.3397, -80.2000],
-    [26.3397, -80.3500],
-    [26.3397, -80.5000],
-    [26.3397, -80.6858],
-    [26.2000, -80.6858],
-    [26.0500, -80.6858],
-    [25.9576, -80.6858],
-    [25.9576, -80.5000],
-    [25.9576, -80.3500],
-    [25.9576, -80.2000],
-    [25.9576, -80.0700],
-    [26.0200, -80.0680],
-    [26.0800, -80.0660],
-    [26.1400, -80.0640],
-    [26.2000, -80.0660],
-    [26.2600, -80.0690],
-    [26.3200, -80.0700],
-    [26.3397, -80.0700]
+    [26.3397, -80.6858], [26.3397, -80.5000], [26.3397, -80.3000],
+    [26.3397, -80.1200], [26.3350, -80.0800], [26.3100, -80.0730],
+    [26.2700, -80.0700], [26.2200, -80.0680], [26.1700, -80.0660],
+    [26.1200, -80.0640], [26.0700, -80.0630], [26.0200, -80.0620],
+    [25.9576, -80.0640], [25.9576, -80.2000], [25.9576, -80.4000],
+    [25.9576, -80.6858], [26.1000, -80.6858], [26.2200, -80.6858],
+    [26.3397, -80.6858]
   ];
 
-  /*
-   * Miami-Dade County — correct real coordinates
-   * North ~25.9576, South ~25.1370 (county tip near Florida City/Card Sound)
-   * West ~80.6858 (Everglades levee), East — Biscayne Bay / Atlantic coast
-   */
+  /* ── Miami-Dade County ───────────────────────────────────────────────────
+     North: 25.9576  South: ~25.24  West: -80.6858  East: Atlantic/Biscayne
+     Key shape features:
+       - East coast goes straight south then cuts WEST around Miami Beach
+         (barrier island) then back east, then continues south
+       - Southwest curves toward Card Sound / Florida City
+       - Southern tip near 25.24 before the Keys
+  */
   var miamiDade = [
-    [25.9576, -80.0700],
-    [25.9576, -80.2000],
-    [25.9576, -80.3500],
-    [25.9576, -80.5000],
-    [25.9576, -80.6858],
-    [25.8500, -80.6858],
-    [25.7000, -80.6858],
-    [25.5500, -80.6858],
-    [25.4200, -80.6858],
-    [25.3500, -80.6300],
-    [25.3000, -80.5500],
-    [25.2700, -80.4500],
-    [25.2500, -80.3500],
-    [25.2400, -80.2500],
-    [25.2500, -80.1700],
-    [25.3000, -80.1300],
-    [25.3800, -80.0900],
-    [25.4500, -80.0850],
-    [25.5200, -80.0820],
-    [25.5900, -80.0780],
-    [25.6600, -80.0750],
-    [25.7400, -80.0900],
-    [25.7800, -80.1200],
-    [25.7700, -80.1600],
-    [25.7600, -80.1900],
-    [25.7800, -80.1950],
-    [25.8100, -80.1200],
-    [25.8500, -80.0800],
-    [25.9000, -80.0720],
-    [25.9576, -80.0700]
+    [25.9576, -80.6858], [25.9576, -80.4000], [25.9576, -80.2000],
+    [25.9576, -80.0640],
+    /* East coast — Aventura south to North Miami Beach */
+    [25.9200, -80.0620], [25.8800, -80.0600], [25.8400, -80.0590],
+    /* Miami Beach barrier island — coast cuts inward (west) */
+    [25.8100, -80.1200], [25.7900, -80.1450], [25.7700, -80.1600],
+    /* Downtown Miami / Brickell waterfront */
+    [25.7500, -80.1900], [25.7300, -80.1950],
+    /* South Biscayne Bay coast resumes south */
+    [25.6900, -80.1750], [25.6500, -80.1680],
+    [25.6000, -80.1620], [25.5500, -80.1580],
+    [25.5000, -80.1550], [25.4600, -80.1560],
+    [25.4200, -80.1600],
+    /* Homestead / Florida City - coast turns southwest */
+    [25.3800, -80.1800], [25.3500, -80.2100],
+    /* South tip curves west — Card Sound area */
+    [25.3200, -80.2800], [25.2900, -80.3600],
+    [25.2600, -80.4400], [25.2500, -80.5200],
+    /* Southwest corner — Florida City / Homestead west */
+    [25.3000, -80.6000], [25.3600, -80.6500],
+    [25.4100, -80.6858], [25.5500, -80.6858],
+    [25.7000, -80.6858], [25.8500, -80.6858],
+    [25.9576, -80.6858]
   ];
 
-  /* Use setView with explicit zoom — NO fitBounds which causes zoom-out issues */
+  /* ── Map init: setView centred on both counties, zoom 9 ── */
   var isMobile = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
   var map = L.map('service-map', {
     scrollWheelZoom: false,
@@ -410,7 +395,10 @@
     dragging:        !isMobile,
     touchZoom:       false,
     doubleClickZoom: false
-  }).setView([26.0500, -80.3800], 10);
+  });
+
+  /* Hard-set view BEFORE adding anything — prevents popup pan hijack */
+  map.setView([25.8200, -80.3700], 9);
 
   /* Touch overlay */
   if (isMobile) {
@@ -456,26 +444,17 @@
   L.polygon(broward,   countyStyle).addTo(map).bindTooltip('Broward County',    {permanent:false, direction:'center', className:'map-county-tip'});
   L.polygon(miamiDade, countyStyle).addTo(map).bindTooltip('Miami-Dade County', {permanent:false, direction:'center', className:'map-county-tip'});
 
-  /* Pin icon */
-  var pinIcon = L.divIcon({
-    html: '<div style="background:#0D7377;width:14px;height:14px;border-radius:50%;border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,0.35);"></div>',
-    className: '', iconSize: [14,14], iconAnchor: [7,7]
-  });
-
-  /* Marker — Fort Lauderdale */
-  L.marker([26.1200, -80.1431], {icon: pinIcon})
-    .addTo(map)
-    .bindPopup('<strong style="color:#0D2B45;font-family:Inter,sans-serif;">Contour Marine</strong><br><span style="font-size:12px;color:#555;">Serving Broward &amp; Miami-Dade Counties</span>', {maxWidth:220});
-
-  /* County labels */
+  /* County labels — permanent, no marker popup to cause pan */
   var ls = 'background:rgba(255,255,255,0.92);border:none;box-shadow:none;font-family:Inter,sans-serif;font-size:11px;font-weight:700;color:#0D2B45;padding:3px 8px;border-radius:6px;white-space:nowrap;';
 
-  L.marker([26.1500, -80.3800], {
-    icon: L.divIcon({ html:'<div style="'+ls+'">BROWARD COUNTY</div>', className:'', iconAnchor:[55,10] })
+  L.marker([26.1600, -80.3500], {
+    icon: L.divIcon({ html:'<div style="'+ls+'">BROWARD COUNTY</div>', className:'', iconAnchor:[55,10] }),
+    interactive: false
   }).addTo(map);
 
-  L.marker([25.5800, -80.3800], {
-    icon: L.divIcon({ html:'<div style="'+ls+'">MIAMI-DADE COUNTY</div>', className:'', iconAnchor:[63,10] })
+  L.marker([25.5800, -80.3500], {
+    icon: L.divIcon({ html:'<div style="'+ls+'">MIAMI-DADE COUNTY</div>', className:'', iconAnchor:[63,10] }),
+    interactive: false
   }).addTo(map);
 
 })();
