@@ -123,9 +123,9 @@ nav.scrolled {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 54px;
-  min-height: 54px;
-  max-height: 54px;
+  height: 72px;
+  min-height: 72px;
+  max-height: 72px;
   padding: 0 0.5rem;
 }
 
@@ -2417,6 +2417,7 @@ footer {
   font-size: 0.9rem;
   line-height: 1.7;
   max-width: 280px;
+  text-align: center;
 }
 
 .footer-phone {
@@ -4744,8 +4745,8 @@ nav.scrolled .nav-logo-img {
   display: block !important;
   width: auto !important;
   max-width: 100% !important;
-  height: 42px !important;
-  max-height: 42px !important;
+  height: 58px !important;
+  max-height: 58px !important;
   object-fit: contain !important;
   object-position: left center !important;
   flex-shrink: 0 !important;
@@ -4780,19 +4781,19 @@ nav.scrolled .nav-logo-img {
 /* ── Responsive nav logo ── */
 @media (max-width: 1024px) {
   .nav-logo-img,
-  nav.scrolled .nav-logo-img { height: 38px !important; max-height: 38px !important; }
+  nav.scrolled .nav-logo-img { height: 52px !important; max-height: 52px !important; }
   .footer-logo-img            { width: 210px !important; }
 }
 
 @media (max-width: 768px) {
   .nav-logo-img,
-  nav.scrolled .nav-logo-img { height: 34px !important; max-height: 34px !important; }
+  nav.scrolled .nav-logo-img { height: 46px !important; max-height: 46px !important; }
   .footer-logo-img            { width: 200px !important; }
 }
 
 @media (max-width: 480px) {
   .nav-logo-img,
-  nav.scrolled .nav-logo-img { height: 28px !important; max-height: 28px !important; }
+  nav.scrolled .nav-logo-img { height: 38px !important; max-height: 38px !important; }
   .footer-logo-img            { width: 170px !important; }
 }
 
@@ -5203,8 +5204,8 @@ nav.scrolled {
   nav.scrolled .nav-logo-img {
     width: auto !important;
     max-width: 100% !important;
-    height: 34px !important;
-    max-height: 34px !important;
+    height: 46px !important;
+    max-height: 46px !important;
     display: block !important;
     transform: none !important;
     transition: none !important;
@@ -5360,8 +5361,8 @@ nav.scrolled {
   nav.scrolled .nav-logo-img {
     width: auto !important;
     max-width: 100% !important;
-    height: 28px !important;
-    max-height: 28px !important;
+    height: 38px !important;
+    max-height: 38px !important;
   }
 
   .nav-logo-tagline {
