@@ -106,6 +106,53 @@ nav {
   transition: background 0.4s ease, box-shadow 0.4s ease;
 }
 
+/* ── DESKTOP: nav sits in normal flow, hero starts below it ── */
+@media (min-width: 769px) {
+  nav {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    z-index: 100 !important;
+    width: 100% !important;
+    background: var(--navy-dark) !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25) !important;
+  }
+  nav.scrolled {
+    position: relative !important;
+    background: var(--navy-dark) !important;
+  }
+  .nav-container {
+    padding: 0.4rem 1.5rem !important;
+    height: auto !important;
+    min-height: unset !important;
+    max-height: none !important;
+  }
+  .hero,
+  #hero {
+    padding-top: 20px !important;
+    margin-top: 0 !important;
+  }
+  .nav-logo,
+  .nav-logo-block {
+    background: transparent !important;
+    box-shadow: none !important;
+    filter: none !important;
+    border: none !important;
+    padding: 0 !important;
+  }
+  .nav-logo-img {
+    background: transparent !important;
+    box-shadow: none !important;
+    filter: none !important;
+    border: none !important;
+    width: 200px !important;
+    max-width: 200px !important;
+    height: auto !important;
+    object-fit: contain !important;
+  }
+}
+
 nav.scrolled {
   background: rgba(7, 27, 46, 0.97);
   backdrop-filter: blur(20px);
@@ -5022,11 +5069,13 @@ section, footer, header, main, .hero, .footer {
    NAV HEIGHT LOCK — never changes on scroll
    ═══════════════════════════════════════════════ */
 
-/* Nav padding stays identical scrolled vs not scrolled */
-nav,
-nav.scrolled {
-  padding-top: 0.9rem !important;
-  padding-bottom: 0.9rem !important;
+/* Nav padding stays identical scrolled vs not scrolled — mobile only */
+@media (max-width: 768px) {
+  nav,
+  nav.scrolled {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
 }
 
 @media (max-width: 768px) {
