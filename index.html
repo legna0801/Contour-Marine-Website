@@ -165,31 +165,38 @@
       <p class="showcase-subtitle">Every exceptional waterfront begins with meticulous planning, precision framing, and expert craftsmanship. This featured project highlights Contour Marine's commitment to quality from structural construction through final installation.</p>
     </div>
 
-    <!-- Before / After Slider -->
-    <div class="showcase-slider-wrap reveal">
-      <div class="showcase-ba-slider" id="baSlider">
-        <!-- AFTER image (bottom layer — always full width, always fully visible) -->
-        <div class="sc-layer sc-layer--after">
-          <img src="images/project-finished-2.jpg" alt="Completed composite dock with wrapped pilings and finished stair system — Contour Marine South Florida" loading="lazy" />
-          <span class="sc-badge sc-badge--after">After</span>
+    <!-- Before / After Side-by-Side Cards -->
+    <div class="showcase-compare reveal">
+
+      <!-- BEFORE card -->
+      <div class="showcase-compare-card">
+        <div class="showcase-compare-label showcase-compare-label--before">
+          <i class="fas fa-hard-hat"></i> Before
         </div>
-        <!-- BEFORE image (top layer — clipped from left, reveals on drag) -->
-        <div class="sc-layer sc-layer--before" id="baBefore">
+        <div class="showcase-compare-img">
           <img src="images/project-framing-2.jpg" alt="Structural framing and custom stair stringers during dock construction — Contour Marine South Florida" loading="lazy" />
-          <span class="sc-badge sc-badge--before">Before</span>
         </div>
-        <!-- Divider handle -->
-        <div class="ba-handle" id="baHandle">
-          <div class="ba-handle-line"></div>
-          <div class="ba-handle-circle">
-            <i class="fas fa-chevron-left"></i>
-            <i class="fas fa-chevron-right"></i>
-          </div>
-          <div class="ba-handle-line"></div>
+        <div class="showcase-compare-caption">
+          <strong>Structural Foundation &amp; Framing</strong>
+          <p>Custom engineered stair stringers, structural framing, and precision layout — built to perform in South Florida's marine environment.</p>
         </div>
       </div>
-      <p class="showcase-slider-hint"><i class="fas fa-hand-point-right"></i> Drag to compare before &amp; after</p>
-    </div>
+
+      <!-- AFTER card -->
+      <div class="showcase-compare-card">
+        <div class="showcase-compare-label showcase-compare-label--after">
+          <i class="fas fa-check-circle"></i> After
+        </div>
+        <div class="showcase-compare-img">
+          <img src="images/project-finished-2.jpg" alt="Completed composite dock with wrapped pilings and finished stair system — Contour Marine South Florida" loading="lazy" />
+        </div>
+        <div class="showcase-compare-caption">
+          <strong>Completed Waterfront Installation</strong>
+          <p>Premium composite decking, precision-finished stair systems, wrapped pilings, and a flawless waterfront finish built to last.</p>
+        </div>
+      </div>
+
+    </div><!-- /.showcase-compare -->
 
     <!-- Two-column: Before Gallery + After Gallery -->
     <div class="showcase-grid reveal">
@@ -201,10 +208,10 @@
           <h3>Structural Foundation &amp; Framing</h3>
         </div>
         <div class="showcase-photos">
-          <div class="showcase-photo showcase-photo--main">
+          <div class="showcase-photo">
             <img src="images/project-framing-1.jpg" alt="Close-up of custom stair stringers and structural framing — Contour Marine dock construction" loading="lazy" />
           </div>
-          <div class="showcase-photo showcase-photo--sub">
+          <div class="showcase-photo">
             <img src="images/project-framing-3.jpg" alt="Precision structural framing layout over water — Contour Marine marine construction" loading="lazy" />
           </div>
         </div>
@@ -218,10 +225,10 @@
           <h3>Completed Waterfront Installation</h3>
         </div>
         <div class="showcase-photos">
-          <div class="showcase-photo showcase-photo--main">
+          <div class="showcase-photo">
             <img src="images/project-finished-3.jpg" alt="Finished composite dock with wide stair system and clean decking lines — Contour Marine" loading="lazy" />
           </div>
-          <div class="showcase-photo showcase-photo--sub">
+          <div class="showcase-photo">
             <img src="images/project-finished-1.jpg" alt="Completed composite dock stairs and decking — Contour Marine South Florida" loading="lazy" />
           </div>
         </div>
@@ -617,38 +624,5 @@
 </div>
 
 <script src="main.js"></script>
-<script>
-(function(){
-  var slider = document.getElementById('baSlider');
-  if(!slider) return;
-  var before = document.getElementById('baBefore');
-  var handle = document.getElementById('baHandle');
-  var dragging = false;
-
-  function setPos(pct){
-    pct = Math.max(2, Math.min(98, pct));
-    // BEFORE layer clips from the left — drag right = more BEFORE, drag left = more AFTER
-    before.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
-    handle.style.left = pct + '%';
-  }
-
-  function getPos(e){
-    var rect = slider.getBoundingClientRect();
-    var clientX = e.touches ? e.touches[0].clientX : e.clientX;
-    return ((clientX - rect.left) / rect.width) * 100;
-  }
-
-  // Start at 50% — equal split on load
-  setPos(50);
-
-  handle.addEventListener('mousedown', function(e){ dragging=true; e.preventDefault(); });
-  handle.addEventListener('touchstart', function(e){ dragging=true; }, {passive:true});
-  document.addEventListener('mousemove', function(e){ if(dragging) setPos(getPos(e)); });
-  document.addEventListener('touchmove', function(e){ if(dragging) setPos(getPos(e)); }, {passive:true});
-  document.addEventListener('mouseup', function(){ dragging=false; });
-  document.addEventListener('touchend', function(){ dragging=false; });
-  slider.addEventListener('click', function(e){ setPos(getPos(e)); });
-})();
-</script>
 </body>
 </html>

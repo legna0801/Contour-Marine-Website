@@ -6373,144 +6373,77 @@ html {
   text-align: center;
 }
 
-/* ── Before / After Slider ── */
-.showcase-slider-wrap {
-  max-width: 860px;
-  margin: 3rem auto 0;
+/* ── Before / After side-by-side cards ── */
+.showcase-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 3rem;
 }
 
-/* Slider container — height is driven by the image, no fixed size */
-.showcase-ba-slider {
-  position: relative;
-  width: 100%;
-  border-radius: 20px;
-  overflow: visible;
-  cursor: col-resize;
-  box-shadow: 0 20px 60px rgba(13,43,69,0.22);
-  user-select: none;
-  background: #0d2b45;
-  border-radius: 20px;
-}
-
-/* AFTER layer — block flow, sets the natural height of the container */
-.sc-layer--after {
-  position: relative;
-  width: 100%;
-  z-index: 1;
-  display: block;
-  line-height: 0;
-  border-radius: 20px;
+.showcase-compare-card {
+  background: white;
+  border-radius: 18px;
   overflow: hidden;
+  box-shadow: 0 8px 32px rgba(13,43,69,0.12);
+  border: 1px solid rgba(13,115,119,0.08);
+  display: flex;
+  flex-direction: column;
 }
 
-.sc-layer--after img {
+.showcase-compare-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.2rem;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.showcase-compare-label--before {
+  background: var(--navy);
+  color: #fff;
+}
+
+.showcase-compare-label--after {
+  background: var(--teal);
+  color: #fff;
+}
+
+.showcase-compare-img {
+  width: 100%;
+  line-height: 0;
+}
+
+.showcase-compare-img img {
   display: block;
   width: 100%;
   height: auto;
+  object-fit: contain;
   max-height: none;
-  object-fit: unset;
-  pointer-events: none;
 }
 
-/* BEFORE layer — absolute, same size as AFTER, clipped from right */
-.sc-layer--before {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  clip-path: inset(0 50% 0 0);
-  z-index: 2;
-  line-height: 0;
-  border-right: 3px solid rgba(255,255,255,0.90);
-  overflow: hidden;
-}
-
-.sc-layer--before img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
-  pointer-events: none;
-}
-
-/* Small corner badges for showcase slider — do NOT use .ba-label here */
-.sc-badge {
-  position: absolute;
-  top: 0.75rem;
-  z-index: 5;
-  padding: 0.22rem 0.65rem;
-  border-radius: 6px;
-  font-family: var(--font-body);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.10em;
-  text-transform: uppercase;
-  pointer-events: none;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-}
-
-.sc-badge--before {
-  left: 0.75rem;
-  background: rgba(13,43,69,0.72);
-  color: #fff;
-  border: 1px solid rgba(255,255,255,0.25);
-}
-
-.sc-badge--after {
-  right: 0.75rem;
-  background: rgba(13,115,119,0.72);
-  color: #fff;
-  border: 1px solid rgba(59,196,218,0.30);
-}
-
-.ba-handle {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  pointer-events: auto;
-  cursor: col-resize;
-  z-index: 10;
-}
-
-.ba-handle-line {
+.showcase-compare-caption {
+  padding: 1.2rem 1.4rem 1.4rem;
   flex: 1;
-  width: 3px;
-  background: rgba(255,255,255,0.85);
 }
 
-.ba-handle-circle {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.30);
-  flex-shrink: 0;
+.showcase-compare-caption strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1rem;
   color: var(--navy);
-  font-size: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 
-.showcase-slider-hint {
-  text-align: center;
-  margin-top: 0.9rem;
-  font-size: 0.82rem;
+.showcase-compare-caption p {
+  font-size: 0.88rem;
   color: var(--text-mid);
-  letter-spacing: 0.04em;
-}
-
-.showcase-slider-hint i {
-  color: var(--teal);
-  margin-right: 0.4rem;
+  line-height: 1.65;
+  margin: 0;
 }
 
 /* ── Two-column grid ── */
@@ -6559,8 +6492,8 @@ html {
 }
 
 .showcase-photos {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 0.75rem;
   margin-bottom: 1.4rem;
 }
@@ -6569,28 +6502,20 @@ html {
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 6px 24px rgba(13,43,69,0.14);
-}
-
-.showcase-photo--main {
-  grid-column: 1 / -1;
-  aspect-ratio: 4 / 3;
-}
-
-.showcase-photo--sub {
-  aspect-ratio: 1 / 1;
-  grid-column: 1 / -1;
+  line-height: 0;
 }
 
 .showcase-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
   display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  max-height: none;
   transition: transform 0.5s ease;
 }
 
 .showcase-photo:hover img {
-  transform: scale(1.03);
+  transform: scale(1.02);
 }
 
 .showcase-col-desc {
@@ -6714,19 +6639,10 @@ html {
     padding: 78px 1.5rem 4rem !important;
   }
 
-  .showcase-ba-slider {
-    border-radius: 14px;
-  }
-  .sc-layer--after {
-    border-radius: 14px;
-  }
-
-
-  /* sc-layer images always fill 100% — no override needed on mobile */
-
-  .ba-handle-circle {
-    width: 40px;
-    height: 40px;
+  /* Stack compare cards vertically on mobile */
+  .showcase-compare {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
   .showcase-trust-inner {
