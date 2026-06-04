@@ -6505,14 +6505,15 @@ html {
   overflow: hidden;
   box-shadow: 0 6px 24px rgba(13,43,69,0.14);
   line-height: 0;
+  height: 300px;
 }
 
 .showcase-photo img {
   display: block;
   width: 100%;
-  height: auto;
-  object-fit: contain;
-  max-height: none;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
   transition: transform 0.5s ease;
 }
 
@@ -6649,6 +6650,10 @@ html {
 
   .showcase-compare-img {
     height: 340px;
+  }
+
+  .showcase-photo {
+    height: 220px;
   }
 
   .showcase-trust-inner {
