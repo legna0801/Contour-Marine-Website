@@ -152,6 +152,115 @@
 </div>
 
 <!-- ═══════════════════════════════════════ -->
+<!--  FROM STRUCTURE TO SHOWCASE            -->
+<!-- ═══════════════════════════════════════ -->
+<section class="showcase-section" id="showcase">
+  <div class="container">
+
+    <!-- Section Header -->
+    <div class="section-header reveal">
+      <span class="section-label">Featured Project</span>
+      <h2>From Structure to Showcase</h2>
+      <div class="divider"><div class="divider-diamond"></div></div>
+      <p class="showcase-subtitle">Every exceptional waterfront begins with meticulous planning, precision framing, and expert craftsmanship. This featured project highlights Contour Marine's commitment to quality from structural construction through final installation.</p>
+    </div>
+
+    <!-- Before / After Slider -->
+    <div class="showcase-slider-wrap reveal">
+      <div class="showcase-ba-slider" id="baSlider">
+        <!-- AFTER image (bottom layer, full width) -->
+        <div class="ba-after">
+          <img src="images/project-finished-2.jpg" alt="Completed composite dock with wrapped pilings and finished stair system — Contour Marine South Florida" loading="lazy" />
+          <span class="ba-label ba-label--after">AFTER</span>
+        </div>
+        <!-- BEFORE image (top layer, clipped by slider) -->
+        <div class="ba-before" id="baBefore">
+          <img src="images/project-framing-2.jpg" alt="Structural framing and custom stair stringers during dock construction — Contour Marine South Florida" loading="lazy" />
+          <span class="ba-label ba-label--before">BEFORE</span>
+        </div>
+        <!-- Divider handle -->
+        <div class="ba-handle" id="baHandle">
+          <div class="ba-handle-line"></div>
+          <div class="ba-handle-circle">
+            <i class="fas fa-chevron-left"></i>
+            <i class="fas fa-chevron-right"></i>
+          </div>
+          <div class="ba-handle-line"></div>
+        </div>
+      </div>
+      <p class="showcase-slider-hint"><i class="fas fa-hand-point-right"></i> Drag to compare before &amp; after</p>
+    </div>
+
+    <!-- Two-column: Before Gallery + After Gallery -->
+    <div class="showcase-grid reveal">
+
+      <!-- BEFORE column -->
+      <div class="showcase-col">
+        <div class="showcase-col-header">
+          <span class="showcase-phase-badge showcase-phase-badge--before">Phase 1</span>
+          <h3>Structural Foundation &amp; Framing</h3>
+        </div>
+        <div class="showcase-photos">
+          <div class="showcase-photo showcase-photo--main">
+            <img src="images/project-framing-1.jpg" alt="Close-up of custom stair stringers and structural framing — Contour Marine dock construction" loading="lazy" />
+          </div>
+          <div class="showcase-photo showcase-photo--sub">
+            <img src="images/project-framing-3.jpg" alt="Precision structural framing layout over water — Contour Marine marine construction" loading="lazy" />
+          </div>
+        </div>
+        <p class="showcase-col-desc">Every detail begins beneath the finished surface. Our team carefully engineered and constructed each component to ensure long-term strength, durability, and performance in South Florida's demanding marine environment.</p>
+      </div>
+
+      <!-- AFTER column -->
+      <div class="showcase-col">
+        <div class="showcase-col-header">
+          <span class="showcase-phase-badge showcase-phase-badge--after">Phase 2</span>
+          <h3>Completed Waterfront Installation</h3>
+        </div>
+        <div class="showcase-photos">
+          <div class="showcase-photo showcase-photo--main">
+            <img src="images/project-finished-3.jpg" alt="Finished composite dock with wide stair system and clean decking lines — Contour Marine" loading="lazy" />
+          </div>
+          <div class="showcase-photo showcase-photo--sub">
+            <img src="images/project-finished-1.jpg" alt="Completed composite dock stairs and decking — Contour Marine South Florida" loading="lazy" />
+          </div>
+        </div>
+        <p class="showcase-col-desc">Premium composite decking, precision-finished stair systems, wrapped piles, and flawless waterfront integration combine to create a stunning finished product built to withstand the coastal environment for years to come.</p>
+      </div>
+
+    </div><!-- /.showcase-grid -->
+
+    <!-- Three Feature Cards -->
+    <div class="showcase-cards reveal">
+      <div class="showcase-card">
+        <div class="showcase-card-icon"><i class="fas fa-drafting-compass"></i></div>
+        <h4>Precision Framing</h4>
+        <p>Every stair stringer and structural component was custom fabricated and carefully installed to achieve a flawless finished result.</p>
+      </div>
+      <div class="showcase-card">
+        <div class="showcase-card-icon"><i class="fas fa-anchor"></i></div>
+        <h4>Marine-Grade Construction</h4>
+        <p>Built using materials and methods specifically designed for South Florida's harsh waterfront conditions.</p>
+      </div>
+      <div class="showcase-card">
+        <div class="showcase-card-icon"><i class="fas fa-star"></i></div>
+        <h4>Flawless Finish</h4>
+        <p>From structural framing to premium decking installation, every detail was executed with precision and pride.</p>
+      </div>
+    </div>
+
+    <!-- Trust Statement -->
+    <div class="showcase-trust reveal">
+      <div class="showcase-trust-inner">
+        <h4>Attention to Detail at Every Stage</h4>
+        <p>At Contour Marine, quality is not measured only by the finished result. It is demonstrated throughout every phase of construction—from structural framing and stair fabrication to final decking installation and finishing details. Our process ensures every waterfront project is built with precision, durability, and pride.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
 <!--  FEATURED WATERFRONT BUILD             -->
 <!-- ═══════════════════════════════════════ -->
 <section class="featured-build-section">
@@ -508,5 +617,37 @@
 </div>
 
 <script src="main.js"></script>
+<script>
+(function(){
+  var slider = document.getElementById('baSlider');
+  if(!slider) return;
+  var before = document.getElementById('baBefore');
+  var handle = document.getElementById('baHandle');
+  var dragging = false;
+
+  function setPos(pct){
+    pct = Math.max(2, Math.min(98, pct));
+    before.style.width = pct + '%';
+    handle.style.left = pct + '%';
+  }
+
+  function getPos(e){
+    var rect = slider.getBoundingClientRect();
+    var clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    return ((clientX - rect.left) / rect.width) * 100;
+  }
+
+  // Start at 50%
+  setPos(50);
+
+  handle.addEventListener('mousedown', function(e){ dragging=true; e.preventDefault(); });
+  handle.addEventListener('touchstart', function(e){ dragging=true; }, {passive:true});
+  document.addEventListener('mousemove', function(e){ if(dragging) setPos(getPos(e)); });
+  document.addEventListener('touchmove', function(e){ if(dragging) setPos(getPos(e)); }, {passive:true});
+  document.addEventListener('mouseup', function(){ dragging=false; });
+  document.addEventListener('touchend', function(){ dragging=false; });
+  slider.addEventListener('click', function(e){ setPos(getPos(e)); });
+})();
+</script>
 </body>
 </html>
