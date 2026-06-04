@@ -6390,23 +6390,29 @@ html {
   user-select: none;
 }
 
-.ba-after,
-.ba-before {
+/* Both layers are full-size — BEFORE clips via clip-path, AFTER always fully visible */
+.sc-layer--after,
+.sc-layer--before {
   position: absolute;
   inset: 0;
-  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
 }
 
-.ba-after { width: 100%; }
-
-.ba-before {
-  width: 50%;
-  border-right: 3px solid rgba(255,255,255,0.85);
-  transition: width 0s;
+/* BEFORE sits on top, clipped from the right by clip-path */
+.sc-layer--before {
+  clip-path: inset(0 50% 0 0);
+  border-right: 3px solid rgba(255,255,255,0.90);
+  z-index: 2;
 }
 
-.ba-after img,
-.ba-before img {
+.sc-layer--after {
+  z-index: 1;
+}
+
+.sc-layer--after img,
+.sc-layer--before img {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -6416,8 +6422,6 @@ html {
   display: block;
   pointer-events: none;
 }
-
-/* ba-before img inherits 100% width/height from above — no override needed */
 
 /* Small corner badges for showcase slider — do NOT use .ba-label here */
 .sc-badge {
@@ -6704,10 +6708,7 @@ html {
     border-radius: 14px;
   }
 
-  .ba-before img {
-    width: 100%;
-    max-width: none;
-  }
+  /* sc-layer images always fill 100% — no override needed on mobile */
 
   .ba-handle-circle {
     width: 40px;

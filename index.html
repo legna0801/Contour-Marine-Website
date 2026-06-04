@@ -168,13 +168,13 @@
     <!-- Before / After Slider -->
     <div class="showcase-slider-wrap reveal">
       <div class="showcase-ba-slider" id="baSlider">
-        <!-- AFTER image (bottom layer, full width) -->
-        <div class="ba-after">
+        <!-- AFTER image (bottom layer — always full width, always fully visible) -->
+        <div class="sc-layer sc-layer--after">
           <img src="images/project-finished-2.jpg" alt="Completed composite dock with wrapped pilings and finished stair system — Contour Marine South Florida" loading="lazy" />
           <span class="sc-badge sc-badge--after">After</span>
         </div>
-        <!-- BEFORE image (top layer, clipped by slider) -->
-        <div class="ba-before" id="baBefore">
+        <!-- BEFORE image (top layer — clipped from left, reveals on drag) -->
+        <div class="sc-layer sc-layer--before" id="baBefore">
           <img src="images/project-framing-2.jpg" alt="Structural framing and custom stair stringers during dock construction — Contour Marine South Florida" loading="lazy" />
           <span class="sc-badge sc-badge--before">Before</span>
         </div>
@@ -627,7 +627,8 @@
 
   function setPos(pct){
     pct = Math.max(2, Math.min(98, pct));
-    before.style.width = pct + '%';
+    // BEFORE layer clips from the left — drag right = more BEFORE, drag left = more AFTER
+    before.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
     handle.style.left = pct + '%';
   }
 
@@ -637,7 +638,7 @@
     return ((clientX - rect.left) / rect.width) * 100;
   }
 
-  // Start at 50%
+  // Start at 50% — equal split on load
   setPos(50);
 
   handle.addEventListener('mousedown', function(e){ dragging=true; e.preventDefault(); });
