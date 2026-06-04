@@ -6417,34 +6417,37 @@ html {
   pointer-events: none;
 }
 
-.ba-before img {
-  width: calc(100vw * 0.86);
-  max-width: 860px;
-}
+/* ba-before img inherits 100% width/height from above — no override needed */
 
-.ba-label {
+/* Small corner badges for showcase slider — do NOT use .ba-label here */
+.sc-badge {
   position: absolute;
-  bottom: 1.2rem;
-  padding: 0.35rem 1rem;
-  border-radius: 50px;
+  top: 0.75rem;
+  z-index: 5;
+  padding: 0.22rem 0.65rem;
+  border-radius: 6px;
   font-family: var(--font-body);
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.10em;
   text-transform: uppercase;
   pointer-events: none;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 
-.ba-label--before {
-  left: 1.2rem;
-  background: rgba(13,43,69,0.88);
+.sc-badge--before {
+  left: 0.75rem;
+  background: rgba(13,43,69,0.72);
   color: #fff;
+  border: 1px solid rgba(255,255,255,0.25);
 }
 
-.ba-label--after {
-  right: 1.2rem;
-  background: rgba(13,115,119,0.90);
+.sc-badge--after {
+  right: 0.75rem;
+  background: rgba(13,115,119,0.72);
   color: #fff;
+  border: 1px solid rgba(59,196,218,0.30);
 }
 
 .ba-handle {
@@ -6702,7 +6705,7 @@ html {
   }
 
   .ba-before img {
-    width: 100vw;
+    width: 100%;
     max-width: none;
   }
 
