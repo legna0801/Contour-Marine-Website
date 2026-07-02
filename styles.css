@@ -6237,17 +6237,23 @@ html {
   background: #fff;
   padding: 5rem 2rem;
 }
-/* Client photo row — always 2-col, never collapses to 1-col */
+/* Client photo row — 2-col on desktop/tablet, 1-col on mobile with proper spacing */
 .client-photo-row {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.25rem;
   margin-top: 1.25rem;
 }
-@media (max-width: 480px) {
+.client-photo-row + .client-photo-row {
+  margin-top: 1.25rem;
+}
+@media (max-width: 600px) {
   .client-photo-row {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 0.75rem;
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+  .client-photo-row > div {
+    margin-bottom: 0 !important;
   }
 }
 .dock-showcase-inner {
