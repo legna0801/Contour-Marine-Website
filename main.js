@@ -204,183 +204,176 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ── Sitewide Image Lightbox ────────────────
-  // Works on all pages — picks up images inside showcase/gallery cards
+  // ── Sitewide Image Lightbox ────────────────────────────────────────────────
+  // Universal: works on ALL pages. Targets every <img> that lives inside
+  // a card/wrapper div (anything with border-radius style or a known class).
+  // Skips nav logos, footer logos, icons, and tiny images (<80px wide).
+  // gallery.html has its own dedicated lightbox — this code exits early there.
+  // ──────────────────────────────────────────────────────────────────────────
   (function () {
-    // Only run if gallery.html hasn't already set up its own lightbox
-    if (document.getElementById('lb')) return;
+    if (document.getElementById('lb')) return; // gallery.html — skip
 
-    // Inject lightbox HTML
-    const lbHTML = `
-      <div id="sw-lb" role="dialog" aria-modal="true" aria-label="Image viewer" style="
-        position:fixed;inset:0;z-index:9000;
-        background:rgba(4,14,26,0.96);
-        display:flex;align-items:center;justify-content:center;
-        opacity:0;pointer-events:none;transition:opacity 0.3s ease;">
-        <button id="sw-lb-close" aria-label="Close" style="
-          position:absolute;top:1.4rem;right:1.6rem;
-          width:44px;height:44px;border-radius:50%;
-          border:1.5px solid rgba(255,255,255,0.22);
-          background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.85);
-          font-size:1.1rem;cursor:pointer;display:flex;align-items:center;
-          justify-content:center;z-index:9010;transition:background 0.2s;">
-          <i class="fas fa-times"></i></button>
-        <button id="sw-lb-prev" aria-label="Previous" style="
-          position:absolute;top:50%;left:1.4rem;transform:translateY(-50%);
-          width:48px;height:48px;border-radius:50%;
-          border:1.5px solid rgba(255,255,255,0.18);
-          background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.78);
-          font-size:1.05rem;cursor:pointer;display:flex;align-items:center;
-          justify-content:center;z-index:9010;transition:background 0.2s;visibility:hidden;">
-          <i class="fas fa-chevron-left"></i></button>
-        <button id="sw-lb-next" aria-label="Next" style="
-          position:absolute;top:50%;right:1.4rem;transform:translateY(-50%);
-          width:48px;height:48px;border-radius:50%;
-          border:1.5px solid rgba(255,255,255,0.18);
-          background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.78);
-          font-size:1.05rem;cursor:pointer;display:flex;align-items:center;
-          justify-content:center;z-index:9010;transition:background 0.2s;visibility:hidden;">
-          <i class="fas fa-chevron-right"></i></button>
-        <div style="max-width:min(90vw,1100px);max-height:88vh;position:relative;display:flex;align-items:center;justify-content:center;">
-          <img id="sw-lb-img" src="" alt="" style="
-            max-width:100%;max-height:88vh;
-            object-fit:contain;border-radius:10px;display:block;
-            box-shadow:0 24px 80px rgba(0,0,0,0.6);transition:opacity 0.2s ease;" />
-          <div id="sw-lb-caption" style="
-            position:absolute;bottom:-2.4rem;left:0;right:0;text-align:center;
-            font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;font-weight:700;
-            letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.38);"></div>
-        </div>
-        <div id="sw-lb-counter" style="
-          position:absolute;bottom:1.4rem;left:50%;transform:translateX(-50%);
-          font-family:'Barlow Condensed',sans-serif;font-size:0.7rem;
-          letter-spacing:0.18em;color:rgba(255,255,255,0.28);"></div>
-      </div>`;
-    document.body.insertAdjacentHTML('beforeend', lbHTML);
+    /* ── 1. Inject overlay HTML ── */
+    document.body.insertAdjacentHTML('beforeend', [
+      '<div id="sw-lb" role="dialog" aria-modal="true" aria-label="Image viewer"',
+      '  style="position:fixed;inset:0;z-index:9000;background:rgba(4,14,26,0.96);',
+      '  display:flex;align-items:center;justify-content:center;',
+      '  opacity:0;pointer-events:none;transition:opacity 0.3s ease;">',
+      ' <button id="sw-lb-close" aria-label="Close"',
+      '   style="position:absolute;top:1.4rem;right:1.6rem;width:44px;height:44px;',
+      '   border-radius:50%;border:1.5px solid rgba(255,255,255,0.22);',
+      '   background:rgba(255,255,255,0.07);color:#fff;font-size:1.1rem;cursor:pointer;',
+      '   display:flex;align-items:center;justify-content:center;z-index:9020;">',
+      '   <i class="fas fa-times"></i></button>',
+      ' <button id="sw-lb-prev" aria-label="Previous"',
+      '   style="position:absolute;top:50%;left:1.2rem;transform:translateY(-50%);',
+      '   width:46px;height:46px;border-radius:50%;border:1.5px solid rgba(255,255,255,0.18);',
+      '   background:rgba(255,255,255,0.07);color:#fff;font-size:1rem;cursor:pointer;',
+      '   display:flex;align-items:center;justify-content:center;z-index:9020;visibility:hidden;">',
+      '   <i class="fas fa-chevron-left"></i></button>',
+      ' <button id="sw-lb-next" aria-label="Next"',
+      '   style="position:absolute;top:50%;right:1.2rem;transform:translateY(-50%);',
+      '   width:46px;height:46px;border-radius:50%;border:1.5px solid rgba(255,255,255,0.18);',
+      '   background:rgba(255,255,255,0.07);color:#fff;font-size:1rem;cursor:pointer;',
+      '   display:flex;align-items:center;justify-content:center;z-index:9020;visibility:hidden;">',
+      '   <i class="fas fa-chevron-right"></i></button>',
+      ' <div id="sw-lb-inner" style="position:relative;max-width:min(92vw,1100px);max-height:90vh;',
+      '   display:flex;align-items:center;justify-content:center;">',
+      '   <img id="sw-lb-img" src="" alt="" style="max-width:100%;max-height:90vh;',
+      '     object-fit:contain;border-radius:10px;display:block;',
+      '     box-shadow:0 24px 80px rgba(0,0,0,0.65);transition:opacity 0.18s ease;" />',
+      '   <div id="sw-lb-cap" style="position:absolute;bottom:-2.2rem;left:0;right:0;',
+      '     text-align:center;font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;',
+      '     color:rgba(255,255,255,0.35);font-family:Barlow Condensed,sans-serif;font-weight:700;"></div>',
+      ' </div>',
+      ' <div id="sw-lb-num" style="position:absolute;bottom:1.2rem;left:50%;transform:translateX(-50%);',
+      '   font-size:0.68rem;letter-spacing:0.16em;color:rgba(255,255,255,0.25);',
+      '   font-family:Barlow Condensed,sans-serif;"></div>',
+      '</div>'
+    ].join(''));
 
-    const overlay  = document.getElementById('sw-lb');
-    const lbImg    = document.getElementById('sw-lb-img');
-    const lbCaption= document.getElementById('sw-lb-caption');
-    const lbCounter= document.getElementById('sw-lb-counter');
-    const lbClose  = document.getElementById('sw-lb-close');
-    const lbPrev   = document.getElementById('sw-lb-prev');
-    const lbNext   = document.getElementById('sw-lb-next');
+    const overlay = document.getElementById('sw-lb');
+    const lbImg   = document.getElementById('sw-lb-img');
+    const lbCap   = document.getElementById('sw-lb-cap');
+    const lbNum   = document.getElementById('sw-lb-num');
+    const btnClose = document.getElementById('sw-lb-close');
+    const btnPrev  = document.getElementById('sw-lb-prev');
+    const btnNext  = document.getElementById('sw-lb-next');
 
-    // Collect all clickable image containers on the page
-    // Target: any div that directly wraps an <img> and has position:relative or border-radius
-    // Strategy: find all imgs inside .dock-showcase-inner, .deck-light-grid parent,
-    //           .dock-montage-inner, .ipe-walkway-inner, .lighting-dark-inner,
-    //           .service-detail-img, and any div with border-radius:14px style
-    const selectors = [
-      '.dock-showcase-inner div[style*="border-radius"]',
-      '.dock-montage-inner div[style*="border-radius"]',
-      '.lighting-dark-inner div[style*="border-radius"]',
-      '.ipe-walkway-inner div[style*="border-radius"]',
-      '.dk-transform-img-wrap',
-      '.showcase-compare-img',
-      '.showcase-photo',
-      '.client-photo-row div[style*="border-radius"]',
-    ];
+    /* ── 2. Collect every content image on the page ── */
+    // Rule: include any <img> that is NOT inside nav, footer, or .float-cta,
+    // and whose natural width is likely > 80px (skip icons/logos by src name).
+    const SKIP_PARENTS = ['nav', 'footer', '.float-cta', '.breadcrumb'];
+    const SKIP_SRC     = /logo|favicon|icon/i;
 
-    let images = [];
-
-    function collectImages() {
-      images = [];
-      document.querySelectorAll(selectors.join(',')).forEach(card => {
-        const img = card.querySelector('img');
-        if (img && img.src) {
-          images.push({ src: img.src, alt: img.alt || '', caption: img.alt || '' });
-        }
-      });
+    function isSkipped(img) {
+      if (SKIP_SRC.test(img.src)) return true;
+      return SKIP_PARENTS.some(sel => img.closest(sel));
     }
 
-    function open(idx) {
-      collectImages();
-      if (!images[idx]) return;
-      show(idx);
+    const allImgs = Array.from(document.querySelectorAll('img')).filter(img => !isSkipped(img));
+
+    /* ── 3. State ── */
+    let current = 0;
+
+    /* ── 4. Open / close ── */
+    function openLB(idx) {
+      current = idx;
+      showSlide(idx);
       overlay.style.opacity = '1';
       overlay.style.pointerEvents = 'all';
       document.body.style.overflow = 'hidden';
     }
-
-    function close() {
+    function closeLB() {
       overlay.style.opacity = '0';
       overlay.style.pointerEvents = 'none';
       document.body.style.overflow = '';
     }
-
-    let currentIdx = 0;
-    function show(idx) {
-      currentIdx = idx;
-      const item = images[idx];
+    function showSlide(idx) {
+      current = idx;
+      const img = allImgs[idx];
       lbImg.style.opacity = '0';
-      setTimeout(() => {
-        lbImg.src = item.src;
-        lbImg.alt = item.alt;
+      setTimeout(function () {
+        lbImg.src = img.src;
+        lbImg.alt = img.alt || '';
         lbImg.style.opacity = '1';
       }, 160);
-      // Extract clean caption from alt text (strip URL-looking suffixes)
-      const cap = item.alt.replace(/\s*[—-]\s*Contour Marine.*$/i, '').replace(/\s*—\s*South Florida.*$/i, '');
-      lbCaption.textContent = cap;
-      lbCounter.textContent = images.length > 1 ? (idx + 1) + ' / ' + images.length : '';
-      lbPrev.style.visibility = idx === 0 ? 'hidden' : 'visible';
-      lbNext.style.visibility = idx === images.length - 1 ? 'hidden' : 'visible';
+      // Clean caption: strip "— Contour Marine" / "— South Florida…" suffixes
+      const cap = (img.alt || '').replace(/\s*[—\-]\s*Contour Marine.*$/i,'')
+                                  .replace(/\s*[—\-]\s*South Florida.*$/i,'');
+      lbCap.textContent = cap;
+      lbNum.textContent  = allImgs.length > 1 ? (idx + 1) + ' / ' + allImgs.length : '';
+      btnPrev.style.visibility = idx === 0 ? 'hidden' : 'visible';
+      btnNext.style.visibility = idx === allImgs.length - 1 ? 'hidden' : 'visible';
     }
 
-    // Wire up click handlers on card containers
-    function wireCards() {
-      collectImages();
-      document.querySelectorAll(selectors.join(',')).forEach((card, i) => {
-        const img = card.querySelector('img');
-        if (!img || !img.src) return;
-        // Find index in images array
-        const idx = images.findIndex(im => im.src === img.src);
-        if (idx === -1) return;
-        // Make it look clickable
-        card.style.cursor = 'pointer';
-        // Add expand icon if not already there
-        if (!card.querySelector('.sw-expand-icon')) {
-          const icon = document.createElement('div');
-          icon.className = 'sw-expand-icon';
-          icon.innerHTML = '<i class="fas fa-expand-alt"></i>';
-          icon.style.cssText = `
-            position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-            background:rgba(7,27,46,0.28);opacity:0;transition:opacity 0.3s ease;
-            pointer-events:none;border-radius:inherit;`;
-          icon.querySelector('i').style.cssText = `
-            color:rgba(255,255,255,0.88);font-size:1.5rem;
-            filter:drop-shadow(0 2px 8px rgba(0,0,0,0.5));`;
-          card.style.position = 'relative';
-          card.appendChild(icon);
-          card.addEventListener('mouseenter', () => icon.style.opacity = '1');
-          card.addEventListener('mouseleave', () => icon.style.opacity = '0');
-        }
-        card.addEventListener('click', () => open(idx));
+    /* ── 5. Wire every image ── */
+    allImgs.forEach(function (img, idx) {
+      // Make the image itself the click target if its parent doesn't already handle it
+      // We attach to the immediate parent div/wrapper so the whole card is clickable
+      const wrapper = img.parentElement;
+      if (!wrapper) return;
+
+      // Style the wrapper as clickable
+      wrapper.style.cursor = 'pointer';
+      wrapper.style.position = wrapper.style.position || 'relative';
+
+      // Add hover expand icon (only once per wrapper)
+      if (!wrapper.querySelector('.sw-exp')) {
+        const icon = document.createElement('div');
+        icon.className = 'sw-exp';
+        icon.innerHTML = '<i class="fas fa-expand-alt"></i>';
+        icon.style.cssText = [
+          'position:absolute;inset:0;z-index:5;',
+          'display:flex;align-items:center;justify-content:center;',
+          'background:rgba(7,27,46,0.30);',
+          'opacity:0;transition:opacity 0.28s ease;pointer-events:none;',
+          'border-radius:inherit;'
+        ].join('');
+        icon.querySelector('i').style.cssText = [
+          'color:rgba(255,255,255,0.9);font-size:1.55rem;',
+          'filter:drop-shadow(0 2px 8px rgba(0,0,0,0.55));'
+        ].join('');
+        wrapper.appendChild(icon);
+        wrapper.addEventListener('mouseenter', function () { icon.style.opacity = '1'; });
+        wrapper.addEventListener('mouseleave', function () { icon.style.opacity = '0'; });
+      }
+
+      wrapper.addEventListener('click', function (e) {
+        // Don't hijack clicks on buttons/links inside the card
+        if (e.target.closest('a, button')) return;
+        openLB(idx);
       });
-    }
-
-    wireCards();
-
-    lbClose.addEventListener('click', close);
-    overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
-    lbPrev.addEventListener('click', e => { e.stopPropagation(); if (currentIdx > 0) show(currentIdx - 1); });
-    lbNext.addEventListener('click', e => { e.stopPropagation(); if (currentIdx < images.length - 1) show(currentIdx + 1); });
-
-    document.addEventListener('keydown', e => {
-      if (overlay.style.pointerEvents !== 'all') return;
-      if (e.key === 'Escape') close();
-      if (e.key === 'ArrowLeft' && currentIdx > 0) show(currentIdx - 1);
-      if (e.key === 'ArrowRight' && currentIdx < images.length - 1) show(currentIdx + 1);
     });
 
-    // Touch swipe
-    let touchX = 0;
-    overlay.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
-    overlay.addEventListener('touchend', e => {
-      const dx = e.changedTouches[0].clientX - touchX;
+    /* ── 6. Controls ── */
+    btnClose.addEventListener('click', closeLB);
+    overlay.addEventListener('click', function (e) { if (e.target === overlay) closeLB(); });
+    btnPrev.addEventListener('click', function (e) {
+      e.stopPropagation();
+      if (current > 0) showSlide(current - 1);
+    });
+    btnNext.addEventListener('click', function (e) {
+      e.stopPropagation();
+      if (current < allImgs.length - 1) showSlide(current + 1);
+    });
+
+    /* keyboard */
+    document.addEventListener('keydown', function (e) {
+      if (overlay.style.pointerEvents !== 'all') return;
+      if (e.key === 'Escape')     { closeLB(); }
+      if (e.key === 'ArrowLeft'  && current > 0)                  showSlide(current - 1);
+      if (e.key === 'ArrowRight' && current < allImgs.length - 1) showSlide(current + 1);
+    });
+
+    /* touch swipe */
+    var touchX = 0;
+    overlay.addEventListener('touchstart', function (e) { touchX = e.touches[0].clientX; }, { passive: true });
+    overlay.addEventListener('touchend',   function (e) {
+      var dx = e.changedTouches[0].clientX - touchX;
       if (Math.abs(dx) > 50) {
-        if (dx < 0 && currentIdx < images.length - 1) show(currentIdx + 1);
-        else if (dx > 0 && currentIdx > 0) show(currentIdx - 1);
+        if (dx < 0 && current < allImgs.length - 1) showSlide(current + 1);
+        if (dx > 0 && current > 0)                   showSlide(current - 1);
       }
     });
 
