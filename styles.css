@@ -6237,6 +6237,19 @@ html {
   background: #fff;
   padding: 5rem 2rem;
 }
+/* Client photo row — always 2-col, never collapses to 1-col */
+.client-photo-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+@media (max-width: 480px) {
+  .client-photo-row {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.75rem;
+  }
+}
 .dock-showcase-inner {
   max-width: 1200px;
   margin: 0 auto;
