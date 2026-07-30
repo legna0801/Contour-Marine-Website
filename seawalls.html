@@ -889,38 +889,23 @@
     }
     .sw-build-pill i { font-size: 0.7rem; }
 
-    /* Caption panel — HIDDEN at rest, slides in on hover */
+    /* Caption — lives BELOW card, never over the image */
     .sw-build-caption {
-      position: absolute;
-      left: 0; right: 0; bottom: 0;
-      z-index: 3;
-      padding: 2rem 1.5rem 1.4rem;
-      background: linear-gradient(to top,
-        rgba(3,12,22,0.98) 0%,
-        rgba(3,12,22,0.85) 55%,
-        transparent 100%);
-      transform: translateY(100%);
-      transition: transform 0.42s cubic-bezier(0.23,1,0.32,1),
-                  opacity 0.42s ease;
-      opacity: 0;
+      padding: 0.95rem 0.25rem 0.5rem;
       display: flex;
       flex-direction: column;
-      gap: 0.3rem;
-    }
-    .sw-build-card:hover .sw-build-caption {
-      transform: translateY(0);
-      opacity: 1;
+      gap: 0.25rem;
     }
     .sw-build-caption strong {
       font-family: var(--font-body);
-      font-size: 1.05rem;
+      font-size: 0.95rem;
       font-weight: 700;
-      color: #fff;
-      line-height: 1.2;
+      color: rgba(255,255,255,0.92);
+      line-height: 1.25;
     }
     .sw-build-caption span {
-      font-size: 0.83rem;
-      color: rgba(255,255,255,0.65);
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.5);
       line-height: 1.55;
     }
 
@@ -929,7 +914,7 @@
       margin-bottom: 1.5rem;
     }
     .sw-build-hero-card .sw-build-card {
-      aspect-ratio: 16/7;
+      aspect-ratio: 16/9;
       border-radius: 20px;
     }
     .sw-build-hero-card .sw-build-caption {
@@ -1029,50 +1014,6 @@
       max-width: 580px;
     }
 
-    /* ── Stat Bar ── */
-    .sw-build-stats {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 0;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(59,196,218,0.13);
-      border-radius: 18px;
-      padding: 2rem 2rem;
-    }
-    .sw-build-stat {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.3rem;
-      padding: 0.5rem 2.5rem;
-      flex: 1;
-      min-width: 150px;
-    }
-    .sw-build-stat-num {
-      font-family: var(--font-display);
-      font-size: clamp(1.5rem, 2.8vw, 2.1rem);
-      font-weight: 800;
-      color: var(--teal-bright);
-      line-height: 1;
-      letter-spacing: -0.02em;
-    }
-    .sw-build-stat-label {
-      font-family: var(--font-accent);
-      font-size: 0.68rem;
-      font-weight: 600;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.45);
-      text-align: center;
-    }
-    .sw-build-stat-div {
-      width: 1px; height: 44px;
-      background: rgba(59,196,218,0.16);
-      flex-shrink: 0;
-    }
-
     /* ── Scroll Reveal ── */
     .sw-build-reveal {
       opacity: 0;
@@ -1086,16 +1027,7 @@
       transform: translateY(0);
     }
 
-    /* ── Mobile: always show caption bottom bar ── */
-    @media (hover: none) {
-      .sw-build-caption {
-        transform: translateY(0);
-        opacity: 1;
-        background: linear-gradient(to top, rgba(3,12,22,0.96) 0%, rgba(3,12,22,0.6) 60%, transparent 100%);
-        padding-bottom: 1rem;
-      }
-      .sw-build-caption span { display: none; }
-    }
+    /* No hover rule needed — captions are always below cards */
 
     /* ── Responsive — tablet ── */
     @media (max-width: 900px) {
@@ -1105,11 +1037,8 @@
       .sw-build-row3 > div:last-child {
         grid-column: 1 / -1;
       }
-      .sw-build-hero-card .sw-build-card { aspect-ratio: 16/8; }
+      .sw-build-hero-card .sw-build-card { aspect-ratio: 16/9; }
       .sw-build-finale .sw-build-card { aspect-ratio: 16/8; }
-      .sw-build-stat { min-width: 130px; padding: 0.5rem 1.2rem; }
-      .sw-build-stat-div { display: none; }
-      .sw-build-timeline { gap: 0.3rem; }
       .sw-build-tl-line { width: 16px; }
     }
 
@@ -1124,9 +1053,9 @@
       .sw-build-row3 > div:last-child { grid-column: auto; }
       .sw-build-row3 .sw-build-card { aspect-ratio: 4/3; }
       .sw-build-finale .sw-build-card { aspect-ratio: 4/3; }
-      .sw-build-stats { padding: 1.25rem 0.5rem; }
-      .sw-build-stat { min-width: 120px; padding: 0.5rem 0.75rem; }
-      .sw-build-stat-num { font-size: 1.3rem; }
+      .sw-build-caption { padding: 0.7rem 0.1rem 0.3rem; }
+      .sw-build-caption strong { font-size: 0.88rem; }
+      .sw-build-caption span { font-size: 0.78rem; }
       .sw-build-finale-badge { top: 12px; right: 12px; font-size: 0.6rem; padding: 5px 12px; }
       .sw-build-tl-step span { display: none; }
     }
@@ -1552,12 +1481,13 @@
           src="images/seawall-new-1.jpg"
           alt="Seawall rebar formwork setup with pilings and South Florida canal view — Contour Marine"
           loading="lazy"
+          style="object-position: center bottom;"
         />
         <div class="sw-build-pill"><i class="fas fa-hard-hat"></i> Phase 1 — Formwork &amp; Pilings</div>
-        <div class="sw-build-caption">
-          <strong>Setting the Stage</strong>
-          <span>Precision timber formwork and structural pilings positioned along the canal — the engineered foundation that defines the seawall's entire strength profile.</span>
-        </div>
+      </div>
+      <div class="sw-build-caption">
+        <strong>Setting the Stage</strong>
+        <span>Precision timber formwork and structural pilings positioned along the canal — the engineered foundation that defines the seawall's entire strength profile.</span>
       </div>
     </div>
 
@@ -1569,12 +1499,13 @@
             src="images/seawall-new-2.jpg"
             alt="Seawall full-length rebar cage assembly — Contour Marine South Florida construction"
             loading="lazy"
+            style="object-position: center 20%;"
           />
           <div class="sw-build-pill"><i class="fas fa-layer-group"></i> Phase 2 — Rebar Cage</div>
-          <div class="sw-build-caption">
-            <strong>Steel Reinforcement</strong>
-            <span>Full-length rebar cage precision-tied and positioned within the formwork — engineered to bond permanently into the concrete cap.</span>
-          </div>
+        </div>
+        <div class="sw-build-caption">
+          <strong>Steel Reinforcement</strong>
+          <span>Full-length rebar cage precision-tied within the formwork — engineered to bond permanently into the concrete cap.</span>
         </div>
       </div>
       <div class="sw-build-reveal" style="--sw-delay:0.28s">
@@ -1583,12 +1514,13 @@
             src="images/seawall-new-3.jpg"
             alt="Fresh concrete being poured into seawall cap formwork — Contour Marine"
             loading="lazy"
+            style="object-position: center 20%;"
           />
           <div class="sw-build-pill"><i class="fas fa-tint"></i> Phase 3 — Concrete Pour</div>
-          <div class="sw-build-caption">
-            <strong>Concrete Placement</strong>
-            <span>Marine-grade high-PSI concrete fills the formwork — locking the rebar into a monolithic cap designed to withstand decades of tidal force.</span>
-          </div>
+        </div>
+        <div class="sw-build-caption">
+          <strong>Concrete Placement</strong>
+          <span>Marine-grade high-PSI concrete fills the formwork — locking rebar into a monolithic cap built to withstand decades of tidal force.</span>
         </div>
       </div>
     </div>
@@ -1601,12 +1533,13 @@
             src="images/seawall-new-4.jpg"
             alt="Smooth concrete seawall cap curing with pilings — Contour Marine"
             loading="lazy"
+            style="object-position: center 15%;"
           />
           <div class="sw-build-pill"><i class="fas fa-check-circle"></i> Phase 4 — Cap Curing</div>
-          <div class="sw-build-caption">
-            <strong>Cap Taking Shape</strong>
-            <span>Smooth concrete surface curing in the forms — the monolithic structure bonding to pilings for maximum compression strength.</span>
-          </div>
+        </div>
+        <div class="sw-build-caption">
+          <strong>Cap Taking Shape</strong>
+          <span>Smooth concrete surface curing in the forms — bonding to pilings for maximum compression strength.</span>
         </div>
       </div>
       <div class="sw-build-reveal" style="--sw-delay:0.30s">
@@ -1615,15 +1548,16 @@
             src="images/seawall-new-5.jpg"
             alt="Completed seawall cap angle view with pilings and South Florida canal — Contour Marine"
             loading="lazy"
+            style="object-position: center 15%;"
           />
           <div class="sw-build-pill"><i class="fas fa-ruler-horizontal"></i> Phase 5 — Finishing</div>
-          <div class="sw-build-caption">
-            <strong>Near Completion</strong>
-            <span>Cap fully formed and set — the clean concrete line runs the property length, pilings locked in place, ready for form stripping.</span>
-          </div>
+        </div>
+        <div class="sw-build-caption">
+          <strong>Near Completion</strong>
+          <span>Clean concrete line runs the full property length — pilings locked, forms ready to strip.</span>
         </div>
       </div>
-      <!-- 3D Stat tile — third column -->
+      <!-- Glass stat tile — third column -->
       <div class="sw-build-reveal" style="--sw-delay:0.38s">
         <div style="
           height: 100%;
@@ -1636,8 +1570,7 @@
           justify-content: center;
           gap: 1.4rem;
           padding: 2rem 1.5rem;
-          box-shadow: 0 8px 40px rgba(0,0,0,0.35),
-                      0 0 0 1px rgba(59,196,218,0.08) inset;
+          box-shadow: 0 8px 40px rgba(0,0,0,0.35), 0 0 0 1px rgba(59,196,218,0.08) inset;
           aspect-ratio: 4/3;
         ">
           <div style="text-align:center;">
@@ -1665,37 +1598,14 @@
           src="images/seawall-new-6.jpg"
           alt="Completed seawall with green lawn and sparkling canal — finished Contour Marine project South Florida"
           loading="lazy"
-          style="object-position: center 35%;"
+          style="object-position: center 40%;"
         />
-        <div class="sw-build-pill"><i class="fas fa-star"></i> Project Complete</div>
+        <div class="sw-build-pill"><i class="fas fa-star"></i> Phase 6 — Complete</div>
         <div class="sw-build-finale-badge"><i class="fas fa-award"></i>&nbsp; Finished Result</div>
-        <div class="sw-build-caption">
-          <strong>The Finished Waterfront</strong>
-          <span>Clean white concrete seawall cap running the full length of the property — protecting the land, defining the waterfront, and built to last for generations. Broward &amp; Miami-Dade County, South Florida.</span>
-        </div>
       </div>
-    </div>
-
-    <!-- Stat bar -->
-    <div class="sw-build-stats sw-build-reveal" style="--sw-delay:0.2s">
-      <div class="sw-build-stat">
-        <span class="sw-build-stat-num">25+</span>
-        <span class="sw-build-stat-label">Years Building Seawalls</span>
-      </div>
-      <div class="sw-build-stat-div"></div>
-      <div class="sw-build-stat">
-        <span class="sw-build-stat-num">500+</span>
-        <span class="sw-build-stat-label">Projects Completed</span>
-      </div>
-      <div class="sw-build-stat-div"></div>
-      <div class="sw-build-stat">
-        <span class="sw-build-stat-num">100%</span>
-        <span class="sw-build-stat-label">Marine-Grade Materials</span>
-      </div>
-      <div class="sw-build-stat-div"></div>
-      <div class="sw-build-stat">
-        <span class="sw-build-stat-num">Broward &amp; Miami-Dade</span>
-        <span class="sw-build-stat-label">Service Area</span>
+      <div class="sw-build-caption" style="padding-top:1.1rem;">
+        <strong>The Finished Waterfront</strong>
+        <span>Clean white concrete seawall cap running the full length of the property — protecting the land, defining the waterfront, and built to last for generations. Broward &amp; Miami-Dade County, South Florida.</span>
       </div>
     </div>
 
