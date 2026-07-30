@@ -689,6 +689,339 @@
       .sw-hero h1 { font-size: clamp(1.9rem, 9vw, 2.6rem); }
       .sw-process-steps { grid-template-columns: 1fr; }
     }
+
+    /* ═══════════════════════════════════════════════
+       CONSTRUCTION SEQUENCE — CINEMATIC SHOWCASE
+       Unique design: dark navy, hero + asymmetric grid,
+       hover caption slide-up, scroll-reveal stagger
+       ═══════════════════════════════════════════════ */
+    .sw-build-showcase {
+      background: linear-gradient(160deg, #030c16 0%, #071b2e 55%, #0a2540 100%);
+      padding: 6rem 0 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Subtle teal shimmer top border */
+    .sw-build-showcase::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent 0%, rgba(59,196,218,0.5) 30%, rgba(201,168,76,0.65) 50%, rgba(59,196,218,0.5) 70%, transparent 100%);
+    }
+    /* Faint radial glow accent */
+    .sw-build-showcase::after {
+      content: '';
+      position: absolute;
+      top: -120px; left: 50%;
+      transform: translateX(-50%);
+      width: 900px; height: 500px;
+      background: radial-gradient(ellipse, rgba(59,196,218,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .sw-build-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Header */
+    .sw-build-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+    .sw-build-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      font-family: var(--font-accent);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+    }
+    .sw-build-eyebrow-line {
+      display: block;
+      width: 36px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.55;
+    }
+    .sw-build-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+      line-height: 1.1;
+    }
+    .sw-build-sub {
+      font-family: var(--font-body);
+      font-size: clamp(0.95rem, 1.8vw, 1.08rem);
+      color: rgba(255,255,255,0.65);
+      line-height: 1.75;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    /* ── Hero Feature Photo ── */
+    .sw-build-hero-wrap {
+      margin-bottom: 1.25rem;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+      position: relative;
+    }
+    .sw-build-hero-img-outer {
+      position: relative;
+      aspect-ratio: 16/7;
+      overflow: hidden;
+    }
+    .sw-build-hero-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+      display: block;
+      transition: transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+    .sw-build-hero-wrap:hover .sw-build-hero-img {
+      transform: scale(1.04);
+    }
+    /* Gradient overlay on hero */
+    .sw-build-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(3,12,22,0.88) 0%, rgba(3,12,22,0.3) 45%, transparent 75%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 2.2rem 2.5rem;
+      pointer-events: none;
+    }
+    .sw-build-hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-accent);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.7rem;
+    }
+    .sw-build-hero-caption h3 {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.4rem;
+      line-height: 1.2;
+    }
+    .sw-build-hero-caption p {
+      font-size: 0.97rem;
+      color: rgba(255,255,255,0.72);
+      max-width: 520px;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    /* ── Asymmetric Grid ── */
+    .sw-build-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+
+    /* Shared photo wrapper — hover caption slide-up */
+    .sw-build-photo-wrap {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 14px 45px rgba(0,0,0,0.40);
+    }
+    .sw-build-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform 0.65s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+    .sw-build-photo-wrap:hover img {
+      transform: scale(1.06);
+    }
+
+    /* Caption slide-up on hover */
+    .sw-build-caption-slide {
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      padding: 1.5rem 1.4rem 1.2rem;
+      background: linear-gradient(to top, rgba(3,12,22,0.97) 0%, rgba(3,12,22,0.8) 60%, transparent 100%);
+      transform: translateY(calc(100% - 48px));
+      transition: transform 0.45s cubic-bezier(0.25,0.46,0.45,0.94);
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .sw-build-photo-wrap:hover .sw-build-caption-slide {
+      transform: translateY(0);
+    }
+    .sw-build-caption-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-family: var(--font-accent);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.1rem;
+    }
+    .sw-build-caption-slide strong {
+      font-family: var(--font-body);
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.2;
+    }
+    .sw-build-caption-slide span {
+      font-size: 0.84rem;
+      color: rgba(255,255,255,0.68);
+      line-height: 1.55;
+    }
+
+    /* Large left photo — full height of grid row */
+    .sw-build-photo-large {
+      min-height: 460px;
+    }
+    .sw-build-photo-large .sw-build-photo-wrap {
+      height: 100%;
+      min-height: 460px;
+    }
+    .sw-build-photo-large .sw-build-caption-slide {
+      transform: translateY(calc(100% - 46px));
+    }
+
+    /* Right stack — 3 equal photos */
+    .sw-build-photo-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .sw-build-photo-sm {
+      flex: 1;
+      min-height: 0;
+    }
+    .sw-build-photo-sm .sw-build-photo-wrap {
+      aspect-ratio: 4/3;
+      height: auto;
+    }
+
+    /* ── Stat Bar ── */
+    .sw-build-stats {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: wrap;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(59,196,218,0.15);
+      border-radius: 16px;
+      padding: 2rem 2.5rem;
+    }
+    .sw-build-stat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0 2.5rem;
+      flex: 1;
+      min-width: 160px;
+    }
+    .sw-build-stat-num {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 2.8vw, 2rem);
+      font-weight: 800;
+      color: var(--teal-bright);
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+    .sw-build-stat-label {
+      font-family: var(--font-accent);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+    }
+    .sw-build-stat-div {
+      width: 1px;
+      height: 40px;
+      background: rgba(59,196,218,0.18);
+      flex-shrink: 0;
+    }
+
+    /* ── Scroll Reveal ── */
+    .sw-build-reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.75s ease var(--sw-delay, 0s), transform 0.75s ease var(--sw-delay, 0s);
+    }
+    .sw-build-reveal.sw-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .sw-build-grid {
+        grid-template-columns: 1fr;
+      }
+      .sw-build-photo-large,
+      .sw-build-photo-large .sw-build-photo-wrap {
+        min-height: 320px;
+      }
+      .sw-build-photo-sm .sw-build-photo-wrap {
+        aspect-ratio: 16/9;
+      }
+      .sw-build-stats {
+        gap: 1rem;
+        padding: 1.5rem 1rem;
+      }
+      .sw-build-stat {
+        padding: 0.5rem 1.5rem;
+      }
+      .sw-build-stat-div { display: none; }
+    }
+    @media (max-width: 600px) {
+      .sw-build-showcase { padding: 4rem 0 3.5rem; }
+      .sw-build-hero-img-outer { aspect-ratio: 4/3; }
+      .sw-build-hero-overlay { padding: 1.4rem 1.2rem; }
+      .sw-build-hero-caption p { display: none; }
+      .sw-build-photo-stack {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      .sw-build-photo-sm:last-child { grid-column: 1 / -1; }
+      .sw-build-stat { min-width: 130px; padding: 0.4rem 1rem; }
+      .sw-build-stat-num { font-size: 1.3rem; }
+      .sw-build-stats { padding: 1.25rem 0.75rem; }
+      /* Always show caption on mobile (no hover) */
+      .sw-build-caption-slide { transform: translateY(0); }
+    }
   </style>
   <link rel="canonical" href="https://www.contourmarine.com/seawalls.html">
 </head>
@@ -1065,6 +1398,132 @@
   </div>
 </section>
 
+<!-- ═══ CONSTRUCTION SEQUENCE — CINEMATIC SHOWCASE ══════════════════════════════ -->
+<section class="sw-build-showcase">
+  <div class="sw-build-inner">
+
+    <!-- Header -->
+    <div class="sw-build-header">
+      <span class="sw-build-eyebrow"><span class="sw-build-eyebrow-line"></span>Construction Process<span class="sw-build-eyebrow-line"></span></span>
+      <h2 class="sw-build-title">Built to Last a Lifetime</h2>
+      <p class="sw-build-sub">Every seawall we construct follows a precision-engineered process — from rebar reinforcement to poured concrete cap, engineered for South Florida's demanding marine environment.</p>
+    </div>
+
+    <!-- Hero Feature Photo -->
+    <div class="sw-build-hero-wrap sw-build-reveal">
+      <div class="sw-build-hero-img-outer">
+        <img
+          src="images/seawall-new-1.jpg"
+          alt="Seawall rebar formwork setup with canal view — Contour Marine South Florida construction"
+          loading="lazy"
+          class="sw-build-hero-img"
+        />
+        <div class="sw-build-hero-overlay">
+          <div class="sw-build-hero-tag"><i class="fas fa-hard-hat"></i> Phase 1 — Rebar &amp; Formwork</div>
+          <div class="sw-build-hero-caption">
+            <h3>Reinforced Foundation</h3>
+            <p>High-strength rebar cages and precision timber formwork — the backbone of a seawall built to withstand decades of tidal forces.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Asymmetric Grid: 4 photos -->
+    <div class="sw-build-grid">
+
+      <!-- Left: Large photo -->
+      <div class="sw-build-photo-large sw-build-reveal" style="--sw-delay:0.1s">
+        <div class="sw-build-photo-wrap">
+          <img
+            src="images/seawall-new-2.jpg"
+            alt="Seawall rebar cage full length detail — Contour Marine construction sequence"
+            loading="lazy"
+          />
+          <div class="sw-build-caption-slide">
+            <span class="sw-build-caption-tag"><i class="fas fa-layer-group"></i> Phase 2</span>
+            <strong>Rebar Cage Assembly</strong>
+            <span>Full-length steel reinforcement cage precisely positioned and tied — engineered to lock into the concrete seawall cap.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: 3 stacked photos -->
+      <div class="sw-build-photo-stack">
+
+        <div class="sw-build-photo-sm sw-build-reveal" style="--sw-delay:0.2s">
+          <div class="sw-build-photo-wrap">
+            <img
+              src="images/seawall-new-3.jpg"
+              alt="Fresh concrete being poured into seawall cap formwork — Contour Marine"
+              loading="lazy"
+            />
+            <div class="sw-build-caption-slide">
+              <span class="sw-build-caption-tag"><i class="fas fa-tint"></i> Phase 3</span>
+              <strong>Concrete Pour</strong>
+              <span>High-PSI marine-grade concrete fills the formwork — setting the permanent seawall cap.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sw-build-photo-sm sw-build-reveal" style="--sw-delay:0.3s">
+          <div class="sw-build-photo-wrap">
+            <img
+              src="images/seawall-new-4.jpg"
+              alt="Freshly poured smooth concrete seawall cap with pilings — Contour Marine"
+              loading="lazy"
+            />
+            <div class="sw-build-caption-slide">
+              <span class="sw-build-caption-tag"><i class="fas fa-check-circle"></i> Phase 4</span>
+              <strong>Cap Curing</strong>
+              <span>Smooth concrete cap curing in the forms — monolithic structure bonded to pilings for maximum strength.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sw-build-photo-sm sw-build-reveal" style="--sw-delay:0.4s">
+          <div class="sw-build-photo-wrap">
+            <img
+              src="images/seawall-new-5.jpg"
+              alt="Completed seawall cap with pilings along South Florida canal — Contour Marine"
+              loading="lazy"
+            />
+            <div class="sw-build-caption-slide">
+              <span class="sw-build-caption-tag"><i class="fas fa-water"></i> Phase 5</span>
+              <strong>Final Inspection</strong>
+              <span>Finished cap stands strong along the canal — engineered protection that lasts 25+ years.</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /stack -->
+    </div><!-- /grid -->
+
+    <!-- Bottom stat bar -->
+    <div class="sw-build-stats sw-build-reveal" style="--sw-delay:0.5s">
+      <div class="sw-build-stat">
+        <span class="sw-build-stat-num">25+</span>
+        <span class="sw-build-stat-label">Years Building Seawalls</span>
+      </div>
+      <div class="sw-build-stat-div"></div>
+      <div class="sw-build-stat">
+        <span class="sw-build-stat-num">500+</span>
+        <span class="sw-build-stat-label">Projects Completed</span>
+      </div>
+      <div class="sw-build-stat-div"></div>
+      <div class="sw-build-stat">
+        <span class="sw-build-stat-num">100%</span>
+        <span class="sw-build-stat-label">Marine-Grade Materials</span>
+      </div>
+      <div class="sw-build-stat-div"></div>
+      <div class="sw-build-stat">
+        <span class="sw-build-stat-num">Broward &amp; Miami-Dade</span>
+        <span class="sw-build-stat-label">Service Area</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- ═══ TESTIMONIALS ══════════════════════════════ -->
 <section class="sw-testimonials">
   <div class="container">
@@ -1207,6 +1666,21 @@
     if (bg) {
       setTimeout(function() { bg.classList.add('loaded'); }, 100);
     }
+  })();
+
+  // Construction Sequence — scroll reveal
+  (function() {
+    var items = document.querySelectorAll('.sw-build-reveal');
+    if (!items.length) return;
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('sw-visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    items.forEach(function(el) { io.observe(el); });
   })();
 </script>
 </body>
