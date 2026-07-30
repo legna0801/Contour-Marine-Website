@@ -924,50 +924,39 @@
       font-size: clamp(1.3rem, 2.5vw, 1.7rem);
     }
 
-    /* ── Middle row: 2 equal photos ── */
-    .sw-build-row2 {
+    /* ── 2×2 photo grid — all 4 cards identical size ── */
+    .sw-build-grid4 {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1.4rem;
-      margin-bottom: 1.4rem;
+      margin-bottom: 1.6rem;
     }
-    .sw-build-row2 .sw-build-card {
-      aspect-ratio: 4/3;
-    }
-
-    /* ── Bottom row: 3 equal photos ── */
-    .sw-build-row3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.4rem;
-      margin-bottom: 2.8rem;
-    }
-    .sw-build-row3 .sw-build-card {
+    .sw-build-grid4 .sw-build-card {
       aspect-ratio: 4/3;
     }
 
     /* ── Finale: Final product — dramatic full-width ── */
     .sw-build-finale {
-      margin-bottom: 3rem;
+      margin-bottom: 0;
       position: relative;
     }
     .sw-build-finale .sw-build-card {
-      aspect-ratio: 16/6;
+      aspect-ratio: 16/7;
       border-radius: 22px;
       box-shadow:
-        0 0 0 2px rgba(201,168,76,0.35),
-        0 0 60px rgba(201,168,76,0.12),
+        0 0 0 2px rgba(201,168,76,0.4),
+        0 0 70px rgba(201,168,76,0.14),
         0 40px 100px rgba(0,0,0,0.7);
     }
     .sw-build-finale .sw-build-card:hover {
       box-shadow:
-        0 0 0 2px rgba(201,168,76,0.7),
-        0 0 80px rgba(201,168,76,0.2),
+        0 0 0 2.5px rgba(201,168,76,0.75),
+        0 0 90px rgba(201,168,76,0.22),
         0 50px 120px rgba(0,0,0,0.75);
       transform: translateY(-6px) scale(1.008);
     }
     .sw-build-finale .sw-build-pill {
-      top: 18px; left: 18px;
+      top: 20px; left: 20px;
       background: rgba(3,12,22,0.88);
       border-color: rgba(201,168,76,0.65);
       padding: 6px 16px;
@@ -976,13 +965,13 @@
     /* Gold shimmer badge top-right */
     .sw-build-finale-badge {
       position: absolute;
-      top: 18px; right: 18px;
+      top: 20px; right: 20px;
       z-index: 5;
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      padding: 8px 18px;
-      background: linear-gradient(135deg, rgba(201,168,76,0.95), rgba(225,195,100,0.9));
+      padding: 8px 20px;
+      background: linear-gradient(135deg, rgba(201,168,76,0.97), rgba(228,198,105,0.93));
       border-radius: 30px;
       font-family: var(--font-accent);
       font-size: 0.68rem;
@@ -990,28 +979,87 @@
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: #030c16;
-      box-shadow: 0 4px 20px rgba(201,168,76,0.5),
-                  0 0 0 1px rgba(255,255,255,0.2) inset;
+      box-shadow: 0 4px 22px rgba(201,168,76,0.55),
+                  0 0 0 1px rgba(255,255,255,0.25) inset;
       pointer-events: none;
       animation: sw-badge-pulse 3s ease-in-out infinite;
     }
     @keyframes sw-badge-pulse {
-      0%, 100% { box-shadow: 0 4px 20px rgba(201,168,76,0.5), 0 0 0 1px rgba(255,255,255,0.2) inset; }
-      50% { box-shadow: 0 6px 30px rgba(201,168,76,0.75), 0 0 0 1px rgba(255,255,255,0.3) inset; }
+      0%, 100% { box-shadow: 0 4px 22px rgba(201,168,76,0.55), 0 0 0 1px rgba(255,255,255,0.25) inset; }
+      50%       { box-shadow: 0 6px 34px rgba(201,168,76,0.8),  0 0 0 1px rgba(255,255,255,0.35) inset; }
+    }
+    /* 3D stat bar — embedded inside finale card at the bottom */
+    .sw-build-finale-stats {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      z-index: 4;
+      display: flex;
+      align-items: stretch;
+      justify-content: space-around;
+      background: rgba(3,12,22,0.82);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-top: 1px solid rgba(59,196,218,0.18);
+      border-radius: 0 0 22px 22px;
+      padding: 1.1rem 2rem;
+      gap: 0;
+      pointer-events: none;
+      /* 3D lift */
+      transform: translateZ(20px);
+      transform-style: preserve-3d;
+    }
+    .sw-build-fs {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.2rem;
+      flex: 1;
+      padding: 0.35rem 1rem;
+      position: relative;
+    }
+    .sw-build-fs + .sw-build-fs::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 10%; bottom: 10%;
+      width: 1px;
+      background: rgba(59,196,218,0.2);
+    }
+    .sw-build-fs-num {
+      font-family: var(--font-display);
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      font-weight: 800;
+      color: var(--teal-bright);
+      line-height: 1;
+      letter-spacing: -0.02em;
+      /* Number glow */
+      text-shadow: 0 0 20px rgba(59,196,218,0.45);
+    }
+    .sw-build-fs-num.gold {
+      color: var(--gold);
+      text-shadow: 0 0 20px rgba(201,168,76,0.45);
+    }
+    .sw-build-fs-label {
+      font-family: var(--font-accent);
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      white-space: nowrap;
     }
     .sw-build-finale .sw-build-caption {
-      padding: 3rem 3rem 2.2rem;
+      padding: 1.2rem 0.25rem 0.5rem;
     }
     .sw-build-finale .sw-build-caption strong {
       font-family: var(--font-display);
-      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
       font-style: italic;
       color: #fff;
     }
     .sw-build-finale .sw-build-caption span {
-      font-size: 0.97rem;
-      color: rgba(255,255,255,0.72);
-      max-width: 580px;
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.6);
     }
 
     /* ── Scroll Reveal ── */
@@ -1031,15 +1079,10 @@
 
     /* ── Responsive — tablet ── */
     @media (max-width: 900px) {
-      .sw-build-row3 {
-        grid-template-columns: 1fr 1fr;
-      }
-      .sw-build-row3 > div:last-child {
-        grid-column: 1 / -1;
-      }
       .sw-build-hero-card .sw-build-card { aspect-ratio: 16/9; }
       .sw-build-finale .sw-build-card { aspect-ratio: 16/8; }
       .sw-build-tl-line { width: 16px; }
+      .sw-build-fs-label { font-size: 0.55rem; letter-spacing: 0.12em; }
     }
 
     /* ── Responsive — mobile ── */
@@ -1047,16 +1090,17 @@
       .sw-build-showcase { padding: 4.5rem 0 4rem; }
       .sw-build-inner { padding: 0 1rem; }
       .sw-build-hero-card .sw-build-card { aspect-ratio: 4/3; }
-      .sw-build-row2 { grid-template-columns: 1fr; gap: 1rem; }
-      .sw-build-row2 .sw-build-card { aspect-ratio: 4/3; }
-      .sw-build-row3 { grid-template-columns: 1fr; gap: 1rem; }
-      .sw-build-row3 > div:last-child { grid-column: auto; }
-      .sw-build-row3 .sw-build-card { aspect-ratio: 4/3; }
+      .sw-build-grid4 { grid-template-columns: 1fr; gap: 1rem; }
+      .sw-build-grid4 .sw-build-card { aspect-ratio: 4/3; }
       .sw-build-finale .sw-build-card { aspect-ratio: 4/3; }
+      .sw-build-finale-stats { padding: 0.75rem 0.5rem; gap: 0; }
+      .sw-build-fs { padding: 0.2rem 0.4rem; }
+      .sw-build-fs-num { font-size: 1.1rem; }
+      .sw-build-fs-label { font-size: 0.5rem; letter-spacing: 0.08em; white-space: normal; text-align: center; }
       .sw-build-caption { padding: 0.7rem 0.1rem 0.3rem; }
       .sw-build-caption strong { font-size: 0.88rem; }
       .sw-build-caption span { font-size: 0.78rem; }
-      .sw-build-finale-badge { top: 12px; right: 12px; font-size: 0.6rem; padding: 5px 12px; }
+      .sw-build-finale-badge { top: 10px; right: 10px; font-size: 0.58rem; padding: 4px 10px; }
       .sw-build-tl-step span { display: none; }
     }
   </style>
@@ -1491,121 +1535,79 @@
       </div>
     </div>
 
-    <!-- ROW 2: Two equal photos side-by-side — Photos 2 & 3 -->
-    <div class="sw-build-row2">
-      <div class="sw-build-reveal" style="--sw-delay:0.2s">
+    <!-- 2×2 GRID — Photos 2, 3, 4, 5 all identical size -->
+    <div class="sw-build-grid4">
+      <div class="sw-build-reveal" style="--sw-delay:0.18s">
         <div class="sw-build-card">
-          <img
-            src="images/seawall-new-2.jpg"
-            alt="Seawall full-length rebar cage assembly — Contour Marine South Florida construction"
-            loading="lazy"
-            style="object-position: center 20%;"
-          />
+          <img src="images/seawall-new-2.jpg" alt="Seawall full-length rebar cage assembly — Contour Marine South Florida" loading="lazy" style="object-position: center 20%;"/>
           <div class="sw-build-pill"><i class="fas fa-layer-group"></i> Phase 2 — Rebar Cage</div>
         </div>
         <div class="sw-build-caption">
           <strong>Steel Reinforcement</strong>
-          <span>Full-length rebar cage precision-tied within the formwork — engineered to bond permanently into the concrete cap.</span>
+          <span>Full-length rebar cage precision-tied — engineered to bond permanently into the concrete cap.</span>
         </div>
       </div>
-      <div class="sw-build-reveal" style="--sw-delay:0.28s">
+      <div class="sw-build-reveal" style="--sw-delay:0.26s">
         <div class="sw-build-card">
-          <img
-            src="images/seawall-new-3.jpg"
-            alt="Fresh concrete being poured into seawall cap formwork — Contour Marine"
-            loading="lazy"
-            style="object-position: center 20%;"
-          />
+          <img src="images/seawall-new-3.jpg" alt="Fresh concrete being poured into seawall cap formwork — Contour Marine" loading="lazy" style="object-position: center 20%;"/>
           <div class="sw-build-pill"><i class="fas fa-tint"></i> Phase 3 — Concrete Pour</div>
         </div>
         <div class="sw-build-caption">
           <strong>Concrete Placement</strong>
-          <span>Marine-grade high-PSI concrete fills the formwork — locking rebar into a monolithic cap built to withstand decades of tidal force.</span>
+          <span>Marine-grade high-PSI concrete fills the formwork — monolithic cap built to last decades.</span>
         </div>
       </div>
-    </div>
-
-    <!-- ROW 3: Three equal photos — Photos 4, 5 + stat tile -->
-    <div class="sw-build-row3">
-      <div class="sw-build-reveal" style="--sw-delay:0.22s">
+      <div class="sw-build-reveal" style="--sw-delay:0.34s">
         <div class="sw-build-card">
-          <img
-            src="images/seawall-new-4.jpg"
-            alt="Smooth concrete seawall cap curing with pilings — Contour Marine"
-            loading="lazy"
-            style="object-position: center 15%;"
-          />
+          <img src="images/seawall-new-4.jpg" alt="Smooth concrete seawall cap curing with pilings — Contour Marine" loading="lazy" style="object-position: center 15%;"/>
           <div class="sw-build-pill"><i class="fas fa-check-circle"></i> Phase 4 — Cap Curing</div>
         </div>
         <div class="sw-build-caption">
           <strong>Cap Taking Shape</strong>
-          <span>Smooth concrete surface curing in the forms — bonding to pilings for maximum compression strength.</span>
+          <span>Smooth concrete surface curing in the forms — bonding to pilings for maximum strength.</span>
         </div>
       </div>
-      <div class="sw-build-reveal" style="--sw-delay:0.30s">
+      <div class="sw-build-reveal" style="--sw-delay:0.42s">
         <div class="sw-build-card">
-          <img
-            src="images/seawall-new-5.jpg"
-            alt="Completed seawall cap angle view with pilings and South Florida canal — Contour Marine"
-            loading="lazy"
-            style="object-position: center 15%;"
-          />
+          <img src="images/seawall-new-5.jpg" alt="Completed seawall cap angle view with pilings and South Florida canal — Contour Marine" loading="lazy" style="object-position: center 15%;"/>
           <div class="sw-build-pill"><i class="fas fa-ruler-horizontal"></i> Phase 5 — Finishing</div>
         </div>
         <div class="sw-build-caption">
           <strong>Near Completion</strong>
-          <span>Clean concrete line runs the full property length — pilings locked, forms ready to strip.</span>
-        </div>
-      </div>
-      <!-- Glass stat tile — third column -->
-      <div class="sw-build-reveal" style="--sw-delay:0.38s">
-        <div style="
-          height: 100%;
-          border-radius: 16px;
-          background: linear-gradient(145deg, rgba(26,122,138,0.18) 0%, rgba(59,196,218,0.06) 100%);
-          border: 1px solid rgba(59,196,218,0.22);
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          gap: 1.4rem;
-          padding: 2rem 1.5rem;
-          box-shadow: 0 8px 40px rgba(0,0,0,0.35), 0 0 0 1px rgba(59,196,218,0.08) inset;
-          aspect-ratio: 4/3;
-        ">
-          <div style="text-align:center;">
-            <div style="font-family:var(--font-display);font-size:2.4rem;font-weight:800;color:var(--teal-bright);line-height:1;letter-spacing:-0.03em;">25+</div>
-            <div style="font-family:var(--font-accent);font-size:0.65rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-top:0.3rem;">Years of Expertise</div>
-          </div>
-          <div style="width:40px;height:1px;background:rgba(59,196,218,0.25);"></div>
-          <div style="text-align:center;">
-            <div style="font-family:var(--font-display);font-size:2.4rem;font-weight:800;color:var(--teal-bright);line-height:1;letter-spacing:-0.03em;">500+</div>
-            <div style="font-family:var(--font-accent);font-size:0.65rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-top:0.3rem;">Projects Completed</div>
-          </div>
-          <div style="width:40px;height:1px;background:rgba(59,196,218,0.25);"></div>
-          <div style="text-align:center;">
-            <div style="font-family:var(--font-display);font-size:2.4rem;font-weight:800;color:var(--gold);line-height:1;letter-spacing:-0.03em;">100%</div>
-            <div style="font-family:var(--font-accent);font-size:0.65rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-top:0.3rem;">Marine-Grade Materials</div>
-          </div>
+          <span>Cap fully formed and set — the clean concrete line runs the full property length.</span>
         </div>
       </div>
     </div>
 
-    <!-- ROW 4 — FINALE: Final Product full-width (gold-bordered) -->
-    <div class="sw-build-finale sw-build-reveal" style="--sw-delay:0.15s">
+    <!-- FINALE — Photo 6 full-width with embedded 3D stat bar -->
+    <div class="sw-build-finale sw-build-reveal" style="--sw-delay:0.12s">
       <div class="sw-build-card">
-        <img
-          src="images/seawall-new-6.jpg"
-          alt="Completed seawall with green lawn and sparkling canal — finished Contour Marine project South Florida"
-          loading="lazy"
-          style="object-position: center 40%;"
-        />
+        <img src="images/seawall-new-6.jpg" alt="Completed seawall with green lawn and sparkling canal — finished Contour Marine project South Florida" loading="lazy" style="object-position: center 40%;"/>
         <div class="sw-build-pill"><i class="fas fa-star"></i> Phase 6 — Complete</div>
         <div class="sw-build-finale-badge"><i class="fas fa-award"></i>&nbsp; Finished Result</div>
+        <!-- 3D Stat Bar embedded inside the photo -->
+        <div class="sw-build-finale-stats">
+          <div class="sw-build-fs">
+            <span class="sw-build-fs-num">25+</span>
+            <span class="sw-build-fs-label">Years Building Seawalls</span>
+          </div>
+          <div class="sw-build-fs">
+            <span class="sw-build-fs-num">500+</span>
+            <span class="sw-build-fs-label">Projects Completed</span>
+          </div>
+          <div class="sw-build-fs">
+            <span class="sw-build-fs-num gold">100%</span>
+            <span class="sw-build-fs-label">Marine-Grade Materials</span>
+          </div>
+          <div class="sw-build-fs">
+            <span class="sw-build-fs-num" style="font-size:clamp(0.9rem,1.6vw,1.2rem);white-space:nowrap;">Broward &amp; Miami-Dade</span>
+            <span class="sw-build-fs-label">Service Area</span>
+          </div>
+        </div>
       </div>
       <div class="sw-build-caption" style="padding-top:1.1rem;">
         <strong>The Finished Waterfront</strong>
-        <span>Clean white concrete seawall cap running the full length of the property — protecting the land, defining the waterfront, and built to last for generations. Broward &amp; Miami-Dade County, South Florida.</span>
+        <span>Clean white concrete seawall cap running the full length of the property — protecting the land, defining the waterfront, built to last for generations.</span>
       </div>
     </div>
 
