@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invoice CM-2026-003 — Contour Marine</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0d2b45;
+      --navy-light: #1a3a5c;
+      --teal: #1fa8c0;
+      --teal-bright: #3bc4da;
+      --gold: #c9a84c;
+      --gold-light: #e8c96a;
+      --white: #ffffff;
+      --off-white: #f7f9fb;
+      --text-mid: #4a6077;
+      --border: rgba(13,43,69,0.10);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--off-white);
+      color: var(--navy);
+      min-height: 100vh;
+    }
+
+    @media print {
+      body { background: white; }
+      .no-print { display: none !important; }
+      .page { box-shadow: none !important; margin: 0 !important; border-radius: 0 !important; }
+    }
+
+    .wrapper {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    .page {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 8px 48px rgba(13,43,69,0.10);
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+
+    /* ── HEADER ── */
+    .header {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 60%, #1c4a6e 100%);
+      padding: 3rem 3rem 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 260px; height: 260px;
+      border-radius: 50%;
+      background: rgba(59,196,218,0.08);
+    }
+    .header::after {
+      content: '';
+      position: absolute;
+      bottom: -40px; left: 30%;
+      width: 180px; height: 180px;
+      border-radius: 50%;
+      background: rgba(201,168,76,0.07);
+    }
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 2.5rem;
+      position: relative; z-index: 1;
+    }
+    .logo-area img {
+      height: 52px;
+      width: auto;
+      filter: brightness(0) invert(1);
+    }
+    .proposal-badge {
+      background: linear-gradient(135deg, var(--teal), var(--teal-bright));
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 0.45rem 1rem;
+      border-radius: 50px;
+    }
+    .header-title {
+      position: relative; z-index: 1;
+    }
+    .header-title h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      color: white;
+      line-height: 1.15;
+      margin-bottom: 0.5rem;
+    }
+    .header-title h1 em {
+      color: var(--teal-bright);
+      font-style: italic;
+    }
+    .header-title p {
+      color: rgba(255,255,255,0.65);
+      font-size: 0.97rem;
+      line-height: 1.6;
+      max-width: 520px;
+    }
+    .header-meta {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2rem;
+      position: relative; z-index: 1;
+    }
+    .header-meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+    .header-meta-item .label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+    }
+    .header-meta-item .value {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: white;
+    }
+    .gold-bar {
+      height: 4px;
+      background: linear-gradient(90deg, var(--teal), var(--gold), var(--teal-bright));
+    }
+
+    /* ── BODY ── */
+    .body {
+      padding: 2.5rem 3rem 3rem;
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--teal);
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+    .divider {
+      width: 40px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--teal), var(--gold));
+      border-radius: 2px;
+      margin-bottom: 1.75rem;
+    }
+
+    /* ── INTRO BOX ── */
+    .intro-box {
+      background: linear-gradient(135deg, #f0f8fa, #f7f9fb);
+      border-left: 4px solid var(--teal);
+      border-radius: 0 12px 12px 0;
+      padding: 1.2rem 1.5rem;
+      margin-bottom: 2.5rem;
+      font-size: 0.96rem;
+      line-height: 1.75;
+      color: var(--text-mid);
+    }
+    .intro-box strong { color: var(--navy); }
+
+    /* ── WORK TABLE ── */
+    .work-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 2.5rem;
+      font-size: 0.92rem;
+    }
+    .work-table thead tr {
+      background: var(--navy);
+      color: white;
+    }
+    .work-table thead th {
+      padding: 0.85rem 1rem;
+      text-align: left;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .work-table thead th:last-child { text-align: right; }
+    .work-table tbody tr {
+      border-bottom: 1px solid var(--border);
+    }
+    .work-table tbody tr:nth-child(even) { background: #f9fbfc; }
+    .work-table tbody tr:hover { background: #eef7fa; }
+    .work-table td {
+      padding: 0.9rem 1rem;
+      vertical-align: top;
+      color: var(--navy);
+    }
+    .work-table td:last-child {
+      text-align: right;
+      font-weight: 600;
+      color: var(--teal);
+      white-space: nowrap;
+    }
+    .work-table .task-name {
+      font-weight: 600;
+      color: var(--navy);
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+    .work-table .task-desc {
+      font-size: 0.82rem;
+      color: var(--text-mid);
+      line-height: 1.5;
+    }
+    .work-table .category-row td {
+      background: #eef7fa;
+      color: var(--teal);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.5rem 1rem;
+    }
+
+    /* ── TOTAL BOX ── */
+    .total-area {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 2.5rem;
+    }
+    .total-box {
+      background: var(--navy);
+      border-radius: 14px;
+      padding: 1.5rem 2rem;
+      min-width: 300px;
+    }
+    .total-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.4rem 0;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.6);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .total-row:last-child { border-bottom: none; }
+    .total-row.grand {
+      padding-top: 0.85rem;
+      margin-top: 0.25rem;
+    }
+    .total-row.grand .total-label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.8);
+    }
+    .total-row.grand .total-amount {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--gold-light);
+    }
+    .total-row .total-label { color: rgba(255,255,255,0.55); font-size: 0.85rem; }
+    .total-row .total-amount { color: white; font-weight: 600; }
+
+    /* ── RETAINER ── */
+    .retainer-section {
+      background: linear-gradient(135deg, var(--navy), var(--navy-light));
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 2.5rem;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    .retainer-section::before {
+      content: '';
+      position: absolute;
+      top: -30px; right: -30px;
+      width: 130px; height: 130px;
+      border-radius: 50%;
+      background: rgba(59,196,218,0.1);
+    }
+    .retainer-section .section-label { color: var(--teal-bright); }
+    .retainer-section .section-title { color: white; font-size: 1.2rem; }
+    .retainer-section p {
+      color: rgba(255,255,255,0.65);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+      max-width: 500px;
+    }
+    .retainer-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      position: relative; z-index: 1;
+    }
+    .retainer-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(59,196,218,0.2);
+      border-radius: 12px;
+      padding: 1.25rem;
+    }
+    .retainer-card .price {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      margin-bottom: 0.2rem;
+    }
+    .retainer-card .price span {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.5);
+      font-weight: 400;
+    }
+    .retainer-card h4 {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 0.6rem;
+    }
+    .retainer-card ul { list-style: none; padding: 0; }
+    .retainer-card ul li {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.6);
+      padding: 0.2rem 0 0.2rem 1rem;
+      position: relative;
+      line-height: 1.4;
+    }
+    .retainer-card ul li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--teal-bright);
+      font-weight: 700;
+      font-size: 0.75rem;
+    }
+    .retainer-card.highlight {
+      border-color: var(--gold);
+      background: rgba(201,168,76,0.08);
+    }
+    .retainer-card.highlight .recommended {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      background: rgba(201,168,76,0.15);
+      border-radius: 50px;
+      padding: 0.2rem 0.6rem;
+      display: inline-block;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ── TERMS ── */
+    .terms-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .term-box {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.1rem 1.25rem;
+    }
+    .term-box h5 {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 0.4rem;
+    }
+    .term-box p {
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+
+    /* ── FOOTER ── */
+    .footer-bar {
+      background: var(--navy);
+      padding: 1.5rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .footer-bar p {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.5);
+    }
+    .footer-bar .contact-info {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .footer-bar .contact-info a {
+      font-size: 0.82rem;
+      color: var(--teal-bright);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .print-btn {
+      display: block;
+      width: fit-content;
+      margin: 0 auto 2rem;
+      background: var(--navy);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      padding: 0.85rem 2rem;
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .print-btn:hover { background: var(--navy-light); }
+
+    @media (max-width: 600px) {
+      .header { padding: 2rem 1.5rem; }
+      .body { padding: 1.75rem 1.5rem 2rem; }
+      .header-meta { flex-wrap: wrap; gap: 1rem; }
+      .retainer-cards { grid-template-columns: 1fr; }
+      .terms-grid { grid-template-columns: 1fr; }
+      .total-box { min-width: unset; width: 100%; }
+      .total-area { justify-content: stretch; }
+      .footer-bar { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="wrapper">
+
+  <a href="javascript:window.print()" class="print-btn no-print">&#8659; Save as PDF / Print</a>
+
+  <div class="page">
+
+    <!-- HEADER -->
+    <div class="header">
+      <div class="header-top">
+        <div class="logo-area">
+          <img src="images/logo-final.png" alt="Contour Marine" />
+        </div>
+        <div class="proposal-badge">Service Invoice</div>
+      </div>
+      <div class="header-title">
+        <h1>Video Integration &amp;<br /><em>Gallery Upscale Session</em></h1>
+        <p>Full-day website session including 22-image 4K upscaling, gallery fixes, mobile layout repairs, video production review &amp; editing, Bunny CDN setup, and video section build on homepage and seawalls page.</p>
+      </div>
+      <div class="header-meta">
+        <div class="header-meta-item">
+          <span class="label">Prepared For</span>
+          <span class="value">Contour Marine</span>
+        </div>
+        <div class="header-meta-item">
+          <span class="label">Date</span>
+          <span class="value">August 14, 2026</span>
+        </div>
+        <div class="header-meta-item">
+          <span class="label">Invoice #</span>
+          <span class="value">CM-2026-003</span>
+        </div>
+        <div class="header-meta-item">
+          <span class="label">Due</span>
+          <span class="value">Upon Receipt</span>
+        </div>
+      </div>
+    </div>
+    <div class="gold-bar"></div>
+
+    <!-- BODY -->
+    <div class="body">
+
+      <div class="intro-box">
+        This invoice covers a <strong>full extended work session starting at 3 PM on August 13, 2026</strong> and continuing through August 14 — including AI-powered 4K upscaling of 22 gallery images, gallery category fix, mobile stats bar repair, video review and production work (watermark removal, AI upscaling of 2 videos, marketing video review), Bunny.net CDN setup &amp; configuration, and building fully functional autoplay video sections on two pages with extensive cross-device sizing and GoDaddy compatibility debugging. Work was performed across <strong>multiple AI tool sessions consuming significant credits</strong> in addition to many hours of hands-on development time.
+      </div>
+
+      <span class="section-label">Scope of Work</span>
+      <h2 class="section-title">Services Performed</h2>
+      <div class="divider"></div>
+
+      <table class="work-table">
+        <thead>
+          <tr>
+            <th style="width:55%">Task</th>
+            <th style="width:20%">Details</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <!-- GALLERY -->
+          <tr class="category-row"><td colspan="3">&#128247; Gallery &mdash; 4K Upscaling &amp; Category Fix</td></tr>
+          <tr>
+            <td>
+              <span class="task-name">AI Upscaling &mdash; 22 Gallery Images to 4K</span>
+              <span class="task-desc">Identified all grainy/low-resolution images across the gallery. Upscaled all 22 images to 4K resolution (up to 4096px) using fal-ai/recraft-clarity-upscale, consuming significant AI processing credits. Images span seawalls, docks, decks, boatlift, and showcase categories. Replaced originals in the images/ directory and committed to GitHub.</span>
+            </td>
+            <td>22 images</td>
+            <td>$95</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="task-name">Gallery Category Fix &mdash; seawall-after.jpg</span>
+              <span class="task-desc">Identified and corrected miscategorized dock photo (bollard lighting) that was tagged data-cat="seawalls" instead of data-cat="docks", causing it to appear in the wrong gallery filter tab.</span>
+            </td>
+            <td>gallery.html</td>
+            <td>$15</td>
+          </tr>
+
+          <!-- MOBILE FIX -->
+          <tr class="category-row"><td colspan="3">&#128241; Mobile Layout &mdash; Stats Bar CTA Fix</td></tr>
+          <tr>
+            <td>
+              <span class="task-name">Mobile Stats Bar &mdash; &ldquo;View Full Build Process&rdquo; Overflow Fix</span>
+              <span class="task-desc">Diagnosed and fixed the CTA button overflowing off-screen on mobile devices. Replaced the broken flex layout with CSS Grid: 3 stats in row 1, full-width CTA spanning all columns in row 2. Tested across 360px, 390px, and 414px viewports. Confirmed zero overflow.</span>
+            </td>
+            <td>styles.css</td>
+            <td>$35</td>
+          </tr>
+
+          <!-- VIDEO PRODUCTION -->
+          <tr class="category-row"><td colspan="3">&#127916; Video Production &mdash; Review, Editing &amp; AI Upscaling</td></tr>
+          <tr>
+            <td>
+              <span class="task-name">Review of 7 Client-Submitted Videos</span>
+              <span class="task-desc">Reviewed and assessed all 7 uploaded videos (V1&ndash;V7) for website suitability: quality, content, branding, and format. Provided written recommendations on which to use, which to upscale, and which to pass on. Also reviewed 2 AI-edited marketing reels (luxury reel + foundation showcase) and provided feedback on fit for homepage vs. seawalls page.</span>
+            </td>
+            <td>7 videos reviewed</td>
+            <td>$40</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="task-name">Watermark Removal &mdash; V1 Dock Reel</span>
+              <span class="task-desc">Detected &ldquo;Similar Shots&rdquo; watermark overlay in first 4 seconds of V1 dock reel using frame analysis. Trimmed cleanly at 4-second mark using ffmpeg, preserving full remaining footage. Delivered clean trimmed MP4.</span>
+            </td>
+            <td>ffmpeg trim</td>
+            <td>$25</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="task-name">AI Video Upscaling &mdash; V4 &amp; V6 to 2K</span>
+              <span class="task-desc">Upscaled V4 (deck showcase) to 2560&times;1440 and V6 (seawall build) to 1920&times;1440 using ByteDance AI video upscaler. Multiple attempts required on MOV files (V1, V5) which failed due to format incompatibility &mdash; documented and communicated to client.</span>
+            </td>
+            <td>2 videos upscaled</td>
+            <td>$45</td>
+          </tr>
+
+          <!-- BUNNY CDN -->
+          <tr class="category-row"><td colspan="3">&#127513; Bunny.net CDN &mdash; Setup &amp; Configuration</td></tr>
+          <tr>
+            <td>
+              <span class="task-name">Bunny Stream Account Research &amp; Platform Recommendation</span>
+              <span class="task-desc">Researched video hosting platforms (Vimeo, YouTube, Bunny, Cloudflare Stream) for a no-logo, no-branding solution suitable for a professional contractor website. Recommended Bunny.net at $1/month with no player branding. Provided full walkthrough for account setup, library creation, and video upload process.</span>
+            </td>
+            <td>Research + advisory</td>
+            <td>$30</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="task-name">Bunny Stream Embed Code Setup &mdash; Both Videos</span>
+              <span class="task-desc">Configured embed parameters for both videos on Bunny Stream (Library ID 728358): autoplay, loop, muted, responsive settings. Built embed codes for the dock reel (homepage) and seawall build video (seawalls page). Verified player URLs and integration parameters.</span>
+            </td>
+            <td>2 embed codes</td>
+            <td>$20</td>
+          </tr>
+
+          <!-- VIDEO SECTIONS -->
+          <tr class="category-row"><td colspan="3">&#128187; Website Build &mdash; Video Sections on Homepage &amp; Seawalls Page</td></tr>
+          <tr>
+            <td>
+              <span class="task-name">Dock Video Showcase Section &mdash; Homepage</span>
+              <span class="task-desc">Designed and built the full &ldquo;South Florida&rsquo;s Premier Waterfront Builder&rdquo; video section on index.html: dark navy gradient background, teal radial glow, eyebrow label with decorative lines, display heading, subtext, centered vertical 9:16 video player (340px), and two CTA buttons (View Dock Projects / View Seawall Projects). Full scroll-reveal animation. All CSS scoped to avoid sitewide conflicts.</span>
+            </td>
+            <td>index.html + styles.css</td>
+            <td>$65</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="task-name">Build Process Video Section &mdash; Seawalls Page</span>
+              <span class="task-desc">Built matching &ldquo;The Build Process &mdash; From Foundation to Finish&rdquo; video section on seawalls.html with consistent dark branding, white heading override (fixed invisible navy-on-dark bug), teal section label, centered 9:16 vertical player. CSS-scoped styles with white text forced via specificity to override sitewide defaults.</span>
+            </td>
+            <td>seawalls.html + styles.css</td>
+            <td>$55</td>
+          </tr>
+
+          <!-- GODADDY DEBUGGING -->
+          <tr class="category-row"><td colspan="3">&#128736; GoDaddy Compatibility &mdash; Video Sizing Debugging</td></tr>
+          <tr>
+            <td>
+              <span class="task-name">Cross-Platform Video Size Debugging &amp; Fix</span>
+              <span class="task-desc">Diagnosed and resolved video player displaying full-screen width on GoDaddy despite correct CSS constraints. Root cause: GoDaddy&rsquo;s builder injects container CSS that overrides external stylesheets. Iterative fix process: attempted max-width, then fixed width, then aspect-ratio CSS, finally resolved by migrating all sizing to inline styles on the wrapper div and iframe (width:340px; height:604px) which cannot be overridden. Multiple rounds of testing, packaging, and delivery across 3 fix iterations.</span>
+            </td>
+            <td>index.html + seawalls.html</td>
+            <td>$60</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+      <!-- TOTAL -->
+      <div class="total-area">
+        <div class="total-box">
+          <div class="total-row">
+            <span class="total-label">Gallery Upscaling &amp; Fix</span>
+            <span class="total-amount">$110</span>
+          </div>
+          <div class="total-row">
+            <span class="total-label">Mobile Stats Bar Fix</span>
+            <span class="total-amount">$35</span>
+          </div>
+          <div class="total-row">
+            <span class="total-label">Video Production &amp; Editing</span>
+            <span class="total-amount">$110</span>
+          </div>
+          <div class="total-row">
+            <span class="total-label">Bunny CDN Setup</span>
+            <span class="total-amount">$50</span>
+          </div>
+          <div class="total-row">
+            <span class="total-label">Video Section Build (2 pages)</span>
+            <span class="total-amount">$120</span>
+          </div>
+          <div class="total-row">
+            <span class="total-label">GoDaddy Compatibility Debugging</span>
+            <span class="total-amount">$60</span>
+          </div>
+          <div class="total-row grand">
+            <span class="total-label">Total Due</span>
+            <span class="total-amount">$485</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RETAINER -->
+      <div class="retainer-section">
+        <span class="section-label">Save on Future Work</span>
+        <h2 class="section-title">Monthly Maintenance Plans</h2>
+        <div class="divider" style="background:linear-gradient(90deg,var(--teal-bright),var(--gold));"></div>
+        <p>Lock in priority support and a lower hourly rate with a monthly plan. Ideal as your website continues to grow with new projects, photos, and seasonal updates.</p>
+        <div class="retainer-cards">
+          <div class="retainer-card">
+            <div class="price">$250 <span>/ month</span></div>
+            <h4>Essentials Plan</h4>
+            <ul>
+              <li>Up to 3 hours of updates/month</li>
+              <li>Photo uploads &amp; gallery updates</li>
+              <li>Text &amp; content edits</li>
+              <li>Priority response within 24hrs</li>
+              <li>Monthly GitHub backup</li>
+            </ul>
+          </div>
+          <div class="retainer-card highlight">
+            <span class="recommended">&#9733; Most Popular</span>
+            <div class="price">$450 <span>/ month</span></div>
+            <h4>Growth Plan</h4>
+            <ul>
+              <li>Up to 6 hours of updates/month</li>
+              <li>New sections &amp; page additions</li>
+              <li>Video processing &amp; uploads</li>
+              <li>AI photo upscaling included</li>
+              <li>Priority response within 12hrs</li>
+              <li>Rollover unused hours (1 month)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- TERMS -->
+      <div class="terms-grid">
+        <div class="term-box">
+          <h5>&#128179; Payment</h5>
+          <p>Payment due upon receipt via <strong>Zelle</strong> to <strong>lg.blueprintsolutions@gmail.com</strong>. Please reference invoice number CM-2026-003.</p>
+        </div>
+        <div class="term-box">
+          <h5>&#9888; AI Credit Costs</h5>
+          <p>Image and video AI processing (upscaling, editing) consumes paid credits per use. These costs are included in the line items above and are not billed separately.</p>
+        </div>
+        <div class="term-box">
+          <h5>&#128196; Files Delivered</h5>
+          <p>All source files committed to GitHub (legna0801/Contour-Marine-Website). Packaged .tar.gz archives delivered via download link for direct GoDaddy upload.</p>
+        </div>
+        <div class="term-box">
+          <h5>&#128336; Hours Worked</h5>
+          <p>Session began 3 PM August 13, 2026 and continued through August 14, 2026 — spanning multiple extended AI tool sessions with high credit consumption throughout.</p>
+        </div>
+      </div>
+
+    </div><!-- /body -->
+
+    <!-- FOOTER -->
+    <div class="footer-bar">
+      <p>&copy; 2026 Blueprint Solutions &mdash; Website Services</p>
+      <div class="contact-info">
+        <a href="mailto:lg.blueprintsolutions@gmail.com">lg.blueprintsolutions@gmail.com</a>
+        <a href="https://github.com/legna0801/Contour-Marine-Website" target="_blank">GitHub Repo</a>
+      </div>
+    </div>
+
+  </div><!-- /page -->
+</div><!-- /wrapper -->
+
+</body>
+</html>
