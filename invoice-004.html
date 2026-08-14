@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invoice CM-2026-004 — Contour Marine</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0d2b45;
+      --navy-light: #1a3a5c;
+      --teal: #1fa8c0;
+      --teal-bright: #3bc4da;
+      --gold: #c9a84c;
+      --gold-light: #e8c96a;
+      --white: #ffffff;
+      --off-white: #f7f9fb;
+      --text-mid: #4a6077;
+      --border: rgba(13,43,69,0.10);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--off-white);
+      color: var(--navy);
+      min-height: 100vh;
+    }
+
+    @media print {
+      body { background: white; }
+      .no-print { display: none !important; }
+      .page { box-shadow: none !important; margin: 0 !important; border-radius: 0 !important; }
+    }
+
+    .wrapper { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+
+    .page {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 8px 48px rgba(13,43,69,0.10);
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+
+    /* ── HEADER ── */
+    .header {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 60%, #1c4a6e 100%);
+      padding: 3rem 3rem 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 260px; height: 260px;
+      border-radius: 50%;
+      background: rgba(59,196,218,0.08);
+    }
+    .header::after {
+      content: '';
+      position: absolute;
+      bottom: -40px; left: 30%;
+      width: 180px; height: 180px;
+      border-radius: 50%;
+      background: rgba(201,168,76,0.07);
+    }
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 2.5rem;
+      position: relative; z-index: 1;
+    }
+    .logo-area img { height: 52px; width: auto; filter: brightness(0) invert(1); }
+    .proposal-badge {
+      background: linear-gradient(135deg, var(--teal), var(--teal-bright));
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 0.45rem 1rem;
+      border-radius: 50px;
+    }
+    .header-title { position: relative; z-index: 1; }
+    .header-title h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      color: white;
+      line-height: 1.15;
+      margin-bottom: 0.5rem;
+    }
+    .header-title h1 em { color: var(--teal-bright); font-style: italic; }
+    .header-title p { color: rgba(255,255,255,0.65); font-size: 0.97rem; line-height: 1.6; max-width: 520px; }
+    .header-meta { display: flex; gap: 2rem; margin-top: 2rem; position: relative; z-index: 1; }
+    .header-meta-item { display: flex; flex-direction: column; gap: 0.2rem; }
+    .header-meta-item .label {
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; color: rgba(255,255,255,0.45);
+    }
+    .header-meta-item .value { font-size: 0.92rem; font-weight: 600; color: white; }
+    .gold-bar { height: 4px; background: linear-gradient(90deg, var(--teal), var(--gold), var(--teal-bright)); }
+
+    /* ── BODY ── */
+    .body { padding: 2.5rem 3rem 3rem; }
+
+    .section-label {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--teal); display: block; margin-bottom: 0.4rem;
+    }
+    .section-title { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--navy); margin-bottom: 0.5rem; }
+    .divider { width: 40px; height: 3px; background: linear-gradient(90deg, var(--teal), var(--gold)); border-radius: 2px; margin-bottom: 1.75rem; }
+
+    /* ── INTRO BOX ── */
+    .intro-box {
+      background: linear-gradient(135deg, #f0f8fa, #f7f9fb);
+      border-left: 4px solid var(--teal);
+      border-radius: 0 12px 12px 0;
+      padding: 1.2rem 1.5rem;
+      margin-bottom: 2.5rem;
+      font-size: 0.96rem;
+      line-height: 1.75;
+      color: var(--text-mid);
+    }
+    .intro-box strong { color: var(--navy); }
+
+    /* ── WORK TABLE ── */
+    .work-table { width: 100%; border-collapse: collapse; margin-bottom: 2.5rem; font-size: 0.92rem; }
+    .work-table thead tr { background: var(--navy); color: white; }
+    .work-table thead th {
+      padding: 0.85rem 1rem; text-align: left;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    }
+    .work-table thead th:last-child { text-align: right; }
+    .work-table tbody tr { border-bottom: 1px solid var(--border); }
+    .work-table tbody tr:nth-child(even) { background: #f9fbfc; }
+    .work-table tbody tr:hover { background: #eef7fa; }
+    .work-table td { padding: 0.9rem 1rem; vertical-align: top; color: var(--navy); }
+    .work-table td:last-child { text-align: right; font-weight: 600; color: var(--teal); white-space: nowrap; }
+    .work-table .task-name { font-weight: 600; color: var(--navy); display: block; margin-bottom: 0.2rem; }
+    .work-table .task-desc { font-size: 0.82rem; color: var(--text-mid); line-height: 1.5; }
+    .work-table .category-row td {
+      background: #eef7fa; color: var(--teal);
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; padding: 0.5rem 1rem;
+    }
+
+    /* ── TOTAL BOX ── */
+    .total-area { display: flex; justify-content: flex-end; margin-bottom: 2.5rem; }
+    .total-box { background: var(--navy); border-radius: 14px; padding: 1.5rem 2rem; min-width: 300px; }
+    .total-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0.4rem 0; font-size: 0.9rem; color: rgba(255,255,255,0.6);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .total-row:last-child { border-bottom: none; }
+    .total-row.grand { padding-top: 0.85rem; margin-top: 0.25rem; }
+    .total-row.grand .total-label {
+      font-size: 0.85rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: rgba(255,255,255,0.8);
+    }
+    .total-row.grand .total-amount {
+      font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: var(--gold-light);
+    }
+    .total-row .total-label { color: rgba(255,255,255,0.55); font-size: 0.85rem; }
+    .total-row .total-amount { color: white; font-weight: 600; }
+
+    /* ── RETAINER ── */
+    .retainer-section {
+      background: linear-gradient(135deg, var(--navy), var(--navy-light));
+      border-radius: 16px; padding: 2rem; margin-bottom: 2.5rem;
+      color: white; position: relative; overflow: hidden;
+    }
+    .retainer-section::before {
+      content: ''; position: absolute; top: -30px; right: -30px;
+      width: 130px; height: 130px; border-radius: 50%; background: rgba(59,196,218,0.1);
+    }
+    .retainer-section .section-label { color: var(--teal-bright); }
+    .retainer-section .section-title { color: white; font-size: 1.2rem; }
+    .retainer-section p { color: rgba(255,255,255,0.65); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1.25rem; max-width: 500px; }
+    .retainer-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; position: relative; z-index: 1; }
+    .retainer-card {
+      background: rgba(255,255,255,0.07); border: 1px solid rgba(59,196,218,0.2);
+      border-radius: 12px; padding: 1.25rem;
+    }
+    .retainer-card .price { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: var(--gold-light); margin-bottom: 0.2rem; }
+    .retainer-card .price span { font-family: 'Inter', sans-serif; font-size: 0.82rem; color: rgba(255,255,255,0.5); font-weight: 400; }
+    .retainer-card h4 { font-size: 0.88rem; font-weight: 700; color: white; margin-bottom: 0.6rem; }
+    .retainer-card ul { list-style: none; padding: 0; }
+    .retainer-card ul li {
+      font-size: 0.8rem; color: rgba(255,255,255,0.6);
+      padding: 0.2rem 0 0.2rem 1rem; position: relative; line-height: 1.4;
+    }
+    .retainer-card ul li::before { content: '&#10003;'; position: absolute; left: 0; color: var(--teal-bright); font-weight: 700; font-size: 0.75rem; }
+    .retainer-card.highlight { border-color: var(--gold); background: rgba(201,168,76,0.08); }
+    .retainer-card.highlight .recommended {
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--gold-light); background: rgba(201,168,76,0.15); border-radius: 50px;
+      padding: 0.2rem 0.6rem; display: inline-block; margin-bottom: 0.5rem;
+    }
+
+    /* ── TERMS ── */
+    .terms-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2.5rem; }
+    .term-box { border: 1px solid var(--border); border-radius: 12px; padding: 1.1rem 1.25rem; }
+    .term-box h5 { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.4rem; }
+    .term-box p { font-size: 0.85rem; color: var(--text-mid); line-height: 1.6; }
+
+    /* ── FOOTER ── */
+    .footer-bar {
+      background: var(--navy); padding: 1.5rem 3rem;
+      display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap;
+    }
+    .footer-bar p { font-size: 0.82rem; color: rgba(255,255,255,0.5); }
+    .footer-bar .contact-info { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .footer-bar .contact-info a { font-size: 0.82rem; color: var(--teal-bright); text-decoration: none; font-weight: 500; }
+
+    .print-btn {
+      display: block; width: fit-content; margin: 0 auto 2rem;
+      background: var(--navy); color: white; border: none; border-radius: 50px;
+      padding: 0.85rem 2rem; font-size: 0.88rem; font-weight: 600;
+      letter-spacing: 0.06em; cursor: pointer; text-decoration: none; transition: background 0.2s;
+    }
+    .print-btn:hover { background: var(--navy-light); }
+
+    @media (max-width: 600px) {
+      .header { padding: 2rem 1.5rem; }
+      .body { padding: 1.75rem 1.5rem 2rem; }
+      .header-meta { flex-wrap: wrap; gap: 1rem; }
+      .retainer-cards { grid-template-columns: 1fr; }
+      .terms-grid { grid-template-columns: 1fr; }
+      .total-box { min-width: unset; width: 100%; }
+      .total-area { justify-content: stretch; }
+      .footer-bar { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="wrapper">
+
+  <a href="javascript:window.print()" class="print-btn no-print">&#8659; Save as PDF / Print</a>
+
+  <div class="page">
+
+    <!-- HEADER -->
+    <div class="header">
+      <div class="header-top">
+        <div class="logo-area">
+          <img src="images/logo-final.png" alt="Contour Marine" />
+        </div>
+        <div class="proposal-badge">Service Invoice</div>
+      </div>
+      <div class="header-title">
+        <h1>Video Production &amp;<br /><em>Website Integration</em></h1>
+        <p>Full video production session — logo design, motion graphics, multi-round editing, audio engineering, 4K upscaling, CDN upload, website embedding, and cross-device quality assurance.</p>
+      </div>
+      <div class="header-meta">
+        <div class="header-meta-item">
+          <span class="label">Prepared For</span>
+          <span class="value">Contour Marine</span>
+        </div>
+        <div class="header-meta-item">
+          <span class="label">Date</span>
+          <span class="value">August 14, 2026</span>
+        </div>
+        <div class="header-meta-item">
+          <span class="label">Invoice #</span>
+          <span class="value">CM-2026-004</span>
+        </div>
+        <div class="header-meta-item">
+          <span class="label">Due</span>
+          <span class="value">Upon Receipt</span>
+        </div>
+      </div>
+    </div>
+    <div class="gold-bar"></div>
+
+    <!-- BODY -->
+    <div class="body">
+
+      <div class="intro-box">
+        This invoice covers a full video production and website integration session for the <strong>Contour Marine website</strong>. Work included producing two professional marketing videos from raw footage — encompassing custom logo creation, motion graphics, multi-round editing, audio sourcing and synchronization, upscaling to 4K, and upload to Bunny CDN — followed by full website integration with responsive embedded players, cross-device testing, and deployment to GoDaddy.
+      </div>
+
+      <span class="section-label">Scope of Work</span>
+      <h2 class="section-title">Services Performed</h2>
+      <div class="divider"></div>
+
+      <table class="work-table">
+        <thead>
+          <tr>
+            <th style="width:55%">Task</th>
+            <th style="width:20%">Details</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <!-- DOCK REEL -->
+          <tr class="category-row"><td colspan="3">&#127916; Dock Reel &mdash; Full Video Production</td></tr>
+          <tr>
+            <td>
+              <span class="task-name">Custom Logo Design &amp; Animated Intro</span>
+              <span class="task-desc">Designed a custom branded logo graphic for Contour Marine. Built an animated intro sequence with a subtle push-in camera movement, bringing still imagery to life with motion. Corrected a misspelling found in the initial badge and regenerated the intro to ensure the final version was clean and professional before any further editing work began.</span>
+            </td>
+            <td>Dock reel</td>
+            <td>$95</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="task-name">Editing &amp; Splice Correction</span>
+              <span class="task-desc">Cut and assembled the full dock reel from raw footage. Identified and corrected a ghosting artifact at the intro-to-footage transition — adjusted the splice point from 3.1 seconds to 4.0 seconds after reviewing the cut frame by frame. Multiple rounds of editing were performed to ensure the final sequence was seamless with no visible glitches or blending errors between the intro and the live footage.</span>
+            </td>
+            <td>Multi-round edit</td>
+            <td>$85</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="task-name">Audio Engineering &amp; Soundtrack Sync</span>
+              <span class="task-desc">Diagnosed a silent/dead audio track on the intro segment. Sourced and integrated the original video&rsquo;s real soundtrack to replace the failed audio. Precisely synchronized the music to the video timeline so the track starts, cuts, and flows naturally across the full duration. Identified and resolved audio glitches including pops, clicks, and volume jumps caused by incorrect crossfade settings &mdash; corrected to a straight cut for clean, uninterrupted playback from start to finish.</span>
+            </td>
+            <td>Audio repair + sync</td>
+            <td>$95</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="task-name">Transition Polish &amp; Final QA</span>
+              <span class="task-desc">Went through multiple transition passes &mdash; hard cut, crossfade, fade-to-black &mdash; before landing on the final seamless audio and video sync that eliminated all ghosting and glitching. Performed frame-by-frame quality review on each revision to catch issues before delivery. Final output reviewed for visual continuity, audio consistency, and overall professional finish.</span>
+            </td>
+            <td>QA + final cut</td>
+            <td>$60</td>
+          </tr>
+
+          <!-- FOUNDATION SHOWCASE -->
+          <tr class="category-row"><td colspan="3">&#127916; Foundation Showcase &mdash; Full Video Production</td></tr>
+          <tr>
+            <td>
+              <span class="task-name">Logo Integration &amp; Animated Intro Build</span>
+              <span class="task-desc">Built the branded intro for the Foundation Showcase video, incorporating the Contour Marine logo as the literal opening frame. The logo embed required multiple rebuilds — initial versions did not display the full logo correctly. Rebuilt the intro blend several times until the logo appeared fully, clearly, and without any cropping or cutoff from the very first frame of playback.</span>
+            </td>
+            <td>Foundation showcase</td>
+            <td>$80</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="task-name">Freeze Fix &amp; Motion from Frame Zero</span>
+              <span class="task-desc">Diagnosed a static hold at the very start of the video where the footage appeared frozen before motion began. Rebuilt the intro blend to achieve continuous, smooth motion starting from frame zero &mdash; no freeze, no hold, no static opening. Applied motion to still project photography, animating the construction sequence images with movement so they read as a dynamic video rather than a slideshow.</span>
+            </td>
+            <td>Motion + freeze fix</td>
+            <td>$85</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="task-name">Quality Assurance &amp; Final Review</span>
+              <span class="task-desc">Verified the intro and outro were correct and undamaged from edits. Performed full playback review of the final cut to confirm smooth motion throughout, logo fully visible from frame one, no freezing, no audio issues, and clean transition from intro into footage. Signed off on final version only after all checks passed.</span>
+            </td>
+            <td>QA pass</td>
+            <td>$45</td>
+          </tr>
+
+          <!-- UPSCALING + CDN -->
+          <tr class="category-row"><td colspan="3">&#11014; 4K Upscaling &amp; CDN Upload</td></tr>
+          <tr>
+            <td>
+              <span class="task-name">Video Upscaling to 4K &amp; Format Preparation</span>
+              <span class="task-desc">Both finished videos were upscaled to 4K resolution to ensure the highest possible visual quality when embedded and played back on modern displays. Files were reviewed post-upscale for quality integrity, prepared in the correct format and codec for web delivery, and exported ready for CDN upload.</span>
+            </td>
+            <td>2 videos &rarr; 4K</td>
+            <td>$70</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="task-name">Bunny CDN Upload &amp; Configuration</span>
+              <span class="task-desc">Both 4K videos were uploaded to the Bunny Stream CDN library (Library ID 728358). Player settings configured for each video: autoplay, loop, muted playback for browser compatibility, no poster thumbnail, and preload enabled for instant start. Verified both videos were processing correctly and playback was confirmed live on the CDN before proceeding to website integration.</span>
+            </td>
+            <td>Bunny Stream CDN</td>
+            <td>$45</td>
+          </tr>
+
+          <!-- WEBSITE INTEGRATION -->
+          <tr class="category-row"><td colspan="3">&#128187; Website Integration &amp; Deployment</td></tr>
+          <tr>
+            <td>
+              <span class="task-name">Video Section Build &amp; Embedding &mdash; Both Pages</span>
+              <span class="task-desc">Built dedicated video showcase sections on both the homepage and seawalls page. Each section features a dark navy gradient background, branded heading, subtext, and a fully responsive embedded player. Both players set to autoplay with loop, muted for browser autoplay compliance, no thumbnail, and preload enabled. Embed code written with hardcoded inline dimensions (340px &times; 604px) to ensure correct sizing regardless of the surrounding page structure on GoDaddy.</span>
+            </td>
+            <td>index.html + seawalls.html</td>
+            <td>$80</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="task-name">GoDaddy Deployment &amp; Cross-Device Testing</span>
+              <span class="task-desc">Uploaded all modified files to GoDaddy hosting. Identified and resolved a sizing issue where the video player was rendering at full page width due to GoDaddy&rsquo;s container styles overriding external CSS. Resolved through multiple iterations by migrating player dimensions to inline styles that cannot be overridden. Confirmed correct 340px display on desktop and mobile. Verified autoplay, loop, and no-thumbnail behavior functioning correctly across both pages. Both video sections then repositioned to appear directly below the hero on each page for maximum first-impression impact.</span>
+            </td>
+            <td>GoDaddy + QA</td>
+            <td>$110</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+      <!-- TOTAL -->
+      <div class="total-area">
+        <div class="total-box">
+          <div class="total-row">
+            <span class="total-label">Dock Reel — Full Production</span>
+            <span class="total-amount">$335</span>
+          </div>
+          <div class="total-row">
+            <span class="total-label">Foundation Showcase — Full Production</span>
+            <span class="total-amount">$210</span>
+          </div>
+          <div class="total-row">
+            <span class="total-label">4K Upscaling &amp; CDN Upload</span>
+            <span class="total-amount">$115</span>
+          </div>
+          <div class="total-row">
+            <span class="total-label">Website Integration &amp; Deployment</span>
+            <span class="total-amount">$190</span>
+          </div>
+          <div class="total-row grand">
+            <span class="total-label">Total Due</span>
+            <span class="total-amount">$950</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RETAINER -->
+      <div class="retainer-section">
+        <span class="section-label">Save on Future Work</span>
+        <h2 class="section-title">Monthly Maintenance Plans</h2>
+        <div class="divider" style="background:linear-gradient(90deg,var(--teal-bright),var(--gold));"></div>
+        <p>Lock in priority support and ongoing updates at a predictable monthly rate. Ideal as the website grows with new project photos, videos, and seasonal content.</p>
+        <div class="retainer-cards">
+          <div class="retainer-card">
+            <div class="price">$250 <span>/ month</span></div>
+            <h4>Essentials Plan</h4>
+            <ul>
+              <li>Up to 3 hours of updates per month</li>
+              <li>Photo uploads &amp; gallery updates</li>
+              <li>Text &amp; content edits</li>
+              <li>Priority response within 24 hours</li>
+              <li>Monthly GitHub backup</li>
+            </ul>
+          </div>
+          <div class="retainer-card highlight">
+            <span class="recommended">&#9733; Most Popular</span>
+            <div class="price">$450 <span>/ month</span></div>
+            <h4>Growth Plan</h4>
+            <ul>
+              <li>Up to 6 hours of updates per month</li>
+              <li>New sections &amp; page additions</li>
+              <li>Video editing &amp; CDN uploads</li>
+              <li>Photo upscaling included</li>
+              <li>Priority response within 12 hours</li>
+              <li>Rollover unused hours (1 month)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- TERMS -->
+      <div class="terms-grid">
+        <div class="term-box">
+          <h5>&#128179; Payment</h5>
+          <p>Payment due upon receipt via <strong>Zelle</strong> to <strong>lg.blueprintsolutions@gmail.com</strong>. Please reference invoice number CM-2026-004.</p>
+        </div>
+        <div class="term-box">
+          <h5>&#127916; Deliverables</h5>
+          <p>Two fully produced, 4K-upscaled marketing videos uploaded to Bunny CDN and embedded live on the Contour Marine website. All source files committed to GitHub.</p>
+        </div>
+        <div class="term-box">
+          <h5>&#128336; Session Duration</h5>
+          <p>Extended multi-session production effort including all editing rounds, QA passes, upload, deployment, and cross-device testing across desktop and mobile.</p>
+        </div>
+        <div class="term-box">
+          <h5>&#128196; Files Updated</h5>
+          <p>index.html, seawalls.html, styles.css — all committed to GitHub (legna0801/Contour-Marine-Website) and deployed live on GoDaddy hosting.</p>
+        </div>
+      </div>
+
+    </div><!-- /body -->
+
+    <!-- FOOTER -->
+    <div class="footer-bar">
+      <p>&copy; 2026 Blueprint Solutions &mdash; Website &amp; Video Services</p>
+      <div class="contact-info">
+        <a href="mailto:lg.blueprintsolutions@gmail.com">lg.blueprintsolutions@gmail.com</a>
+        <a href="https://github.com/legna0801/Contour-Marine-Website" target="_blank">GitHub Repo</a>
+      </div>
+    </div>
+
+  </div><!-- /page -->
+</div><!-- /wrapper -->
+
+</body>
+</html>
