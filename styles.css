@@ -7192,18 +7192,23 @@ html {
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-  width: 100%;
 }
+/* The frame: fixed 340px wide, aspect-ratio locks height — no % padding tricks */
 .idx-video-frame {
   width: 340px;
-  max-width: 100%;
+  max-width: calc(100vw - 3rem);
   border-radius: 16px;
   overflow: hidden;
-  flex-shrink: 0;
   box-shadow:
     0 0 0 1px rgba(59,196,218,0.2),
     0 30px 80px rgba(0,0,0,0.6),
     0 0 60px rgba(59,196,218,0.1);
+}
+.idx-video-frame iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  height: auto;
 }
 .idx-video-ctas {
   display: flex;
@@ -7245,7 +7250,6 @@ html {
 /* ── Responsive ── */
 @media (max-width: 600px) {
   .idx-video-section { padding: 4rem 0 3.5rem; }
-  .idx-video-frame { width: 290px; }
   .idx-video-btn { font-size: 0.68rem; padding: 0.75rem 1.5rem; }
 }
 
@@ -7276,24 +7280,32 @@ html {
   align-items: center;
   gap: 3rem;
 }
+/* Force white text — dark bg, section-header defaults to navy */
+.sw-video-section .section-header h2 { color: #fff !important; }
+.sw-video-section .section-header p  { color: rgba(255,255,255,0.65) !important; }
+.sw-video-section .section-label     { color: var(--teal-bright) !important; }
 .sw-video-wrap {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
 }
+/* Same pattern as idx — fixed 340px, aspect-ratio for height */
 .sw-video-frame {
   width: 340px;
-  max-width: 100%;
+  max-width: calc(100vw - 3rem);
   border-radius: 16px;
   overflow: hidden;
-  flex-shrink: 0;
   box-shadow:
     0 0 0 1px rgba(59,196,218,0.2),
     0 30px 80px rgba(0,0,0,0.6),
     0 0 60px rgba(59,196,218,0.1);
 }
+.sw-video-frame iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  height: auto;
+}
 @media (max-width: 600px) {
   .sw-video-section { padding: 4rem 0 3.5rem; }
-  .sw-video-frame { width: 290px; }
 }
