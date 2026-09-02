@@ -7210,6 +7210,23 @@ html {
   aspect-ratio: 9 / 16;
   height: auto;
 }
+/* Horizontal 16:9 showreel frame */
+.idx-reel-frame {
+  width: 100%;
+  max-width: 900px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(59,196,218,0.2),
+    0 30px 80px rgba(0,0,0,0.6),
+    0 0 60px rgba(59,196,218,0.1);
+}
+.idx-reel-frame iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+}
 .idx-video-ctas {
   display: flex;
   gap: 1rem;
