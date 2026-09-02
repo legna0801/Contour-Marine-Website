@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invoice CM-2026-005 — Contour Marine</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0d2b45;
+      --navy-light: #1a3a5c;
+      --teal: #1fa8c0;
+      --teal-bright: #3bc4da;
+      --gold: #c9a84c;
+      --gold-light: #e8c96a;
+      --white: #ffffff;
+      --off-white: #f7f9fb;
+      --text-mid: #4a6077;
+      --border: rgba(13,43,69,0.10);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--off-white);
+      color: var(--navy);
+      min-height: 100vh;
+    }
+
+    @media print {
+      body { background: white; }
+      .no-print { display: none !important; }
+      .page { box-shadow: none !important; margin: 0 !important; border-radius: 0 !important; }
+    }
+
+    .wrapper { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+
+    .page {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 8px 48px rgba(13,43,69,0.10);
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+
+    /* HEADER */
+    .header {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 60%, #1c4a6e 100%);
+      padding: 3rem 3rem 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 260px; height: 260px;
+      border-radius: 50%;
+      background: rgba(59,196,218,0.08);
+    }
+    .header::after {
+      content: '';
+      position: absolute;
+      bottom: -40px; left: 30%;
+      width: 180px; height: 180px;
+      border-radius: 50%;
+      background: rgba(201,168,76,0.07);
+    }
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 2.5rem;
+      position: relative; z-index: 1;
+    }
+    .logo-area img { height: 52px; width: auto; filter: brightness(0) invert(1); }
+    .proposal-badge {
+      background: linear-gradient(135deg, var(--teal), var(--teal-bright));
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 0.45rem 1rem;
+      border-radius: 50px;
+    }
+    .header-title { position: relative; z-index: 1; }
+    .header-title h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      color: white;
+      line-height: 1.15;
+      margin-bottom: 0.5rem;
+    }
+    .header-title h1 em { color: var(--teal-bright); font-style: italic; }
+    .header-title p { color: rgba(255,255,255,0.65); font-size: 0.97rem; line-height: 1.6; max-width: 520px; }
+    .header-meta { display: flex; gap: 2rem; margin-top: 2rem; position: relative; z-index: 1; flex-wrap: wrap; }
+    .header-meta-item { display: flex; flex-direction: column; gap: 0.2rem; }
+    .header-meta-item .label {
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; color: rgba(255,255,255,0.45);
+    }
+    .header-meta-item .value { font-size: 0.92rem; font-weight: 600; color: white; }
+    .gold-bar { height: 4px; background: linear-gradient(90deg, var(--teal), var(--gold), var(--teal-bright)); }
+
+    /* BODY */
+    .body { padding: 2.5rem 3rem 3rem; }
+
+    .section-label {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--teal); display: block; margin-bottom: 0.4rem;
+    }
+    .section-title { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--navy); margin-bottom: 0.5rem; }
+    .divider { width: 40px; height: 3px; background: linear-gradient(90deg, var(--teal), var(--gold)); border-radius: 2px; margin-bottom: 1.75rem; }
+
+    /* INTRO BOX */
+    .intro-box {
+      background: linear-gradient(135deg, #f0f8fa, #f7f9fb);
+      border-left: 4px solid var(--teal);
+      border-radius: 0 12px 12px 0;
+      padding: 1.2rem 1.5rem;
+      margin-bottom: 2.5rem;
+      font-size: 0.96rem;
+      line-height: 1.75;
+      color: var(--text-mid);
+    }
+    .intro-box strong { color: var(--navy); }
+
+    /* WORK TABLE */
+    .work-table { width: 100%; border-collapse: collapse; margin-bottom: 2.5rem; font-size: 0.92rem; }
+    .work-table thead tr { background: var(--navy); color: white; }
+    .work-table thead th {
+      padding: 0.85rem 1rem; text-align: left;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    }
+    .work-table thead th:last-child { text-align: right; }
+    .work-table tbody tr { border-bottom: 1px solid var(--border); }
+    .work-table tbody tr:nth-child(even) { background: #f9fbfc; }
+    .work-table tbody tr:hover { background: #eef7fa; }
+    .work-table td { padding: 0.9rem 1rem; vertical-align: top; color: var(--navy); }
+    .work-table td:last-child { text-align: right; font-weight: 600; color: var(--teal); white-space: nowrap; }
+    .work-table .task-name { font-weight: 600; color: var(--navy); display: block; margin-bottom: 0.2rem; }
+    .work-table .task-desc { font-size: 0.82rem; color: var(--text-mid); line-height: 1.5; }
+    .work-table .category-row td {
+      background: #eef7fa; color: var(--teal);
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; padding: 0.5rem 1rem;
+    }
+
+    /* TOTAL BOX */
+    .total-area { display: flex; justify-content: flex-end; margin-bottom: 2.5rem; }
+    .total-box { background: var(--navy); border-radius: 14px; padding: 1.5rem 2rem; min-width: 320px; }
+    .total-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0.4rem 0; font-size: 0.9rem; color: rgba(255,255,255,0.6);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .total-row:last-child { border-bottom: none; }
+    .total-row.grand { padding-top: 0.85rem; margin-top: 0.25rem; }
+    .total-row.grand .total-label {
+      font-size: 0.85rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: rgba(255,255,255,0.8);
+    }
+    .total-row.grand .total-amount {
+      font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: var(--gold-light);
+    }
+    .total-row .total-label { color: rgba(255,255,255,0.55); font-size: 0.85rem; }
+    .total-row .total-amount { color: white; font-weight: 600; }
+
+    /* CREDIT EVIDENCE SECTION */
+    .credits-section {
+      background: linear-gradient(135deg, #f0f8fa, #f7f9fb);
+      border: 1px solid rgba(31,168,192,0.2);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 2.5rem;
+    }
+    .credits-section .section-label { color: var(--teal); }
+    .credits-section .section-title { font-size: 1.15rem; }
+    .credits-section p {
+      font-size: 0.88rem; color: var(--text-mid); line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+    .credits-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .credit-stat {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem;
+      text-align: center;
+    }
+    .credit-stat .num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--teal);
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+    .credit-stat .lbl {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+    }
+    .screenshots-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .screenshots-grid img {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 16px rgba(13,43,69,0.08);
+    }
+    .screenshots-caption {
+      font-size: 0.75rem;
+      color: var(--text-mid);
+      text-align: center;
+      margin-top: 0.75rem;
+      font-style: italic;
+    }
+
+    /* RETAINER */
+    .retainer-section {
+      background: linear-gradient(135deg, var(--navy), var(--navy-light));
+      border-radius: 16px; padding: 2rem; margin-bottom: 2.5rem;
+      color: white; position: relative; overflow: hidden;
+    }
+    .retainer-section::before {
+      content: ''; position: absolute; top: -30px; right: -30px;
+      width: 130px; height: 130px; border-radius: 50%; background: rgba(59,196,218,0.1);
+    }
+    .retainer-section .section-label { color: var(--teal-bright); }
+    .retainer-section .section-title { color: white; font-size: 1.2rem; }
+    .retainer-section p { color: rgba(255,255,255,0.65); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1.25rem; max-width: 500px; }
+    .retainer-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; position: relative; z-index: 1; }
+    .retainer-card {
+      background: rgba(255,255,255,0.07); border: 1px solid rgba(59,196,218,0.2);
+      border-radius: 12px; padding: 1.25rem;
+    }
+    .retainer-card .price { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: var(--gold-light); margin-bottom: 0.2rem; }
+    .retainer-card .price span { font-family: 'Inter', sans-serif; font-size: 0.82rem; color: rgba(255,255,255,0.5); font-weight: 400; }
+    .retainer-card h4 { font-size: 0.88rem; font-weight: 700; color: white; margin-bottom: 0.6rem; }
+    .retainer-card ul { list-style: none; padding: 0; }
+    .retainer-card ul li {
+      font-size: 0.8rem; color: rgba(255,255,255,0.6);
+      padding: 0.3rem 0 0.3rem 1.2rem; position: relative; line-height: 1.6;
+      display: block;
+    }
+    .retainer-card ul li::before { content: '\2713'; position: absolute; left: 0; color: var(--teal-bright); font-weight: 700; font-size: 0.75rem; }
+    .retainer-card.highlight { border-color: var(--gold); background: rgba(201,168,76,0.08); }
+    .retainer-card.highlight .recommended {
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--gold-light); background: rgba(201,168,76,0.15); border-radius: 50px;
+      padding: 0.2rem 0.6rem; display: inline-block; margin-bottom: 0.5rem;
+    }
+
+    /* TERMS */
+    .terms-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2.5rem; }
+    .term-box { border: 1px solid var(--border); border-radius: 12px; padding: 1.1rem 1.25rem; }
+    .term-box h5 { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.4rem; }
+    .term-box p { font-size: 0.85rem; color: var(--text-mid); line-height: 1.6; }
+
+    /* FOOTER */
+    .footer-bar {
+      background: var(--navy); padding: 1.5rem 3rem;
+      display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap;
+    }
+    .footer-bar p { font-size: 0.82rem; color: rgba(255,255,255,0.5); }
+    .footer-bar .contact-info { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .footer-bar .contact-info a { font-size: 0.82rem; color: var(--teal-bright); text-decoration: none; font-weight: 500; }
+
+    .print-btn {
+      display: block; width: fit-content; margin: 0 auto 2rem;
+      background: var(--navy); color: white; border: none; border-radius: 50px;
+      padding: 0.85rem 2rem; font-size: 0.88rem; font-weight: 600;
+      letter-spacing: 0.06em; cursor: pointer; text-decoration: none; transition: background 0.2s;
+    }
+    .print-btn:hover { background: var(--navy-light); }
+
+    @media (max-width: 600px) {
+      .header { padding: 2rem 1.5rem; }
+      .body { padding: 1.75rem 1.5rem 2rem; }
+      .header-meta { flex-wrap: wrap; gap: 1rem; }
+      .retainer-cards { grid-template-columns: 1fr; }
+      .terms-grid { grid-template-columns: 1fr; }
+      .total-box { min-width: unset; width: 100%; }
+      .total-area { justify-content: stretch; }
+      .footer-bar { flex-direction: column; align-items: flex-start; }
+      .credits-stats { grid-template-columns: 1fr; }
+      .screenshots-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="wrapper">
+
+  <a href="javascript:window.print()" class="print-btn no-print">&#8659; Save as PDF / Print</a>
+
+  <div class="page">
+
+    <!-- HEADER -->
+    <div class="header">
+      <div class="header-top">
+        <div class="logo-area">
+          <img src="images/logo-final.png" alt="Contour Marine" />
+        </div>
+        <div class="proposal-badge">Service Invoice</div>
+      </div>
+      <div class="header-title">
+        <h1>Cinematic Video Production &amp;<br /><em>Luxury Showcase Package</em></h1>
+        <p>Full-scale cinematic video production — 80+ AI renders, 26 master versions, custom orchestral scoring, 4K delivery, CDN upload, and complete website integration across 4 pages.</p>
+      </div>
+      <div class="header-meta">
+        <div class="header-meta-item">
+          <span class="label">Prepared For</span>
+          <span class="value">Contour Marine</span>
+        </div>
+        <div class="header-meta-item">
+          <span class="label">Date</span>
+          <span class="value">September 2, 2026</span>
+        </div>
+        <div class="header-meta-item">
+          <span class="label">Invoice #</span>
+          <span class="value">CM-2026-005</span>
+        </div>
+        <div class="header-meta-item">
+          <span class="label">Due</span>
+          <span class="value">Upon Receipt</span>
+        </div>
+      </div>
+    </div>
+    <div class="gold-bar"></div>
+
+    <!-- BODY -->
+    <div class="body">
+
+      <div class="intro-box">
+        This invoice covers a <strong>full-scale cinematic video production session</strong> spanning 3 working days for Contour Marine. Two broadcast-quality marketing videos were produced from scratch — a <strong>4K vertical master</strong> featuring real client footage of the Indian Creek Police Department dock project, and a <strong>full HD horizontal service showcase reel</strong> covering every service line. Work included 80+ AI video renders, 26 master edit iterations, custom royalty-free orchestral scoring, frame-by-frame QC audits, CDN upload, and complete integration across the Contour Marine website. <strong>Production credit costs were paid upfront and are documented below.</strong>
+      </div>
+
+      <span class="section-label">Scope of Work</span>
+      <h2 class="section-title">Services Performed</h2>
+      <div class="divider"></div>
+
+      <table class="work-table">
+        <thead>
+          <tr>
+            <th style="width:55%">Task</th>
+            <th style="width:20%">Details</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <!-- VERTICAL MASTER -->
+          <tr class="category-row"><td colspan="3">&#127916; Deliverable 1 &mdash; 4K Vertical Master (Indian Creek Police Dock)</td></tr>
+          <tr>
+            <td>
+              <span class="task-name">Real Footage Treatment &amp; Clip Selection</span>
+              <span class="task-desc">Reviewed and selected the best real client footage clips from the Indian Creek Police Department dock project — dock walk, police boat, seawall perspective, and piling detail. Each clip was processed through Seedance 2.5 video-to-video edit mode to enhance quality while preserving authentic real footage. No fabricated or AI-invented content — all clips are real project footage treated for cinematic quality.</span>
+            </td>
+            <td>4 real clips enhanced</td>
+            <td>$175</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="task-name">Cinematic Intro &amp; Outro Brand Animation</span>
+              <span class="task-desc">Built a locked cinematic intro badge animation and a marine-life-filled ContourMarine.com outro. Both were rendered through multiple versions until brand-perfect — logo undistorted, all text readable, animation smooth from frame zero. 7 intro/outro versions rendered before final approval.</span>
+            </td>
+            <td>7 versions rendered</td>
+            <td>$120</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="task-name">Custom Orchestral Score &amp; Audio Mix</span>
+              <span class="task-desc">Composed a custom royalty-free luxury marine orchestral score via ElevenLabs Music — soft grand piano lead, warm cinematic strings, subtle low orchestral swells. Score synchronized precisely to the video timeline. Perpetual commercial license — safe for website, social media, and paid advertising use forever with no recurring fees.</span>
+            </td>
+            <td>Perpetual commercial license</td>
+            <td>$110</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="task-name">Assembly, Color Grading &amp; 4K Master Export</span>
+              <span class="task-desc">Full FFmpeg pipeline assembly with ARRI teal-amber LUT color grading, cross-dissolve transitions, audio crossfades, and deshake stabilization. Upscaled to true 4K (2160&times;3840) at 24fps using lanczos algorithm. Exported at CRF 15 — visually lossless. Final runtime: 46 seconds. Audit rating: 10/10 — SHIP verdict.</span>
+            </td>
+            <td>2160&times;3840 · 24fps · CRF15</td>
+            <td>$95</td>
+          </tr>
+
+          <!-- HORIZONTAL MASTER -->
+          <tr class="category-row"><td colspan="3">&#127916; Deliverable 2 &mdash; Full HD Horizontal Service Showcase Reel</td></tr>
+          <tr>
+            <td>
+              <span class="task-name">15 Cinematic Hero Clip Generation</span>
+              <span class="task-desc">Generated 15 unique cinematic hero clips using Google Gemini Veo 3.1 Fast (image-to-video) from Contour Marine's own website imagery — covering every service line: seawalls, docks, decks, boat lifts, and pilings. 5 AI-fabricated clips were identified during QC and removed or replaced with real-photo regenerations. 80+ total renders executed across the full session to achieve 15 approved clips.</span>
+            </td>
+            <td>80+ renders · 15 approved</td>
+            <td>$320</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="task-name">3D Brand Intro &amp; Animated Outro</span>
+              <span class="task-desc">8-second Seedance intro: 3D beveled Contour Marine logo with marine-life-filled serif service reveal (SEAWALLS &middot; DOCKS &middot; DECKS &middot; BOAT LIFTS &middot; PILINGS). 8-second Seedance outro: 3D logo with ContourMarine.com letters filled with animated sealife. Multiple render versions executed until all text was correctly spelled, logo undistorted, and animation seamless.</span>
+            </td>
+            <td>Seedance 2.5 · 3D animated</td>
+            <td>$130</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="task-name">Custom 72-Second Orchestral Score</span>
+              <span class="task-desc">Composed a continuous 72-second royalty-free luxury marine orchestral score to run the full length of the showcase reel. Two music track versions produced — 30s bed and 72s continuous bed. Instrumentation matches the vertical master for brand audio consistency across both videos. Perpetual commercial license included.</span>
+            </td>
+            <td>72s continuous · perpetual license</td>
+            <td>$110</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="task-name">26-Version Edit Cycle &amp; Post-Production</span>
+              <span class="task-desc">26 master versions built (v1 through v26) over 3 working days. Each version involved FFmpeg pipeline rebuilds with cross-dissolve chains (0.4–1.0s xfade), audio crossfades (acrossfade), black-frame elimination, duplicate scene removal, hard-cut smoothing, and transition smoothness audits across 16 transition points. Final runtime: 76 seconds. Audit rating: 10/10 — SHIP verdict.</span>
+            </td>
+            <td>26 master versions · 1920&times;1080</td>
+            <td>$140</td>
+          </tr>
+
+          <!-- QC -->
+          <tr class="category-row"><td colspan="3">&#128269; Quality Control &amp; Frame Audits</td></tr>
+          <tr>
+            <td>
+              <span class="task-name">12+ Full AI Frame-by-Frame QC Audits</span>
+              <span class="task-desc">12+ full QC audit passes using Gemini Flash Pro frame and video analysis across both masters. Audits covered: transition smoothness (16 transition points per audit), duplicate scene detection, fake AI clip identification and removal (5 clips flagged), people/camera/equipment/shadow detection, music seamlessness verification, spelling verification on all badge text, and logo integrity verification (brand-locked, undistorted, all text readable).</span>
+            </td>
+            <td>Gemini Flash Pro · 12+ audits</td>
+            <td>$100</td>
+          </tr>
+
+          <!-- CDN + INTEGRATION -->
+          <tr class="category-row"><td colspan="3">&#127758; CDN Upload &amp; Website Integration</td></tr>
+          <tr>
+            <td>
+              <span class="task-name">Bunny CDN Upload &amp; Player Configuration</span>
+              <span class="task-desc">Both final master videos uploaded to Bunny Stream CDN (Library ID 728358). Player settings configured: autoplay, loop, muted, preload, no poster thumbnail, playsinline for Safari/iOS compatibility. Verified both videos processing correctly and live on CDN before integration.</span>
+            </td>
+            <td>Bunny Stream · Library 728358</td>
+            <td>$45</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="task-name">4-Page Website Integration &amp; Deployment</span>
+              <span class="task-desc">Built video sections across 4 pages: horizontal showreel on homepage, Indian Creek vertical on docks page (with government contract badge, credential copy, and stat callout), seawall build video on seawalls page, original dock video on about page. All iframes configured with hardcoded inline dimensions to prevent GoDaddy container override. Added teal glow frames, radial background glow, pulsing unmute nudge, and government credential badge on docks page. Safari/iOS playsinline fix applied. All files committed to GitHub and deployed to GoDaddy.</span>
+            </td>
+            <td>4 pages · GoDaddy deployed</td>
+            <td>$155</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+      <!-- TOTAL -->
+      <div class="total-area">
+        <div class="total-box">
+          <div class="total-row">
+            <span class="total-label">4K Vertical Master — Indian Creek Police</span>
+            <span class="total-amount">$500</span>
+          </div>
+          <div class="total-row">
+            <span class="total-label">Horizontal Service Showcase Reel</span>
+            <span class="total-amount">$700</span>
+          </div>
+          <div class="total-row">
+            <span class="total-label">QC Audits &amp; Frame Analysis</span>
+            <span class="total-amount">$100</span>
+          </div>
+          <div class="total-row">
+            <span class="total-label">CDN Upload &amp; 4-Page Integration</span>
+            <span class="total-amount">$200</span>
+          </div>
+          <div class="total-row grand">
+            <span class="total-label">Total Due</span>
+            <span class="total-amount">$1,500</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CREDIT EVIDENCE -->
+      <div class="credits-section">
+        <span class="section-label">Production Cost Documentation</span>
+        <h2 class="section-title">Upfront Credit Costs — Paid by Producer</h2>
+        <div class="divider"></div>
+        <p>All AI video generation, music composition, and processing credits were <strong>paid upfront out of pocket</strong> by the producer before any deliverable was complete. The credit ledger below documents the actual platform costs incurred exclusively for this Contour Marine production session across 3 working days (August 28 – September 1, 2026).</p>
+
+        <div class="credits-stats">
+          <div class="credit-stat">
+            <span class="num">~384,000</span>
+            <span class="lbl">Total Credits Consumed</span>
+          </div>
+          <div class="credit-stat">
+            <span class="num">80+</span>
+            <span class="lbl">Video Generations Run</span>
+          </div>
+          <div class="credit-stat">
+            <span class="num">3</span>
+            <span class="lbl">Subscription Refills Used</span>
+          </div>
+        </div>
+
+        <p>The screenshots below are direct exports from the platform credit ledger showing all charges tagged <em>"Contour Marine video master assembly"</em> — confirming these costs were incurred specifically for this project.</p>
+
+        <div class="screenshots-grid">
+          <img src="images/credits-screenshot-1.png" alt="Credit usage ledger — Page 1" />
+          <img src="images/credits-screenshot-2.png" alt="Credit usage ledger — Page 2" />
+        </div>
+        <p class="screenshots-caption">Platform credit ledger — Contour Marine video production session · Aug 22 – Sep 1, 2026</p>
+      </div>
+
+      <!-- RETAINER -->
+      <div class="retainer-section">
+        <span class="section-label">Save on Future Work</span>
+        <h2 class="section-title">Monthly Maintenance Plans</h2>
+        <div class="divider" style="background:linear-gradient(90deg,var(--teal-bright),var(--gold));"></div>
+        <p>Lock in priority support and ongoing updates at a predictable monthly rate — covering video production, website updates, new sections, photo upscaling, and CDN management.</p>
+        <div class="retainer-cards">
+          <div class="retainer-card">
+            <div class="price">$350 <span>/ month</span></div>
+            <h4>Essentials Plan</h4>
+            <ul>
+              <li>Up to 3 hours of updates per month</li>
+              <li>Photo uploads &amp; gallery updates</li>
+              <li>Text &amp; content edits</li>
+              <li>Priority response within 24 hours</li>
+              <li>Monthly GitHub backup</li>
+            </ul>
+          </div>
+          <div class="retainer-card highlight">
+            <span class="recommended">&#9733; Most Popular</span>
+            <div class="price">$550 <span>/ month</span></div>
+            <h4>Growth Plan</h4>
+            <ul>
+              <li>Up to 6 hours of updates per month</li>
+              <li>New sections &amp; page additions</li>
+              <li>Video editing &amp; CDN uploads</li>
+              <li>Photo upscaling included</li>
+              <li>Priority response within 12 hours</li>
+              <li>Rollover unused hours (1 month)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- TERMS -->
+      <div class="terms-grid">
+        <div class="term-box">
+          <h5>&#128179; Payment</h5>
+          <p>Payment due upon receipt via <strong>Zelle</strong> to <strong>lg.blueprintsolutions@gmail.com</strong>. Please reference invoice number CM-2026-005.</p>
+        </div>
+        <div class="term-box">
+          <h5>&#127916; Deliverables</h5>
+          <p>Two broadcast-quality master videos — 4K vertical (46s) and Full HD horizontal (76s) — uploaded to Bunny CDN and embedded live across 4 pages on ContourMarine.com.</p>
+        </div>
+        <div class="term-box">
+          <h5>&#127925; Music License</h5>
+          <p>Both custom orchestral scores are royalty-free with <strong>perpetual commercial license</strong> — safe for website, social media, and paid advertising with no recurring fees.</p>
+        </div>
+        <div class="term-box">
+          <h5>&#128196; Files &amp; Source</h5>
+          <p>All website files committed to GitHub (legna0801/Contour-Marine-Website) and deployed live on GoDaddy. index.html, docks.html, seawalls.html, about.html, styles.css updated.</p>
+        </div>
+      </div>
+
+    </div><!-- /body -->
+
+    <!-- FOOTER -->
+    <div class="footer-bar">
+      <p>&copy; 2026 Blueprint Solutions &mdash; Website &amp; Video Services</p>
+      <div class="contact-info">
+        <a href="mailto:lg.blueprintsolutions@gmail.com">lg.blueprintsolutions@gmail.com</a>
+        <a href="https://github.com/legna0801/Contour-Marine-Website" target="_blank">GitHub Repo</a>
+      </div>
+    </div>
+
+  </div><!-- /page -->
+</div><!-- /wrapper -->
+
+</body>
+</html>
