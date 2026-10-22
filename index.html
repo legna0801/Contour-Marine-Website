@@ -18,11 +18,17 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://player.mediadelivery.net" />
+  <link rel="preconnect" href="https://fonts.bunny.net" crossorigin />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="styles.css?v=19" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" /></noscript>
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css" /></noscript>
+  <link rel="stylesheet" href="styles.css?v=20" />
   <link rel="canonical" href="https://www.contourmarine.com/">
+  <link rel="preload" href="images/logo-hd.webp" as="image" type="image/webp" fetchpriority="high" />
+  <link rel="preload" href="images/logo-final.webp" as="image" type="image/webp" fetchpriority="high" />
 </head>
 <body>
 
@@ -33,7 +39,7 @@
   <div class="nav-container">
     <a href="index.html" class="nav-logo">
       <span class="nav-logo-block">
-        <img src="images/logo-final.png" srcset="images/logo-final.png 1x, images/logo-2x.png 2x" alt="Contour Marine" class="nav-logo-img" width="954" height="294" />
+        <picture><source srcset="images/logo-final.webp 1x, images/logo-2x.webp 2x" type="image/webp" /><img fetchpriority="high" src="images/logo-final.png" srcset="images/logo-final.png 1x, images/logo-2x.png 2x" alt="Contour Marine" class="nav-logo-img" width="954" height="294" /></picture>
       </span>
     </a>
     <ul class="nav-links">
@@ -77,15 +83,7 @@
 
     <!-- Logo -->
     <div class="hero-logo-wrap">
-      <img
-        src="images/logo-hd.png"
-        alt="Contour Marine — South Florida's Premier Marine Contractor"
-        class="hero-logo"
-        width="2048"
-        height="2048"
-        loading="eager"
-        decoding="async"
-      />
+      <picture><source srcset="images/logo-hd.webp" type="image/webp" /><img src="images/logo-hd.png" alt="Contour Marine — South Florida" class="hero-logo" width="2048" height="2048" loading="eager" decoding="async" /></picture>
     </div>
 
     <!-- Eyebrow — Est. label with flanking rules -->
@@ -200,7 +198,7 @@
           <i class="fas fa-hard-hat"></i> Before
         </div>
         <div class="showcase-compare-img">
-          <img src="images/project-framing-2.jpg" alt="Structural framing and custom stair stringers during dock construction — Contour Marine South Florida" loading="lazy" />
+          <picture><source srcset="images/project-framing-2.webp" type="image/webp" /><img src="images/project-framing-2.jpg" alt="Structural framing and custom stair stringers during dock construction — Contour Marine South Florida" loading="lazy" width="372" height="496" /></picture>
         </div>
         <div class="showcase-compare-caption">
           <strong>Structural Foundation &amp; Framing</strong>
@@ -214,7 +212,7 @@
           <i class="fas fa-check-circle"></i> After
         </div>
         <div class="showcase-compare-img">
-          <img src="images/project-finished-2.jpg" alt="Completed composite dock with wrapped pilings and finished stair system — Contour Marine South Florida" loading="lazy" />
+          <picture><source srcset="images/project-finished-2.webp" type="image/webp" /><img src="images/project-finished-2.jpg" alt="Completed composite dock with wrapped pilings and finished stair system — Contour Marine South Florida" loading="lazy" width="372" height="496" /></picture>
         </div>
         <div class="showcase-compare-caption">
           <strong>Completed Waterfront Installation</strong>
@@ -235,10 +233,10 @@
         </div>
         <div class="showcase-photos">
           <div class="showcase-photo">
-            <img src="images/project-framing-1.jpg" alt="Close-up of custom stair stringers and structural framing — Contour Marine dock construction" loading="lazy" />
+            <picture><source srcset="images/project-framing-1.webp" type="image/webp" /><img src="images/project-framing-1.jpg" alt="Close-up of custom stair stringers and structural framing — Contour Marine dock construction" loading="lazy" width="374" height="499" /></picture>
           </div>
           <div class="showcase-photo">
-            <img src="images/project-framing-3.jpg" alt="Precision structural framing layout over water — Contour Marine marine construction" loading="lazy" />
+            <picture><source srcset="images/project-framing-3.webp" type="image/webp" /><img src="images/project-framing-3.jpg" alt="Precision structural framing layout over water — Contour Marine marine construction" loading="lazy" width="374" height="499" /></picture>
           </div>
         </div>
         <p class="showcase-col-desc">Every detail begins beneath the finished surface. Our team carefully engineered and constructed each component to ensure long-term strength, durability, and performance in South Florida's demanding marine environment.</p>
@@ -252,10 +250,10 @@
         </div>
         <div class="showcase-photos">
           <div class="showcase-photo">
-            <img src="images/project-finished-3.jpg" alt="Finished composite dock with wide stair system and clean decking lines — Contour Marine" loading="lazy" />
+            <picture><source srcset="images/project-finished-3.webp" type="image/webp" /><img src="images/project-finished-3.jpg" alt="Finished composite dock with wide stair system and clean decking lines — Contour Marine" loading="lazy" width="374" height="499" /></picture>
           </div>
           <div class="showcase-photo">
-            <img src="images/project-finished-1.jpg" alt="Completed composite dock stairs and decking — Contour Marine South Florida" loading="lazy" />
+            <picture><source srcset="images/project-finished-1.webp" type="image/webp" /><img src="images/project-finished-1.jpg" alt="Completed composite dock stairs and decking — Contour Marine South Florida" loading="lazy" width="374" height="499" /></picture>
           </div>
         </div>
         <p class="showcase-col-desc">Premium composite decking, precision-finished stair systems, wrapped piles, and flawless waterfront integration combine to create a stunning finished product built to withstand the coastal environment for years to come.</p>
@@ -305,11 +303,7 @@
     </div>
     <div class="featured-build-card reveal">
       <div class="featured-build-img-wrap">
-        <img
-          src="images/dock-night-feature.jpg?v=2"
-          alt="Luxury custom dock at night with teal underwater lighting and teak wood decking — South Florida by Contour Marine"
-          loading="lazy"
-        />
+        <picture><source srcset="images/dock-night-feature.webp" type="image/webp" /><img src="images/dock-night-feature.jpg?v=2" alt="Luxury custom dock at night with teal underwater lighting and teak wood decking — South Florida by Contour Marine" loading="lazy" width="560" height="745" /></picture>
       </div>
       <div class="featured-build-caption">
         <div class="featured-build-title">
@@ -340,7 +334,7 @@
 
       <a href="seawalls.html" class="service-card reveal">
         <div class="service-card-img">
-          <img src="images/seawall-completed-cap.jpg" alt="Completed concrete seawall cap with timber deck foreground and lush lawn — South Florida by Contour Marine" loading="lazy" style="object-position:center 45%;" />
+          <picture><source srcset="images/seawall-completed-cap.webp" type="image/webp" /><img src="images/seawall-completed-cap.jpg" alt="Completed concrete seawall cap with timber deck foreground and lush lawn — South Florida by Contour Marine" loading="lazy" style="object-position:center 45%;" width="560" height="640" /></picture>
           <span class="service-card-badge">In Demand</span>
         </div>
         <div class="service-card-body">
@@ -353,7 +347,7 @@
 
       <a href="docks.html" class="service-card reveal">
         <div class="service-card-img">
-          <img src="images/dock-white-posts-walkway.jpg?v=3" alt="Modern dock with white square posts extending over blue water — South Florida by Contour Marine" loading="lazy" style="object-position:center 45%;" />
+          <picture><source srcset="images/dock-white-posts-walkway.webp" type="image/webp" /><img src="images/dock-white-posts-walkway.jpg?v=3" alt="Modern dock with white square posts extending over blue water — South Florida by Contour Marine" loading="lazy" style="object-position:center 45%;" width="560" height="640" /></picture>
         </div>
         <div class="service-card-body">
           <div class="service-card-icon"><i class="fas fa-ship"></i></div>
@@ -365,7 +359,7 @@
 
       <a href="decks.html" class="service-card reveal">
         <div class="service-card-img">
-          <img src="images/deck-evening-lit.jpg?v=2" alt="Illuminated waterfront deck at night with blue LED rail accent lights — South Florida by Contour Marine" loading="lazy" style="object-position:center 55%;" />
+          <picture><source srcset="images/deck-evening-lit.webp" type="image/webp" /><img src="images/deck-evening-lit.jpg?v=2" alt="Illuminated waterfront deck at night with blue LED rail accent lights — South Florida by Contour Marine" loading="lazy" style="object-position:center 55%;" width="560" height="452" /></picture>
         </div>
         <div class="service-card-body">
           <div class="service-card-icon"><i class="fas fa-th-large"></i></div>
@@ -377,7 +371,7 @@
 
       <a href="boatlifts.html" class="service-card reveal">
         <div class="service-card-img">
-          <img src="images/boatlift-project.jpg" alt="Luxury yacht secured on a boat lift at a South Florida dock" loading="lazy" style="object-position:center 35%;" />
+          <picture><source srcset="images/boatlift-project.webp" type="image/webp" /><img src="images/boatlift-project.jpg" alt="Luxury yacht secured on a boat lift at a South Florida dock" loading="lazy" style="object-position:center 35%;" width="560" height="685" /></picture>
           <span class="service-card-badge">Popular</span>
         </div>
         <div class="service-card-body">
@@ -390,7 +384,7 @@
 
       <a href="pilings.html" class="service-card reveal">
         <div class="service-card-img">
-          <img src="images/seawall-pilings.jpg" alt="Concrete marine pilings installed along a South Florida canal — Contour Marine" loading="lazy" style="object-position:center 25%;" />
+          <picture><source srcset="images/seawall-pilings.webp" type="image/webp" /><img src="images/seawall-pilings.jpg" alt="Concrete marine pilings installed along a South Florida canal — Contour Marine" loading="lazy" style="object-position:center 25%;" width="560" height="700" /></picture>
         </div>
         <div class="service-card-body">
           <div class="service-card-icon"><i class="fas fa-ruler-vertical"></i></div>
@@ -427,12 +421,7 @@
       <!-- BEFORE panel -->
       <div class="idx-sw-panel idx-sw-panel--before">
         <div class="idx-sw-img-wrap">
-          <img
-            src="images/seawall-new-1.jpg"
-            alt="Seawall under construction — rebar formwork and pilings along South Florida canal — Contour Marine"
-            loading="lazy"
-            style="object-position: center bottom;"
-          />
+          <picture><source srcset="images/seawall-new-1.webp" type="image/webp" /><img src="images/seawall-new-1.jpg" alt="Seawall under construction — rebar formwork and pilings along South Florida canal — Contour Marine" loading="lazy" style="object-position: center bottom;" /></picture>
           <!-- Dark vignette -->
           <div class="idx-sw-vignette"></div>
         </div>
@@ -459,12 +448,7 @@
       <!-- AFTER panel -->
       <div class="idx-sw-panel idx-sw-panel--after">
         <div class="idx-sw-img-wrap">
-          <img
-            src="images/seawall-new-6.jpg"
-            alt="Completed seawall — lush green lawn, white concrete cap, pilings along sparkling South Florida canal — Contour Marine"
-            loading="lazy"
-            style="object-position: center 38%;"
-          />
+          <picture><source srcset="images/seawall-new-6.webp" type="image/webp" /><img src="images/seawall-new-6.jpg" alt="Completed seawall — lush green lawn, white concrete cap, pilings along sparkling South Florida canal — Contour Marine" loading="lazy" style="object-position: center 38%;" /></picture>
           <div class="idx-sw-vignette"></div>
         </div>
         <!-- Label pill -->
@@ -525,11 +509,7 @@
       <!-- BEFORE -->
       <div class="ba-card ba-card--before reveal-left">
         <div class="ba-img-wrap">
-          <img
-            src="images/seawall-before.jpg"
-            alt="Seawall construction phase — rebar and concrete panels being installed along a South Florida waterway"
-            loading="lazy"
-          />
+          <picture><source srcset="images/seawall-before.webp" type="image/webp" /><img src="images/seawall-before.jpg" alt="Seawall construction phase — rebar and concrete panels being installed along a South Florida waterway" loading="lazy" /></picture>
         </div>
         <span class="ba-label"><i class="fas fa-hard-hat"></i> Before</span>
         <div class="ba-hover-caption">Construction Phase</div>
@@ -537,11 +517,7 @@
       <!-- AFTER -->
       <div class="ba-card ba-card--after reveal-right">
         <div class="ba-img-wrap">
-          <img
-            src="images/seawall-after.jpg"
-            alt="Completed waterfront dock with travertine deck and illuminated bollards at sunset — South Florida"
-            loading="lazy"
-          />
+          <picture><source srcset="images/seawall-after.webp" type="image/webp" /><img src="images/seawall-after.jpg" alt="Completed waterfront dock with travertine deck and illuminated bollards at sunset — South Florida" loading="lazy" /></picture>
         </div>
         <span class="ba-label after"><i class="fas fa-check-circle"></i> After</span>
         <div class="ba-hover-caption">Completed Project</div>
@@ -703,7 +679,7 @@
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <img src="images/logo-final.png" srcset="images/logo-final.png 1x, images/logo-2x.png 2x" alt="Contour Marine" class="footer-logo-img" width="954" height="294" />
+      <picture><source srcset="images/logo-final.webp 1x, images/logo-2x.webp 2x" type="image/webp" /><img src="images/logo-final.png" srcset="images/logo-final.png 1x, images/logo-2x.png 2x" alt="Contour Marine" class="footer-logo-img" width="954" height="294" /></picture>
       <p>South Florida's trusted marine contractor since 2001, proudly serving Broward and Miami-Dade.</p>
       <div class="footer-social">
         <a href="https://www.instagram.com/contourmarine" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>

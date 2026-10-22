@@ -16,10 +16,14 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://player.mediadelivery.net" />
+  <link rel="preconnect" href="https://fonts.bunny.net" crossorigin />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="styles.css?v=19" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" /></noscript>
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css" /></noscript>
+  <link rel="stylesheet" href="styles.css?v=20" />
 
   <style>
     /* ═══════════════════════════════════════════════
@@ -1309,6 +1313,7 @@
     }
   </style>
   <link rel="canonical" href="https://www.contourmarine.com/seawalls.html">
+  <link rel="preload" href="images/logo-final.webp" as="image" type="image/webp" fetchpriority="high" />
 </head>
 <body>
 
@@ -1317,7 +1322,7 @@
   <div class="nav-container">
     <a href="index.html" class="nav-logo">
       <span class="nav-logo-block">
-        <img src="images/logo-final.png" srcset="images/logo-final.png 1x, images/logo-2x.png 2x" alt="Contour Marine" class="nav-logo-img" width="954" height="294" />
+        <picture><source srcset="images/logo-final.webp 1x, images/logo-2x.webp 2x" type="image/webp" /><img fetchpriority="high" src="images/logo-final.png" srcset="images/logo-final.png 1x, images/logo-2x.png 2x" alt="Contour Marine" class="nav-logo-img" width="954" height="294" /></picture>
       </span>
     </a>
     <ul class="nav-links">
@@ -1445,7 +1450,7 @@
   <div class="container">
     <div class="service-detail-grid">
       <div class="service-detail-img reveal-left">
-        <img src="images/seawall-completed-cap.jpg" alt="Completed concrete seawall cap with timber deck foreground, green lawn, palm trees, and luxury waterfront home — South Florida by Contour Marine" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 50%;display:block;border-radius:16px;" />
+        <picture><source srcset="images/seawall-completed-cap.webp" type="image/webp" /><img src="images/seawall-completed-cap.jpg" alt="Completed concrete seawall cap with timber deck foreground, green lawn, palm trees, and luxury waterfront home — South Florida by Contour Marine" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 50%;display:block;border-radius:16px;" width="560" height="640" /></picture>
       </div>
       <div class="service-detail-content reveal-right">
         <span class="section-label">Built for South Florida Conditions</span>
@@ -1478,12 +1483,7 @@
     </div>
     <div class="sw-why-grid">
       <div class="sw-why-img reveal-left">
-        <img
-          src="images/seawall-construction-crane.jpg"
-          alt="Engineered seawall installation — crane barge driving pilings on a South Florida canal, Contour Marine crew on site"
-          loading="lazy"
-          style="width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block;border-radius:16px;"
-        />
+        <picture><source srcset="images/seawall-construction-crane.webp" type="image/webp" /><img src="images/seawall-construction-crane.jpg" alt="Engineered seawall installation — crane barge driving pilings on a South Florida canal, Contour Marine crew on site" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block;border-radius:16px;" /></picture>
       </div>
       <div class="sw-why-content reveal-right">
         <div class="sw-why-point">
@@ -1571,12 +1571,7 @@
     <!-- Step 1 — image left, text right -->
     <div class="service-detail-grid reveal">
       <div class="service-detail-img reveal-left">
-        <img
-          src="images/sw-step1.jpg"
-          alt="Seawall formwork and steel rebar reinforcement cage during construction — South Florida by Contour Marine"
-          loading="lazy"
-          style="width:100%;height:100%;object-fit:cover;object-position:center 35%;display:block;"
-        />
+        <picture><source srcset="images/sw-step1.webp" type="image/webp" /><img src="images/sw-step1.jpg" alt="Seawall formwork and steel rebar reinforcement cage during construction — South Florida by Contour Marine" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 35%;display:block;" /></picture>
       </div>
       <div class="service-detail-content reveal-right">
         <span class="section-label">Step 01</span>
@@ -1594,12 +1589,7 @@
     <!-- Step 2 — image right, text left -->
     <div class="service-detail-grid reverse reveal">
       <div class="service-detail-img reveal-right">
-        <img
-          src="images/sw-step2.jpg"
-          alt="Fresh concrete being placed inside seawall formwork along South Florida waterfront — Contour Marine"
-          loading="lazy"
-          style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;"
-        />
+        <picture><source srcset="images/sw-step2.webp" type="image/webp" /><img src="images/sw-step2.jpg" alt="Fresh concrete being placed inside seawall formwork along South Florida waterfront — Contour Marine" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;" /></picture>
       </div>
       <div class="service-detail-content reveal-left">
         <span class="section-label">Step 02</span>
@@ -1617,12 +1607,7 @@
     <!-- Step 3 — image left, text right -->
     <div class="service-detail-grid reveal">
       <div class="service-detail-img reveal-left">
-        <img
-          src="images/sw-step3.jpg"
-          alt="Freshly finished concrete seawall cap with workers and rebar coils, canal view — South Florida by Contour Marine"
-          loading="lazy"
-          style="width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block;"
-        />
+        <picture><source srcset="images/sw-step3.webp" type="image/webp" /><img src="images/sw-step3.jpg" alt="Freshly finished concrete seawall cap with workers and rebar coils, canal view — South Florida by Contour Marine" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block;" /></picture>
       </div>
       <div class="service-detail-content reveal-right">
         <span class="section-label">Step 03</span>
@@ -1658,11 +1643,7 @@
         <i class="fas fa-hard-hat"></i> Before
       </div>
       <div class="sw-transform-img-wrap">
-        <img
-          src="images/sw-transform-before.jpg"
-          alt="Seawall formwork and rebar reinforcement grid during construction — South Florida by Contour Marine"
-          loading="lazy"
-        />
+        <picture><source srcset="images/sw-transform-before.webp" type="image/webp" /><img src="images/sw-transform-before.jpg" alt="Seawall formwork and rebar reinforcement grid during construction — South Florida by Contour Marine" loading="lazy" /></picture>
       </div>
     </div>
 
@@ -1673,11 +1654,7 @@
           <i class="fas fa-sun"></i> After – Daytime
         </div>
         <div class="sw-transform-img-wrap">
-          <img
-            src="images/sw-transform-day.jpg"
-            alt="Finished seawall cap with white dock light posts and timber pilings — South Florida by Contour Marine"
-            loading="lazy"
-          />
+          <picture><source srcset="images/sw-transform-day.webp" type="image/webp" /><img src="images/sw-transform-day.jpg" alt="Finished seawall cap with white dock light posts and timber pilings — South Florida by Contour Marine" loading="lazy" /></picture>
         </div>
       </div>
       <div class="sw-transform-after-card">
@@ -1685,11 +1662,7 @@
           <i class="fas fa-moon"></i> After – Night
         </div>
         <div class="sw-transform-img-wrap">
-          <img
-            src="images/sw-transform-night.jpg"
-            alt="Completed seawall at night with illuminated dock lights reflecting on canal water — South Florida by Contour Marine"
-            loading="lazy"
-          />
+          <picture><source srcset="images/sw-transform-night.webp" type="image/webp" /><img src="images/sw-transform-night.jpg" alt="Completed seawall at night with illuminated dock lights reflecting on canal water — South Florida by Contour Marine" loading="lazy" /></picture>
         </div>
       </div>
     </div>
@@ -1745,12 +1718,7 @@
     <!-- ROW 1: Hero full-width — Photo 1 (formwork + canal view) -->
     <div class="sw-build-hero-card sw-build-reveal" style="--sw-delay:0.15s">
       <div class="sw-build-card">
-        <img
-          src="images/seawall-new-1.jpg"
-          alt="Seawall rebar formwork setup with pilings and South Florida canal view — Contour Marine"
-          loading="lazy"
-          style="object-position: center bottom;"
-        />
+        <picture><source srcset="images/seawall-new-1.webp" type="image/webp" /><img src="images/seawall-new-1.jpg" alt="Seawall rebar formwork setup with pilings and South Florida canal view — Contour Marine" loading="lazy" style="object-position: center bottom;" /></picture>
         <div class="sw-build-pill"><i class="fas fa-hard-hat"></i> Phase 1 — Formwork &amp; Pilings</div>
       </div>
       <div class="sw-build-caption">
@@ -1763,7 +1731,7 @@
     <div class="sw-build-grid4">
       <div class="sw-build-reveal" style="--sw-delay:0.18s">
         <div class="sw-build-card">
-          <img src="images/seawall-new-2.jpg" alt="Seawall full-length rebar cage assembly — Contour Marine South Florida" loading="lazy" style="object-position: center 20%;"/>
+          <picture><source srcset="images/seawall-new-2.webp" type="image/webp" /><img src="images/seawall-new-2.jpg" alt="Seawall full-length rebar cage assembly — Contour Marine South Florida" loading="lazy" style="object-position: center 20%;" /></picture>
           <div class="sw-build-pill"><i class="fas fa-layer-group"></i> Phase 2 — Rebar Cage</div>
         </div>
         <div class="sw-build-caption">
@@ -1773,7 +1741,7 @@
       </div>
       <div class="sw-build-reveal" style="--sw-delay:0.26s">
         <div class="sw-build-card">
-          <img src="images/seawall-new-3.jpg" alt="Fresh concrete being poured into seawall cap formwork — Contour Marine" loading="lazy" style="object-position: center 20%;"/>
+          <picture><source srcset="images/seawall-new-3.webp" type="image/webp" /><img src="images/seawall-new-3.jpg" alt="Fresh concrete being poured into seawall cap formwork — Contour Marine" loading="lazy" style="object-position: center 20%;" /></picture>
           <div class="sw-build-pill"><i class="fas fa-tint"></i> Phase 3 — Concrete Pour</div>
         </div>
         <div class="sw-build-caption">
@@ -1783,7 +1751,7 @@
       </div>
       <div class="sw-build-reveal" style="--sw-delay:0.34s">
         <div class="sw-build-card">
-          <img src="images/seawall-new-4.jpg" alt="Smooth concrete seawall cap curing with pilings — Contour Marine" loading="lazy" style="object-position: center 15%;"/>
+          <picture><source srcset="images/seawall-new-4.webp" type="image/webp" /><img src="images/seawall-new-4.jpg" alt="Smooth concrete seawall cap curing with pilings — Contour Marine" loading="lazy" style="object-position: center 15%;" /></picture>
           <div class="sw-build-pill"><i class="fas fa-check-circle"></i> Phase 4 — Cap Curing</div>
         </div>
         <div class="sw-build-caption">
@@ -1793,7 +1761,7 @@
       </div>
       <div class="sw-build-reveal" style="--sw-delay:0.42s">
         <div class="sw-build-card">
-          <img src="images/seawall-new-5.jpg" alt="Completed seawall cap angle view with pilings and South Florida canal — Contour Marine" loading="lazy" style="object-position: center 15%;"/>
+          <picture><source srcset="images/seawall-new-5.webp" type="image/webp" /><img src="images/seawall-new-5.jpg" alt="Completed seawall cap angle view with pilings and South Florida canal — Contour Marine" loading="lazy" style="object-position: center 15%;" /></picture>
           <div class="sw-build-pill"><i class="fas fa-ruler-horizontal"></i> Phase 5 — Finishing</div>
         </div>
         <div class="sw-build-caption">
@@ -1806,7 +1774,7 @@
     <!-- FINALE — Photo 6 full-width with embedded 3D stat bar -->
     <div class="sw-build-finale sw-build-reveal" style="--sw-delay:0.12s">
       <div class="sw-build-card">
-        <img src="images/seawall-new-6.jpg" alt="Completed seawall with green lawn and sparkling canal — finished Contour Marine project South Florida" loading="lazy" style="object-position: center 40%;"/>
+        <picture><source srcset="images/seawall-new-6.webp" type="image/webp" /><img src="images/seawall-new-6.jpg" alt="Completed seawall with green lawn and sparkling canal — finished Contour Marine project South Florida" loading="lazy" style="object-position: center 40%;" /></picture>
         <div class="sw-build-pill"><i class="fas fa-star"></i> Phase 6 — Complete</div>
         <div class="sw-build-finale-badge"><i class="fas fa-award"></i>&nbsp; Finished Result</div>
         <!-- 3D Stat Bar embedded inside the photo -->
@@ -1933,7 +1901,7 @@
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <img src="images/logo-final.png" srcset="images/logo-final.png 1x, images/logo-2x.png 2x" alt="Contour Marine" class="footer-logo-img" width="954" height="294" />
+      <picture><source srcset="images/logo-final.webp 1x, images/logo-2x.webp 2x" type="image/webp" /><img src="images/logo-final.png" srcset="images/logo-final.png 1x, images/logo-2x.png 2x" alt="Contour Marine" class="footer-logo-img" width="954" height="294" /></picture>
       <p>South Florida's trusted marine contractor since 2001, proudly serving Broward and Miami-Dade.</p>
       <div class="footer-social">
         <a href="https://www.instagram.com/contourmarine" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>

@@ -16,11 +16,16 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://player.mediadelivery.net" />
+  <link rel="preconnect" href="https://fonts.bunny.net" crossorigin />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="styles.css?v=19" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" /></noscript>
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css" /></noscript>
+  <link rel="stylesheet" href="styles.css?v=20" />
   <link rel="canonical" href="https://www.contourmarine.com/docks.html">
+  <link rel="preload" href="images/logo-final.webp" as="image" type="image/webp" fetchpriority="high" />
 </head>
 <body>
 
@@ -28,7 +33,7 @@
   <div class="nav-container">
     <a href="index.html" class="nav-logo">
       <span class="nav-logo-block">
-        <img src="images/logo-final.png" srcset="images/logo-final.png 1x, images/logo-2x.png 2x" alt="Contour Marine" class="nav-logo-img" width="954" height="294" />
+        <picture><source srcset="images/logo-final.webp 1x, images/logo-2x.webp 2x" type="image/webp" /><img fetchpriority="high" src="images/logo-final.png" srcset="images/logo-final.png 1x, images/logo-2x.png 2x" alt="Contour Marine" class="nav-logo-img" width="954" height="294" /></picture>
       </span>
     </a>
     <ul class="nav-links">
@@ -114,12 +119,7 @@
 
     <div class="service-detail-grid">
       <div class="service-detail-img reveal-left">
-        <img
-          src="images/dock-white-posts-walkway.jpg?v=3"
-          alt="Modern dock with white square posts extending over blue water — South Florida by Contour Marine"
-          loading="eager"
-          style="width:100%;height:100%;object-fit:cover;object-position:center 45%;display:block;border-radius:16px;"
-        />
+        <picture><source srcset="images/dock-white-posts-walkway.webp" type="image/webp" /><img src="images/dock-white-posts-walkway.jpg?v=3" alt="Modern dock with white square posts extending over blue water — South Florida by Contour Marine" loading="eager" style="width:100%;height:100%;object-fit:cover;object-position:center 45%;display:block;border-radius:16px;" width="560" height="640" /></picture>
       </div>
       <div class="service-detail-content reveal-right">
         <span class="section-label">Dock Construction</span>
@@ -139,7 +139,7 @@
 
     <div class="service-detail-grid reverse">
       <div class="service-detail-img reveal-right">
-        <img src="images/dock-composite-gray.jpg?v=3" alt="Gray composite dock walkway with dark pilings along a South Florida canal — Contour Marine" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 45%;display:block;border-radius:16px;" />
+        <picture><source srcset="images/dock-composite-gray.webp" type="image/webp" /><img src="images/dock-composite-gray.jpg?v=3" alt="Gray composite dock walkway with dark pilings along a South Florida canal — Contour Marine" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 45%;display:block;border-radius:16px;" /></picture>
       </div>
       <div class="service-detail-content reveal-left">
         <span class="section-label">Materials &amp; Design</span>
@@ -239,13 +239,13 @@
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
       <div style="border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(13,43,69,0.12);position:relative;">
-        <img src="images/dock-extension-day.jpg" alt="Dock extension in bright daylight — South Florida" loading="lazy" style="width:100%;height:320px;object-fit:cover;object-position:center 40%;display:block;" />
+        <picture><source srcset="images/dock-extension-day.webp" type="image/webp" /><img src="images/dock-extension-day.jpg" alt="Dock extension in bright daylight — South Florida" loading="lazy" style="width:100%;height:320px;object-fit:cover;object-position:center 40%;display:block;" /></picture>
         <div class="img-caption-overlay">
           <span style="color:#fff;font-size:0.82rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;"><i class="fas fa-sun" style="color:#f5c842;margin-right:0.4rem;"></i>Daytime</span>
         </div>
       </div>
       <div style="border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(13,43,69,0.12);position:relative;">
-        <img src="images/dock-extension-evening.jpg" alt="Dock extension at dusk — South Florida" loading="lazy" style="width:100%;height:320px;object-fit:cover;object-position:center 40%;display:block;" />
+        <picture><source srcset="images/dock-extension-evening.webp" type="image/webp" /><img src="images/dock-extension-evening.jpg" alt="Dock extension at dusk — South Florida" loading="lazy" style="width:100%;height:320px;object-fit:cover;object-position:center 40%;display:block;" /></picture>
         <div class="img-caption-overlay">
           <span style="color:#fff;font-size:0.82rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;"><i class="fas fa-moon" style="color:#3bc4da;margin-right:0.4rem;"></i>Evening</span>
         </div>
@@ -269,13 +269,13 @@
     <!-- 3-photo side-by-side row -->
     <div class="dock-light-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2.5rem;">
       <div style="border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.45);aspect-ratio:4/3;background:#040e1a;">
-        <img src="images/dock-light-1.jpg" alt="Dock with vivid green underwater lighting and Miami city skyline at night — South Florida" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 50%;display:block;transition:transform 0.45s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
+        <picture><source srcset="images/dock-light-1.webp" type="image/webp" /><img src="images/dock-light-1.jpg" alt="Dock with vivid green underwater lighting and Miami city skyline at night — South Florida" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 50%;display:block;transition:transform 0.45s ease;" /></picture>
       </div>
       <div style="border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.45);aspect-ratio:4/3;background:#040e1a;">
-        <img src="images/dock-light-4.jpg" alt="Dock walkway with blue LED lighting and brilliant green underwater glow — South Florida" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 50%;display:block;transition:transform 0.45s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
+        <picture><source srcset="images/dock-light-4.webp" type="image/webp" /><img src="images/dock-light-4.jpg" alt="Dock walkway with blue LED lighting and brilliant green underwater glow — South Florida" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 50%;display:block;transition:transform 0.45s ease;" /></picture>
       </div>
       <div style="border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.45);aspect-ratio:4/3;background:#040e1a;">
-        <img src="images/dock-light-6.jpg" alt="Composite dock at night with teal cyan underwater glow and lit power pedestal — South Florida" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 50%;display:block;transition:transform 0.45s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
+        <picture><source srcset="images/dock-light-6.webp" type="image/webp" /><img src="images/dock-light-6.jpg" alt="Composite dock at night with teal cyan underwater glow and lit power pedestal — South Florida" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 50%;display:block;transition:transform 0.45s ease;" /></picture>
       </div>
     </div>
 
@@ -306,13 +306,13 @@
     <!-- Row 1: 3 landscape cards -->
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:1.25rem;">
       <div style="border-radius:14px;overflow:hidden;box-shadow:0 4px 18px rgba(13,43,69,0.10);aspect-ratio:4/3;background:#0a1a2e;">
-        <img src="images/dock-proj-1.jpg" alt="White composite dock platform with chairs overlooking Miami skyline — South Florida" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 45%;display:block;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
+        <picture><source srcset="images/dock-proj-1.webp" type="image/webp" /><img src="images/dock-proj-1.jpg" alt="White composite dock platform with chairs overlooking Miami skyline — South Florida" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 45%;display:block;transition:transform 0.5s ease;" /></picture>
       </div>
       <div style="border-radius:14px;overflow:hidden;box-shadow:0 4px 18px rgba(13,43,69,0.10);aspect-ratio:4/3;background:#0a1a2e;">
-        <img src="images/dock-proj-2.jpg" alt="Ipe hardwood dock platform with decorative piling caps and luxury yachts — South Florida" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 55%;display:block;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
+        <picture><source srcset="images/dock-proj-2.webp" type="image/webp" /><img src="images/dock-proj-2.jpg" alt="Ipe hardwood dock platform with decorative piling caps and luxury yachts — South Florida" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 55%;display:block;transition:transform 0.5s ease;" /></picture>
       </div>
       <div style="border-radius:14px;overflow:hidden;box-shadow:0 4px 18px rgba(13,43,69,0.10);aspect-ratio:4/3;background:#0a1a2e;">
-        <img src="images/dock-proj-3.jpg" alt="Grey composite dock with stainless cable railing and gate — South Florida canal" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 50%;display:block;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
+        <picture><source srcset="images/dock-proj-3.webp" type="image/webp" /><img src="images/dock-proj-3.jpg" alt="Grey composite dock with stainless cable railing and gate — South Florida canal" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 50%;display:block;transition:transform 0.5s ease;" /></picture>
       </div>
     </div>
 
@@ -320,15 +320,15 @@
     <div style="display:grid;grid-template-columns:1fr 2fr;gap:1.25rem;">
       <!-- Portrait: dock-proj-6 -->
       <div style="border-radius:14px;overflow:hidden;box-shadow:0 4px 18px rgba(13,43,69,0.10);background:#0a1a2e;">
-        <img src="images/dock-proj-6.jpg" alt="Ipe wood dock with seawall steps and boat lift posts — South Florida waterfront" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
+        <picture><source srcset="images/dock-proj-6.webp" type="image/webp" /><img src="images/dock-proj-6.jpg" alt="Ipe wood dock with seawall steps and boat lift posts — South Florida waterfront" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block;transition:transform 0.5s ease;" /></picture>
       </div>
       <!-- Right column: 2 landscape stacked -->
       <div style="display:flex;flex-direction:column;gap:1.25rem;">
         <div style="border-radius:14px;overflow:hidden;box-shadow:0 4px 18px rgba(13,43,69,0.10);aspect-ratio:16/7;background:#0a1a2e;">
-          <img src="images/dock-proj-4.jpg" alt="Grey composite dock curving along South Florida canal with tropical plants" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 45%;display:block;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
+          <picture><source srcset="images/dock-proj-4.webp" type="image/webp" /><img src="images/dock-proj-4.jpg" alt="Grey composite dock curving along South Florida canal with tropical plants" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 45%;display:block;transition:transform 0.5s ease;" /></picture>
         </div>
         <div style="border-radius:14px;overflow:hidden;box-shadow:0 4px 18px rgba(13,43,69,0.10);aspect-ratio:16/7;background:#0a1a2e;">
-          <img src="images/dock-proj-5.jpg" alt="Long grey composite dock alongside waterfront home on South Florida canal" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
+          <picture><source srcset="images/dock-proj-5.webp" type="image/webp" /><img src="images/dock-proj-5.jpg" alt="Long grey composite dock alongside waterfront home on South Florida canal" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block;transition:transform 0.5s ease;" /></picture>
         </div>
       </div>
     </div>
@@ -341,14 +341,14 @@
     </div>
     <div class="client-photo-row">
       <div style="border-radius:14px;overflow:hidden;box-shadow:0 4px 18px rgba(13,43,69,0.10);aspect-ratio:4/3;background:#0a1a2e;position:relative;">
-        <img src="images/dock-cable-railing.jpg" alt="Grey composite dock with stainless steel cable railing system along South Florida canal — Contour Marine" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 45%;display:block;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
+        <picture><source srcset="images/dock-cable-railing.webp" type="image/webp" /><img src="images/dock-cable-railing.jpg" alt="Grey composite dock with stainless steel cable railing system along South Florida canal — Contour Marine" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 45%;display:block;transition:transform 0.5s ease;" /></picture>
         <div class="img-caption-overlay">
           <span style="color:#fff;font-size:0.83rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;display:block;"><i class="fas fa-water" style="color:var(--teal-bright);margin-right:0.4rem;"></i>Grey Composite Dock — Cable Railing</span>
           <span style="color:rgba(255,255,255,0.72);font-size:0.78rem;font-weight:400;display:block;margin-top:0.2rem;">Stainless steel cable rail system with modern composite decking — clean, low-maintenance, and built to last.</span>
         </div>
       </div>
       <div style="border-radius:14px;overflow:hidden;box-shadow:0 4px 18px rgba(13,43,69,0.10);aspect-ratio:4/3;background:#0a1a2e;position:relative;">
-        <img src="images/dock-brown-pilings.jpg" alt="Brown composite dock with dark wrapped pilings along a tropical South Florida canal — Contour Marine" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 45%;display:block;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
+        <picture><source srcset="images/dock-brown-pilings.webp" type="image/webp" /><img src="images/dock-brown-pilings.jpg" alt="Brown composite dock with dark wrapped pilings along a tropical South Florida canal — Contour Marine" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 45%;display:block;transition:transform 0.5s ease;" /></picture>
         <div class="img-caption-overlay">
           <span style="color:#fff;font-size:0.83rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;display:block;"><i class="fas fa-water" style="color:var(--teal-bright);margin-right:0.4rem;"></i>Brown Composite Dock — Wrapped Pilings</span>
           <span style="color:rgba(255,255,255,0.72);font-size:0.78rem;font-weight:400;display:block;margin-top:0.2rem;">Rich brown composite decking with custom dark-wrapped pilings — a sharp, finished look from water to walkway.</span>
@@ -382,7 +382,7 @@
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <img src="images/logo-final.png" srcset="images/logo-final.png 1x, images/logo-2x.png 2x" alt="Contour Marine" class="footer-logo-img" width="954" height="294" />
+      <picture><source srcset="images/logo-final.webp 1x, images/logo-2x.webp 2x" type="image/webp" /><img src="images/logo-final.png" srcset="images/logo-final.png 1x, images/logo-2x.png 2x" alt="Contour Marine" class="footer-logo-img" width="954" height="294" /></picture>
       <p>South Florida's trusted marine contractor since 2001, proudly serving Broward and Miami-Dade.</p>
       <div class="footer-social">
         <a href="https://www.instagram.com/contourmarine" target="_blank"><i class="fab fa-instagram"></i></a>

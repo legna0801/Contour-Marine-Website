@@ -17,10 +17,13 @@
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="styles.css?v=19" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" /></noscript>
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css" /></noscript>
+  <link rel="stylesheet" href="styles.css?v=20" />
   <link rel="canonical" href="https://www.contourmarine.com/boatlifts.html">
+  <link rel="preload" href="images/logo-final.webp" as="image" type="image/webp" fetchpriority="high" />
 </head>
 <body>
 
@@ -28,7 +31,7 @@
   <div class="nav-container">
     <a href="index.html" class="nav-logo">
       <span class="nav-logo-block">
-        <img src="images/logo-final.png" srcset="images/logo-final.png 1x, images/logo-2x.png 2x" alt="Contour Marine" class="nav-logo-img" width="954" height="294" />
+        <picture><source srcset="images/logo-final.webp 1x, images/logo-2x.webp 2x" type="image/webp" /><img fetchpriority="high" src="images/logo-final.png" srcset="images/logo-final.png 1x, images/logo-2x.png 2x" alt="Contour Marine" class="nav-logo-img" width="954" height="294" /></picture>
       </span>
     </a>
     <ul class="nav-links">
@@ -82,12 +85,7 @@
 
     <div class="service-detail-grid">
       <div class="service-detail-img reveal-left">
-        <img
-          src="images/boatlift-1.jpg"
-          alt="Precision-installed aluminum boat lift system with dock walkway — South Florida waterfront"
-          loading="eager"
-          style="width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block;border-radius:16px;"
-        />
+        <picture><source srcset="images/boatlift-1.webp" type="image/webp" /><img src="images/boatlift-1.jpg" alt="Precision-installed aluminum boat lift system with dock walkway — South Florida waterfront" loading="eager" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block;border-radius:16px;" /></picture>
       </div>
       <div class="service-detail-content reveal-right">
         <span class="section-label">Boat Lift Installation</span>
@@ -108,12 +106,7 @@
 
     <div class="service-detail-grid reverse">
       <div class="service-detail-img reveal-right">
-        <img
-          src="images/boatlift-2.jpg"
-          alt="Marine lift construction with precision alignment and structural integrity — Contour Marine South Florida"
-          loading="lazy"
-          style="width:100%;height:100%;object-fit:cover;object-position:center 35%;display:block;border-radius:16px;"
-        />
+        <picture><source srcset="images/boatlift-2.webp" type="image/webp" /><img src="images/boatlift-2.jpg" alt="Marine lift construction with precision alignment and structural integrity — Contour Marine South Florida" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 35%;display:block;border-radius:16px;" /></picture>
       </div>
       <div class="service-detail-content reveal-left">
         <span class="section-label">System Options</span>
@@ -136,12 +129,7 @@
 
     <div class="service-detail-grid">
       <div class="service-detail-img reveal-left">
-        <img
-          src="images/boatlift-3.jpg"
-          alt="Advanced boat lift system with precision controls and reinforced components — Contour Marine South Florida"
-          loading="lazy"
-          style="width:100%;height:100%;object-fit:cover;object-position:center 45%;display:block;border-radius:16px;"
-        />
+        <picture><source srcset="images/boatlift-3.webp" type="image/webp" /><img src="images/boatlift-3.jpg" alt="Advanced boat lift system with precision controls and reinforced components — Contour Marine South Florida" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 45%;display:block;border-radius:16px;" /></picture>
       </div>
       <div class="service-detail-content reveal-right">
         <span class="section-label">Advanced Boat Lift Installation</span>
@@ -181,38 +169,22 @@
     <div class="pwc-angle-grid reveal">
 
       <div class="pwc-angle-item">
-        <img
-          src="images/pwc-lift-angle1.jpg"
-          alt="Deco double jet ski lift aluminum frame being installed — side view along South Florida canal"
-          loading="lazy"
-        />
+        <picture><source srcset="images/pwc-lift-angle1.webp" type="image/webp" /><img src="images/pwc-lift-angle1.jpg" alt="Deco double jet ski lift aluminum frame being installed — side view along South Florida canal" loading="lazy" /></picture>
         <span class="pwc-angle-label"><i class="fas fa-drafting-compass"></i> Frame Installation</span>
       </div>
 
       <div class="pwc-angle-item">
-        <img
-          src="images/pwc-lift-angle2.jpg"
-          alt="Deco double jet ski lift with dual Yamaha WaveRunners loaded — front-on view"
-          loading="lazy"
-        />
+        <picture><source srcset="images/pwc-lift-angle2.webp" type="image/webp" /><img src="images/pwc-lift-angle2.jpg" alt="Deco double jet ski lift with dual Yamaha WaveRunners loaded — front-on view" loading="lazy" /></picture>
         <span class="pwc-angle-label"><i class="fas fa-arrows-alt-h"></i> Front View — Both PWC Loaded</span>
       </div>
 
       <div class="pwc-angle-item">
-        <img
-          src="images/pwc-lift-angle3.jpg"
-          alt="Yamaha WaveRunner on deco double jet ski lift — port-side angle South Florida dock"
-          loading="lazy"
-        />
+        <picture><source srcset="images/pwc-lift-angle3.webp" type="image/webp" /><img src="images/pwc-lift-angle3.jpg" alt="Yamaha WaveRunner on deco double jet ski lift — port-side angle South Florida dock" loading="lazy" /></picture>
         <span class="pwc-angle-label"><i class="fas fa-water"></i> Side Angle — WaveRunner Detail</span>
       </div>
 
       <div class="pwc-angle-item pwc-angle-item--wide">
-        <img
-          src="images/pwc-lift-angle4.jpg"
-          alt="Deco double jet ski lift cradles and large yacht alongside — wide canal view South Florida"
-          loading="lazy"
-        />
+        <picture><source srcset="images/pwc-lift-angle4.webp" type="image/webp" /><img src="images/pwc-lift-angle4.jpg" alt="Deco double jet ski lift cradles and large yacht alongside — wide canal view South Florida" loading="lazy" /></picture>
         <span class="pwc-angle-label"><i class="fas fa-expand-arrows-alt"></i> Wide View — Cradles &amp; Dock Context</span>
       </div>
 
@@ -305,11 +277,7 @@
       <!-- Rear view -->
       <div class="bl-showcase-card swbp-reveal" data-delay="0">
         <div class="bl-showcase-img-wrap">
-          <img
-            src="images/boatlift-rear.jpg"
-            alt="Triple Yamaha 300 V6 center console on boat lift, rear view — South Florida canal by Contour Marine"
-            loading="lazy"
-          />
+          <picture><source srcset="images/boatlift-rear.webp" type="image/webp" /><img src="images/boatlift-rear.jpg" alt="Triple Yamaha 300 V6 center console on boat lift, rear view — South Florida canal by Contour Marine" loading="lazy" /></picture>
         </div>
         <div class="bl-showcase-label">
           <i class="fas fa-anchor"></i>
@@ -320,11 +288,7 @@
       <!-- Side view -->
       <div class="bl-showcase-card swbp-reveal" data-delay="1">
         <div class="bl-showcase-img-wrap">
-          <img
-            src="images/boatlift-side.jpg"
-            alt="Triple-engine center console on boat lift, side view — South Florida waterfront by Contour Marine"
-            loading="lazy"
-          />
+          <picture><source srcset="images/boatlift-side.webp" type="image/webp" /><img src="images/boatlift-side.jpg" alt="Triple-engine center console on boat lift, side view — South Florida waterfront by Contour Marine" loading="lazy" /></picture>
         </div>
         <div class="bl-showcase-label">
           <i class="fas fa-water"></i>
@@ -348,12 +312,7 @@
       <p style="color:var(--navy-muted);font-size:0.93rem;line-height:1.75;max-width:520px;margin:0 auto;">A precision-installed vertical aluminum boat lift system for a center console — featuring a dual-motor control box, corrosion-resistant framing, and clean dockside integration along a South Florida waterway.</p>
     </div>
     <div style="border-radius:16px;overflow:hidden;box-shadow:0 8px 40px rgba(13,43,69,0.13);">
-      <img
-        src="images/boatlift-proj.jpg"
-        alt="Vertical aluminum boat lift with center console and dual motor control box — South Florida waterfront installation by Contour Marine"
-        loading="lazy"
-        style="width:100%;max-height:600px;display:block;object-fit:cover;object-position:center 45%;"
-      />
+      <picture><source srcset="images/boatlift-proj.webp" type="image/webp" /><img src="images/boatlift-proj.jpg" alt="Vertical aluminum boat lift with center console and dual motor control box — South Florida waterfront installation by Contour Marine" loading="lazy" style="width:100%;max-height:600px;display:block;object-fit:cover;object-position:center 45%;" /></picture>
     </div>
   </div>
 </section>
@@ -402,7 +361,7 @@
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <img src="images/logo-final.png" srcset="images/logo-final.png 1x, images/logo-2x.png 2x" alt="Contour Marine" class="footer-logo-img" width="954" height="294" />
+      <picture><source srcset="images/logo-final.webp 1x, images/logo-2x.webp 2x" type="image/webp" /><img src="images/logo-final.png" srcset="images/logo-final.png 1x, images/logo-2x.png 2x" alt="Contour Marine" class="footer-logo-img" width="954" height="294" /></picture>
       <p>South Florida's trusted marine contractor since 2001, proudly serving Broward and Miami-Dade.</p>
       <div class="footer-social">
         <a href="https://www.instagram.com/contourmarine" target="_blank"><i class="fab fa-instagram"></i></a>

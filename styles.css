@@ -2915,25 +2915,27 @@ footer {
     0 8px 28px rgba(59,196,218,0.4),
     0 0 50px rgba(59,196,218,0.2);
   animation: idx-arrow-pulse 2.5s ease-in-out infinite;
+  will-change: transform, opacity;
   position: relative;
   z-index: 2;
   text-shadow: none;
 }
 @keyframes idx-arrow-pulse {
   0%, 100% {
-    box-shadow: 0 0 0 4px rgba(3,12,22,0.9), 0 0 0 6px rgba(59,196,218,0.35), 0 8px 28px rgba(59,196,218,0.4);
     transform: translateX(0) scale(1);
+    opacity: 1;
   }
   30% {
     transform: translateX(3px) scale(1.08);
-    box-shadow: 0 0 0 4px rgba(3,12,22,0.9), 0 0 0 9px rgba(59,196,218,0.5), 0 10px 36px rgba(59,196,218,0.55);
+    opacity: 0.92;
   }
   50% {
-    box-shadow: 0 0 0 4px rgba(3,12,22,0.9), 0 0 0 10px rgba(59,196,218,0.6), 0 12px 44px rgba(59,196,218,0.65);
     transform: translateX(5px) scale(1.1);
+    opacity: 0.88;
   }
   70% {
     transform: translateX(3px) scale(1.05);
+    opacity: 0.94;
   }
 }
 

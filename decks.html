@@ -17,10 +17,13 @@
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="styles.css?v=19" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" /></noscript>
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css" /></noscript>
+  <link rel="stylesheet" href="styles.css?v=20" />
   <link rel="canonical" href="https://www.contourmarine.com/decks.html">
+  <link rel="preload" href="images/logo-final.webp" as="image" type="image/webp" fetchpriority="high" />
 </head>
 <body>
 
@@ -28,7 +31,7 @@
   <div class="nav-container">
     <a href="index.html" class="nav-logo">
       <span class="nav-logo-block">
-        <img src="images/logo-final.png" srcset="images/logo-final.png 1x, images/logo-2x.png 2x" alt="Contour Marine" class="nav-logo-img" width="954" height="294" />
+        <picture><source srcset="images/logo-final.webp 1x, images/logo-2x.webp 2x" type="image/webp" /><img fetchpriority="high" src="images/logo-final.png" srcset="images/logo-final.png 1x, images/logo-2x.png 2x" alt="Contour Marine" class="nav-logo-img" width="954" height="294" /></picture>
       </span>
     </a>
     <ul class="nav-links">
@@ -82,12 +85,7 @@
 
     <div class="service-detail-grid">
       <div class="service-detail-img reveal-left">
-        <img
-          src="images/deck-evening-lit.jpg?v=2"
-          alt="Illuminated waterfront deck at night with blue LED rail accent lights — South Florida by Contour Marine"
-          loading="eager"
-          style="width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block;border-radius:16px;"
-        />
+        <picture><source srcset="images/deck-evening-lit.webp" type="image/webp" /><img src="images/deck-evening-lit.jpg?v=2" alt="Illuminated waterfront deck at night with blue LED rail accent lights — South Florida by Contour Marine" loading="eager" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block;border-radius:16px;" width="560" height="452" /></picture>
       </div>
       <div class="service-detail-content reveal-right">
         <span class="section-label">Deck Construction</span>
@@ -107,12 +105,7 @@
 
     <div class="service-detail-grid reverse">
       <div class="service-detail-img reveal-right">
-        <img
-          src="images/deck-waterfront.jpg"
-          alt="Luxury Ipe hardwood waterfront deck with palm tree and tropical landscaping — South Florida by Contour Marine"
-          loading="lazy"
-          style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;border-radius:16px;"
-        />
+        <picture><source srcset="images/deck-waterfront.webp" type="image/webp" /><img src="images/deck-waterfront.jpg" alt="Luxury Ipe hardwood waterfront deck with palm tree and tropical landscaping — South Florida by Contour Marine" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;border-radius:16px;" /></picture>
       </div>
       <div class="service-detail-content reveal-left">
         <span class="section-label">Design &amp; Materials</span>
@@ -146,12 +139,7 @@
       <p style="color:var(--navy-muted);font-size:0.93rem;line-height:1.75;max-width:520px;margin:0 auto;">Brazilian Ipe hardwood laid as a sweeping garden walkway — naturally rot-resistant, oil-rich, and built to endure South Florida's climate for decades.</p>
     </div>
     <div style="border-radius:16px;overflow:hidden;box-shadow:0 8px 40px rgba(13,43,69,0.13);">
-      <img
-        src="images/deck-walkway.jpg"
-        alt="Luxury Ipe hardwood estate walkway winding through tropical garden with palm trees and river rock landscaping — South Florida by Contour Marine"
-        loading="lazy"
-        style="width:100%;height:auto;display:block;"
-      />
+      <picture><source srcset="images/deck-walkway.webp" type="image/webp" /><img src="images/deck-walkway.jpg" alt="Luxury Ipe hardwood estate walkway winding through tropical garden with palm trees and river rock landscaping — South Florida by Contour Marine" loading="lazy" style="width:100%;height:auto;display:block;" /></picture>
     </div>
   </div>
 </section>
@@ -201,38 +189,17 @@
 
       <!-- Staircase -->
       <div style="border-radius:12px;overflow:hidden;box-shadow:0 4px 22px rgba(0,0,0,0.5);height:260px;background:#040e1a;">
-        <img
-          src="images/deck-light-stairs.jpg"
-          alt="Waterfront composite deck staircase at twilight with warm golden LED step riser lights and cable railing — South Florida"
-          loading="lazy"
-          style="width:100%;height:100%;object-fit:cover;object-position:center 50%;display:block;transition:transform 0.45s ease;"
-          onmouseover="this.style.transform='scale(1.05)'"
-          onmouseout="this.style.transform='scale(1)'"
-        />
+        <picture><source srcset="images/deck-light-stairs.webp" type="image/webp" /><img src="images/deck-light-stairs.jpg" alt="Waterfront composite deck staircase at twilight with warm golden LED step riser lights and cable railing — South Florida" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 50%;display:block;transition:transform 0.45s ease;" /></picture>
       </div>
 
       <!-- Wide blue LED deck -->
       <div style="border-radius:12px;overflow:hidden;box-shadow:0 4px 22px rgba(0,0,0,0.5);height:260px;background:#040e1a;">
-        <img
-          src="images/deck-light-wide.jpg"
-          alt="South Florida waterfront deck at night with vivid blue LED piling cap lights and illuminated step risers"
-          loading="lazy"
-          style="width:100%;height:100%;object-fit:cover;object-position:center 55%;display:block;transition:transform 0.45s ease;"
-          onmouseover="this.style.transform='scale(1.05)'"
-          onmouseout="this.style.transform='scale(1)'"
-        />
+        <picture><source srcset="images/deck-light-wide.webp" type="image/webp" /><img src="images/deck-light-wide.jpg" alt="South Florida waterfront deck at night with vivid blue LED piling cap lights and illuminated step risers" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 55%;display:block;transition:transform 0.45s ease;" /></picture>
       </div>
 
       <!-- Blue steps walkway -->
       <div style="border-radius:12px;overflow:hidden;box-shadow:0 4px 22px rgba(0,0,0,0.5);height:260px;background:#040e1a;">
-        <img
-          src="images/deck-light-2.jpg"
-          alt="Luxury waterfront deck walkway at night with evenly spaced blue LED step lights and illuminated square piling caps — South Florida"
-          loading="lazy"
-          style="width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block;transition:transform 0.45s ease;"
-          onmouseover="this.style.transform='scale(1.05)'"
-          onmouseout="this.style.transform='scale(1)'"
-        />
+        <picture><source srcset="images/deck-light-2.webp" type="image/webp" /><img src="images/deck-light-2.jpg" alt="Luxury waterfront deck walkway at night with evenly spaced blue LED step lights and illuminated square piling caps — South Florida" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block;transition:transform 0.45s ease;" /></picture>
       </div>
 
     </div>
@@ -269,11 +236,7 @@
       <!-- BEFORE -->
       <div class="dk-transform-card swbp-reveal" data-delay="0">
         <div class="dk-transform-img-wrap">
-          <img
-            src="images/deck-rooftop-before.jpg"
-            alt="Bare concrete rooftop before composite deck installation — South Florida by Contour Marine"
-            loading="lazy"
-          />
+          <picture><source srcset="images/deck-rooftop-before.webp" type="image/webp" /><img src="images/deck-rooftop-before.jpg" alt="Bare concrete rooftop before composite deck installation — South Florida by Contour Marine" loading="lazy" /></picture>
         </div>
         <div class="dk-transform-label dk-label--before">
           <span class="dk-label-tag">Before</span>
@@ -284,11 +247,7 @@
       <!-- AFTER -->
       <div class="dk-transform-card swbp-reveal" data-delay="1">
         <div class="dk-transform-img-wrap">
-          <img
-            src="images/deck-rooftop-after.jpg"
-            alt="Finished composite rooftop deck installed by Contour Marine — South Florida"
-            loading="lazy"
-          />
+          <picture><source srcset="images/deck-rooftop-after.webp" type="image/webp" /><img src="images/deck-rooftop-after.jpg" alt="Finished composite rooftop deck installed by Contour Marine — South Florida" loading="lazy" /></picture>
         </div>
         <div class="dk-transform-label dk-label--after">
           <span class="dk-label-tag">After</span>
@@ -315,14 +274,14 @@
     <!-- Row 1: 2 travertine pool deck photos side by side -->
     <div class="client-photo-row" style="margin-bottom:1.5rem;margin-top:2rem;">
       <div style="border-radius:14px;overflow:hidden;box-shadow:0 4px 18px rgba(13,43,69,0.10);aspect-ratio:4/3;background:#0a1a2e;position:relative;">
-        <img src="images/deck-travertine-1.jpg" alt="Luxury travertine pool deck beside a South Florida canal with tropical landscaping — Contour Marine" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 45%;display:block;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
+        <picture><source srcset="images/deck-travertine-1.webp" type="image/webp" /><img src="images/deck-travertine-1.jpg" alt="Luxury travertine pool deck beside a South Florida canal with tropical landscaping — Contour Marine" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 45%;display:block;transition:transform 0.5s ease;" /></picture>
         <div class="img-caption-overlay">
           <span style="color:#fff;font-size:0.83rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;display:block;"><i class="fas fa-border-all" style="color:var(--teal-bright);margin-right:0.4rem;"></i>Travertine Pool Deck — Canalfront</span>
           <span style="color:rgba(255,255,255,0.72);font-size:0.78rem;font-weight:400;display:block;margin-top:0.2rem;">Natural travertine pavers surrounding a pool with direct canal access — timeless and built to handle Florida’s elements.</span>
         </div>
       </div>
       <div style="border-radius:14px;overflow:hidden;box-shadow:0 4px 18px rgba(13,43,69,0.10);aspect-ratio:4/3;background:#0a1a2e;position:relative;">
-        <img src="images/deck-travertine-2.jpg" alt="Travertine pool deck with outdoor kitchen and blue pool water — South Florida by Contour Marine" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
+        <picture><source srcset="images/deck-travertine-2.webp" type="image/webp" /><img src="images/deck-travertine-2.jpg" alt="Travertine pool deck with outdoor kitchen and blue pool water — South Florida by Contour Marine" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block;transition:transform 0.5s ease;" /></picture>
         <div class="img-caption-overlay">
           <span style="color:#fff;font-size:0.83rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;display:block;"><i class="fas fa-border-all" style="color:var(--teal-bright);margin-right:0.4rem;"></i>Travertine Pool Deck — Outdoor Kitchen</span>
           <span style="color:rgba(255,255,255,0.72);font-size:0.78rem;font-weight:400;display:block;margin-top:0.2rem;">Full pool deck in travertine stone paired with a built-in outdoor kitchen area — the complete backyard experience.</span>
@@ -333,14 +292,14 @@
     <!-- Row 2: 2 more deck photos side by side -->
     <div class="client-photo-row">
       <div style="border-radius:14px;overflow:hidden;box-shadow:0 4px 18px rgba(13,43,69,0.10);aspect-ratio:4/3;background:#0a1a2e;position:relative;">
-        <img src="images/deck-travertine-3.jpg" alt="Elegant travertine deck with outdoor kitchen beside South Florida canal — Contour Marine" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 45%;display:block;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
+        <picture><source srcset="images/deck-travertine-3.webp" type="image/webp" /><img src="images/deck-travertine-3.jpg" alt="Elegant travertine deck with outdoor kitchen beside South Florida canal — Contour Marine" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 45%;display:block;transition:transform 0.5s ease;" /></picture>
         <div class="img-caption-overlay">
           <span style="color:#fff;font-size:0.83rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;display:block;"><i class="fas fa-border-all" style="color:var(--teal-bright);margin-right:0.4rem;"></i>Travertine Pool Deck — Canal View</span>
           <span style="color:rgba(255,255,255,0.72);font-size:0.78rem;font-weight:400;display:block;margin-top:0.2rem;">Expansive travertine surround with lush tropical plantings and a serene canal view right off the deck.</span>
         </div>
       </div>
       <div style="border-radius:14px;overflow:hidden;box-shadow:0 4px 18px rgba(13,43,69,0.10);aspect-ratio:4/3;background:#0a1a2e;position:relative;">
-        <img src="images/deck-composite-steps.jpg" alt="Composite deck with travertine stone steps and tropical landscaping — South Florida by Contour Marine" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
+        <picture><source srcset="images/deck-composite-steps.webp" type="image/webp" /><img src="images/deck-composite-steps.jpg" alt="Composite deck with travertine stone steps and tropical landscaping — South Florida by Contour Marine" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block;transition:transform 0.5s ease;" /></picture>
         <div class="img-caption-overlay">
           <span style="color:#fff;font-size:0.83rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;display:block;"><i class="fas fa-layer-group" style="color:var(--teal-bright);margin-right:0.4rem;"></i>Composite Deck — Travertine Steps</span>
           <span style="color:rgba(255,255,255,0.72);font-size:0.78rem;font-weight:400;display:block;margin-top:0.2rem;">Brown composite decking with natural travertine stone step risers — two premium materials combined into one seamless design.</span>
@@ -372,7 +331,7 @@
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <img src="images/logo-final.png" srcset="images/logo-final.png 1x, images/logo-2x.png 2x" alt="Contour Marine" class="footer-logo-img" width="954" height="294" />
+      <picture><source srcset="images/logo-final.webp 1x, images/logo-2x.webp 2x" type="image/webp" /><img src="images/logo-final.png" srcset="images/logo-final.png 1x, images/logo-2x.png 2x" alt="Contour Marine" class="footer-logo-img" width="954" height="294" /></picture>
       <p>South Florida's trusted marine contractor since 2001, proudly serving Broward and Miami-Dade.</p>
       <div class="footer-social">
         <a href="https://www.instagram.com/contourmarine" target="_blank"><i class="fab fa-instagram"></i></a>

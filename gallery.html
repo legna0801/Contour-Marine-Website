@@ -17,9 +17,11 @@
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="styles.css?v=19" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" /></noscript>
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css" /></noscript>
+  <link rel="stylesheet" href="styles.css?v=20" />
 
   <style>
   /* ═══════════════════════════════════════════════
@@ -427,6 +429,7 @@
   }
   </style>
   <link rel="canonical" href="https://www.contourmarine.com/gallery.html">
+  <link rel="preload" href="images/logo-final.webp" as="image" type="image/webp" fetchpriority="high" />
 </head>
 <body>
 
@@ -437,7 +440,7 @@
   <div class="nav-container">
     <a href="index.html" class="nav-logo">
       <span class="nav-logo-block">
-        <img src="images/logo-final.png" srcset="images/logo-final.png 1x, images/logo-2x.png 2x" alt="Contour Marine" class="nav-logo-img" width="954" height="294" />
+        <picture><source srcset="images/logo-final.webp 1x, images/logo-2x.webp 2x" type="image/webp" /><img fetchpriority="high" src="images/logo-final.png" srcset="images/logo-final.png 1x, images/logo-2x.png 2x" alt="Contour Marine" class="nav-logo-img" width="954" height="294" /></picture>
       </span>
     </a>
     <ul class="nav-links">
@@ -498,44 +501,44 @@
 
     <!-- ── BOAT LIFTS (3 clean photos, no overlays) ── -->
     <div class="gal-item" data-cat="boat-lifts" data-label="Boat Lift Installation">
-      <img src="images/boatlift-1.jpg" alt="Boat lift walkway over calm South Florida waterway" loading="lazy" style="object-position: center 60%;" />
+      <picture><source srcset="images/boatlift-1.webp" type="image/webp" /><img src="images/boatlift-1.jpg" alt="Boat lift walkway over calm South Florida waterway" loading="lazy" style="object-position: center 60%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Boat Lift Installation</span>
     </div>
 
     <div class="gal-item" data-cat="boat-lifts" data-label="Boat Lift Installation">
-      <img src="images/boatlift-2.jpg" alt="Installed boat lift frame and controls — South Florida dock" loading="lazy" style="object-position: center 40%;" />
+      <picture><source srcset="images/boatlift-2.webp" type="image/webp" /><img src="images/boatlift-2.jpg" alt="Installed boat lift frame and controls — South Florida dock" loading="lazy" style="object-position: center 40%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Boat Lift Installation</span>
     </div>
 
     <div class="gal-item" data-cat="boat-lifts" data-label="Boat Lift Installation">
-      <img src="images/boatlift-3.jpg" alt="Boat lift rails and motor detail — South Florida waterfront" loading="lazy" style="object-position: center 50%;" />
+      <picture><source srcset="images/boatlift-3.webp" type="image/webp" /><img src="images/boatlift-3.jpg" alt="Boat lift rails and motor detail — South Florida waterfront" loading="lazy" style="object-position: center 50%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Boat Lift Installation</span>
     </div>
 
     <!-- ── SEAWALLS (3 clean photos, no overlays) ── -->
     <div class="gal-item" data-cat="seawalls" data-label="Completed Seawall Cap">
-      <img src="images/seawall-completed-cap.jpg" alt="Completed concrete seawall cap with timber deck foreground, green lawn, palm trees and luxury home — South Florida" loading="lazy" style="object-position: center 45%;" />
+      <picture><source srcset="images/seawall-completed-cap.webp" type="image/webp" /><img src="images/seawall-completed-cap.jpg" alt="Completed concrete seawall cap with timber deck foreground, green lawn, palm trees and luxury home — South Florida" loading="lazy" style="object-position: center 45%;" width="560" height="640" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Completed Seawall Cap</span>
     </div>
 
     <div class="gal-item" data-cat="seawalls" data-label="Seawall Construction">
-      <img src="images/seawall-before.jpg" alt="Seawall under construction — rebar and formwork along South Florida canal" loading="lazy" style="object-position: center 40%;" />
+      <picture><source srcset="images/seawall-before.webp" type="image/webp" /><img src="images/seawall-before.jpg" alt="Seawall under construction — rebar and formwork along South Florida canal" loading="lazy" style="object-position: center 40%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Seawall Construction</span>
     </div>
 
     <div class="gal-item" data-cat="seawalls" data-label="Seawall Construction">
-      <img src="images/seawall-construction-crane.jpg" alt="Seawall and dock construction with crane barge — South Florida" loading="lazy" style="object-position: center 45%;" />
+      <picture><source srcset="images/seawall-construction-crane.webp" type="image/webp" /><img src="images/seawall-construction-crane.jpg" alt="Seawall and dock construction with crane barge — South Florida" loading="lazy" style="object-position: center 45%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Seawall Construction</span>
     </div>
 
     <div class="gal-item" data-cat="docks" data-label="Completed Waterfront">
-      <img src="images/seawall-after.jpg" alt="Completed waterfront dock with bollard lighting — South Florida" loading="lazy" style="object-position: center 35%;" />
+      <picture><source srcset="images/seawall-after.webp" type="image/webp" /><img src="images/seawall-after.jpg" alt="Completed waterfront dock with bollard lighting — South Florida" loading="lazy" style="object-position: center 35%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Completed Waterfront</span>
     </div>
@@ -543,403 +546,403 @@
     <!-- ── DOCKS (7 photos) ── -->
 
     <div class="gal-item" data-cat="docks" data-label="Dock — Night Lighting">
-      <img src="images/dock-night-feature.jpg?v=2" alt="Luxury custom dock at night with teal underwater lighting and teak wood decking — South Florida by Contour Marine" loading="lazy" style="object-position: center 60%;" />
+      <picture><source srcset="images/dock-night-feature.webp" type="image/webp" /><img src="images/dock-night-feature.jpg?v=2" alt="Luxury custom dock at night with teal underwater lighting and teak wood decking — South Florida by Contour Marine" loading="lazy" style="object-position: center 60%;" width="560" height="745" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Dock — Night Lighting</span>
     </div>
 
     <div class="gal-item" data-cat="docks" data-label="Composite Gray Dock">
-      <img src="images/dock-composite-gray.jpg?v=3" alt="Gray composite dock walkway with dark pilings along a South Florida canal — Contour Marine" loading="lazy" style="object-position: center 45%;" />
+      <picture><source srcset="images/dock-composite-gray.webp" type="image/webp" /><img src="images/dock-composite-gray.jpg?v=3" alt="Gray composite dock walkway with dark pilings along a South Florida canal — Contour Marine" loading="lazy" style="object-position: center 45%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Composite Gray Dock</span>
     </div>
 
     <div class="gal-item" data-cat="docks" data-label="Dock — White Post Walkway">
-      <img src="images/dock-white-posts-walkway.jpg?v=3" alt="Modern dock walkway with white square posts and city skyline — South Florida by Contour Marine" loading="lazy" style="object-position: center 50%;" />
+      <picture><source srcset="images/dock-white-posts-walkway.webp" type="image/webp" /><img src="images/dock-white-posts-walkway.jpg?v=3" alt="Modern dock walkway with white square posts and city skyline — South Florida by Contour Marine" loading="lazy" style="object-position: center 50%;" width="560" height="640" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Dock — White Post Walkway</span>
     </div>
 
     <div class="gal-item" data-cat="docks" data-label="Composite Dock">
-      <img src="images/dock-composite-walkway.jpg?v=2" alt="Composite dock walkway with palm trees and moored boats — South Florida" loading="lazy" style="object-position: center 50%;" />
+      <picture><source srcset="images/dock-composite-walkway.webp" type="image/webp" /><img src="images/dock-composite-walkway.jpg?v=2" alt="Composite dock walkway with palm trees and moored boats — South Florida" loading="lazy" style="object-position: center 50%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Composite Dock</span>
     </div>
 
     <div class="gal-item" data-cat="docks" data-label="Large Custom Dock">
-      <img src="images/dock-large-custom.jpg?v=2" alt="Large custom dock installation with composite decking and covered yacht — South Florida" loading="lazy" style="object-position: center 40%;" />
+      <picture><source srcset="images/dock-large-custom.webp" type="image/webp" /><img src="images/dock-large-custom.jpg?v=2" alt="Large custom dock installation with composite decking and covered yacht — South Florida" loading="lazy" style="object-position: center 40%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Large Custom Dock</span>
     </div>
 
     <div class="gal-item" data-cat="docks" data-label="Dock Extension — Day">
-      <img src="images/dock-extension-day.jpg" alt="Dock extension with composite decking — bright daylight — South Florida" loading="lazy" style="object-position: center 50%;" />
+      <picture><source srcset="images/dock-extension-day.webp" type="image/webp" /><img src="images/dock-extension-day.jpg" alt="Dock extension with composite decking — bright daylight — South Florida" loading="lazy" style="object-position: center 50%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Dock Extension — Day</span>
     </div>
 
     <div class="gal-item" data-cat="docks" data-label="Dock Extension — Evening">
-      <img src="images/dock-extension-evening.jpg" alt="Dock extension at dusk with warm evening light — South Florida waterway" loading="lazy" style="object-position: center 50%;" />
+      <picture><source srcset="images/dock-extension-evening.webp" type="image/webp" /><img src="images/dock-extension-evening.jpg" alt="Dock extension at dusk with warm evening light — South Florida waterway" loading="lazy" style="object-position: center 50%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Dock Extension — Evening</span>
     </div>
 
     <div class="gal-item" data-cat="docks" data-label="Dock Access Ramp">
-      <img src="images/dock-access-ramp.jpg" alt="Dock access ramp and gangway with construction crane barge — South Florida" loading="lazy" style="object-position: center 50%;" />
+      <picture><source srcset="images/dock-access-ramp.webp" type="image/webp" /><img src="images/dock-access-ramp.jpg" alt="Dock access ramp and gangway with construction crane barge — South Florida" loading="lazy" style="object-position: center 50%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Dock Access Ramp</span>
     </div>
 
     <div class="gal-item" data-cat="docks" data-label="Luxury Dock with Boat Lifts">
-      <img src="images/dock-luxury-boatlifts.jpg" alt="Luxury dock with dual boat lifts and covered slips — South Florida" loading="lazy" style="object-position: center 40%;" />
+      <picture><source srcset="images/dock-luxury-boatlifts.webp" type="image/webp" /><img src="images/dock-luxury-boatlifts.jpg" alt="Luxury dock with dual boat lifts and covered slips — South Florida" loading="lazy" style="object-position: center 40%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Luxury Dock with Boat Lifts</span>
     </div>
 
     <div class="gal-item" data-cat="docks" data-label="Multi-Level Dock &amp; Lift">
-      <img src="images/dock-multilevel-lift.jpg" alt="Multi-level dock and boat lift system on South Florida waterway" loading="lazy" style="object-position: center 50%;" />
+      <picture><source srcset="images/dock-multilevel-lift.webp" type="image/webp" /><img src="images/dock-multilevel-lift.jpg" alt="Multi-level dock and boat lift system on South Florida waterway" loading="lazy" style="object-position: center 50%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Multi-Level Dock &amp; Lift</span>
     </div>
 
     <div class="gal-item" data-cat="decks" data-label="Deck — Evening Lighting">
-      <img src="images/deck-evening-lit.jpg?v=2" alt="Illuminated composite waterfront deck at night with blue LED rail accent lights and warm golden stair lighting — South Florida" loading="lazy" style="object-position: center 55%;" />
+      <picture><source srcset="images/deck-evening-lit.webp" type="image/webp" /><img src="images/deck-evening-lit.jpg?v=2" alt="Illuminated composite waterfront deck at night with blue LED rail accent lights and warm golden stair lighting — South Florida" loading="lazy" style="object-position: center 55%;" width="560" height="452" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Deck — Evening Lighting</span>
     </div>
 
     <div class="gal-item" data-cat="docks" data-label="Dock Construction">
-      <img src="images/dock-framing.jpg" alt="Dock framing and structural pilings under construction — South Florida" loading="lazy" style="object-position: center 40%;" />
+      <picture><source srcset="images/dock-framing.webp" type="image/webp" /><img src="images/dock-framing.jpg" alt="Dock framing and structural pilings under construction — South Florida" loading="lazy" style="object-position: center 40%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Dock Construction</span>
     </div>
 
     <div class="gal-item" data-cat="docks" data-label="Completed Dock">
-      <img src="images/dock-hero.jpg" alt="Finished custom dock with cable railing — South Florida waterway" loading="lazy" style="object-position: center 30%;" />
+      <picture><source srcset="images/dock-hero.webp" type="image/webp" /><img src="images/dock-hero.jpg" alt="Finished custom dock with cable railing — South Florida waterway" loading="lazy" style="object-position: center 30%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Completed Dock</span>
     </div>
 
     <!-- ── DOCKS — Project Photos ── -->
     <div class="gal-item" data-cat="docks" data-label="White Dock — Miami Skyline">
-      <img src="images/dock-proj-1.jpg" alt="White composite dock platform with lounge chairs overlooking Biscayne Bay and Miami skyline — South Florida by Contour Marine" loading="lazy" style="object-position: center 45%;" />
+      <picture><source srcset="images/dock-proj-1.webp" type="image/webp" /><img src="images/dock-proj-1.jpg" alt="White composite dock platform with lounge chairs overlooking Biscayne Bay and Miami skyline — South Florida by Contour Marine" loading="lazy" style="object-position: center 45%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">White Dock — Miami Skyline</span>
     </div>
 
     <div class="gal-item" data-cat="docks" data-label="Ipe Hardwood — Luxury Yachts">
-      <img src="images/dock-proj-2.jpg" alt="Ipe hardwood dock platform with decorative piling caps overlooking luxury yachts on South Florida waterway" loading="lazy" style="object-position: center 55%;" />
+      <picture><source srcset="images/dock-proj-2.webp" type="image/webp" /><img src="images/dock-proj-2.jpg" alt="Ipe hardwood dock platform with decorative piling caps overlooking luxury yachts on South Florida waterway" loading="lazy" style="object-position: center 55%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Ipe Hardwood — Luxury Yachts</span>
     </div>
 
     <div class="gal-item" data-cat="docks" data-label="Composite Dock with Cable Rail">
-      <img src="images/dock-proj-3.jpg" alt="Grey composite dock with stainless cable railing and gate — South Florida canal by Contour Marine" loading="lazy" style="object-position: center 50%;" />
+      <picture><source srcset="images/dock-proj-3.webp" type="image/webp" /><img src="images/dock-proj-3.jpg" alt="Grey composite dock with stainless cable railing and gate — South Florida canal by Contour Marine" loading="lazy" style="object-position: center 50%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Composite Dock with Cable Rail</span>
     </div>
 
     <div class="gal-item" data-cat="docks" data-label="Curved Composite Dock">
-      <img src="images/dock-proj-4.jpg" alt="Grey composite dock curving along South Florida canal with tropical banana plants — Contour Marine" loading="lazy" style="object-position: center 45%;" />
+      <picture><source srcset="images/dock-proj-4.webp" type="image/webp" /><img src="images/dock-proj-4.jpg" alt="Grey composite dock curving along South Florida canal with tropical banana plants — Contour Marine" loading="lazy" style="object-position: center 45%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Curved Composite Dock</span>
     </div>
 
     <div class="gal-item" data-cat="docks" data-label="Long Canal Dock">
-      <img src="images/dock-proj-5.jpg" alt="Long grey composite dock running alongside waterfront home on South Florida canal — Contour Marine" loading="lazy" style="object-position: center 40%;" />
+      <picture><source srcset="images/dock-proj-5.webp" type="image/webp" /><img src="images/dock-proj-5.jpg" alt="Long grey composite dock running alongside waterfront home on South Florida canal — Contour Marine" loading="lazy" style="object-position: center 40%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Long Canal Dock</span>
     </div>
 
     <div class="gal-item" data-cat="docks" data-label="Ipe Dock — Seawall Steps">
-      <img src="images/dock-proj-6.jpg" alt="Ipe wood dock with seawall steps and boat lift posts on South Florida waterway — Contour Marine" loading="lazy" style="object-position: center 40%;" />
+      <picture><source srcset="images/dock-proj-6.webp" type="image/webp" /><img src="images/dock-proj-6.jpg" alt="Ipe wood dock with seawall steps and boat lift posts on South Florida waterway — Contour Marine" loading="lazy" style="object-position: center 40%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Ipe Dock — Seawall Steps</span>
     </div>
 
     <div class="gal-item" data-cat="docks" data-label="Ipe Dock with Pool &amp; Canal">
-      <img src="images/dock-new-5.jpg" alt="Long Ipe hardwood dock alongside luxury pool and palm trees on South Florida canal — Contour Marine" loading="lazy" style="object-position: center 50%;" />
+      <picture><source srcset="images/dock-new-5.webp" type="image/webp" /><img src="images/dock-new-5.jpg" alt="Long Ipe hardwood dock alongside luxury pool and palm trees on South Florida canal — Contour Marine" loading="lazy" style="object-position: center 50%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Ipe Dock with Pool &amp; Canal</span>
     </div>
 
     <div class="gal-item" data-cat="docks" data-label="Composite Dock — Canal Walkway">
-      <img src="images/dock-new-7.jpg" alt="Light composite dock walkway with square posts and railing along South Florida canal — Contour Marine" loading="lazy" style="object-position: center 50%;" />
+      <picture><source srcset="images/dock-new-7.webp" type="image/webp" /><img src="images/dock-new-7.jpg" alt="Light composite dock walkway with square posts and railing along South Florida canal — Contour Marine" loading="lazy" style="object-position: center 50%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Composite Dock — Canal Walkway</span>
     </div>
 
     <div class="gal-item" data-cat="docks" data-label="Composite Dock — Waterfront">
-      <img src="images/dock-new-8.jpg" alt="Beige composite dock with square posts lining a South Florida canal waterfront — Contour Marine" loading="lazy" style="object-position: center 50%;" />
+      <picture><source srcset="images/dock-new-8.webp" type="image/webp" /><img src="images/dock-new-8.jpg" alt="Beige composite dock with square posts lining a South Florida canal waterfront — Contour Marine" loading="lazy" style="object-position: center 50%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Composite Dock — Waterfront</span>
     </div>
 
     <!-- ── DOCK LIGHTING (10 night photos) ── -->
     <div class="gal-item" data-cat="docks" data-label="Dock Lighting — Green Underwater">
-      <img src="images/dock-light-1.jpg" alt="Dock with vivid green underwater lighting and Miami city skyline at night — South Florida" loading="lazy" style="object-position: center 50%;" />
+      <picture><source srcset="images/dock-light-1.webp" type="image/webp" /><img src="images/dock-light-1.jpg" alt="Dock with vivid green underwater lighting and Miami city skyline at night — South Florida" loading="lazy" style="object-position: center 50%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Dock Lighting — Green Underwater</span>
     </div>
 
     <div class="gal-item" data-cat="docks" data-label="Dock Lighting — Pink &amp; Green">
-      <img src="images/dock-light-2.jpg" alt="Dock with vivid pink magenta LED lighting and green underwater glow — South Florida night" loading="lazy" style="object-position: center 50%;" />
+      <picture><source srcset="images/dock-light-2.webp" type="image/webp" /><img src="images/dock-light-2.jpg" alt="Dock with vivid pink magenta LED lighting and green underwater glow — South Florida night" loading="lazy" style="object-position: center 50%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Dock Lighting — Pink &amp; Green</span>
     </div>
 
     <div class="gal-item" data-cat="docks" data-label="Dock Lighting — Red &amp; Green">
-      <img src="images/dock-light-3.jpg" alt="Dock with red pink edge lighting and green underwater glow — Miami skyline at night" loading="lazy" style="object-position: center 50%;" />
+      <picture><source srcset="images/dock-light-3.webp" type="image/webp" /><img src="images/dock-light-3.jpg" alt="Dock with red pink edge lighting and green underwater glow — Miami skyline at night" loading="lazy" style="object-position: center 50%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Dock Lighting — Red &amp; Green</span>
     </div>
 
     <div class="gal-item" data-cat="docks" data-label="Dock Lighting — Blue &amp; Green">
-      <img src="images/dock-light-4.jpg" alt="Dock walkway with blue LED lighting and brilliant green underwater glow — South Florida" loading="lazy" style="object-position: center 50%;" />
+      <picture><source srcset="images/dock-light-4.webp" type="image/webp" /><img src="images/dock-light-4.jpg" alt="Dock walkway with blue LED lighting and brilliant green underwater glow — South Florida" loading="lazy" style="object-position: center 50%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Dock Lighting — Blue &amp; Green</span>
     </div>
 
     <div class="gal-item" data-cat="docks" data-label="Dock Lighting — Teal Underwater">
-      <img src="images/dock-light-6.jpg" alt="Composite dock at night with teal cyan underwater glow and lit power pedestal — South Florida" loading="lazy" style="object-position: center 50%;" />
+      <picture><source srcset="images/dock-light-6.webp" type="image/webp" /><img src="images/dock-light-6.jpg" alt="Composite dock at night with teal cyan underwater glow and lit power pedestal — South Florida" loading="lazy" style="object-position: center 50%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Dock Lighting — Teal Underwater</span>
     </div>
 
     <div class="gal-item" data-cat="docks" data-label="Dock Lighting — Blue LED">
-      <img src="images/dock-light-7.jpg" alt="Composite dock with blue LED piling cap lighting and illuminated seawall steps — South Florida" loading="lazy" style="object-position: center 50%;" />
+      <picture><source srcset="images/dock-light-7.webp" type="image/webp" /><img src="images/dock-light-7.jpg" alt="Composite dock with blue LED piling cap lighting and illuminated seawall steps — South Florida" loading="lazy" style="object-position: center 50%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Dock Lighting — Blue LED</span>
     </div>
 
     <div class="gal-item" data-cat="decks" data-label="Deck Lighting — Staircase">
-      <img src="images/deck-light-stairs.jpg" alt="Waterfront composite deck staircase at twilight with warm golden LED step riser lights and cable railing — South Florida" loading="lazy" style="object-position: center 40%;" />
+      <picture><source srcset="images/deck-light-stairs.webp" type="image/webp" /><img src="images/deck-light-stairs.jpg" alt="Waterfront composite deck staircase at twilight with warm golden LED step riser lights and cable railing — South Florida" loading="lazy" style="object-position: center 40%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Deck Lighting — Staircase</span>
     </div>
 
     <div class="gal-item" data-cat="decks" data-label="Ipe Estate Walkway">
-      <img src="images/deck-walkway.jpg" alt="Luxury Ipe hardwood estate walkway winding through tropical garden with palm trees and river rock landscaping — South Florida by Contour Marine" loading="lazy" style="object-position: center 40%;" />
+      <picture><source srcset="images/deck-walkway.webp" type="image/webp" /><img src="images/deck-walkway.jpg" alt="Luxury Ipe hardwood estate walkway winding through tropical garden with palm trees and river rock landscaping — South Florida by Contour Marine" loading="lazy" style="object-position: center 40%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Ipe Estate Walkway</span>
     </div>
 
     <!-- ── BOAT LIFTS (additional photos) ── -->
     <div class="gal-item" data-cat="boat-lifts" data-label="Boat Lift Platform">
-      <img src="images/dock-boatlift-platform.jpg" alt="Finished dock platform with boat lift posts and covered boat — South Florida" loading="lazy" style="object-position: center 50%;" />
+      <picture><source srcset="images/dock-boatlift-platform.webp" type="image/webp" /><img src="images/dock-boatlift-platform.jpg" alt="Finished dock platform with boat lift posts and covered boat — South Florida" loading="lazy" style="object-position: center 50%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Boat Lift Platform</span>
     </div>
 
     <div class="gal-item" data-cat="boat-lifts" data-label="Center Console Vertical Lift">
-      <img src="images/boatlift-proj.jpg" alt="Vertical aluminum boat lift with center console and dual motor control box — South Florida waterfront by Contour Marine" loading="lazy" style="object-position: center 45%;" />
+      <picture><source srcset="images/boatlift-proj.webp" type="image/webp" /><img src="images/boatlift-proj.jpg" alt="Vertical aluminum boat lift with center console and dual motor control box — South Florida waterfront by Contour Marine" loading="lazy" style="object-position: center 45%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Center Console Vertical Lift</span>
     </div>
 
     <!-- ── SEAWALLS (additional photos) ── -->
     <div class="gal-item" data-cat="seawalls" data-label="Seawall Construction">
-      <img src="images/seawall-construction-2.jpg" alt="Seawall construction with fresh concrete formwork — South Florida" loading="lazy" style="object-position: center 45%;" />
+      <picture><source srcset="images/seawall-construction-2.webp" type="image/webp" /><img src="images/seawall-construction-2.jpg" alt="Seawall construction with fresh concrete formwork — South Florida" loading="lazy" style="object-position: center 45%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Seawall Construction</span>
     </div>
 
     <div class="gal-item" data-cat="seawalls" data-label="Seawall Cap &amp; Pilings">
-      <img src="images/seawall-cap-pilings.jpg" alt="Completed concrete seawall cap with square marine pilings — South Florida" loading="lazy" style="object-position: center 40%;" />
+      <picture><source srcset="images/seawall-cap-pilings.webp" type="image/webp" /><img src="images/seawall-cap-pilings.jpg" alt="Completed concrete seawall cap with square marine pilings — South Florida" loading="lazy" style="object-position: center 40%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Seawall Cap &amp; Pilings</span>
     </div>
 
     <!-- ── DECO DOUBLE JET SKI LIFT (4 angles) ── -->
     <div class="gal-item" data-cat="boat-lifts" data-label="Deco Double Jet Ski Lift">
-      <img src="images/pwc-lift-angle1.jpg" alt="Deco double jet ski lift aluminum frame installation — South Florida canal" loading="lazy" style="object-position: center 50%;" />
+      <picture><source srcset="images/pwc-lift-angle1.webp" type="image/webp" /><img src="images/pwc-lift-angle1.jpg" alt="Deco double jet ski lift aluminum frame installation — South Florida canal" loading="lazy" style="object-position: center 50%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Deco Double Jet Ski Lift</span>
     </div>
 
     <div class="gal-item" data-cat="boat-lifts" data-label="Deco Double Jet Ski Lift">
-      <img src="images/pwc-lift-angle2.jpg" alt="Dual Yamaha WaveRunners loaded on deco double jet ski lift — front view South Florida" loading="lazy" style="object-position: center 50%;" />
+      <picture><source srcset="images/pwc-lift-angle2.webp" type="image/webp" /><img src="images/pwc-lift-angle2.jpg" alt="Dual Yamaha WaveRunners loaded on deco double jet ski lift — front view South Florida" loading="lazy" style="object-position: center 50%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Deco Double Jet Ski Lift</span>
     </div>
 
     <div class="gal-item" data-cat="boat-lifts" data-label="Deco Double Jet Ski Lift">
-      <img src="images/pwc-lift-angle3.jpg" alt="Yamaha WaveRunner on deco lift — side angle South Florida dock" loading="lazy" style="object-position: center 50%;" />
+      <picture><source srcset="images/pwc-lift-angle3.webp" type="image/webp" /><img src="images/pwc-lift-angle3.jpg" alt="Yamaha WaveRunner on deco lift — side angle South Florida dock" loading="lazy" style="object-position: center 50%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Deco Double Jet Ski Lift</span>
     </div>
 
     <div class="gal-item" data-cat="boat-lifts" data-label="Deco Double Jet Ski Lift">
-      <img src="images/pwc-lift-angle4.jpg" alt="Deco double jet ski lift cradles wide view with yacht alongside — South Florida" loading="lazy" style="object-position: center 50%;" />
+      <picture><source srcset="images/pwc-lift-angle4.webp" type="image/webp" /><img src="images/pwc-lift-angle4.jpg" alt="Deco double jet ski lift cradles wide view with yacht alongside — South Florida" loading="lazy" style="object-position: center 50%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Deco Double Jet Ski Lift</span>
     </div>
 
     <!-- ── PILINGS ── -->
     <div class="gal-item" data-cat="pilings" data-label="Marine Pilings">
-      <img src="images/seawall-pilings.jpg" alt="Concrete marine pilings installed along South Florida canal" loading="lazy" style="object-position: center 40%;" />
+      <picture><source srcset="images/seawall-pilings.webp" type="image/webp" /><img src="images/seawall-pilings.jpg" alt="Concrete marine pilings installed along South Florida canal" loading="lazy" style="object-position: center 40%;" width="560" height="700" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Marine Pilings</span>
     </div>
 
     <div class="gal-item" data-cat="pilings" data-label="Square Composite Wrap">
-      <img src="images/piling-square-composite.jpg" alt="Square composite piling wraps on South Florida dock — Contour Marine" loading="lazy" style="object-position: center top;" />
+      <picture><source srcset="images/piling-square-composite.webp" type="image/webp" /><img src="images/piling-square-composite.jpg" alt="Square composite piling wraps on South Florida dock — Contour Marine" loading="lazy" style="object-position: center top;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Square Composite Wrap</span>
     </div>
 
     <div class="gal-item" data-cat="pilings" data-label="Traditional Wood Pilings">
-      <img src="images/piling-traditional-wood.jpg" alt="Traditional wood pilings with composite wrap caps along South Florida waterfront — Contour Marine" loading="lazy" style="object-position: center top;" />
+      <picture><source srcset="images/piling-traditional-wood.webp" type="image/webp" /><img src="images/piling-traditional-wood.jpg" alt="Traditional wood pilings with composite wrap caps along South Florida waterfront — Contour Marine" loading="lazy" style="object-position: center top;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Traditional Wood Pilings</span>
     </div>
 
     <div class="gal-item" data-cat="pilings" data-label="Custom Wrapped Finish">
-      <img src="images/piling-custom-wrap.jpg" alt="Custom wrapped piling finish on South Florida waterfront dock — Contour Marine" loading="lazy" style="object-position: center top;" />
+      <picture><source srcset="images/piling-custom-wrap.webp" type="image/webp" /><img src="images/piling-custom-wrap.jpg" alt="Custom wrapped piling finish on South Florida waterfront dock — Contour Marine" loading="lazy" style="object-position: center top;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Custom Wrapped Finish</span>
     </div>
 
     <!-- ── SEAWALLS — Construction Process ── -->
     <div class="gal-item" data-cat="seawalls" data-label="Forming &amp; Reinforcement">
-      <img src="images/sw-step1.jpg" alt="Seawall forming and steel reinforcement installation — South Florida by Contour Marine" loading="lazy" style="object-position: center 50%;" />
+      <picture><source srcset="images/sw-step1.webp" type="image/webp" /><img src="images/sw-step1.jpg" alt="Seawall forming and steel reinforcement installation — South Florida by Contour Marine" loading="lazy" style="object-position: center 50%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Forming &amp; Reinforcement</span>
     </div>
 
     <div class="gal-item" data-cat="seawalls" data-label="Concrete Placement">
-      <img src="images/sw-step2.jpg" alt="Concrete being poured into seawall formwork — South Florida by Contour Marine" loading="lazy" style="object-position: center 50%;" />
+      <picture><source srcset="images/sw-step2.webp" type="image/webp" /><img src="images/sw-step2.jpg" alt="Concrete being poured into seawall formwork — South Florida by Contour Marine" loading="lazy" style="object-position: center 50%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Concrete Placement</span>
     </div>
 
     <div class="gal-item" data-cat="seawalls" data-label="Finished Seawall">
-      <img src="images/sw-step3.jpg" alt="Finished seawall — completed concrete cap along South Florida canal — Contour Marine" loading="lazy" style="object-position: center 50%;" />
+      <picture><source srcset="images/sw-step3.webp" type="image/webp" /><img src="images/sw-step3.jpg" alt="Finished seawall — completed concrete cap along South Florida canal — Contour Marine" loading="lazy" style="object-position: center 50%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Finished Seawall</span>
     </div>
 
     <!-- ── SEAWALLS — Transformation ── -->
     <div class="gal-item" data-cat="seawalls" data-label="Seawall Transformation — Before">
-      <img src="images/sw-transform-before.jpg" alt="Seawall construction in progress — before transformation — South Florida by Contour Marine" loading="lazy" style="object-position: center 50%;" />
+      <picture><source srcset="images/sw-transform-before.webp" type="image/webp" /><img src="images/sw-transform-before.jpg" alt="Seawall construction in progress — before transformation — South Florida by Contour Marine" loading="lazy" style="object-position: center 50%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Seawall Transformation — Before</span>
     </div>
 
     <div class="gal-item" data-cat="seawalls" data-label="Seawall Transformation — Daytime">
-      <img src="images/sw-transform-day.jpg" alt="Completed seawall — finished waterfront daytime view — South Florida by Contour Marine" loading="lazy" style="object-position: center 50%;" />
+      <picture><source srcset="images/sw-transform-day.webp" type="image/webp" /><img src="images/sw-transform-day.jpg" alt="Completed seawall — finished waterfront daytime view — South Florida by Contour Marine" loading="lazy" style="object-position: center 50%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Seawall Transformation — Daytime</span>
     </div>
 
     <div class="gal-item" data-cat="seawalls" data-label="Seawall Transformation — Night">
-      <img src="images/sw-transform-night.jpg" alt="Completed seawall with integrated lighting at night — South Florida by Contour Marine" loading="lazy" style="object-position: center 50%;" />
+      <picture><source srcset="images/sw-transform-night.webp" type="image/webp" /><img src="images/sw-transform-night.jpg" alt="Completed seawall with integrated lighting at night — South Florida by Contour Marine" loading="lazy" style="object-position: center 50%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Seawall Transformation — Night</span>
     </div>
 
     <div class="gal-item" data-cat="seawalls" data-label="Rebar Formwork — Canal View">
-      <img src="images/seawall-new-1.jpg" alt="Seawall rebar formwork with pilings and South Florida canal view — Contour Marine construction" loading="lazy" style="object-position: center 40%;" />
+      <picture><source srcset="images/seawall-new-1.webp" type="image/webp" /><img src="images/seawall-new-1.jpg" alt="Seawall rebar formwork with pilings and South Florida canal view — Contour Marine construction" loading="lazy" style="object-position: center 40%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Rebar Formwork — Canal View</span>
     </div>
 
     <div class="gal-item" data-cat="seawalls" data-label="Rebar Cage Assembly">
-      <img src="images/seawall-new-2.jpg" alt="Full-length seawall rebar cage assembly — Contour Marine South Florida" loading="lazy" style="object-position: center 30%;" />
+      <picture><source srcset="images/seawall-new-2.webp" type="image/webp" /><img src="images/seawall-new-2.jpg" alt="Full-length seawall rebar cage assembly — Contour Marine South Florida" loading="lazy" style="object-position: center 30%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Rebar Cage Assembly</span>
     </div>
 
     <div class="gal-item" data-cat="seawalls" data-label="Concrete Cap Pour">
-      <img src="images/seawall-new-3.jpg" alt="Fresh concrete being poured into seawall cap formwork — Contour Marine" loading="lazy" style="object-position: center 30%;" />
+      <picture><source srcset="images/seawall-new-3.webp" type="image/webp" /><img src="images/seawall-new-3.jpg" alt="Fresh concrete being poured into seawall cap formwork — Contour Marine" loading="lazy" style="object-position: center 30%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Concrete Cap Pour</span>
     </div>
 
     <div class="gal-item" data-cat="seawalls" data-label="Concrete Cap Curing">
-      <img src="images/seawall-new-4.jpg" alt="Smooth concrete seawall cap curing with pilings and canal — Contour Marine" loading="lazy" style="object-position: center 30%;" />
+      <picture><source srcset="images/seawall-new-4.webp" type="image/webp" /><img src="images/seawall-new-4.jpg" alt="Smooth concrete seawall cap curing with pilings and canal — Contour Marine" loading="lazy" style="object-position: center 30%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Concrete Cap Curing</span>
     </div>
 
     <div class="gal-item" data-cat="seawalls" data-label="Seawall Cap — Final Inspection">
-      <img src="images/seawall-new-5.jpg" alt="Completed seawall cap with pilings along South Florida canal — Contour Marine final inspection" loading="lazy" style="object-position: center 30%;" />
+      <picture><source srcset="images/seawall-new-5.webp" type="image/webp" /><img src="images/seawall-new-5.jpg" alt="Completed seawall cap with pilings along South Florida canal — Contour Marine final inspection" loading="lazy" style="object-position: center 30%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Seawall Cap — Final Inspection</span>
     </div>
 
     <div class="gal-item" data-cat="seawalls" data-label="Completed Seawall — Final Project">
-      <img src="images/seawall-new-6.jpg" alt="Finished seawall with green lawn and canal view — completed Contour Marine project South Florida" loading="lazy" style="object-position: center 35%;" />
+      <picture><source srcset="images/seawall-new-6.webp" type="image/webp" /><img src="images/seawall-new-6.jpg" alt="Finished seawall with green lawn and canal view — completed Contour Marine project South Florida" loading="lazy" style="object-position: center 35%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Completed Seawall — Final Project</span>
     </div>
 
     <!-- ── DECKS ── -->
     <div class="gal-item" data-cat="decks" data-label="Rooftop Deck — Before">
-      <img src="images/deck-rooftop-before.jpg" alt="Bare concrete rooftop before composite deck installation — South Florida by Contour Marine" loading="lazy" style="object-position: center top;" />
+      <picture><source srcset="images/deck-rooftop-before.webp" type="image/webp" /><img src="images/deck-rooftop-before.jpg" alt="Bare concrete rooftop before composite deck installation — South Florida by Contour Marine" loading="lazy" style="object-position: center top;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Rooftop Deck — Before</span>
     </div>
 
     <div class="gal-item" data-cat="decks" data-label="Rooftop Deck — After">
-      <img src="images/deck-rooftop-after.jpg" alt="Finished composite rooftop deck — South Florida by Contour Marine" loading="lazy" style="object-position: center top;" />
+      <picture><source srcset="images/deck-rooftop-after.webp" type="image/webp" /><img src="images/deck-rooftop-after.jpg" alt="Finished composite rooftop deck — South Florida by Contour Marine" loading="lazy" style="object-position: center top;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Rooftop Deck — After</span>
     </div>
 
     <div class="gal-item" data-cat="decks" data-label="Waterfront Hardwood Deck">
-      <img src="images/deck-waterfront.jpg" alt="Luxury Ipe hardwood waterfront deck with palm tree and tropical landscaping — South Florida by Contour Marine" loading="lazy" style="object-position: center 40%;" />
+      <picture><source srcset="images/deck-waterfront.webp" type="image/webp" /><img src="images/deck-waterfront.jpg" alt="Luxury Ipe hardwood waterfront deck with palm tree and tropical landscaping — South Florida by Contour Marine" loading="lazy" style="object-position: center 40%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Waterfront Hardwood Deck</span>
     </div>
 
     <!-- ── NEW CLIENT DOCK PHOTOS ── -->
     <div class="gal-item" data-cat="docks" data-label="Grey Composite Dock — Cable Railing">
-      <img src="images/dock-cable-railing.jpg" alt="Grey composite dock with stainless steel cable railing system along South Florida canal — Contour Marine" loading="lazy" style="object-position: center 40%;" />
+      <picture><source srcset="images/dock-cable-railing.webp" type="image/webp" /><img src="images/dock-cable-railing.jpg" alt="Grey composite dock with stainless steel cable railing system along South Florida canal — Contour Marine" loading="lazy" style="object-position: center 40%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Grey Composite Dock — Cable Railing</span>
     </div>
 
     <div class="gal-item" data-cat="docks" data-label="Brown Composite Dock — Wrapped Pilings">
-      <img src="images/dock-brown-pilings.jpg" alt="Brown composite dock with custom dark-wrapped pilings along a tropical South Florida canal — Contour Marine" loading="lazy" style="object-position: center 40%;" />
+      <picture><source srcset="images/dock-brown-pilings.webp" type="image/webp" /><img src="images/dock-brown-pilings.jpg" alt="Brown composite dock with custom dark-wrapped pilings along a tropical South Florida canal — Contour Marine" loading="lazy" style="object-position: center 40%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Brown Composite Dock — Wrapped Pilings</span>
     </div>
 
     <!-- ── NEW CLIENT DECK PHOTOS ── -->
     <div class="gal-item" data-cat="decks" data-label="Travertine Pool Deck — Canalfront">
-      <img src="images/deck-travertine-1.jpg" alt="Luxury travertine pool deck beside a South Florida canal with tropical landscaping — Contour Marine" loading="lazy" style="object-position: center 40%;" />
+      <picture><source srcset="images/deck-travertine-1.webp" type="image/webp" /><img src="images/deck-travertine-1.jpg" alt="Luxury travertine pool deck beside a South Florida canal with tropical landscaping — Contour Marine" loading="lazy" style="object-position: center 40%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Travertine Pool Deck — Canalfront</span>
     </div>
 
     <div class="gal-item" data-cat="decks" data-label="Travertine Pool Deck — Outdoor Kitchen">
-      <img src="images/deck-travertine-2.jpg" alt="Travertine pool deck with outdoor kitchen and blue pool water — South Florida by Contour Marine" loading="lazy" style="object-position: center 40%;" />
+      <picture><source srcset="images/deck-travertine-2.webp" type="image/webp" /><img src="images/deck-travertine-2.jpg" alt="Travertine pool deck with outdoor kitchen and blue pool water — South Florida by Contour Marine" loading="lazy" style="object-position: center 40%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Travertine Pool Deck — Outdoor Kitchen</span>
     </div>
 
     <div class="gal-item" data-cat="decks" data-label="Travertine Pool Deck — Canal View">
-      <img src="images/deck-travertine-3.jpg" alt="Elegant travertine deck with outdoor kitchen beside South Florida canal — Contour Marine" loading="lazy" style="object-position: center 40%;" />
+      <picture><source srcset="images/deck-travertine-3.webp" type="image/webp" /><img src="images/deck-travertine-3.jpg" alt="Elegant travertine deck with outdoor kitchen beside South Florida canal — Contour Marine" loading="lazy" style="object-position: center 40%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Travertine Pool Deck — Canal View</span>
     </div>
 
     <div class="gal-item" data-cat="decks" data-label="Composite Deck — Travertine Steps">
-      <img src="images/deck-composite-steps.jpg" alt="Composite deck with travertine stone steps and tropical landscaping — South Florida by Contour Marine" loading="lazy" style="object-position: center 40%;" />
+      <picture><source srcset="images/deck-composite-steps.webp" type="image/webp" /><img src="images/deck-composite-steps.jpg" alt="Composite deck with travertine stone steps and tropical landscaping — South Florida by Contour Marine" loading="lazy" style="object-position: center 40%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Composite Deck — Travertine Steps</span>
     </div>
 
     <!-- ── BOAT LIFTS — Project Showcase ── -->
     <div class="gal-item" data-cat="boat-lifts" data-label="Boat Lift — Rear View">
-      <img src="images/boatlift-rear.jpg" alt="Center console on boat lift, rear view — South Florida canal by Contour Marine" loading="lazy" style="object-position: center 50%;" />
+      <picture><source srcset="images/boatlift-rear.webp" type="image/webp" /><img src="images/boatlift-rear.jpg" alt="Center console on boat lift, rear view — South Florida canal by Contour Marine" loading="lazy" style="object-position: center 50%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Boat Lift — Rear View</span>
     </div>
 
     <div class="gal-item" data-cat="boat-lifts" data-label="Boat Lift — Side View">
-      <img src="images/boatlift-side.jpg" alt="Center console on boat lift, side view — South Florida waterfront by Contour Marine" loading="lazy" style="object-position: center 50%;" />
+      <picture><source srcset="images/boatlift-side.webp" type="image/webp" /><img src="images/boatlift-side.jpg" alt="Center console on boat lift, side view — South Florida waterfront by Contour Marine" loading="lazy" style="object-position: center 50%;" /></picture>
       <div class="gal-expand"><i class="fas fa-expand-alt"></i></div>
       <span class="gal-label">Boat Lift — Side View</span>
     </div>
@@ -976,7 +979,7 @@
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <img src="images/logo-final.png" srcset="images/logo-final.png 1x, images/logo-2x.png 2x" alt="Contour Marine" class="footer-logo-img" width="954" height="294" />
+      <picture><source srcset="images/logo-final.webp 1x, images/logo-2x.webp 2x" type="image/webp" /><img src="images/logo-final.png" srcset="images/logo-final.png 1x, images/logo-2x.png 2x" alt="Contour Marine" class="footer-logo-img" width="954" height="294" /></picture>
       <p>South Florida's trusted marine contractor since 2001, proudly serving Broward and Miami-Dade.</p>
       <div class="footer-social">
         <a href="https://www.instagram.com/contourmarine" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
