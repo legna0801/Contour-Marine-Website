@@ -2,6 +2,44 @@
 // CONTOUR MARINE - Global JavaScript
 // ============================================
 
+// ── Lazy-load Bunny video iframes ──────────────────────────────────────────
+// Iframes use data-bunny-src instead of src.
+// When the iframe scrolls into view (300px margin), src is set → player loads.
+// This removes ~297KB of Bunny player.es.js from the initial page load.
+(function () {
+  var lazyIframes = document.querySelectorAll('iframe[data-bunny-src]');
+  if (!lazyIframes.length) return;
+
+  if (!('IntersectionObserver' in window)) {
+    // Fallback for very old browsers: load all immediately
+    lazyIframes.forEach(function (iframe) {
+      iframe.src = iframe.getAttribute('data-bunny-src');
+    });
+    return;
+  }
+
+  var videoObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        var iframe = entry.target;
+        var src = iframe.getAttribute('data-bunny-src');
+        if (src) {
+          iframe.src = src;
+          iframe.removeAttribute('data-bunny-src');
+        }
+        videoObserver.unobserve(iframe);
+      }
+    });
+  }, {
+    rootMargin: '300px 0px',   // Start loading 300px before entering viewport
+    threshold: 0
+  });
+
+  lazyIframes.forEach(function (iframe) {
+    videoObserver.observe(iframe);
+  });
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
 
   // ── Sticky Nav ─────────────────────────────
