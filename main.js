@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         nav.classList.remove('scrolled');
       }
-    });
+    }, { passive: true });   // passive=true: never calls preventDefault, unblocks scroll
   }
 
   // ── Hero BG Zoom ───────────────────────────
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         floatCta.classList.remove('visible');
       }
-    });
+    }, { passive: true });   // passive=true: unblocks scroll on mobile
   }
 
   // ── Counter Animation ──────────────────────

@@ -7390,3 +7390,119 @@ html {
 @media (max-width: 600px) {
   .sw-video-section { padding: 4rem 0 3.5rem; }
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   MOBILE PERFORMANCE OPTIMIZATIONS
+   Disable expensive GPU ops on small/slow devices
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── 1. Kill 3D floating logo animation on mobile — saves GPU compositor ── */
+@media (max-width: 768px) {
+  .hero-logo {
+    animation: none !important;
+    transform: none !important;
+    transform-style: flat !important;
+    filter: drop-shadow(0 2px 8px rgba(13,43,69,0.45)) !important;
+    will-change: auto !important;
+  }
+  .hero-logo:hover {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+/* ── 2. Remove all backdrop-filter blur on mobile (huge GPU drain) ─────── */
+@media (max-width: 768px) {
+  nav.scrolled,
+  .feature-box,
+  .idx-sw-panel-caption,
+  .idx-video-btn,
+  .video-unmute-nudge,
+  .gov-badge,
+  .sw-video-frame,
+  [style*="backdrop-filter"] {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  /* Replace frosted glass nav with solid background */
+  nav.scrolled {
+    background: rgba(7, 27, 46, 0.98) !important;
+  }
+}
+
+/* ── 3. Reduce box-shadow complexity on mobile ─────────────────────────── */
+@media (max-width: 768px) {
+  .btn-primary,
+  .btn-secondary,
+  .feature-box,
+  .service-card,
+  .hero-stat {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25) !important;
+  }
+  /* Kill glow shadows on video frames — not visible on small screens */
+  .idx-video-section::before {
+    display: none !important;
+  }
+  .idx-reel-frame,
+  .idx-video-frame {
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5) !important;
+  }
+}
+
+/* ── 4. Simplify hero section animations on mobile ─────────────────────── */
+@media (max-width: 768px) {
+  /* Replace staggered heroFadeUp with instant opacity — no jank */
+  .hero-eyebrow,
+  .hero h1,
+  .hero-sub,
+  .hero-trust-line,
+  .hero-buttons,
+  .hero-stats,
+  .hero-logo-wrap {
+    animation-duration: 0.3s !important;
+    animation-delay: 0s !important;
+  }
+}
+
+/* ── 5. Remove nav gradient background animation on mobile ─────────────── */
+@media (max-width: 768px) {
+  .nav-logo-text {
+    background: linear-gradient(175deg, #fff0a0 0%, #f7b733 40%, #e8900a 70%, #f7b733 100%) !important;
+    background-size: 100% auto !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    animation: none !important;
+  }
+}
+
+/* ── 6. prefers-reduced-motion — kill ALL animations for accessibility ─── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .hero-logo,
+  .hero-logo-wrap,
+  .hero-eyebrow,
+  .hero h1,
+  .hero-sub,
+  .hero-trust-line,
+  .hero-buttons,
+  .hero-stats {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+  .reveal,
+  .reveal-left,
+  .reveal-right,
+  .reveal-up {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
